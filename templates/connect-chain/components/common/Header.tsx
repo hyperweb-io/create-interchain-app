@@ -8,7 +8,7 @@ import {
   useTheme,
 } from "@interchain-ui/react";
 
-const stacks = ["Interchain Kit", "Next.js", "CosmJS"];
+const stacks = ["Interchain Kit", "Next.js", "InterchainJS"];
 
 export function Header() {
   const { theme, setTheme } = useTheme();
