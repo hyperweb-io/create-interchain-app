@@ -24,7 +24,7 @@ export default function Home() {
         fontWeight="500"
         attributes={{ mt: '200px', mb: '20px' }}
       >
-        Create Cosmos App
+        Create Interchain App
       </Text>
       <Text
         textAlign="center"

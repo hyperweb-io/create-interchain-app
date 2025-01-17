@@ -62,7 +62,7 @@ export const products: Product[] = [
     category: 'testing',
   },
   {
-    name: 'Create Cosmos App',
+    name: 'Create Interchain App',
     description:
       'One-Command Setup for Modern Cosmos dApps. Speed up your development and bootstrap new web3 dApps quickly.',
     link: 'https://cosmology.zone/products/create-interchain-app',

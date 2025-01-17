@@ -17,14 +17,14 @@ const osmojs = dependencies[0];
     <Text as="h1" fontWeight="$extrabold" :fontSize="{ mobile: '$3xl', tablet: '$4xl', desktop: '$10xl' }" :attributes="{
       marginBottom: '$6',
     }">
-      Create Cosmos App
+      Create Interchain App
     </Text>
     <Text as="h1" fontWeight="$bold">
       <Text as="span" :fontSize="{ mobile: '$4xl', tablet: '$8xl', desktop: '$8xl' }">
         Welcome to&nbsp;
       </Text>
       <Text as="span" :fontSize="{ mobile: '$4xl', tablet: '$8xl', desktop: '$8xl' }" color="$primary500">
-        {{ stacks.join(' + ') }} 
+        {{ stacks.join(' + ') }}
         <!-- {{ ' + ' }}
         <Link :href="osmojs.name" target="_blank" rel="noreferrer" :attributes="{
           fontSize: { mobile: '$4xl', tablet: '$8xl', desktop: '$8xl' },
