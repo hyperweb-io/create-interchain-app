@@ -36,7 +36,7 @@ function CreateCosmosApp({ Component, pageProps }: AppProps) {
             metadata: {
               name: 'Interchain Kit dApp',
               description: 'Interchain Kit dApp built by Create Interchain App',
-              url: "https://docs.cosmology.zone/cosmos-kit/",
+              url: "https://docs.cosmology.zone/interchain-kit/",
               icons: [],
             },
           },

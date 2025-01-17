@@ -16,7 +16,7 @@ export const products: Product[] = [
     name: 'Interchain Kit',
     description:
       'A wallet adapter for react with mobile WalletConnect support for the Cosmos ecosystem.',
-    link: 'https://cosmology.zone/products/cosmos-kit',
+    link: 'https://cosmology.zone/products/interchain-kit',
     category: 'frontend',
   },
   {

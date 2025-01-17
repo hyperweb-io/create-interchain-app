@@ -8,7 +8,7 @@ export const products: Project[] = [
   {
     name: 'Interchain Kit',
     desc: 'A wallet adapter for react with mobile WalletConnect support for the Cosmos ecosystem.',
-    link: 'https://github.com/cosmology-tech/cosmos-kit',
+    link: 'https://github.com/cosmology-tech/interchain-kit',
   },
   {
     name: 'Telescope',
