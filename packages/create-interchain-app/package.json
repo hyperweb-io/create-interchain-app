@@ -41,7 +41,7 @@
     "cosmos",
     "cosmology",
     "create-interchain-app",
-    "cosmos-kit"
+    "interchain-kit"
   ],
   "bugs": {
     "url": "https://github.com/cosmology-tech/create-interchain-app/issues"
