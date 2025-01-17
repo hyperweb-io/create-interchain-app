@@ -21,7 +21,7 @@ var argv = require('minimist')(process.argv.slice(2), {
     } else if (argv._.includes('upgrade')
         || (argv.hasOwnProperty('upgrade') && argv.upgrade)
     ) {
-        shell.exec(`npm install -g create-cosmos-app@latest`);
+        shell.exec(`npm install -g create-interchain-app@latest`);
     } else {
         await cli(argv, pkg.version);
     }

@@ -1,13 +1,13 @@
-# create-cosmos-app
+# create-interchain-app
 
 <p align="center" width="100%">
     <img height="148" src="https://user-images.githubusercontent.com/545047/186589196-e75c9540-86a7-4a71-8096-207be9a4216f.svg" />
 </p>
 
 <p align="center" width="100%">
-   <a href="https://www.npmjs.com/package/create-cosmos-app"><img height="20" src="https://img.shields.io/npm/dt/create-cosmos-app"></a>
-   <a href="https://github.com/cosmology-tech/create-cosmos-app/blob/main/LICENSE"><img height="20" src="https://img.shields.io/badge/license-MIT-blue.svg"></a>
-   <a href="https://www.npmjs.com/package/create-cosmos-app"><img height="20" src="https://img.shields.io/github/package-json/v/cosmology-tech/create-cosmos-app?filename=packages%2Fcreate-cosmos-app%2Fpackage.json"></a>
+   <a href="https://www.npmjs.com/package/create-interchain-app"><img height="20" src="https://img.shields.io/npm/dt/create-interchain-app"></a>
+   <a href="https://github.com/cosmology-tech/create-interchain-app/blob/main/LICENSE"><img height="20" src="https://img.shields.io/badge/license-MIT-blue.svg"></a>
+   <a href="https://www.npmjs.com/package/create-interchain-app"><img height="20" src="https://img.shields.io/github/package-json/v/cosmology-tech/create-interchain-app?filename=packages%2Fcreate-interchain-app%2Fpackage.json"></a>
 </p>
 
 Set up a modern Cosmos app by running one command ⚛️
@@ -24,17 +24,17 @@ https://user-images.githubusercontent.com/545047/192061992-f0e1106d-f4b2-4879-ab
 
 ## Overview
 
-First, install `create-cosmos-app` globally using npm:
+First, install `create-interchain-app` globally using npm:
 
 ```sh
-npm install -g create-cosmos-app
+npm install -g create-interchain-app
 ```
 
 Then, create your new Cosmos app by running the following command:
 
 ```sh
-# you can also use `cca` instead of `create-cosmos-app` for shortcut ;)
-create-cosmos-app
+# you can also use `cca` instead of `create-interchain-app` for shortcut ;)
+create-interchain-app
 ```
 
 During the setup process, you'll be prompted to enter the name of your app. For example:
@@ -66,7 +66,7 @@ Everything is preconfigured, ready-to-go, so you can focus on your code!
 
 ## Education & Resources
 
-🎥 [Checkout our videos](https://cosmology.zone/learn) to learn to learn more about `create-cosmos-app` and tooling for building frontends in the Cosmos!
+🎥 [Checkout our videos](https://cosmology.zone/learn) to learn to learn more about `create-interchain-app` and tooling for building frontends in the Cosmos!
 
 Checkout [cosmos-kit](https://github.com/cosmology-tech/cosmos-kit) for more docs as well as [cosmos-kit/react](https://github.com/cosmology-tech/cosmos-kit/tree/main/packages/react#signing-clients) for getting cosmjs stargate and cosmjs signers.
 
@@ -77,16 +77,16 @@ To create a new app, you may choose one of the following methods:
 ### global install
 
 ```sh
-npm install -g create-cosmos-app
+npm install -g create-interchain-app
 ```
 
 Then run the command:
 
 ```sh
-create-cosmos-app
+create-interchain-app
 ```
 
-we also made an alias `cca` if you don't want to type `create-cosmos-app`:
+we also made an alias `cca` if you don't want to type `create-interchain-app`:
 
 ```sh
 cca
@@ -95,7 +95,7 @@ cca
 ### npx
 
 ```sh
-npx create-cosmos-app
+npx create-interchain-app
 ```
 
 ### npm
@@ -112,7 +112,7 @@ yarn create cosmos-app
 
 ## Examples
 
-The `create-cosmos-app` tool provides a range of examples to help you understand and test various features and integrations. By executing the examples, you can quickly see how to implement specific functionalities in your Cosmos app.
+The `create-interchain-app` tool provides a range of examples to help you understand and test various features and integrations. By executing the examples, you can quickly see how to implement specific functionalities in your Cosmos app.
 
 ```
 cca --example
@@ -267,7 +267,7 @@ Checkout these related projects:
 - [@cosmwasm/ts-codegen](https://github.com/CosmWasm/ts-codegen) Convert your CosmWasm smart contracts into dev-friendly TypeScript classes.
 - [chain-registry](https://github.com/cosmology-tech/chain-registry) Everything from token symbols, logos, and IBC denominations for all assets you want to support in your application.
 - [cosmos-kit](https://github.com/cosmology-tech/cosmos-kit) Experience the convenience of connecting with a variety of web3 wallets through a single, streamlined interface.
-- [create-cosmos-app](https://github.com/cosmology-tech/create-cosmos-app) Set up a modern Cosmos app by running one command.
+- [create-interchain-app](https://github.com/cosmology-tech/create-interchain-app) Set up a modern Cosmos app by running one command.
 - [interchain-ui](https://github.com/cosmology-tech/interchain-ui) The Interchain Design System, empowering developers with a flexible, easy-to-use UI kit.
 - [starship](https://github.com/cosmology-tech/starship) Unified Testing and Development for the Interchain.
 

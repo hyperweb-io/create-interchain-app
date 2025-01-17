@@ -1,15 +1,15 @@
 {
-  "name": "create-cosmos-app",
+  "name": "create-interchain-app",
   "version": "2.4.0",
   "description": "Set up a modern Cosmos app by running one command ⚛️",
   "author": "Dan Lynch <pyramation@gmail.com>",
-  "homepage": "https://github.com/cosmology-tech/create-cosmos-app#readme",
+  "homepage": "https://github.com/cosmology-tech/create-interchain-app#readme",
   "license": "SEE LICENSE IN LICENSE",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
   "bin": {
-    "cca": "dist/create-cosmos-app.js",
-    "create-cosmos-app": "dist/create-cosmos-app.js"
+    "cca": "dist/create-interchain-app.js",
+    "create-interchain-app": "dist/create-interchain-app.js"
   },
   "directories": {
     "lib": "src",
@@ -20,10 +20,10 @@
   ],
   "scripts": {
     "build:dist": "yarn tsc -p tsconfig.json --outDir dist --module commonjs || true",
-    "build:chmod": "chmod +x ./dist/create-cosmos-app.js",
+    "build:chmod": "chmod +x ./dist/create-interchain-app.js",
     "build": "npm run build:dist && npm run build:chmod",
     "prepare": "npm run build",
-    "dev": "node ./dist/create-cosmos-app",
+    "dev": "node ./dist/create-interchain-app",
     "lint": "eslint .",
     "format": "eslint --fix .",
     "test": "jest",
@@ -35,16 +35,16 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/cosmology-tech/create-cosmos-app"
+    "url": "https://github.com/cosmology-tech/create-interchain-app"
   },
   "keywords": [
     "cosmos",
     "cosmology",
-    "create-cosmos-app",
+    "create-interchain-app",
     "cosmos-kit"
   ],
   "bugs": {
-    "url": "https://github.com/cosmology-tech/create-cosmos-app/issues"
+    "url": "https://github.com/cosmology-tech/create-interchain-app/issues"
   },
   "devDependencies": {
     "@types/jest": "^29.2.2",

@@ -19417,9 +19417,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"create-cosmos-app-project@workspace:.":
+"create-interchain-app-project@workspace:.":
   version: 0.0.0-use.local
-  resolution: "create-cosmos-app-project@workspace:."
+  resolution: "create-interchain-app-project@workspace:."
   dependencies:
     "@babel/cli": "npm:7.24.7"
     "@babel/core": "npm:7.24.7"
@@ -19436,9 +19436,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"create-cosmos-app@workspace:packages/create-cosmos-app":
+"create-interchain-app@workspace:packages/create-interchain-app":
   version: 0.0.0-use.local
-  resolution: "create-cosmos-app@workspace:packages/create-cosmos-app"
+  resolution: "create-interchain-app@workspace:packages/create-interchain-app"
   dependencies:
     "@types/jest": "npm:^29.2.2"
     ansi-colors: "npm:4.1.3"
@@ -19460,8 +19460,8 @@ __metadata:
     ts-jest: "npm:^29.0.3"
     typescript: "npm:^5.1.6"
   bin:
-    cca: dist/create-cosmos-app.js
-    create-cosmos-app: dist/create-cosmos-app.js
+    cca: dist/create-interchain-app.js
+    create-interchain-app: dist/create-interchain-app.js
   languageName: unknown
   linkType: soft
 

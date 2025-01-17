@@ -68,10 +68,10 @@ async function setupAppDirectory(repo, argv, name) {
 
 async function warnIfOutdated(repo, clonedRepoDir, version) {
     if (repo === CCA_URL) {
-        const rootPkgPath = join(clonedRepoDir, 'packages/create-cosmos-app/package.json');
+        const rootPkgPath = join(clonedRepoDir, 'packages/create-interchain-app/package.json');
         const rootPkg = JSON.parse(fs.readFileSync(rootPkgPath, 'utf-8'));
         if (semver.lt(rootPkg.version, version)) {
-            console.warn(c.yellow(`⚠️ You are using create-cosmos-app version ${c.red(rootPkg.version)}, but version ${c.green(version)} is available. Run "${c.cyan('cca upgrade')}" or "${c.cyan('npm install -g create-cosmos-app@latest')}" to upgrade.`));
+            console.warn(c.yellow(`⚠️ You are using create-interchain-app version ${c.red(rootPkg.version)}, but version ${c.green(version)} is available. Run "${c.cyan('cca upgrade')}" or "${c.cyan('npm install -g create-interchain-app@latest')}" to upgrade.`));
         }
     }
 }

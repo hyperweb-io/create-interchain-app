@@ -24,7 +24,7 @@ jobs:
       - name: Install Dependencies
         run: |
           echo "YARN_ENABLE_IMMUTABLE_INSTALLS=false" >> $GITHUB_ENV
-          npm install -g create-cosmos-app
+          npm install -g create-interchain-app
 
       - name: asset-list
         run: |

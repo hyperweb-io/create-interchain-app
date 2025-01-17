@@ -1,1 +1,1 @@
-export const CCA_URL = 'https://github.com/cosmology-tech/create-cosmos-app.git';
+export const CCA_URL = 'https://github.com/cosmology-tech/create-interchain-app.git';

@@ -65,7 +65,7 @@ export const products: Product[] = [
     name: 'Create Cosmos App',
     description:
       'One-Command Setup for Modern Cosmos dApps. Speed up your development and bootstrap new web3 dApps quickly.',
-    link: 'https://cosmology.zone/products/create-cosmos-app',
+    link: 'https://cosmology.zone/products/create-interchain-app',
     category: 'frontend',
   },
   {
