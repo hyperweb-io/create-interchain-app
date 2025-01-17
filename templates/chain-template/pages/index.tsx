@@ -32,7 +32,7 @@ export default function Home() {
         fontWeight="500"
         attributes={{ mb: '20px' }}
       >
-        Welcome to <HighlightText>Cosmos Kit</HighlightText> +{' '}
+        Welcome to <HighlightText>Interchain Kit</HighlightText> +{' '}
         <HighlightText>Next.js</HighlightText>
       </Text>
       <Button

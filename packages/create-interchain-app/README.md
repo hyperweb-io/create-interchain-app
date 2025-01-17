@@ -58,7 +58,7 @@ You don’t need to install or configure cosmjs, keplr, nextjs, webpack or Babel
 
 Everything is preconfigured, ready-to-go, so you can focus on your code!
 
-- ⚡️ Connect easily to 20+ wallets via [Cosmos Kit](https://github.com/cosmology-tech/interchain-kit) — including Ledger, Keplr, Cosmostation, Leap, Trust Wallet, OKX, XDEFI, Exodus, Wallet Connect and more!
+- ⚡️ Connect easily to 20+ wallets via [Interchain Kit](https://github.com/cosmology-tech/interchain-kit) — including Ledger, Keplr, Cosmostation, Leap, Trust Wallet, OKX, XDEFI, Exodus, Wallet Connect and more!
 - ⚛️ Sign and broadcast with [cosmjs](https://github.com/cosmos/cosmjs) stargate + cosmwasm signers
 - 🎨 Build awesome UI with [Interchain UI](https://cosmology.zone/products/interchain-ui) and [Explore Components](https://cosmology.zone/components)
 - 🛠 Render pages with [next.js](https://nextjs.org/) hybrid static & server rendering
