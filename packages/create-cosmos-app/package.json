@@ -8,7 +8,7 @@
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
   "bin": {
-    "cca": "dist/create-interchain-app.js",
+    "cia": "dist/create-interchain-app.js",
     "create-interchain-app": "dist/create-interchain-app.js"
   },
   "directories": {

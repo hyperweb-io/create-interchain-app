@@ -33,7 +33,7 @@ npm install -g create-interchain-app
 Then, create your new Cosmos app by running the following command:
 
 ```sh
-# you can also use `cca` instead of `create-interchain-app` for shortcut ;)
+# you can also use `cia` instead of `create-interchain-app` for shortcut ;)
 create-interchain-app
 ```
 
@@ -86,10 +86,10 @@ Then run the command:
 create-interchain-app
 ```
 
-we also made an alias `cca` if you don't want to type `create-interchain-app`:
+we also made an alias `cia` if you don't want to type `create-interchain-app`:
 
 ```sh
-cca
+cia
 ```
 
 ### npx
@@ -115,19 +115,19 @@ yarn create cosmos-app
 The `create-interchain-app` tool provides a range of examples to help you understand and test various features and integrations. By executing the examples, you can quickly see how to implement specific functionalities in your Cosmos app.
 
 ```
-cca --example
+cia --example
 ```
 
 If you know the example name, you can do
 
 ```
-cca --example <example-name>
+cia --example <example-name>
 ```
 
 Alternatively, you can use the shorthand `-e` flag to achieve the same:
 
 ```
-cca -e <example-name>
+cia -e <example-name>
 ```
 
 This command will generate a new project configured with the selected example, allowing you to dive into the code and functionality right away.
@@ -142,7 +142,7 @@ Initiate and manage staking operations directly within your application, allowin
 
 
 ```
-cca --name stake-example --example stake-tokens
+cia --name stake-example --example stake-tokens
 ```
 
 ### Vote Proposal
@@ -154,7 +154,7 @@ cca --name stake-example --example stake-tokens
 Facilitate on-chain governance by enabling users to vote on proposals, enhancing community engagement and decision-making.
 
 ```
-cca --name vote-example --example vote-proposal
+cia --name vote-example --example vote-proposal
 ```
 
 ### Authz
@@ -166,7 +166,7 @@ cca --name vote-example --example vote-proposal
 Leverage the Authz module to grant and manage authorizations, allowing users to perform actions on behalf of others.
 
 ```
-cca --name authz-example --example authz
+cia --name authz-example --example authz
 ```
 
 ### grpc-web and grpc-gateway
@@ -178,7 +178,7 @@ cca --name authz-example --example authz
 Integrate gRPC-web and gRPC-gateway in your app for robust and efficient communication between your Cosmos SDK blockchain and web clients.
 
 ```
-cca --name grpc-example --example grpc-web-grpc-gateway
+cia --name grpc-example --example grpc-web-grpc-gateway
 ```
 
 ### Swap Tokens
@@ -190,7 +190,7 @@ cca --name grpc-example --example grpc-web-grpc-gateway
 Utilize [osmojs](https://github.com/osmosis-labs/osmojs) for streamlined token swapping capabilities within your Osmosis app.
 
 ```
-cca --name swap-example --example swap-tokens
+cia --name swap-example --example swap-tokens
 ```
 
 ### Provide Liquidity
@@ -202,7 +202,7 @@ cca --name swap-example --example swap-tokens
 Use [osmojs](https://github.com/osmosis-labs/osmojs) to enable liquidity provision features, enhancing the DeFi experience in your app.
 
 ```
-cca --name liquidity-example --example provide-liquidity
+cia --name liquidity-example --example provide-liquidity
 ```
 
 ### Asset List
@@ -214,7 +214,7 @@ cca --name liquidity-example --example provide-liquidity
 Create and manage an asset list, offering comprehensive insights into the available assets, and empower your application with Inter-Blockchain Communication (IBC) capabilities for transferring tokens across different chains.
 
 ```
-cca --name asset-list-example --example asset-list
+cia --name asset-list-example --example asset-list
 ```
 
 ### NFT
@@ -226,14 +226,14 @@ cca --name asset-list-example --example asset-list
 Incorporate NFT functionalities into your Stargaze app using [stargazejs](https://github.com/cosmology-tech/stargazejs), enabling seamless NFT minting, transfer, and management.
 
 ```
-cca --name nft-example --example nft
+cia --name nft-example --example nft
 ```
 
 ## Options
 
 | Argument             | Description                                    | Default    |
 |----------------------|------------------------------------------------|------------|
-| `--repo`             | Set custom repository for cca templates        | None       |
+| `--repo`             | Set custom repository for cia templates        | None       |
 | `--install`          | Automatically install dependencies             | `true`     |
 | `--printCmd`         | Print the command to run after setup           | `true`     |
 | `-n`, `--name`       | Provide a project name                         | None       |

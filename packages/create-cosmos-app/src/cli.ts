@@ -1,5 +1,5 @@
 import { CCA_URL } from "./constants";
-import { createGitApp } from "./git-cca-template";
+import { createGitApp } from "./git-cia-template";
 export const cli = async (argv, version) => {
   const repo = argv.repo ?? CCA_URL;
   const createCosmosApp = createGitApp(repo, version);

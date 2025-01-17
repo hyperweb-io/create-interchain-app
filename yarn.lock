@@ -19460,7 +19460,7 @@ __metadata:
     ts-jest: "npm:^29.0.3"
     typescript: "npm:^5.1.6"
   bin:
-    cca: dist/create-interchain-app.js
+    cia: dist/create-interchain-app.js
     create-interchain-app: dist/create-interchain-app.js
   languageName: unknown
   linkType: soft

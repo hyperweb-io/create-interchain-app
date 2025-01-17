@@ -1,3 +1,3 @@
 // noop
 
-export * from './git-cca-template';
+export * from './git-cia-template';

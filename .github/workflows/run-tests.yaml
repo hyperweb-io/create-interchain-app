@@ -28,37 +28,37 @@ jobs:
 
       - name: asset-list
         run: |
-          cca --example asset-list --name asset-list
+          cia --example asset-list --name asset-list
           cd asset-list
           yarn build
 
       - name: vote-proposal
         run: |
-          cca --example vote-proposal --name vote-proposal
+          cia --example vote-proposal --name vote-proposal
           cd vote-proposal
           yarn build
 
       - name: ibc-transfer
         run: |
-          cca --example ibc-transfer --name ibc-transfer
+          cia --example ibc-transfer --name ibc-transfer
           cd ibc-transfer
           yarn build
 
       - name: swap-tokens
         run: |
-          cca --example swap-tokens --name swap-tokens
+          cia --example swap-tokens --name swap-tokens
           cd swap-tokens
           yarn build
 
       - name: provide-liquidity
         run: |
-          cca --example provide-liquidity --name provide-liquidity
+          cia --example provide-liquidity --name provide-liquidity
           cd provide-liquidity
           yarn build
 
       - name: nft
         run: |
-          cca --example nft --name nft
+          cia --example nft --name nft
           cd nft
           touch yarn.lock
           yarn install
@@ -66,24 +66,24 @@ jobs:
 
       - name: authz
         run: |
-          cca --example authz --name authz
+          cia --example authz --name authz
           cd authz
           yarn build
 
       - name: connect-chain
         run: |
-          cca --template connect-chain --name connect-chain
+          cia --template connect-chain --name connect-chain
           cd connect-chain
           yarn build
 
       - name: connect-multi-chain
         run: |
-          cca --template connect-multi-chain --name connect-multi-chain
+          cia --template connect-multi-chain --name connect-multi-chain
           cd connect-multi-chain
           yarn build
 
       - name: website
         run: |
-          cca --boilerplate website --name website
+          cia --boilerplate website --name website
           cd website
           yarn build
