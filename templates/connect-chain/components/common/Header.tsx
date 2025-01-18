@@ -8,7 +8,7 @@ import {
   useTheme,
 } from "@interchain-ui/react";
 
-const stacks = ["Cosmos Kit", "Next.js", "CosmJS"];
+const stacks = ["Interchain Kit", "Next.js", "InterchainJS"];
 
 export function Header() {
   const { theme, setTheme } = useTheme();
@@ -41,7 +41,7 @@ export function Header() {
             marginBottom: "$8",
           }}
         >
-          Create Cosmos App
+          Create Interchain App
         </Text>
         <Text as="h2" fontWeight="$bold">
           <Text

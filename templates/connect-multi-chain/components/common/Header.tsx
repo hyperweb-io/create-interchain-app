@@ -9,7 +9,7 @@ import {
 } from "@interchain-ui/react";
 import { dependencies } from "@/config";
 
-const stacks = ["Cosmos Kit", "Next.js"];
+const stacks = ["Interchain Kit", "Next.js"];
 
 const stargazejs = dependencies[0];
 
@@ -44,7 +44,7 @@ export function Header() {
             marginBottom: "$8",
           }}
         >
-          Create Cosmos App
+          Create Interchain App
         </Text>
         <Text as="h2" fontWeight="$bold">
           <Text

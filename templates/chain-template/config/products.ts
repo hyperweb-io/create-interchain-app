@@ -13,10 +13,10 @@ export type Product = {
 
 export const products: Product[] = [
   {
-    name: 'Cosmos Kit',
+    name: 'Interchain Kit',
     description:
       'A wallet adapter for react with mobile WalletConnect support for the Cosmos ecosystem.',
-    link: 'https://cosmology.zone/products/cosmos-kit',
+    link: 'https://cosmology.zone/products/interchain-kit',
     category: 'frontend',
   },
   {
@@ -62,10 +62,10 @@ export const products: Product[] = [
     category: 'testing',
   },
   {
-    name: 'Create Cosmos App',
+    name: 'Create Interchain App',
     description:
       'One-Command Setup for Modern Cosmos dApps. Speed up your development and bootstrap new web3 dApps quickly.',
-    link: 'https://cosmology.zone/products/create-cosmos-app',
+    link: 'https://cosmology.zone/products/create-interchain-app',
     category: 'frontend',
   },
   {

@@ -1,4 +1,4 @@
-This is a Cosmos App project bootstrapped with [`create-cosmos-app`](https://github.com/cosmology-tech/create-cosmos-app).
+This is a Cosmos App project bootstrapped with [`create-interchain-app`](https://github.com/cosmology-tech/create-interchain-app).
 
 ## Getting Started
 
@@ -26,11 +26,11 @@ Checkout more videos for how to use various frontend tooling in the Cosmos!
 
 * https://cosmology.zone/learn
 
-### Cosmos Kit
+### Interchain Kit
 
 A wallet connector for the Cosmos ⚛️
 
-* https://github.com/cosmology-tech/cosmos-kit
+* https://github.com/cosmology-tech/interchain-kit
 
 ### Telescope
 
@@ -71,8 +71,8 @@ Checkout these related projects:
 * [@cosmology/telescope](https://github.com/cosmology-tech/telescope) Your Frontend Companion for Building with TypeScript with Cosmos SDK Modules.
 * [@cosmwasm/ts-codegen](https://github.com/CosmWasm/ts-codegen) Convert your CosmWasm smart contracts into dev-friendly TypeScript classes.
 * [chain-registry](https://github.com/cosmology-tech/chain-registry) Everything from token symbols, logos, and IBC denominations for all assets you want to support in your application.
-* [cosmos-kit](https://github.com/cosmology-tech/cosmos-kit) Experience the convenience of connecting with a variety of web3 wallets through a single, streamlined interface.
-* [create-cosmos-app](https://github.com/cosmology-tech/create-cosmos-app) Set up a modern Cosmos app by running one command.
+* [interchain-kit](https://github.com/cosmology-tech/interchain-kit) Experience the convenience of connecting with a variety of web3 wallets through a single, streamlined interface.
+* [create-interchain-app](https://github.com/cosmology-tech/create-interchain-app) Set up a modern Cosmos app by running one command.
 * [interchain-ui](https://github.com/cosmology-tech/interchain-ui) The Interchain Design System, empowering developers with a flexible, easy-to-use UI kit.
 * [starship](https://github.com/cosmology-tech/starship) Unified Testing and Development for the Interchain.
 
