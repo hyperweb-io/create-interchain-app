@@ -15,7 +15,7 @@
   "registry": "https://registry.npmjs.org",
   "command": {
     "create": {
-      "homepage": "https://github.com/cosmology-tech/create-interchain-app",
+      "homepage": "https://github.com/hyperweb-io/create-interchain-app",
       "license": "SEE LICENSE IN LICENSE",
       "access": "restricted"
     },
