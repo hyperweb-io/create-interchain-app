@@ -24,7 +24,7 @@
     "@interchain-kit/keplr-extension": "^0.0.1-beta.62",
     "@interchain-kit/leap-extension": "^0.0.1-beta.62",
     "@interchain-kit/react": "^0.0.1-beta.62",
-    "@interchain-ui/react": "1.26.1",
+    "@interchain-ui/react": "1.26.0",
     "@interchain-ui/react-no-ssr": "^0.1.6",
     "fast-fuzzy": "1.12.0",
     "framer-motion": "9.0.7",

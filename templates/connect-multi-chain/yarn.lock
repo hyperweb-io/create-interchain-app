@@ -133,7 +133,7 @@ __metadata:
     "@interchain-kit/keplr-extension": "npm:^0.0.1-beta.62"
     "@interchain-kit/leap-extension": "npm:^0.0.1-beta.62"
     "@interchain-kit/react": "npm:^0.0.1-beta.62"
-    "@interchain-ui/react": "npm:1.26.1"
+    "@interchain-ui/react": "npm:1.26.0"
     "@interchain-ui/react-no-ssr": "npm:^0.1.6"
     "@types/node": "npm:18.19.37"
     "@types/react": "npm:18.2.0"
@@ -758,6 +758,43 @@ __metadata:
     react: ^16.14.0 || ^17.0.0 || ^18.0.0
     react-dom: ^16.14.0 || ^17.0.0 || ^18.0.0
   checksum: 10c0/995e0e8a85056af7d9139f5cf8ac8dc4ea337a53708e09bd089f581db5cb32f2b679016e4f6a8e48c6eb6131d8888206ddbd76316b5312b048f4061d34eabd04
+  languageName: node
+  linkType: hard
+
+"@interchain-ui/react@npm:1.26.0":
+  version: 1.26.0
+  resolution: "@interchain-ui/react@npm:1.26.0"
+  dependencies:
+    "@floating-ui/core": "npm:^1.6.7"
+    "@floating-ui/dom": "npm:^1.6.10"
+    "@floating-ui/react": "npm:^0.26.23"
+    "@floating-ui/react-dom": "npm:^2.1.1"
+    "@floating-ui/utils": "npm:^0.2.7"
+    "@formkit/auto-animate": "npm:^0.8.2"
+    "@react-aria/listbox": "npm:^3.13.3"
+    "@react-aria/overlays": "npm:^3.23.2"
+    "@react-aria/utils": "npm:^3.25.2"
+    "@tanstack/react-virtual": "npm:^3.10.5"
+    "@vanilla-extract/css": "npm:^1.15.5"
+    "@vanilla-extract/css-utils": "npm:^0.1.4"
+    "@vanilla-extract/dynamic": "npm:^2.1.2"
+    "@vanilla-extract/private": "npm:^1.0.6"
+    "@vanilla-extract/recipes": "npm:^0.5.5"
+    animejs: "npm:^3.2.2"
+    bignumber.js: "npm:^9.1.2"
+    client-only: "npm:^0.0.1"
+    clsx: "npm:^2.1.1"
+    copy-to-clipboard: "npm:^3.3.3"
+    immer: "npm:^10.1.1"
+    lodash: "npm:^4.17.21"
+    rainbow-sprinkles: "npm:^0.17.3"
+    react-aria: "npm:^3.34.3"
+    react-stately: "npm:^3.32.2"
+    zustand: "npm:^4.5.5"
+  peerDependencies:
+    react: ^16.14.0 || ^17.0.0 || ^18.0.0
+    react-dom: ^16.14.0 || ^17.0.0 || ^18.0.0
+  checksum: 10c0/db1a0f6303586a6a4a0545b818259abda48b5c889d0dcfd1be086bfc57fe4e8fd337082b9752dd1ac81d7400501a543f24d70c9d960752502f1f0c28a23153b4
   languageName: node
   linkType: hard
 
