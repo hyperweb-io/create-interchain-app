@@ -5,9 +5,9 @@ import {
   Stack,
   useColorModeValue,
 } from "@interchain-ui/react";
-import { WalletStatus } from "@cosmos-kit/core";
-import { useChain } from "@cosmos-kit/react";
-import { chains } from "chain-registry";
+import { WalletState as WalletStatus } from "@interchain-kit/core";
+import { useChain } from "@interchain-kit/react";
+import { chains } from "@chain-registry/v2";
 import { User } from "./User";
 import { Warning } from "./Warning";
 import { ChainSelect } from "./Chain";
@@ -29,7 +29,7 @@ export type WalletProps = {
 
 export function Wallet({
   chainName = CHAIN_NAME,
-  onChainChange = () => {},
+  onChainChange = () => { },
 }: WalletProps) {
   const {
     chain,
@@ -46,9 +46,9 @@ export function Wallet({
     [WalletStatus.Connected]: <ButtonConnected onClick={openView} />,
     [WalletStatus.Connecting]: <ButtonConnecting />,
     [WalletStatus.Disconnected]: <ButtonDisconnected onClick={connect} />,
-    [WalletStatus.Error]: <ButtonError onClick={openView} />,
+    // [WalletStatus.Error]: <ButtonError onClick={openView} />,
     [WalletStatus.Rejected]: <ButtonRejected onClick={connect} />,
-    [WalletStatus.NotExist]: <ButtonNotExist onClick={openView} />,
+    // [WalletStatus.NotExist]: <ButtonNotExist onClick={openView} />,
   }[status] || <ButtonConnect onClick={connect} />;
 
   function handleChainChange(chainName?: string) {
@@ -70,7 +70,7 @@ export function Wallet({
       <Box mx="auto" maxWidth="28rem" attributes={{ mb: "$12" }}>
         <ChainSelect
           chains={chains}
-          chainName={chain.chain_name}
+          chainName={chain.chainName}
           onChange={handleChainChange}
         />
       </Box>
@@ -108,8 +108,8 @@ export function Wallet({
         </Box>
 
         {message &&
-            [WalletStatus.Error, WalletStatus.Rejected].includes(status)
-          ? <Warning text={`${wallet?.prettyName}: ${message}`} />
+          [WalletStatus.Rejected].includes(status)
+          ? <Warning text={`${wallet?.info?.prettyName}: ${message}`} />
           : null}
       </Stack>
     </Box>
