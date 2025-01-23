@@ -1,7 +1,11 @@
 import { cosmos } from 'interchain-query';
-import { useChain } from '@cosmos-kit/react';
-import { isDeliverTxSuccess, StdFee } from '@cosmjs/stargate';
+import { useChain } from '@interchain-kit/react';
+import { StdFee } from '@interchainjs/cosmos-types/types';
+import { isDeliverTxSuccess } from '@interchainjs/cosmos/utils/asserts'
 import { useToast, type CustomToast } from './useToast';
+import { assetLists } from '@chain-registry/v2';
+import { toEncoders } from '@interchainjs/cosmos/utils'
+import { MsgDelegate, MsgUndelegate } from 'interchainjs/cosmos/staking/v1beta1/tx'
 
 const txRaw = cosmos.tx.v1beta1.TxRaw;
 
@@ -23,7 +27,9 @@ export enum TxStatus {
 }
 
 export const useTx = (chainName: string) => {
-  const { address, getSigningStargateClient, estimateFee } =
+  const { address, getSigningClient,
+    // estimateFee 
+  } =
     useChain(chainName);
 
   const { toast } = useToast();
@@ -39,21 +45,23 @@ export const useTx = (chainName: string) => {
     }
 
     let signed: Parameters<typeof txRaw.encode>['0'];
-    let client: Awaited<ReturnType<typeof getSigningStargateClient>>;
+    let client: Awaited<ReturnType<typeof getSigningClient>>;
+    const assetList = assetLists.find((asset) => asset.chainName === chainName);
+    const denom = assetList?.assets[0].base!
+    const denomUnit = assetList?.assets[0].denomUnits[0]
 
     try {
-      let fee: StdFee;
-      if (options?.fee) {
-        fee = options.fee;
-        client = await getSigningStargateClient();
-      } else {
-        const [_fee, _client] = await Promise.all([
-          estimateFee(msgs),
-          getSigningStargateClient(),
-        ]);
-        fee = _fee;
-        client = _client;
+      let fee = {
+        amount: [
+          {
+            denom: denomUnit?.denom!,
+            amount: (BigInt(10 ** (denomUnit?.exponent || 6)) / 100n).toString()
+          }
+        ],
+        gas: '200000'
       }
+      client = await getSigningClient();
+      client.addEncoders(toEncoders(MsgDelegate, MsgUndelegate))
       signed = await client.sign(address, msgs, fee, '');
     } catch (e: any) {
       console.error(e);
@@ -76,7 +84,7 @@ export const useTx = (chainName: string) => {
 
     if (client && signed) {
       await client
-        .broadcastTx(Uint8Array.from(txRaw.encode(signed).finish()))
+        .broadcastTx(Uint8Array.from(txRaw.encode(signed).finish()), {})
         .then((res: any) => {
           if (isDeliverTxSuccess(res)) {
             if (options.onSuccess) options.onSuccess();

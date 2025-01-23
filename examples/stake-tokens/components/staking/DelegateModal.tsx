@@ -1,8 +1,7 @@
 import { useState } from 'react';
 import { cosmos } from 'interchain-query';
-import { StdFee } from '@cosmjs/amino';
-import { useChain } from '@cosmos-kit/react';
-import { ChainName } from 'cosmos-kit';
+import { StdFee } from '@interchainjs/cosmos-types/types';
+import { useChain } from '@interchain-kit/react';
 import BigNumber from 'bignumber.js';
 import {
   BasicModal,
@@ -12,6 +11,7 @@ import {
   Callout,
   Text,
 } from '@interchain-ui/react';
+import { assetLists } from '@chain-registry/v2'
 
 import {
   type ExtendedValidator as Validator,
@@ -47,7 +47,7 @@ export const DelegateModal = ({
   balance: string;
   updateData: () => void;
   unbondingDays: string;
-  chainName: ChainName;
+  chainName: string;
   modalControl: UseDisclosureReturn;
   selectedValidator: Validator;
   logoUrl: string;
@@ -57,7 +57,7 @@ export const DelegateModal = ({
   showDescription?: boolean;
 }) => {
   const { isOpen, onClose } = modalControl;
-  const { address, estimateFee } = useChain(chainName);
+  const { address } = useChain(chainName);
 
   const [amount, setAmount] = useState<number | undefined>(0);
   const [isDelegating, setIsDelegating] = useState(false);
@@ -125,8 +125,20 @@ export const DelegateModal = ({
       },
     });
 
+    const assetList = assetLists.find((asset) => asset.chainName === chainName);
+    const denom = assetList?.assets[0].base!
+    const denomUnit = assetList?.assets[0].denomUnits[0]
+
     try {
-      const fee = await estimateFee([msg]);
+      const fee = {
+        amount: [
+          {
+            denom: denomUnit?.denom!,
+            amount: (BigInt(10 ** (denomUnit?.exponent || 6)) / 100n).toString()
+          }
+        ],
+        gas: '200000'
+      }
       const feeAmount = new BigNumber(fee.amount[0].amount).shiftedBy(-exp);
       const balanceAfterFee = new BigNumber(balance)
         .minus(feeAmount)

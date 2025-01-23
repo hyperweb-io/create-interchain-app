@@ -6,7 +6,6 @@ import {
   ValidatorNameCell,
   ValidatorTokenAmountCell,
 } from '@interchain-ui/react';
-import { ChainName } from 'cosmos-kit';
 import { getCoin } from '@/config';
 import { type ExtendedValidator as Validator } from '@/utils';
 
@@ -18,7 +17,7 @@ const MyValidatorsList = ({
   setSelectedValidator,
 }: {
   myValidators: Validator[];
-  chainName: ChainName;
+  chainName: string;
   openModal: () => void;
   setSelectedValidator: Dispatch<SetStateAction<Validator | undefined>>;
   logos: {

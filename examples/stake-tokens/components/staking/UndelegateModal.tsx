@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { cosmos } from 'interchain-query';
-import { useChain } from '@cosmos-kit/react';
-import { ChainName } from 'cosmos-kit';
+import { useChain } from '@interchain-kit/react';
 import BigNumber from 'bignumber.js';
 import {
   BasicModal,
@@ -36,7 +35,7 @@ export const UndelegateModal = ({
 }: {
   updateData: () => void;
   unbondingDays: string;
-  chainName: ChainName;
+  chainName: string;
   selectedValidator: Validator;
   closeOuterModal: () => void;
   modalControl: UseDisclosureReturn;

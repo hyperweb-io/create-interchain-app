@@ -4,14 +4,14 @@ import {
   Validator,
 } from 'interchain-query/cosmos/staking/v1beta1/staking';
 import { isGreaterThanZero, shiftDigits, toNumber } from '.';
-import { Coin, decodeCosmosSdkDecFromProto } from '@cosmjs/stargate';
+import { Coin } from '@interchainjs/cosmos-types/types';
 import {
   QueryDelegatorDelegationsResponse,
   QueryParamsResponse,
 } from 'interchain-query/cosmos/staking/v1beta1/query';
 import BigNumber from 'bignumber.js';
 import { QueryAnnualProvisionsResponse } from 'interchain-query/cosmos/mint/v1beta1/query';
-import type { Asset } from '@chain-registry/types';
+import type { Asset } from '@chain-registry/v2-types';
 
 const DAY_TO_SECONDS = 24 * 60 * 60;
 const ZERO = '0';
@@ -110,7 +110,7 @@ const findAndDecodeReward = (
   exponent: number
 ) => {
   const amount = coins.find((coin) => coin.denom === denom)?.amount || ZERO;
-  const decodedAmount = decodeCosmosSdkDecFromProto(amount).toString();
+  const decodedAmount = (new BigNumber(amount).div(10 ** 18)).toString();
   return shiftDigits(decodedAmount, exponent);
 };
 
@@ -167,7 +167,7 @@ export const parseAnnualProvisions = (data: QueryAnnualProvisionsResponse) => {
 };
 
 export const getAssetLogoUrl = (asset: Asset): string => {
-  return Object.values(asset?.logo_URIs || {})?.[0] || '';
+  return Object.values(asset?.logoURIs || {})?.[0] || '';
 };
 
 export const formatValidatorMetaInfo = (

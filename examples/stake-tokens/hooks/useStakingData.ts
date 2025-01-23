@@ -1,5 +1,5 @@
 import { useEffect, useMemo } from 'react';
-import { useChain } from '@cosmos-kit/react';
+import { useChain } from '@interchain-kit/react';
 import BigNumber from 'bignumber.js';
 import {
   cosmos,

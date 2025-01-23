@@ -1,10 +1,9 @@
-// @ts-nocheck
-import { useChain, useManager } from '@cosmos-kit/react';
+import { useChain } from '@interchain-kit/react';
 import { Box, Stack, useTheme } from '@interchain-ui/react';
 import { MouseEventHandler, useEffect, useMemo } from 'react';
 import { FiAlertTriangle } from 'react-icons/fi';
+import { chains } from '@chain-registry/v2';
 
-import { ChainName, WalletStatus } from 'cosmos-kit';
 import { defaultChainName } from '@/config';
 import {
   Connected,
@@ -25,8 +24,8 @@ import { ChainCard } from './ChainCard';
 
 export interface WalletSectionProps {
   isMultiChain: boolean;
-  providedChainName?: ChainName;
-  setChainName?: (chainName: ChainName | undefined) => void;
+  providedChainName?: string;
+  setChainName?: (chainName: string | undefined) => void;
 }
 
 export const WalletSection = ({
@@ -34,7 +33,6 @@ export const WalletSection = ({
   providedChainName,
   setChainName,
 }: WalletSectionProps) => {
-  const { chainRecords, getChainLogo } = useManager();
   const {
     connect,
     openView,
@@ -50,22 +48,22 @@ export const WalletSection = ({
 
   const chain = {
     chainName: defaultChainName,
-    label: chainInfo.pretty_name,
+    label: chainInfo.prettyName,
     value: defaultChainName,
-    icon: getChainLogo(defaultChainName),
+    icon: chains.find(c => c.chainName === defaultChainName)?.logoURIs?.png
   };
 
   const chainOptions = useMemo(
     () =>
-      chainRecords.map((chainRecord) => {
+      chains.map((chainRecord) => {
         return {
-          chainName: chainRecord?.name,
-          label: chainRecord?.chain?.pretty_name ?? '',
-          value: chainRecord?.name,
-          icon: getChainLogo(chainRecord.name),
+          chainName: chainRecord?.chainName,
+          label: chainRecord?.prettyName ?? '',
+          value: chainRecord?.chainName,
+          icon: chainRecord.logoURIs?.png
         };
       }),
-    [chainRecords, getChainLogo]
+    [chains]
   );
 
   // Events
@@ -82,6 +80,7 @@ export const WalletSection = ({
   // Components
   const connectWalletButton = (
     <WalletConnectComponent
+      // @ts-ignore
       walletStatus={status}
       disconnect={
         <Disconnected buttonText="Connect Wallet" onClick={onClickConnect} />
@@ -100,6 +99,7 @@ export const WalletSection = ({
 
   const connectWalletWarn = message ? (
     <ConnectStatusWarn
+      // @ts-ignore
       walletStatus={status}
       rejected={
         <RejectedWarn
@@ -108,7 +108,7 @@ export const WalletSection = ({
               <FiAlertTriangle />
             </Box>
           }
-          wordOfWarning={`${wallet?.prettyName}: ${message}`}
+          wordOfWarning={`${wallet?.info?.prettyName}: ${message}`}
         />
       }
       error={
@@ -118,7 +118,7 @@ export const WalletSection = ({
               <FiAlertTriangle />
             </Box>
           }
-          wordOfWarning={`${wallet?.prettyName}: ${message}`}
+          wordOfWarning={`${wallet?.info?.prettyName}: ${message}`}
         />
       }
     />
@@ -155,6 +155,7 @@ export const WalletSection = ({
 
   const addressBtn = (
     <CopyAddressBtn
+      // @ts-ignore
       walletStatus={status}
       connected={<ConnectedShowAddress address={address} isLoading={false} />}
     />

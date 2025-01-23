@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { cosmos } from 'interchain-query';
-import { useChain } from '@cosmos-kit/react';
-import { ChainName } from 'cosmos-kit';
+import { useChain } from '@interchain-kit/react';
 import {
   BasicModal,
   Box,
@@ -33,7 +32,7 @@ export const RedelegateModal = ({
   prices,
 }: {
   updateData: () => void;
-  chainName: ChainName;
+  chainName: string;
   selectedValidator: Validator;
   validatorToRedelegate: Validator;
   modalControl: UseDisclosureReturn;

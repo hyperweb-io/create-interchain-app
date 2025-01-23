@@ -1,7 +1,6 @@
-// @ts-nocheck
 import Image from 'next/image';
 import { Box, ClipboardCopyText, Stack } from '@interchain-ui/react';
-import { WalletStatus } from 'cosmos-kit';
+import { WalletState as WalletStatus } from "@interchain-kit/core";
 import React, { ReactNode, useEffect, useState } from 'react';
 
 const SIZES = {

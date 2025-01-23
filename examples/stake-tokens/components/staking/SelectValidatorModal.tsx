@@ -1,5 +1,4 @@
 import { useMemo } from 'react';
-import { ChainName } from 'cosmos-kit';
 import {
   Text,
   GridColumn,
@@ -23,7 +22,7 @@ export const SelectValidatorModal = ({
   modalControl,
 }: {
   allValidators: Validator[];
-  chainName: ChainName;
+  chainName: string;
   handleValidatorClick: (validator: Validator) => void;
   modalControl: UseDisclosureReturn;
   logos: {

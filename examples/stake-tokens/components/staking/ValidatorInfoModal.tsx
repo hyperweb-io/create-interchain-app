@@ -1,5 +1,4 @@
 import { getCoin } from '@/config';
-import { ChainName } from 'cosmos-kit';
 import {
   formatValidatorMetaInfo,
   type ExtendedValidator as Validator,
@@ -20,7 +19,7 @@ export const ValidatorInfoModal = ({
   modalControl,
   selectedValidator,
 }: {
-  chainName: ChainName;
+  chainName: string;
   modalControl: UseDisclosureReturn;
   selectedValidator: Validator;
   handleClick: {
