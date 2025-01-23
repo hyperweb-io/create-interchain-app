@@ -42,40 +42,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@chain-registry/cosmostation@npm:1.67.13":
-  version: 1.67.13
-  resolution: "@chain-registry/cosmostation@npm:1.67.13"
-  dependencies:
-    "@chain-registry/types": "npm:^0.46.11"
-    "@chain-registry/utils": "npm:^1.47.11"
-    "@cosmostation/extension-client": "npm:0.1.15"
-  checksum: 10c0/d9cb615ab21fc868eb02a877f0ccd4744478a65e2993d1d936c84f67a97a036e363e081193ea1e5c712e59cde985112f66b67012230a5d5d5f49466e8fbbcce6
-  languageName: node
-  linkType: hard
-
-"@chain-registry/cosmostation@npm:^1.67.13":
-  version: 1.72.102
-  resolution: "@chain-registry/cosmostation@npm:1.72.102"
-  dependencies:
-    "@chain-registry/types": "npm:^0.50.55"
-    "@chain-registry/utils": "npm:^1.51.55"
-    "@cosmostation/extension-client": "npm:0.1.15"
-  checksum: 10c0/d5c94239b53a1e9bef8c28c38131111ee41761229fe755ec27ab17e879af32fd84ec93141d8414a853e4e8b20856e69e31fc1045467e542b7765616d1a60f654
-  languageName: node
-  linkType: hard
-
-"@chain-registry/keplr@npm:1.68.2":
-  version: 1.68.2
-  resolution: "@chain-registry/keplr@npm:1.68.2"
-  dependencies:
-    "@chain-registry/types": "npm:^0.45.1"
-    "@keplr-wallet/cosmos": "npm:0.12.28"
-    "@keplr-wallet/crypto": "npm:0.12.28"
-    semver: "npm:^7.5.0"
-  checksum: 10c0/a155f2029f7fb366b6aa6169b8774d01a57150af0ca6925024a77d401e9c0302860208520a7dd5fead08a47b65025b1eddd65c77f10d73cbd7be71b2cda8132d
-  languageName: node
-  linkType: hard
-
 "@chain-registry/keplr@npm:^1.69.13":
   version: 1.74.102
   resolution: "@chain-registry/keplr@npm:1.74.102"
@@ -85,13 +51,6 @@ __metadata:
     "@keplr-wallet/crypto": "npm:0.12.28"
     semver: "npm:^7.5.0"
   checksum: 10c0/8764f44ef7336fca82ef3ae7424f7e23956b1ef750f2113e8e565293753d3566ffb3f8bf46844fd3ea29e005bb7c47f594f613160169dca544e4a9f0e509e53d
-  languageName: node
-  linkType: hard
-
-"@chain-registry/types@npm:^0.45.1":
-  version: 0.45.3
-  resolution: "@chain-registry/types@npm:0.45.3"
-  checksum: 10c0/54922e4f07bc0f23e116bf4bd35309e80c98864b5b9bf0c71e8f78e75018069a1b6a332864f6b9c7e43cd404abed474a1de8aafdea1832b74c8b8e2cdb141a6b
   languageName: node
   linkType: hard
 
@@ -123,7 +82,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@chain-registry/utils@npm:^1.47.11, @chain-registry/utils@npm:^1.51.55":
+"@chain-registry/utils@npm:^1.51.55":
   version: 1.51.55
   resolution: "@chain-registry/utils@npm:1.51.55"
   dependencies:
@@ -205,19 +164,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@cosmjs/amino@npm:^0.31.3":
-  version: 0.31.3
-  resolution: "@cosmjs/amino@npm:0.31.3"
-  dependencies:
-    "@cosmjs/crypto": "npm:^0.31.3"
-    "@cosmjs/encoding": "npm:^0.31.3"
-    "@cosmjs/math": "npm:^0.31.3"
-    "@cosmjs/utils": "npm:^0.31.3"
-  checksum: 10c0/2f5f866df043bef072ef8802844beacd282027dcc32f69428fe98e256d5fec0dd4a45a4c7d6c45c8a7d7f4387893ef02c8b471a32d6450215f56157d6eaa467e
-  languageName: node
-  linkType: hard
-
-"@cosmjs/amino@npm:^0.32.0, @cosmjs/amino@npm:^0.32.3":
+"@cosmjs/amino@npm:^0.32.3":
   version: 0.32.3
   resolution: "@cosmjs/amino@npm:0.32.3"
   dependencies:
@@ -226,25 +173,6 @@ __metadata:
     "@cosmjs/math": "npm:^0.32.3"
     "@cosmjs/utils": "npm:^0.32.3"
   checksum: 10c0/6f3da2ba6d88257d6717898af798aad9f2a51bb2c0d0b61cd40cf103c86a1431f4fa5086df350f81371d3282b8a28bcbc4f97c6d9eb83a9831fad473ae1ab492
-  languageName: node
-  linkType: hard
-
-"@cosmjs/cosmwasm-stargate@npm:0.31.3":
-  version: 0.31.3
-  resolution: "@cosmjs/cosmwasm-stargate@npm:0.31.3"
-  dependencies:
-    "@cosmjs/amino": "npm:^0.31.3"
-    "@cosmjs/crypto": "npm:^0.31.3"
-    "@cosmjs/encoding": "npm:^0.31.3"
-    "@cosmjs/math": "npm:^0.31.3"
-    "@cosmjs/proto-signing": "npm:^0.31.3"
-    "@cosmjs/stargate": "npm:^0.31.3"
-    "@cosmjs/tendermint-rpc": "npm:^0.31.3"
-    "@cosmjs/utils": "npm:^0.31.3"
-    cosmjs-types: "npm:^0.8.0"
-    long: "npm:^4.0.0"
-    pako: "npm:^2.0.2"
-  checksum: 10c0/905b2139672d6ac947e19daad86b46cb1a0ff62781344e8514d41a4935911bdd75b833b4fe88fc602502358cad7cf231b40f68e5825e3e8da7852415e23991cc
   languageName: node
   linkType: hard
 
@@ -281,21 +209,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@cosmjs/crypto@npm:^0.31.3":
-  version: 0.31.3
-  resolution: "@cosmjs/crypto@npm:0.31.3"
-  dependencies:
-    "@cosmjs/encoding": "npm:^0.31.3"
-    "@cosmjs/math": "npm:^0.31.3"
-    "@cosmjs/utils": "npm:^0.31.3"
-    "@noble/hashes": "npm:^1"
-    bn.js: "npm:^5.2.0"
-    elliptic: "npm:^6.5.4"
-    libsodium-wrappers-sumo: "npm:^0.7.11"
-  checksum: 10c0/595de61be8832c0f012e80343427efc5f7dec6157f31410908edefcae710f31bed723b50d0979b66d961765854e76d89e6942b5430a727f458b8d7e67fc7b174
-  languageName: node
-  linkType: hard
-
 "@cosmjs/crypto@npm:^0.32.3":
   version: 0.32.3
   resolution: "@cosmjs/crypto@npm:0.32.3"
@@ -322,17 +235,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@cosmjs/encoding@npm:^0.31.3":
-  version: 0.31.3
-  resolution: "@cosmjs/encoding@npm:0.31.3"
-  dependencies:
-    base64-js: "npm:^1.3.0"
-    bech32: "npm:^1.1.4"
-    readonly-date: "npm:^1.0.0"
-  checksum: 10c0/48eb9f9259bdfd88db280b6b5ea970fd1b3b0f81a8f4253f315ff2c736b27dbe0fdf74405c52ad35fcd4b16f1fde4250c4de936997b9d92e79cb97d98cc538c7
-  languageName: node
-  linkType: hard
-
 "@cosmjs/encoding@npm:^0.32.3":
   version: 0.32.3
   resolution: "@cosmjs/encoding@npm:0.32.3"
@@ -354,16 +256,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@cosmjs/json-rpc@npm:^0.31.3":
-  version: 0.31.3
-  resolution: "@cosmjs/json-rpc@npm:0.31.3"
-  dependencies:
-    "@cosmjs/stream": "npm:^0.31.3"
-    xstream: "npm:^11.14.0"
-  checksum: 10c0/8cc8fa9490e512a2865e888b162e2cc38477a6a5b6261fce885579712c880087c8bb2733717eb5fe03c131f31064e1f9060f87ae2a4d1d01d6c465761ab1a32d
-  languageName: node
-  linkType: hard
-
 "@cosmjs/json-rpc@npm:^0.32.3":
   version: 0.32.3
   resolution: "@cosmjs/json-rpc@npm:0.32.3"
@@ -380,15 +272,6 @@ __metadata:
   dependencies:
     bn.js: "npm:^5.2.0"
   checksum: 10c0/e44aedcaf2d72085585612909685c453b6c27397b4506bdfa3556163f33050df5448f6ca076256ed8229ddb12bdd74072b38334d136524180d23d89781deeea7
-  languageName: node
-  linkType: hard
-
-"@cosmjs/math@npm:^0.31.3":
-  version: 0.31.3
-  resolution: "@cosmjs/math@npm:0.31.3"
-  dependencies:
-    bn.js: "npm:^5.2.0"
-  checksum: 10c0/7dd742ee6ff52bc322d3cd43b9ab0e15d70b41b74a487f64c23609ffe5abce9a02cbec46a729155608a1abb3bc0067ac97361f0af23453fb0b4c438b17e37a99
   languageName: node
   linkType: hard
 
@@ -431,22 +314,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@cosmjs/proto-signing@npm:^0.31.3":
-  version: 0.31.3
-  resolution: "@cosmjs/proto-signing@npm:0.31.3"
-  dependencies:
-    "@cosmjs/amino": "npm:^0.31.3"
-    "@cosmjs/crypto": "npm:^0.31.3"
-    "@cosmjs/encoding": "npm:^0.31.3"
-    "@cosmjs/math": "npm:^0.31.3"
-    "@cosmjs/utils": "npm:^0.31.3"
-    cosmjs-types: "npm:^0.8.0"
-    long: "npm:^4.0.0"
-  checksum: 10c0/91bc6c0d03462b16e85fd6acfd3d28ab56a8de9a199f97601aac30aace75b64250bf0efcdda0aa5e3ea9e6defa46844b5f8e4358aabaeeb16d439480f55bbff7
-  languageName: node
-  linkType: hard
-
-"@cosmjs/proto-signing@npm:^0.32.0, @cosmjs/proto-signing@npm:^0.32.3":
+"@cosmjs/proto-signing@npm:^0.32.3":
   version: 0.32.3
   resolution: "@cosmjs/proto-signing@npm:0.32.3"
   dependencies:
@@ -469,18 +337,6 @@ __metadata:
     ws: "npm:^7"
     xstream: "npm:^11.14.0"
   checksum: 10c0/ffd7afe5a12fc77603ae3d89380f81330ea565de9de41485c266e61fce224c4666a19f6c47d91de6b6f276389bb5e51bd89bb7002bd43a1d02ae6eb776df9b8f
-  languageName: node
-  linkType: hard
-
-"@cosmjs/socket@npm:^0.31.3":
-  version: 0.31.3
-  resolution: "@cosmjs/socket@npm:0.31.3"
-  dependencies:
-    "@cosmjs/stream": "npm:^0.31.3"
-    isomorphic-ws: "npm:^4.0.1"
-    ws: "npm:^7"
-    xstream: "npm:^11.14.0"
-  checksum: 10c0/35ce93726f1c5c7d4cdf49c68d754b5587ac94fa65fd66f3db625c4794413359e225ddcaa55ee0bb17806a0b9cc13f884a7ec780503267addc6d03aacee1770c
   languageName: node
   linkType: hard
 
@@ -516,7 +372,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@cosmjs/stargate@npm:0.32.3, @cosmjs/stargate@npm:^0.32.3":
+"@cosmjs/stargate@npm:^0.32.3":
   version: 0.32.3
   resolution: "@cosmjs/stargate@npm:0.32.3"
   dependencies:
@@ -534,41 +390,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@cosmjs/stargate@npm:^0.31.3":
-  version: 0.31.3
-  resolution: "@cosmjs/stargate@npm:0.31.3"
-  dependencies:
-    "@confio/ics23": "npm:^0.6.8"
-    "@cosmjs/amino": "npm:^0.31.3"
-    "@cosmjs/encoding": "npm:^0.31.3"
-    "@cosmjs/math": "npm:^0.31.3"
-    "@cosmjs/proto-signing": "npm:^0.31.3"
-    "@cosmjs/stream": "npm:^0.31.3"
-    "@cosmjs/tendermint-rpc": "npm:^0.31.3"
-    "@cosmjs/utils": "npm:^0.31.3"
-    cosmjs-types: "npm:^0.8.0"
-    long: "npm:^4.0.0"
-    protobufjs: "npm:~6.11.3"
-    xstream: "npm:^11.14.0"
-  checksum: 10c0/85ce69ac6314f5194206c01f6ef346dd3e1fbfbe4489adf5926badfabcc61913ef97e5f6d155bd2370e4e5cdedfcfb951248321b37fdfaf8e866fa0711c5cfbd
-  languageName: node
-  linkType: hard
-
 "@cosmjs/stream@npm:^0.29.4, @cosmjs/stream@npm:^0.29.5":
   version: 0.29.5
   resolution: "@cosmjs/stream@npm:0.29.5"
   dependencies:
     xstream: "npm:^11.14.0"
   checksum: 10c0/c69613738c01282d43e855af6350a3cb1e254cc472f1a63a817a8f32a86bd4797b5280c120528787dfb6f38738a037a5fafa9c83821c2aef54e79684e134d6ca
-  languageName: node
-  linkType: hard
-
-"@cosmjs/stream@npm:^0.31.3":
-  version: 0.31.3
-  resolution: "@cosmjs/stream@npm:0.31.3"
-  dependencies:
-    xstream: "npm:^11.14.0"
-  checksum: 10c0/e0279b925c4f02535ba9b1f6f9563a1db4fb53ed1396e4e3958fcad887e047a78b431a227dd7c159aadb6e0e054db9dfb34b7a9128f2082ff3114bcfd74516c3
   languageName: node
   linkType: hard
 
@@ -599,24 +426,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@cosmjs/tendermint-rpc@npm:^0.31.3":
-  version: 0.31.3
-  resolution: "@cosmjs/tendermint-rpc@npm:0.31.3"
-  dependencies:
-    "@cosmjs/crypto": "npm:^0.31.3"
-    "@cosmjs/encoding": "npm:^0.31.3"
-    "@cosmjs/json-rpc": "npm:^0.31.3"
-    "@cosmjs/math": "npm:^0.31.3"
-    "@cosmjs/socket": "npm:^0.31.3"
-    "@cosmjs/stream": "npm:^0.31.3"
-    "@cosmjs/utils": "npm:^0.31.3"
-    axios: "npm:^0.21.2"
-    readonly-date: "npm:^1.0.0"
-    xstream: "npm:^11.14.0"
-  checksum: 10c0/1d8d8a78cc1dc54884c0916e709c98d533215f2235ce48f2079cbd8b3a9edf7aa14f216b815d727cacabfead54c0b15ca622fd43243260d8d311bc408edd0f11
-  languageName: node
-  linkType: hard
-
 "@cosmjs/tendermint-rpc@npm:^0.32.3":
   version: 0.32.3
   resolution: "@cosmjs/tendermint-rpc@npm:0.32.3"
@@ -642,84 +451,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@cosmjs/utils@npm:^0.31.3":
-  version: 0.31.3
-  resolution: "@cosmjs/utils@npm:0.31.3"
-  checksum: 10c0/26266e1206ed8c7c4e744db1e97fc7a341ffee383ca9f43e6c9e8ff596039a90068c39aadc4f6524b6f2b5b6d581318657f3eb272f98b9e430f2d0df79382b6a
-  languageName: node
-  linkType: hard
-
 "@cosmjs/utils@npm:^0.32.3":
   version: 0.32.3
   resolution: "@cosmjs/utils@npm:0.32.3"
   checksum: 10c0/e21cb0387d135142fdebe64fadfe2f7c9446b8b974b9d0dff7a02f04e17e79fcfc3946258ad79af1db35b252058d97c38e1f90f2f14e903a37d85316f31efde6
-  languageName: node
-  linkType: hard
-
-"@cosmos-kit/cdcwallet-extension@npm:^2.15.6":
-  version: 2.15.6
-  resolution: "@cosmos-kit/cdcwallet-extension@npm:2.15.6"
-  dependencies:
-    "@chain-registry/keplr": "npm:^1.69.13"
-    "@cosmos-kit/core": "npm:^2.15.4"
-  peerDependencies:
-    "@cosmjs/amino": ">=0.32.3"
-    "@cosmjs/proto-signing": ">=0.32.3"
-  checksum: 10c0/0b4a320eda50f887b8ccfc3c50158ee7af545f511bf206950564f2aeaf0c75513548c7b282979358738e0f3fef9dcfc8f96219e44fc6dd8d5c638ef36f1644c4
-  languageName: node
-  linkType: hard
-
-"@cosmos-kit/cdcwallet@npm:^2.15.3":
-  version: 2.15.6
-  resolution: "@cosmos-kit/cdcwallet@npm:2.15.6"
-  dependencies:
-    "@cosmos-kit/cdcwallet-extension": "npm:^2.15.6"
-  checksum: 10c0/7311269d388e0be7d46d8f0b0a8ad633ea8079a5172d561727b522f4642609c4484ffd6eca28b1048b827dc902f0ba2fcf1b938e474a75f34331d51571c37eca
-  languageName: node
-  linkType: hard
-
-"@cosmos-kit/coin98-extension@npm:^2.14.6":
-  version: 2.14.6
-  resolution: "@cosmos-kit/coin98-extension@npm:2.14.6"
-  dependencies:
-    "@chain-registry/keplr": "npm:^1.69.13"
-    "@cosmos-kit/core": "npm:^2.15.4"
-    cosmjs-types: "npm:>=0.9.0"
-  peerDependencies:
-    "@cosmjs/amino": ">=0.32.3"
-    "@cosmjs/proto-signing": ">=0.32.3"
-  checksum: 10c0/87e2a4ef75f66d240b2bfa385bea52aa709673aac3e5a3854eefb4827612e6376de7c1c33fc6a08332932c050225a9108b677335f0bd0c4e43f93b0869e9cc40
-  languageName: node
-  linkType: hard
-
-"@cosmos-kit/coin98@npm:^2.13.3":
-  version: 2.13.6
-  resolution: "@cosmos-kit/coin98@npm:2.13.6"
-  dependencies:
-    "@cosmos-kit/coin98-extension": "npm:^2.14.6"
-  checksum: 10c0/0b34c901bca57c06261eaf180cf90e94d85b894516fb9ecdb67add9f6acc1305926a64b5cf1964e2f64a7e1e6b8285f00715177721a17c3c0347d94f91442dd0
-  languageName: node
-  linkType: hard
-
-"@cosmos-kit/compass-extension@npm:^2.13.6":
-  version: 2.13.6
-  resolution: "@cosmos-kit/compass-extension@npm:2.13.6"
-  dependencies:
-    "@chain-registry/keplr": "npm:^1.69.13"
-    "@cosmos-kit/core": "npm:^2.15.4"
-  peerDependencies:
-    "@cosmjs/amino": ">=0.32.3"
-    "@cosmjs/proto-signing": ">=0.32.3"
-  checksum: 10c0/3c50cd32b9dfe38238a53c399e6502bce708adcce6776073c7930814872d0090e23123e504c796d2ed6ede401d8721ba25a53671b398e05c24d9d16ab3024a56
-  languageName: node
-  linkType: hard
-
-"@cosmos-kit/compass@npm:^2.13.3":
-  version: 2.13.6
-  resolution: "@cosmos-kit/compass@npm:2.13.6"
-  dependencies:
-    "@cosmos-kit/compass-extension": "npm:^2.13.6"
-  checksum: 10c0/d3b7d9a686b510bbd4b9fea5eebb79e8906c44979e57e7a2170cff784b3d368c26f3e1ddb894ac180415c48c96c617b001b1c7fa385b3b933b449df82660b44f
   languageName: node
   linkType: hard
 
@@ -742,285 +477,6 @@ __metadata:
     nock: "npm:13.5.4"
     uuid: "npm:^9.0.1"
   checksum: 10c0/49d15fefdd11f55df4b3359ca7b1822f1bb324099da71e5c49b719618db27904b23d82f20326ac99b318d48246f8f76c2b817838edcbdd57547746728b2b97f9
-  languageName: node
-  linkType: hard
-
-"@cosmos-kit/cosmostation-extension@npm:^2.15.5":
-  version: 2.15.5
-  resolution: "@cosmos-kit/cosmostation-extension@npm:2.15.5"
-  dependencies:
-    "@chain-registry/cosmostation": "npm:^1.67.13"
-    "@cosmos-kit/core": "npm:^2.15.4"
-    cosmjs-types: "npm:^0.9.0"
-  peerDependencies:
-    "@cosmjs/amino": ">=0.32.3"
-    "@cosmjs/proto-signing": ">=0.32.3"
-  checksum: 10c0/6e17d2cf5ed253bf90b8db86f7267b670b37e3ba11f525178df999277f002c73cfbc675bafc37070804df76d1bd881f74aadcc390a8457d9bd6fffc94762c97a
-  languageName: node
-  linkType: hard
-
-"@cosmos-kit/cosmostation-mobile@npm:^2.13.5":
-  version: 2.13.5
-  resolution: "@cosmos-kit/cosmostation-mobile@npm:2.13.5"
-  dependencies:
-    "@chain-registry/cosmostation": "npm:1.67.13"
-    "@cosmos-kit/core": "npm:^2.15.4"
-    "@cosmos-kit/walletconnect": "npm:^2.12.4"
-  checksum: 10c0/021ee18578317ada3c7d7ead04329859ef16c4429a47e854325b0909089f04f8fa975318f73044e607f696f42c83a6980f9eeb03f9466e4e5fda4921030734a0
-  languageName: node
-  linkType: hard
-
-"@cosmos-kit/cosmostation@npm:^2.14.2":
-  version: 2.14.5
-  resolution: "@cosmos-kit/cosmostation@npm:2.14.5"
-  dependencies:
-    "@cosmos-kit/cosmostation-extension": "npm:^2.15.5"
-    "@cosmos-kit/cosmostation-mobile": "npm:^2.13.5"
-  checksum: 10c0/ef83b0aec605ebc143d3ea12e0fde472e9bd50bc48fab95e02fbe43d00b2d223d8821e8ca06fbd1e979bf3236e32f32e91f60b586d34a7aded3501823a2125dd
-  languageName: node
-  linkType: hard
-
-"@cosmos-kit/ctrl-extension@npm:^2.14.5":
-  version: 2.14.5
-  resolution: "@cosmos-kit/ctrl-extension@npm:2.14.5"
-  dependencies:
-    "@cosmos-kit/core": "npm:^2.15.4"
-  peerDependencies:
-    "@cosmjs/amino": ">=0.32.3"
-    "@cosmjs/proto-signing": ">=0.32.3"
-  checksum: 10c0/d4606b25a3d27071e1ce66e7760916cc9ccff3cb3090b97a5df61016afac583f4088c156321543110687f5c03e9fe5aa724073d0336d9b3e4e7debeffffe9125
-  languageName: node
-  linkType: hard
-
-"@cosmos-kit/ctrl@npm:^2.13.2":
-  version: 2.13.5
-  resolution: "@cosmos-kit/ctrl@npm:2.13.5"
-  dependencies:
-    "@cosmos-kit/ctrl-extension": "npm:^2.14.5"
-  checksum: 10c0/568c27fddf2b7cccef224ab2917692791d3cfeb1e682f4b620c0b9c2f6992126349e0987ff467d9b7116e348f9bf8e2ec33202acd761a87b4cb99ec9e018aff9
-  languageName: node
-  linkType: hard
-
-"@cosmos-kit/exodus-extension@npm:^2.12.5":
-  version: 2.12.5
-  resolution: "@cosmos-kit/exodus-extension@npm:2.12.5"
-  dependencies:
-    "@cosmos-kit/core": "npm:^2.15.4"
-    react-icons: "npm:4.4.0"
-  peerDependencies:
-    "@cosmjs/amino": ">=0.32.3"
-    "@cosmjs/proto-signing": ">=0.32.3"
-  checksum: 10c0/2b9d1deb793f8a4495196123853a82dcc066d0757a9590ab2469cb35746c3717570d097388bdb5e09b522f8945150c8c4fcf0f31af5ad3dee48b186e67700b50
-  languageName: node
-  linkType: hard
-
-"@cosmos-kit/exodus@npm:^2.12.2":
-  version: 2.12.5
-  resolution: "@cosmos-kit/exodus@npm:2.12.5"
-  dependencies:
-    "@cosmos-kit/exodus-extension": "npm:^2.12.5"
-  checksum: 10c0/cd31b2211d12ccfbd1fefec00bbf01889cf31a163f8faddb30390b33ba0d5ad7d830d67e2af63b6fb330a90c08f602aabadb9687a314123710536cf0a61efcd7
-  languageName: node
-  linkType: hard
-
-"@cosmos-kit/fin-extension@npm:^2.13.6":
-  version: 2.13.6
-  resolution: "@cosmos-kit/fin-extension@npm:2.13.6"
-  dependencies:
-    "@chain-registry/keplr": "npm:^1.69.13"
-    "@cosmos-kit/core": "npm:^2.15.4"
-  peerDependencies:
-    "@cosmjs/amino": ">=0.32.3"
-    "@cosmjs/proto-signing": ">=0.32.3"
-  checksum: 10c0/0a0e21f112a43cad7a988b7b795ccb1c04b709dc20c335e2dc42be8aae80aef9d9184395e5ad9d16fc6a317a58c7865eac65af1c349cd3e0f022ac3428426714
-  languageName: node
-  linkType: hard
-
-"@cosmos-kit/fin@npm:^2.13.3":
-  version: 2.13.6
-  resolution: "@cosmos-kit/fin@npm:2.13.6"
-  dependencies:
-    "@cosmos-kit/fin-extension": "npm:^2.13.6"
-  checksum: 10c0/bedf9ac7f533dbf15f270171e3e19e1b3fb7f79e032b4a27e1a20d456fd280bbfe007498a69fb2c46cf0d7e89483e19d51383ab31142dc3e8d54ed6181b0fbeb
-  languageName: node
-  linkType: hard
-
-"@cosmos-kit/keplr-extension@npm:^2.14.5":
-  version: 2.14.5
-  resolution: "@cosmos-kit/keplr-extension@npm:2.14.5"
-  dependencies:
-    "@chain-registry/keplr": "npm:^1.69.13"
-    "@cosmos-kit/core": "npm:^2.15.4"
-    "@keplr-wallet/provider-extension": "npm:^0.12.95"
-    "@keplr-wallet/types": "npm:^0.12.95"
-  peerDependencies:
-    "@cosmjs/amino": ">=0.32.3"
-    "@cosmjs/proto-signing": ">=0.32.3"
-  checksum: 10c0/820d8a66574e331c7c47bc93c1616e15bcaa2b2c3b5fd0a66136a56ade64c9e75a8204a56b2625dc1fd91316296e83ea6e7ebdb82884f0f8131efe3a951f8f33
-  languageName: node
-  linkType: hard
-
-"@cosmos-kit/keplr-mobile@npm:^2.14.6":
-  version: 2.14.6
-  resolution: "@cosmos-kit/keplr-mobile@npm:2.14.6"
-  dependencies:
-    "@chain-registry/keplr": "npm:^1.69.13"
-    "@cosmos-kit/core": "npm:^2.15.4"
-    "@cosmos-kit/keplr-extension": "npm:^2.14.5"
-    "@cosmos-kit/walletconnect": "npm:^2.12.4"
-    "@keplr-wallet/provider-extension": "npm:^0.12.95"
-    "@keplr-wallet/wc-client": "npm:^0.12.95"
-  peerDependencies:
-    "@cosmjs/amino": ">=0.32.3"
-    "@cosmjs/proto-signing": ">=0.32.3"
-  checksum: 10c0/7cdeefedefdd18e11b826a3f956fb5e2c64a7041638f3e645389a0cee5738219bc056ccc9e0ad729a3e34f297092c5d31256a00ac40cbbb1345ab6c926b9e665
-  languageName: node
-  linkType: hard
-
-"@cosmos-kit/keplr@npm:^2.14.3":
-  version: 2.14.6
-  resolution: "@cosmos-kit/keplr@npm:2.14.6"
-  dependencies:
-    "@cosmos-kit/keplr-extension": "npm:^2.14.5"
-    "@cosmos-kit/keplr-mobile": "npm:^2.14.6"
-  checksum: 10c0/3213e7cb80e13a172eb647f8b3b8fb0c88ec3fc9e622e49b83cbb01efa2b16bf28c271fdce2c0d8ffc421dfa4058f024969de9ea41d2bfd1d037c2bb9eddb814
-  languageName: node
-  linkType: hard
-
-"@cosmos-kit/leap-extension@npm:^2.14.6":
-  version: 2.14.6
-  resolution: "@cosmos-kit/leap-extension@npm:2.14.6"
-  dependencies:
-    "@chain-registry/keplr": "npm:^1.69.13"
-    "@cosmos-kit/core": "npm:^2.15.4"
-  peerDependencies:
-    "@cosmjs/amino": ">=0.32.3"
-    "@cosmjs/proto-signing": ">=0.32.3"
-  checksum: 10c0/d98bd66c313e76d1f461ac2f89103247dfcb21e240ebfb20143ccc59155f13eb5ced9974b30ca7aec3ef6cb7fb0ee7d49a09edf805059dfea8f240178f6a3cea
-  languageName: node
-  linkType: hard
-
-"@cosmos-kit/leap-metamask-cosmos-snap@npm:^0.14.6":
-  version: 0.14.6
-  resolution: "@cosmos-kit/leap-metamask-cosmos-snap@npm:0.14.6"
-  dependencies:
-    "@chain-registry/keplr": "npm:^1.69.13"
-    "@cosmos-kit/core": "npm:^2.15.4"
-    "@leapwallet/cosmos-snap-provider": "npm:0.1.26"
-    "@metamask/providers": "npm:^11.1.1"
-  peerDependencies:
-    "@cosmjs/amino": ">=0.32.3"
-    "@cosmjs/proto-signing": ">=0.32.3"
-    cosmjs-types: ">=0.9.0"
-  checksum: 10c0/d30235f0af698f0e9978a712af7578101309202b2ff1d98151b3676d0a6a9f38e97bb0ff648da3b891650d87fbe8db7871a6cd40c274b22e2ef2b0c9bc346e4f
-  languageName: node
-  linkType: hard
-
-"@cosmos-kit/leap-mobile@npm:^2.13.6":
-  version: 2.13.6
-  resolution: "@cosmos-kit/leap-mobile@npm:2.13.6"
-  dependencies:
-    "@chain-registry/keplr": "npm:^1.69.13"
-    "@cosmos-kit/core": "npm:^2.15.4"
-    "@cosmos-kit/walletconnect": "npm:^2.12.4"
-  checksum: 10c0/df9f7de195bcc9e30ff185e341e5bd39ec251be0a4af7e04f4326bc635155aec3d037706234670048ea3b11095e96c5f1619f0e63424b2ae3ca4c4f7500e4426
-  languageName: node
-  linkType: hard
-
-"@cosmos-kit/leap@npm:^2.14.3":
-  version: 2.14.6
-  resolution: "@cosmos-kit/leap@npm:2.14.6"
-  dependencies:
-    "@cosmos-kit/leap-extension": "npm:^2.14.6"
-    "@cosmos-kit/leap-metamask-cosmos-snap": "npm:^0.14.6"
-    "@cosmos-kit/leap-mobile": "npm:^2.13.6"
-  checksum: 10c0/75314c821631a979fd8d6b7bf21acefcb7642f46edba230ca337d4d98ee2418086c53c30f1287603c89dacca5a101476c9a5ab0c4bb0a59297f04684dbe62fb9
-  languageName: node
-  linkType: hard
-
-"@cosmos-kit/ledger@npm:^2.13.2":
-  version: 2.13.6
-  resolution: "@cosmos-kit/ledger@npm:2.13.6"
-  dependencies:
-    "@cosmos-kit/core": "npm:^2.15.4"
-    "@ledgerhq/hw-app-cosmos": "npm:^6.30.4"
-    "@ledgerhq/hw-transport-webhid": "npm:^6.30.0"
-    "@ledgerhq/hw-transport-webusb": "npm:^6.29.4"
-  peerDependencies:
-    "@cosmjs/amino": ">=0.32.4"
-    "@cosmjs/crypto": ">=0.32.4"
-    "@cosmjs/encoding": ">=0.32.4"
-    "@cosmjs/proto-signing": ">=0.32.4"
-  checksum: 10c0/8a6c12ea660e0ed2cb8a7068ca7e6a42fa25cad0cd23260d2887d354c53aa7ff12b8a14c23b892b067f3b1b619f1fb8edfafa0f284edfa5976729f2fd0513e42
-  languageName: node
-  linkType: hard
-
-"@cosmos-kit/okxwallet-extension@npm:^2.13.1":
-  version: 2.13.4
-  resolution: "@cosmos-kit/okxwallet-extension@npm:2.13.4"
-  dependencies:
-    "@cosmos-kit/core": "npm:^2.15.4"
-  peerDependencies:
-    "@cosmjs/amino": ">=0.32.3"
-    "@cosmjs/proto-signing": ">=0.32.3"
-  checksum: 10c0/c4a908e81695072cd99961db0bfe4bc9f4f9eb8ee4782d93080ccbbfd88e10fef1bc2accd70490e65f718299b8bd3643b5372fe96520578fe8954cc359ec1b27
-  languageName: node
-  linkType: hard
-
-"@cosmos-kit/omni-mobile@npm:^2.12.5":
-  version: 2.12.5
-  resolution: "@cosmos-kit/omni-mobile@npm:2.12.5"
-  dependencies:
-    "@cosmos-kit/core": "npm:^2.15.4"
-    "@cosmos-kit/walletconnect": "npm:^2.12.4"
-  peerDependencies:
-    "@cosmjs/amino": ">=0.32.3"
-    "@cosmjs/proto-signing": ">=0.32.3"
-  checksum: 10c0/5ba530eaf87b3cc20f68ee31e9fa57591ed14239531894eb6d240748a0cc52a96f83951ea7d8064b18e9521f5abb026369624652b8b2fac1594c64832a0daab5
-  languageName: node
-  linkType: hard
-
-"@cosmos-kit/omni@npm:^2.12.2":
-  version: 2.12.5
-  resolution: "@cosmos-kit/omni@npm:2.12.5"
-  dependencies:
-    "@cosmos-kit/omni-mobile": "npm:^2.12.5"
-  checksum: 10c0/66cfe90e5277c0cc1bb18a25442dc68721baee8a2efcbc26e4dbab9f2a9f7bad8270cb970609c789669188b47e52bc6258b18b36e8624971df77bfdb74c17846
-  languageName: node
-  linkType: hard
-
-"@cosmos-kit/owallet-extension@npm:^2.14.6":
-  version: 2.14.6
-  resolution: "@cosmos-kit/owallet-extension@npm:2.14.6"
-  dependencies:
-    "@chain-registry/keplr": "npm:^1.69.13"
-    "@cosmos-kit/core": "npm:^2.15.4"
-    "@keplr-wallet/types": "npm:^0.12.90"
-  peerDependencies:
-    "@cosmjs/amino": ">=0.32.3"
-    "@cosmjs/proto-signing": ">=0.32.3"
-  checksum: 10c0/98fca39cb7e2d57cb3fe20badeb2a841b7cb59c9d499dff6a62e15b2ddfd8628d6192519bee90d2e102ac4453621e0a59d96046cce05daf529da14201b158795
-  languageName: node
-  linkType: hard
-
-"@cosmos-kit/owallet-mobile@npm:^2.15.5":
-  version: 2.15.5
-  resolution: "@cosmos-kit/owallet-mobile@npm:2.15.5"
-  dependencies:
-    "@chain-registry/keplr": "npm:1.68.2"
-    "@cosmos-kit/core": "npm:^2.15.4"
-    "@cosmos-kit/walletconnect": "npm:^2.12.4"
-  checksum: 10c0/7d25ed2629edf55f6c2c0d6ca8897abf018f006a803ebd049f4592ebe115408b4d3571ddc4d6c5de62e12b9ea88c85d332c38fb7ab59eda60ba9021a9ea69fdb
-  languageName: node
-  linkType: hard
-
-"@cosmos-kit/owallet@npm:^2.14.2":
-  version: 2.14.5
-  resolution: "@cosmos-kit/owallet@npm:2.14.5"
-  dependencies:
-    "@cosmos-kit/owallet-extension": "npm:^2.14.6"
-    "@cosmos-kit/owallet-mobile": "npm:^2.15.5"
-  checksum: 10c0/102620bcfa63187f319679fbf3121e0336418bfef0c6664ca1f7cfb8d6a888e41617d5fbc2a00f4464976a55c1576891b8db7d1ffb5984666a778c3d4734edd0
   languageName: node
   linkType: hard
 
@@ -1055,104 +511,6 @@ __metadata:
     react: ^18
     react-dom: ^18
   checksum: 10c0/16dcdee0aaf44580b6ce3e84759312336dd8bbe37a6744b0b951cadcaa22c4f7d9c8dfbb6d8e8fce1b54d8488c33b35f0c218be22d27146666dbe053e7650de5
-  languageName: node
-  linkType: hard
-
-"@cosmos-kit/shell-extension@npm:^2.13.6":
-  version: 2.13.6
-  resolution: "@cosmos-kit/shell-extension@npm:2.13.6"
-  dependencies:
-    "@chain-registry/keplr": "npm:^1.69.13"
-    "@cosmos-kit/core": "npm:^2.15.4"
-  peerDependencies:
-    "@cosmjs/amino": ">=0.32.3"
-    "@cosmjs/proto-signing": ">=0.32.3"
-  checksum: 10c0/fea6593693f3e71855c62106c7981995c80e31decea22854e71eac1a445896285d160d2d5e9ef8a091438316bdeed16e5be2b48bc9226a728b14ed8929251804
-  languageName: node
-  linkType: hard
-
-"@cosmos-kit/shell@npm:^2.13.3":
-  version: 2.13.6
-  resolution: "@cosmos-kit/shell@npm:2.13.6"
-  dependencies:
-    "@cosmos-kit/shell-extension": "npm:^2.13.6"
-  checksum: 10c0/7f0340ffec1526fb141b505c56c0aaae658c8ec5a375b3cc554e9d007faf29dccae78474708ac5dc3d30a8fb663f23b397ff650a87a87dc59549a5163419505d
-  languageName: node
-  linkType: hard
-
-"@cosmos-kit/tailwind-extension@npm:^1.7.5":
-  version: 1.7.5
-  resolution: "@cosmos-kit/tailwind-extension@npm:1.7.5"
-  dependencies:
-    "@cosmos-kit/core": "npm:^2.15.4"
-  checksum: 10c0/2e98545c0e5e41dc20ec0b935619252fdcacb7d34a73241ec9681dced0a7f947e71f868fc69717c8f4a8d6c4067e0a3ad3353aa62989a66e4910b136e8f468c2
-  languageName: node
-  linkType: hard
-
-"@cosmos-kit/tailwind@npm:^1.7.2":
-  version: 1.7.5
-  resolution: "@cosmos-kit/tailwind@npm:1.7.5"
-  dependencies:
-    "@cosmos-kit/tailwind-extension": "npm:^1.7.5"
-  checksum: 10c0/3ba53ccac3cb55b389d8fab3921baded5dc6722c422e07757b55101c4e9ac054088ecd2e7cc3444db5ed128ad20c7c6e5b4b0ea81eab991c839fd1917890664b
-  languageName: node
-  linkType: hard
-
-"@cosmos-kit/trust-extension@npm:^2.12.5":
-  version: 2.12.5
-  resolution: "@cosmos-kit/trust-extension@npm:2.12.5"
-  dependencies:
-    "@cosmos-kit/core": "npm:^2.15.4"
-  peerDependencies:
-    "@cosmjs/amino": ">=0.32.3"
-    "@cosmjs/proto-signing": ">=0.32.3"
-  checksum: 10c0/c54bc2bf16f8a8b3aa7fd0964cdafa215e92f9e183fd80dddd56296254511f55ee529ff0ed556cb8aa8d830af7e15b16cdcabe1d13d26546326b9da2d4e05582
-  languageName: node
-  linkType: hard
-
-"@cosmos-kit/trust-mobile@npm:^2.12.5":
-  version: 2.12.5
-  resolution: "@cosmos-kit/trust-mobile@npm:2.12.5"
-  dependencies:
-    "@cosmos-kit/core": "npm:^2.15.4"
-    "@cosmos-kit/walletconnect": "npm:^2.12.4"
-  peerDependencies:
-    "@cosmjs/amino": ">=0.32.3"
-    "@cosmjs/proto-signing": ">=0.32.3"
-  checksum: 10c0/e80e3e53803c1dc05dcba860bb0939b90e3659f0da0486a96ad3f0ddf0353baf8dd70af999ba7f33c048a37cc31e1a2b2ddbfdcedac30cb7e467b24ea9bf163f
-  languageName: node
-  linkType: hard
-
-"@cosmos-kit/trust@npm:^2.13.2":
-  version: 2.13.5
-  resolution: "@cosmos-kit/trust@npm:2.13.5"
-  dependencies:
-    "@cosmos-kit/trust-extension": "npm:^2.12.5"
-    "@cosmos-kit/trust-mobile": "npm:^2.12.5"
-  checksum: 10c0/295d4442591e66f8d3be177f695c3eedb5a8b71d48d9c5bb6555c72ef73f014edc01d40ba3338e6e36a7c8be4c2d205826939e198e49e66dd68fd3fec643545f
-  languageName: node
-  linkType: hard
-
-"@cosmos-kit/walletconnect@npm:^2.12.4":
-  version: 2.12.4
-  resolution: "@cosmos-kit/walletconnect@npm:2.12.4"
-  dependencies:
-    "@cosmjs/proto-signing": "npm:^0.32.3"
-    "@cosmos-kit/core": "npm:^2.15.4"
-    "@walletconnect/sign-client": "npm:^2.9.0"
-    "@walletconnect/utils": "npm:^2.9.0"
-    events: "npm:3.3.0"
-  peerDependencies:
-    "@cosmjs/amino": ">=0.32.3"
-    "@walletconnect/types": 2.11.0
-  checksum: 10c0/1fbdb8f526ab8f880e52537380315f948fa56b85e5c25ba92593c6212d645f9f5c89eb168ed516e6ee9c9fbe4b780574bb113e0df3a9b39c27a746fba695ffee
-  languageName: node
-  linkType: hard
-
-"@cosmostation/extension-client@npm:0.1.15":
-  version: 0.1.15
-  resolution: "@cosmostation/extension-client@npm:0.1.15"
-  checksum: 10c0/4afc033a6f0c894a632b5b6806c9588daab2aeb0afd3004429be2b6ec96636b9103f3097b86c606de3df239451dce4efdc930acdb0835919cc3f6727755871c3
   languageName: node
   linkType: hard
 
@@ -1605,8 +963,6 @@ __metadata:
   resolution: "@hyperweb/stake-tokens@workspace:."
   dependencies:
     "@chain-registry/types": "npm:^0.50.18"
-    "@cosmjs/cosmwasm-stargate": "npm:0.31.3"
-    "@cosmjs/stargate": "npm:0.32.3"
     "@cosmos-kit/react": "npm:2.21.2"
     "@interchain-kit/core": "npm:0.0.1-beta.62"
     "@interchain-kit/keplr-extension": "npm:0.0.1-beta.62"
@@ -1623,7 +979,6 @@ __metadata:
     "@types/react-dom": "npm:^18.3.0"
     bignumber.js: "npm:9.1.1"
     chain-registry: "npm:^1.69.32"
-    cosmos-kit: "npm:2.23.4"
     eslint: "npm:8.56.0"
     eslint-config-next: "npm:14.1.0"
     fast-fuzzy: "npm:1.12.0"
@@ -2027,50 +1382,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@keplr-wallet/provider-extension@npm:^0.12.95":
-  version: 0.12.104
-  resolution: "@keplr-wallet/provider-extension@npm:0.12.104"
-  dependencies:
-    "@keplr-wallet/types": "npm:0.12.104"
-    deepmerge: "npm:^4.2.2"
-    long: "npm:^4.0.0"
-  checksum: 10c0/0be47c373950bbe4172a1a18ef02459c066b1f2f69da275f626bf90a6f7355f729f759901b775cb115dfca57ea1a47372bca61e5dbbff840807bb5e9bb5a1bec
-  languageName: node
-  linkType: hard
-
-"@keplr-wallet/provider@npm:0.12.104":
-  version: 0.12.104
-  resolution: "@keplr-wallet/provider@npm:0.12.104"
-  dependencies:
-    "@keplr-wallet/router": "npm:0.12.104"
-    "@keplr-wallet/types": "npm:0.12.104"
-    buffer: "npm:^6.0.3"
-    deepmerge: "npm:^4.2.2"
-    long: "npm:^4.0.0"
-  checksum: 10c0/263f6254dbcf2e3dc01645d374f41e8fef3e54186ecd162740017d0508301240fca403ee14dc49dce53b7ba939e4bd178aeff3a4ad4823f902462f5aa6306c1b
-  languageName: node
-  linkType: hard
-
-"@keplr-wallet/router@npm:0.12.104":
-  version: 0.12.104
-  resolution: "@keplr-wallet/router@npm:0.12.104"
-  checksum: 10c0/39fb91c2e29ff63e2eba41b215742cc40cf1b7538ef9b44fcf701a75d73cfa79e4a975b3a32e01e34b6a551f9637afa404f66fac014730183313ef1e4071415d
-  languageName: node
-  linkType: hard
-
 "@keplr-wallet/simple-fetch@npm:0.12.28":
   version: 0.12.28
   resolution: "@keplr-wallet/simple-fetch@npm:0.12.28"
   checksum: 10c0/a5f7b9df3555f1d6b1fb0c72560302a62f6482ce7417c4218724e97827cad3ec8c71ea0dea2929571a9db9236d55ece7df15326944c5e1e64df0d55eab871882
-  languageName: node
-  linkType: hard
-
-"@keplr-wallet/types@npm:0.12.104, @keplr-wallet/types@npm:^0.12.90, @keplr-wallet/types@npm:^0.12.95":
-  version: 0.12.104
-  resolution: "@keplr-wallet/types@npm:0.12.104"
-  dependencies:
-    long: "npm:^4.0.0"
-  checksum: 10c0/4b8718f8e756109e6b4aeee4f7e08e0dbdef73f00ef7dbb46cdf578ceeda1d0f5f9bc2f5a2ba8376d38aa4496fc63cd2eeec858f949df20ed6075d5bfc658a0a
   languageName: node
   linkType: hard
 
@@ -2102,34 +1417,6 @@ __metadata:
     big-integer: "npm:^1.6.48"
     utility-types: "npm:^3.10.0"
   checksum: 10c0/08d86d9ba01a11fcf2acd6a8a8b2252381eda8dc7613e3c3a50d7ebf73433fcece862b437f4118410e8c968983535e0aa5c4f2747eef9fd9785635eff836f7a7
-  languageName: node
-  linkType: hard
-
-"@keplr-wallet/wc-client@npm:^0.12.95":
-  version: 0.12.104
-  resolution: "@keplr-wallet/wc-client@npm:0.12.104"
-  dependencies:
-    "@keplr-wallet/provider": "npm:0.12.104"
-    "@keplr-wallet/types": "npm:0.12.104"
-    buffer: "npm:^6.0.3"
-    deepmerge: "npm:^4.2.2"
-    long: "npm:^3 || ^4 || ^5"
-  peerDependencies:
-    "@walletconnect/sign-client": ^2
-    "@walletconnect/types": ^2
-  checksum: 10c0/3c02c3090b84041efde33a336366889fb296c4a7c6914f9c226427773c1355c35c3aaf08597884bfda1986fd70a9dae0f0536b08a3bdbee9fd3ea5bd5d4ef135
-  languageName: node
-  linkType: hard
-
-"@leapwallet/cosmos-snap-provider@npm:0.1.26":
-  version: 0.1.26
-  resolution: "@leapwallet/cosmos-snap-provider@npm:0.1.26"
-  dependencies:
-    "@cosmjs/amino": "npm:^0.32.0"
-    "@cosmjs/proto-signing": "npm:^0.32.0"
-    bignumber.js: "npm:^9.1.2"
-    long: "npm:^5.2.3"
-  checksum: 10c0/e6a74773eed4754b37777bfbd946fbfd902213774eabb047c3c4a9aec82728be42196d79aee735cefe6e03bd77be4548805a5fd373eba741dd9667004f43523a
   languageName: node
   linkType: hard
 
@@ -2203,50 +1490,6 @@ __metadata:
   version: 6.12.0
   resolution: "@ledgerhq/logs@npm:6.12.0"
   checksum: 10c0/573122867ae807a60c3218234019ba7c4b35c14551b90c291fd589d7c2e7f002c2e84151868e67801c9f89a33d8a5569da77aef83b5f5e03b5faa2811cab6a86
-  languageName: node
-  linkType: hard
-
-"@metamask/object-multiplex@npm:^1.1.0":
-  version: 1.3.0
-  resolution: "@metamask/object-multiplex@npm:1.3.0"
-  dependencies:
-    end-of-stream: "npm:^1.4.4"
-    once: "npm:^1.4.0"
-    readable-stream: "npm:^2.3.3"
-  checksum: 10c0/24d80303b545da4c6de77a4f6adf46b3a498e15024f6b40b6e3594cbc7b77248b86b83716f343c24fc62379486b47ab4e5b0a4103552354f08e9fb68ecb01c7c
-  languageName: node
-  linkType: hard
-
-"@metamask/providers@npm:^11.1.1":
-  version: 11.1.2
-  resolution: "@metamask/providers@npm:11.1.2"
-  dependencies:
-    "@metamask/object-multiplex": "npm:^1.1.0"
-    "@metamask/safe-event-emitter": "npm:^3.0.0"
-    detect-browser: "npm:^5.2.0"
-    eth-rpc-errors: "npm:^4.0.2"
-    extension-port-stream: "npm:^2.1.1"
-    fast-deep-equal: "npm:^3.1.3"
-    is-stream: "npm:^2.0.0"
-    json-rpc-engine: "npm:^6.1.0"
-    json-rpc-middleware-stream: "npm:^4.2.1"
-    pump: "npm:^3.0.0"
-    webextension-polyfill: "npm:^0.10.0"
-  checksum: 10c0/0c0da8735be8943b1801f98115a87554076e97d5ff00fad83bb707992bb35fb8a849ff0f04aecb1ff54ebeba47ba61326e39c5b9b6de373839e18607e2ee7c7b
-  languageName: node
-  linkType: hard
-
-"@metamask/safe-event-emitter@npm:^2.0.0":
-  version: 2.0.0
-  resolution: "@metamask/safe-event-emitter@npm:2.0.0"
-  checksum: 10c0/a86b91f909834dc14de7eadd38b22d4975f6529001d265cd0f5c894351f69f39447f1ef41b690b9849c86dd2a25a39515ef5f316545d36aea7b3fc50ee930933
-  languageName: node
-  linkType: hard
-
-"@metamask/safe-event-emitter@npm:^3.0.0":
-  version: 3.1.1
-  resolution: "@metamask/safe-event-emitter@npm:3.1.1"
-  checksum: 10c0/4dd51651fa69adf65952449b20410acac7edad06f176dc6f0a5d449207527a2e85d5a21a864566e3d8446fb259f8840bd69fdb65932007a882f771f473a2b682
   languageName: node
   linkType: hard
 
@@ -4312,7 +3555,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@stablelib/x25519@npm:1.0.3, @stablelib/x25519@npm:^1.0.3":
+"@stablelib/x25519@npm:1.0.3":
   version: 1.0.3
   resolution: "@stablelib/x25519@npm:1.0.3"
   dependencies:
@@ -4614,31 +3857,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@walletconnect/core@npm:2.12.1":
-  version: 2.12.1
-  resolution: "@walletconnect/core@npm:2.12.1"
-  dependencies:
-    "@walletconnect/heartbeat": "npm:1.2.1"
-    "@walletconnect/jsonrpc-provider": "npm:1.0.13"
-    "@walletconnect/jsonrpc-types": "npm:1.0.3"
-    "@walletconnect/jsonrpc-utils": "npm:1.0.8"
-    "@walletconnect/jsonrpc-ws-connection": "npm:1.0.14"
-    "@walletconnect/keyvaluestorage": "npm:^1.1.1"
-    "@walletconnect/logger": "npm:^2.1.0"
-    "@walletconnect/relay-api": "npm:^1.0.9"
-    "@walletconnect/relay-auth": "npm:^1.0.4"
-    "@walletconnect/safe-json": "npm:^1.0.2"
-    "@walletconnect/time": "npm:^1.0.2"
-    "@walletconnect/types": "npm:2.12.1"
-    "@walletconnect/utils": "npm:2.12.1"
-    events: "npm:^3.3.0"
-    isomorphic-unfetch: "npm:3.1.0"
-    lodash.isequal: "npm:4.5.0"
-    uint8arrays: "npm:^3.1.0"
-  checksum: 10c0/1bc872d5659fc229436e6ee620126c7d2f7e30c711dd2781fcc254a201b3b2ff3fee94a596681ac4797d023db2233904d1a679a920b11a4607a77478251d188d
-  languageName: node
-  linkType: hard
-
 "@walletconnect/core@npm:2.17.5":
   version: 2.17.5
   resolution: "@walletconnect/core@npm:2.17.5"
@@ -4705,17 +3923,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@walletconnect/jsonrpc-provider@npm:1.0.13":
-  version: 1.0.13
-  resolution: "@walletconnect/jsonrpc-provider@npm:1.0.13"
-  dependencies:
-    "@walletconnect/jsonrpc-utils": "npm:^1.0.8"
-    "@walletconnect/safe-json": "npm:^1.0.2"
-    tslib: "npm:1.14.1"
-  checksum: 10c0/9b5b2f0ce516d2ddebe2cd1a2c8ea18a6b765b0d068162caf39745c18534e264a0cc6198adb869ba8684d0efa563be30956a3b9a7cc82b80b9e263f6211e30ab
-  languageName: node
-  linkType: hard
-
 "@walletconnect/jsonrpc-provider@npm:1.0.14":
   version: 1.0.14
   resolution: "@walletconnect/jsonrpc-provider@npm:1.0.14"
@@ -4755,18 +3962,6 @@ __metadata:
     "@walletconnect/jsonrpc-types": "npm:^1.0.3"
     tslib: "npm:1.14.1"
   checksum: 10c0/e4a6bd801cf555bca775e03d961d1fe5ad0a22838e3496adda43ab4020a73d1b38de7096c06940e51f00fccccc734cd422fe4f1f7a8682302467b9c4d2a93d5d
-  languageName: node
-  linkType: hard
-
-"@walletconnect/jsonrpc-ws-connection@npm:1.0.14":
-  version: 1.0.14
-  resolution: "@walletconnect/jsonrpc-ws-connection@npm:1.0.14"
-  dependencies:
-    "@walletconnect/jsonrpc-utils": "npm:^1.0.6"
-    "@walletconnect/safe-json": "npm:^1.0.2"
-    events: "npm:^3.3.0"
-    ws: "npm:^7.5.1"
-  checksum: 10c0/a710ecc51f8d3ed819ba6d6e53151ef274473aa8746ffdeaffaa3d4c020405bc694b0d179649fc2510a556eb4daf02f4a9e3dacef69ff95f673939bd67be649e
   languageName: node
   linkType: hard
 
@@ -4818,16 +4013,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@walletconnect/logger@npm:^2.1.0":
-  version: 2.1.0
-  resolution: "@walletconnect/logger@npm:2.1.0"
-  dependencies:
-    "@walletconnect/safe-json": "npm:^1.0.2"
-    pino: "npm:7.11.0"
-  checksum: 10c0/3d7b4eaf3b1e95e8cc12740ef7768a2722f70d23998a4dc45422da6817829626c6d79fa3683bd8eb52c5e1091bd6b63773d7c04b1f2d1932167f38e0123b1537
-  languageName: node
-  linkType: hard
-
 "@walletconnect/relay-api@npm:1.0.11":
   version: 1.0.11
   resolution: "@walletconnect/relay-api@npm:1.0.11"
@@ -4837,17 +4022,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@walletconnect/relay-api@npm:^1.0.9":
-  version: 1.0.9
-  resolution: "@walletconnect/relay-api@npm:1.0.9"
-  dependencies:
-    "@walletconnect/jsonrpc-types": "npm:^1.0.2"
-    tslib: "npm:1.14.1"
-  checksum: 10c0/e5994c63619b89cae45428108857389536f3c7e43a92f324a8ef305f351cf125dcfafeb9c480f23798c162ca2cad7b8f91828bae28a84cf869c3e7ee1dcca9dd
-  languageName: node
-  linkType: hard
-
-"@walletconnect/relay-auth@npm:1.0.4, @walletconnect/relay-auth@npm:^1.0.4":
+"@walletconnect/relay-auth@npm:1.0.4":
   version: 1.0.4
   resolution: "@walletconnect/relay-auth@npm:1.0.4"
   dependencies:
@@ -4887,23 +4062,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@walletconnect/sign-client@npm:^2.9.0":
-  version: 2.12.1
-  resolution: "@walletconnect/sign-client@npm:2.12.1"
-  dependencies:
-    "@walletconnect/core": "npm:2.12.1"
-    "@walletconnect/events": "npm:^1.0.1"
-    "@walletconnect/heartbeat": "npm:1.2.1"
-    "@walletconnect/jsonrpc-utils": "npm:1.0.8"
-    "@walletconnect/logger": "npm:^2.0.1"
-    "@walletconnect/time": "npm:^1.0.2"
-    "@walletconnect/types": "npm:2.12.1"
-    "@walletconnect/utils": "npm:2.12.1"
-    events: "npm:^3.3.0"
-  checksum: 10c0/ccf0ea03d953c0e7b06d037f9e4c2f957cc6a0134be31e55adb308f3ee88dd91c89e53c521317ea9b1274cf80a1ae9a28d2474258ad980714e07f254efe56e55
-  languageName: node
-  linkType: hard
-
 "@walletconnect/time@npm:1.0.2, @walletconnect/time@npm:^1.0.2":
   version: 1.0.2
   resolution: "@walletconnect/time@npm:1.0.2"
@@ -4927,20 +4085,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@walletconnect/types@npm:2.12.1":
-  version: 2.12.1
-  resolution: "@walletconnect/types@npm:2.12.1"
-  dependencies:
-    "@walletconnect/events": "npm:^1.0.1"
-    "@walletconnect/heartbeat": "npm:1.2.1"
-    "@walletconnect/jsonrpc-types": "npm:1.0.3"
-    "@walletconnect/keyvaluestorage": "npm:^1.1.1"
-    "@walletconnect/logger": "npm:^2.0.1"
-    events: "npm:^3.3.0"
-  checksum: 10c0/c04d2f769b5a2c7e72e501a50b95ccfad9bc086643dbd036779bb66662885c312be9ed0ddc7b095e26ed666d47494c912e8b82624e6e348063b42a73ba174299
-  languageName: node
-  linkType: hard
-
 "@walletconnect/types@npm:2.17.5, @walletconnect/types@npm:^2.17.3":
   version: 2.17.5
   resolution: "@walletconnect/types@npm:2.17.5"
@@ -4952,28 +4096,6 @@ __metadata:
     "@walletconnect/logger": "npm:2.1.2"
     events: "npm:3.3.0"
   checksum: 10c0/dff6f75222fd46cf17cf6d65c962c938351750bffb8a32e88e8ba56d177db8779e798defe7226697ab0317bd2a2bc47f46a57237e70be41d6d3d558667658d08
-  languageName: node
-  linkType: hard
-
-"@walletconnect/utils@npm:2.12.1, @walletconnect/utils@npm:^2.9.0":
-  version: 2.12.1
-  resolution: "@walletconnect/utils@npm:2.12.1"
-  dependencies:
-    "@stablelib/chacha20poly1305": "npm:1.0.1"
-    "@stablelib/hkdf": "npm:1.0.1"
-    "@stablelib/random": "npm:^1.0.2"
-    "@stablelib/sha256": "npm:1.0.1"
-    "@stablelib/x25519": "npm:^1.0.3"
-    "@walletconnect/relay-api": "npm:^1.0.9"
-    "@walletconnect/safe-json": "npm:^1.0.2"
-    "@walletconnect/time": "npm:^1.0.2"
-    "@walletconnect/types": "npm:2.12.1"
-    "@walletconnect/window-getters": "npm:^1.0.1"
-    "@walletconnect/window-metadata": "npm:^1.0.1"
-    detect-browser: "npm:5.3.0"
-    query-string: "npm:7.1.3"
-    uint8arrays: "npm:^3.1.0"
-  checksum: 10c0/0864afecb5bbfa736e6d390cb0e0b721cdd03a9616a6c0c93a8f381cb8f0354db658800880131e9bbcf6e5a22e819bf413e197484dce3218b677fad6da068b8e
   languageName: node
   linkType: hard
 
@@ -5013,7 +4135,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@walletconnect/window-metadata@npm:1.0.1, @walletconnect/window-metadata@npm:^1.0.1":
+"@walletconnect/window-metadata@npm:1.0.1":
   version: 1.0.1
   resolution: "@walletconnect/window-metadata@npm:1.0.1"
   dependencies:
@@ -5796,20 +4918,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"core-util-is@npm:~1.0.0":
-  version: 1.0.3
-  resolution: "core-util-is@npm:1.0.3"
-  checksum: 10c0/90a0e40abbddfd7618f8ccd63a74d88deea94e77d0e8dbbea059fa7ebebb8fbb4e2909667fe26f3a467073de1a542ebe6ae4c73a73745ac5833786759cd906c9
-  languageName: node
-  linkType: hard
-
-"cosmjs-types@npm:>=0.9.0, cosmjs-types@npm:^0.9.0":
-  version: 0.9.0
-  resolution: "cosmjs-types@npm:0.9.0"
-  checksum: 10c0/bc20f4293fb34629d7c5f96bafe533987f753df957ff68eb078d0128ae5a418320cb945024441769a07bb9bc5dde9d22b972fd40d485933e5706ea191c43727b
-  languageName: node
-  linkType: hard
-
 "cosmjs-types@npm:^0.5.2":
   version: 0.5.2
   resolution: "cosmjs-types@npm:0.5.2"
@@ -5820,37 +4928,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"cosmjs-types@npm:^0.8.0":
-  version: 0.8.0
-  resolution: "cosmjs-types@npm:0.8.0"
-  dependencies:
-    long: "npm:^4.0.0"
-    protobufjs: "npm:~6.11.2"
-  checksum: 10c0/910a84d04d17c3a32120bda52063a582325b900e9bb2f5ddffee621c1d053bc562bedc0d39d20e12736445b66d897bdae085247f51c6ffd1ca0154f99b938214
-  languageName: node
-  linkType: hard
-
-"cosmos-kit@npm:2.23.4":
-  version: 2.23.4
-  resolution: "cosmos-kit@npm:2.23.4"
-  dependencies:
-    "@cosmos-kit/cdcwallet": "npm:^2.15.3"
-    "@cosmos-kit/coin98": "npm:^2.13.3"
-    "@cosmos-kit/compass": "npm:^2.13.3"
-    "@cosmos-kit/cosmostation": "npm:^2.14.2"
-    "@cosmos-kit/ctrl": "npm:^2.13.2"
-    "@cosmos-kit/exodus": "npm:^2.12.2"
-    "@cosmos-kit/fin": "npm:^2.13.3"
-    "@cosmos-kit/keplr": "npm:^2.14.3"
-    "@cosmos-kit/leap": "npm:^2.14.3"
-    "@cosmos-kit/ledger": "npm:^2.13.2"
-    "@cosmos-kit/okxwallet-extension": "npm:^2.13.1"
-    "@cosmos-kit/omni": "npm:^2.12.2"
-    "@cosmos-kit/owallet": "npm:^2.14.2"
-    "@cosmos-kit/shell": "npm:^2.13.3"
-    "@cosmos-kit/tailwind": "npm:^1.7.2"
-    "@cosmos-kit/trust": "npm:^2.13.2"
-  checksum: 10c0/06a8425228b4c2e9cefc5a780f1f239200201c19292c4014bd5f1a5eca2400de2b6bfb84f4bf563b5aaaa8cbe61b7ca69fc5334288aface292d21e1f41334e2c
+"cosmjs-types@npm:^0.9.0":
+  version: 0.9.0
+  resolution: "cosmjs-types@npm:0.9.0"
+  checksum: 10c0/bc20f4293fb34629d7c5f96bafe533987f753df957ff68eb078d0128ae5a418320cb945024441769a07bb9bc5dde9d22b972fd40d485933e5706ea191c43727b
   languageName: node
   linkType: hard
 
@@ -6011,13 +5092,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"decode-uri-component@npm:^0.2.2":
-  version: 0.2.2
-  resolution: "decode-uri-component@npm:0.2.2"
-  checksum: 10c0/1f4fa54eb740414a816b3f6c24818fbfcabd74ac478391e9f4e2282c994127db02010ce804f3d08e38255493cfe68608b3f5c8e09fd6efc4ae46c807691f7a31
-  languageName: node
-  linkType: hard
-
 "dedent@npm:^1.5.3":
   version: 1.5.3
   resolution: "dedent@npm:1.5.3"
@@ -6108,7 +5182,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"detect-browser@npm:5.3.0, detect-browser@npm:^5.2.0":
+"detect-browser@npm:5.3.0":
   version: 5.3.0
   resolution: "detect-browser@npm:5.3.0"
   checksum: 10c0/88d49b70ce3836e7971345b2ebdd486ad0d457d1e4f066540d0c12f9210c8f731ccbed955fcc9af2f048f5d4629702a8e46bedf5bcad42ad49a3a0927bfd5a76
@@ -6238,7 +5312,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"end-of-stream@npm:^1.1.0, end-of-stream@npm:^1.4.1, end-of-stream@npm:^1.4.4":
+"end-of-stream@npm:^1.4.1":
   version: 1.4.4
   resolution: "end-of-stream@npm:1.4.4"
   dependencies:
@@ -6672,15 +5746,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eth-rpc-errors@npm:^4.0.2":
-  version: 4.0.3
-  resolution: "eth-rpc-errors@npm:4.0.3"
-  dependencies:
-    fast-safe-stringify: "npm:^2.0.6"
-  checksum: 10c0/332cbc5a957b62bb66ea01da2a467da65026df47e6516a286a969cad74d6002f2b481335510c93f12ca29c46ebc8354e39e2240769d86184f9b4c30832cf5466
-  languageName: node
-  linkType: hard
-
 "ethers@npm:^6.5.1":
   version: 6.13.5
   resolution: "ethers@npm:6.13.5"
@@ -6724,15 +5789,6 @@ __metadata:
   version: 3.1.1
   resolution: "exponential-backoff@npm:3.1.1"
   checksum: 10c0/160456d2d647e6019640bd07111634d8c353038d9fa40176afb7cd49b0548bdae83b56d05e907c2cce2300b81cae35d800ef92fefb9d0208e190fa3b7d6bb579
-  languageName: node
-  linkType: hard
-
-"extension-port-stream@npm:^2.1.1":
-  version: 2.1.1
-  resolution: "extension-port-stream@npm:2.1.1"
-  dependencies:
-    webextension-polyfill: "npm:>=0.10.0 <1.0"
-  checksum: 10c0/e3fb183669fee8adbb0fecdd0aa604feb976dc9d54c42da6c838c97c10be7f7f33c5341f198401e21216e1dd536fadd7b3f4bdf8e1bb38bbe3f135ecc3f6fda4
   languageName: node
   linkType: hard
 
@@ -6786,13 +5842,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"fast-safe-stringify@npm:^2.0.6":
-  version: 2.1.1
-  resolution: "fast-safe-stringify@npm:2.1.1"
-  checksum: 10c0/d90ec1c963394919828872f21edaa3ad6f1dddd288d2bd4e977027afff09f5db40f94e39536d4646f7e01761d704d72d51dce5af1b93717f3489ef808f5f4e4d
-  languageName: node
-  linkType: hard
-
 "fastq@npm:^1.6.0":
   version: 1.17.1
   resolution: "fastq@npm:1.17.1"
@@ -6833,13 +5882,6 @@ __metadata:
   dependencies:
     to-regex-range: "npm:^5.0.1"
   checksum: 10c0/b75b691bbe065472f38824f694c2f7449d7f5004aa950426a2c28f0306c60db9b880c0b0e4ed819997ffb882d1da02cfcfc819bddc94d71627f5269682edf018
-  languageName: node
-  linkType: hard
-
-"filter-obj@npm:^1.1.0":
-  version: 1.1.0
-  resolution: "filter-obj@npm:1.1.0"
-  checksum: 10c0/071e0886b2b50238ca5026c5bbf58c26a7c1a1f720773b8c7813d16ba93d0200de977af14ac143c5ac18f666b2cfc83073f3a5fe6a4e996c49e0863d5500fccf
   languageName: node
   linkType: hard
 
@@ -7402,7 +6444,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"inherits@npm:2, inherits@npm:^2.0.1, inherits@npm:^2.0.3, inherits@npm:^2.0.4, inherits@npm:~2.0.3":
+"inherits@npm:2, inherits@npm:^2.0.1, inherits@npm:^2.0.3, inherits@npm:^2.0.4":
   version: 2.0.4
   resolution: "inherits@npm:2.0.4"
   checksum: 10c0/4e531f648b29039fb7426fb94075e6545faa1eb9fe83c29f0b6d9e7263aceb4289d2d4557db0d428188eeb449cc7c5e77b0a0b2c4e248ff2a65933a0dee49ef2
@@ -7699,13 +6741,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"is-stream@npm:^2.0.0":
-  version: 2.0.1
-  resolution: "is-stream@npm:2.0.1"
-  checksum: 10c0/7c284241313fc6efc329b8d7f08e16c0efeb6baab1b4cd0ba579eb78e5af1aa5da11e68559896a2067cd6c526bd29241dda4eb1225e627d5aa1a89a76d4635a5
-  languageName: node
-  linkType: hard
-
 "is-stream@npm:^3.0.0":
   version: 3.0.0
   resolution: "is-stream@npm:3.0.0"
@@ -7798,13 +6833,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"isarray@npm:~1.0.0":
-  version: 1.0.0
-  resolution: "isarray@npm:1.0.0"
-  checksum: 10c0/18b5be6669be53425f0b84098732670ed4e727e3af33bc7f948aac01782110eb9a18b3b329c5323bcdd3acdaae547ee077d3951317e7f133bff7105264b3003d
-  languageName: node
-  linkType: hard
-
 "isexe@npm:^2.0.0":
   version: 2.0.0
   resolution: "isexe@npm:2.0.0"
@@ -7816,16 +6844,6 @@ __metadata:
   version: 3.1.1
   resolution: "isexe@npm:3.1.1"
   checksum: 10c0/9ec257654093443eb0a528a9c8cbba9c0ca7616ccb40abd6dde7202734d96bb86e4ac0d764f0f8cd965856aacbff2f4ce23e730dc19dfb41e3b0d865ca6fdcc7
-  languageName: node
-  linkType: hard
-
-"isomorphic-unfetch@npm:3.1.0":
-  version: 3.1.0
-  resolution: "isomorphic-unfetch@npm:3.1.0"
-  dependencies:
-    node-fetch: "npm:^2.6.1"
-    unfetch: "npm:^4.2.0"
-  checksum: 10c0/d3b61fca06304db692b7f76bdfd3a00f410e42cfa7403c3b250546bf71589d18cf2f355922f57198e4cc4a9872d3647b20397a5c3edf1a347c90d57c83cf2a89
   languageName: node
   linkType: hard
 
@@ -7929,27 +6947,6 @@ __metadata:
   version: 3.0.1
   resolution: "json-buffer@npm:3.0.1"
   checksum: 10c0/0d1c91569d9588e7eef2b49b59851f297f3ab93c7b35c7c221e288099322be6b562767d11e4821da500f3219542b9afd2e54c5dc573107c1126ed1080f8e96d7
-  languageName: node
-  linkType: hard
-
-"json-rpc-engine@npm:^6.1.0":
-  version: 6.1.0
-  resolution: "json-rpc-engine@npm:6.1.0"
-  dependencies:
-    "@metamask/safe-event-emitter": "npm:^2.0.0"
-    eth-rpc-errors: "npm:^4.0.2"
-  checksum: 10c0/29c480f88152b1987ab0f58f9242ee163d5a7e95cd0d8ae876c08b21657022b82f6008f5eecd048842fb7f6fc3b4e364fde99ca620458772b6abd1d2c1e020d5
-  languageName: node
-  linkType: hard
-
-"json-rpc-middleware-stream@npm:^4.2.1":
-  version: 4.2.3
-  resolution: "json-rpc-middleware-stream@npm:4.2.3"
-  dependencies:
-    "@metamask/safe-event-emitter": "npm:^3.0.0"
-    json-rpc-engine: "npm:^6.1.0"
-    readable-stream: "npm:^2.3.3"
-  checksum: 10c0/d21b86e79b5711c99f4211a4f129c9c24817ea372945cae8ea1425285680e71ff8d0638d4d8738fe480a56baa7f8cd7f9a8330b43b81a0719e522bd5d80567c7
   languageName: node
   linkType: hard
 
@@ -8144,17 +7141,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"long@npm:^3 || ^4 || ^5, long@npm:^5.2.3":
-  version: 5.2.3
-  resolution: "long@npm:5.2.3"
-  checksum: 10c0/6a0da658f5ef683b90330b1af76f06790c623e148222da9d75b60e266bbf88f803232dd21464575681638894a84091616e7f89557aa087fd14116c0f4e0e43d9
-  languageName: node
-  linkType: hard
-
 "long@npm:^4.0.0":
   version: 4.0.0
   resolution: "long@npm:4.0.0"
   checksum: 10c0/50a6417d15b06104dbe4e3d4a667c39b137f130a9108ea8752b352a4cfae047531a3ac351c181792f3f8768fe17cca6b0f406674a541a86fb638aaac560d83ed
+  languageName: node
+  linkType: hard
+
+"long@npm:^5.2.3":
+  version: 5.2.3
+  resolution: "long@npm:5.2.3"
+  checksum: 10c0/6a0da658f5ef683b90330b1af76f06790c623e148222da9d75b60e266bbf88f803232dd21464575681638894a84091616e7f89557aa087fd14116c0f4e0e43d9
   languageName: node
   linkType: hard
 
@@ -8631,7 +7628,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"node-fetch@npm:^2.6.1, node-fetch@npm:^2.6.12":
+"node-fetch@npm:^2.6.12":
   version: 2.7.0
   resolution: "node-fetch@npm:2.7.0"
   dependencies:
@@ -8813,7 +7810,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"once@npm:^1.3.0, once@npm:^1.3.1, once@npm:^1.4.0":
+"once@npm:^1.3.0, once@npm:^1.4.0":
   version: 1.4.0
   resolution: "once@npm:1.4.0"
   dependencies:
@@ -9056,13 +8053,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"process-nextick-args@npm:~2.0.0":
-  version: 2.0.1
-  resolution: "process-nextick-args@npm:2.0.1"
-  checksum: 10c0/bec089239487833d46b59d80327a1605e1c5287eaad770a291add7f45fda1bb5e28b38e0e061add0a1d0ee0984788ce74fa394d345eed1c420cacf392c554367
-  languageName: node
-  linkType: hard
-
 "process-warning@npm:^1.0.0":
   version: 1.0.0
   resolution: "process-warning@npm:1.0.0"
@@ -9129,32 +8119,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"pump@npm:^3.0.0":
-  version: 3.0.0
-  resolution: "pump@npm:3.0.0"
-  dependencies:
-    end-of-stream: "npm:^1.1.0"
-    once: "npm:^1.3.1"
-  checksum: 10c0/bbdeda4f747cdf47db97428f3a135728669e56a0ae5f354a9ac5b74556556f5446a46f720a8f14ca2ece5be9b4d5d23c346db02b555f46739934cc6c093a5478
-  languageName: node
-  linkType: hard
-
 "punycode@npm:^2.1.0":
   version: 2.3.1
   resolution: "punycode@npm:2.3.1"
   checksum: 10c0/14f76a8206bc3464f794fb2e3d3cc665ae416c01893ad7a02b23766eb07159144ee612ad67af5e84fa4479ccfe67678c4feb126b0485651b302babf66f04f9e9
-  languageName: node
-  linkType: hard
-
-"query-string@npm:7.1.3":
-  version: 7.1.3
-  resolution: "query-string@npm:7.1.3"
-  dependencies:
-    decode-uri-component: "npm:^0.2.2"
-    filter-obj: "npm:^1.1.0"
-    split-on-first: "npm:^1.0.0"
-    strict-uri-encode: "npm:^2.0.0"
-  checksum: 10c0/a896c08e9e0d4f8ffd89a572d11f668c8d0f7df9c27c6f49b92ab31366d3ba0e9c331b9a620ee747893436cd1f2f821a6327e2bc9776bde2402ac6c270b801b2
   languageName: node
   linkType: hard
 
@@ -9251,15 +8219,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-icons@npm:4.4.0":
-  version: 4.4.0
-  resolution: "react-icons@npm:4.4.0"
-  peerDependencies:
-    react: "*"
-  checksum: 10c0/8daeae11e4b989eebcb97b9fdf3a743607b76b637d2eece309f6274f3a85b9c720313956cfabe220628324abf50b9b01823f65ac9cf71b8a816e440d2fca5293
-  languageName: node
-  linkType: hard
-
 "react-icons@npm:4.6.0":
   version: 4.6.0
   resolution: "react-icons@npm:4.6.0"
@@ -9317,21 +8276,6 @@ __metadata:
   dependencies:
     loose-envify: "npm:^1.1.0"
   checksum: 10c0/283e8c5efcf37802c9d1ce767f302dd569dd97a70d9bb8c7be79a789b9902451e0d16334b05d73299b20f048cbc3c7d288bbbde10b701fa194e2089c237dbea3
-  languageName: node
-  linkType: hard
-
-"readable-stream@npm:^2.3.3":
-  version: 2.3.8
-  resolution: "readable-stream@npm:2.3.8"
-  dependencies:
-    core-util-is: "npm:~1.0.0"
-    inherits: "npm:~2.0.3"
-    isarray: "npm:~1.0.0"
-    process-nextick-args: "npm:~2.0.0"
-    safe-buffer: "npm:~5.1.1"
-    string_decoder: "npm:~1.1.1"
-    util-deprecate: "npm:~1.0.1"
-  checksum: 10c0/7efdb01f3853bc35ac62ea25493567bf588773213f5f4a79f9c365e1ad13bab845ac0dae7bc946270dc40c3929483228415e92a3fc600cc7e4548992f41ee3fa
   languageName: node
   linkType: hard
 
@@ -9548,13 +8492,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"safe-buffer@npm:~5.1.0, safe-buffer@npm:~5.1.1":
-  version: 5.1.2
-  resolution: "safe-buffer@npm:5.1.2"
-  checksum: 10c0/780ba6b5d99cc9a40f7b951d47152297d0e260f0df01472a1b99d4889679a4b94a13d644f7dbc4f022572f09ae9005fa2fbb93bbbd83643316f365a3e9a45b21
-  languageName: node
-  linkType: hard
-
 "safe-regex-test@npm:^1.0.3":
   version: 1.0.3
   resolution: "safe-regex-test@npm:1.0.3"
@@ -9742,13 +8679,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"split-on-first@npm:^1.0.0":
-  version: 1.1.0
-  resolution: "split-on-first@npm:1.1.0"
-  checksum: 10c0/56df8344f5a5de8521898a5c090023df1d8b8c75be6228f56c52491e0fc1617a5236f2ac3a066adb67a73231eac216ccea7b5b4a2423a543c277cb2f48d24c29
-  languageName: node
-  linkType: hard
-
 "split2@npm:^4.0.0":
   version: 4.2.0
   resolution: "split2@npm:4.2.0"
@@ -9790,13 +8720,6 @@ __metadata:
   version: 1.1.0
   resolution: "streamsearch@npm:1.1.0"
   checksum: 10c0/fbd9aecc2621364384d157f7e59426f4bfd385e8b424b5aaa79c83a6f5a1c8fd2e4e3289e95de1eb3511cb96bb333d6281a9919fafce760e4edb35b2cd2facab
-  languageName: node
-  linkType: hard
-
-"strict-uri-encode@npm:^2.0.0":
-  version: 2.0.0
-  resolution: "strict-uri-encode@npm:2.0.0"
-  checksum: 10c0/010cbc78da0e2cf833b0f5dc769e21ae74cdc5d5f5bd555f14a4a4876c8ad2c85ab8b5bdf9a722dc71a11dcd3184085e1c3c0bd50ec6bb85fffc0f28cf82597d
   languageName: node
   linkType: hard
 
@@ -9882,15 +8805,6 @@ __metadata:
   dependencies:
     safe-buffer: "npm:~5.2.0"
   checksum: 10c0/810614ddb030e271cd591935dcd5956b2410dd079d64ff92a1844d6b7588bf992b3e1b69b0f4d34a3e06e0bd73046ac646b5264c1987b20d0601f81ef35d731d
-  languageName: node
-  linkType: hard
-
-"string_decoder@npm:~1.1.1":
-  version: 1.1.1
-  resolution: "string_decoder@npm:1.1.1"
-  dependencies:
-    safe-buffer: "npm:~5.1.0"
-  checksum: 10c0/b4f89f3a92fd101b5653ca3c99550e07bdf9e13b35037e9e2a1c7b47cec4e55e06ff3fc468e314a0b5e80bfbaf65c1ca5a84978764884ae9413bec1fc6ca924e
   languageName: node
   linkType: hard
 
@@ -10229,7 +9143,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"uint8arrays@npm:^3.0.0, uint8arrays@npm:^3.1.0":
+"uint8arrays@npm:^3.0.0":
   version: 3.1.1
   resolution: "uint8arrays@npm:3.1.1"
   dependencies:
@@ -10281,13 +9195,6 @@ __metadata:
     node-fetch-native: "npm:^1.6.1"
     pathe: "npm:^1.1.1"
   checksum: 10c0/d00012badc83731c07f08d5129c702c49c0212375eb3732b27aae89ace3c67162dbaea4496965676f18fc06b0ec445d91385e283f5fd3e4540dda8b0b5424f81
-  languageName: node
-  linkType: hard
-
-"unfetch@npm:^4.2.0":
-  version: 4.2.0
-  resolution: "unfetch@npm:4.2.0"
-  checksum: 10c0/a5c0a896a6f09f278b868075aea65652ad185db30e827cb7df45826fe5ab850124bf9c44c4dafca4bf0c55a0844b17031e8243467fcc38dd7a7d435007151f1b
   languageName: node
   linkType: hard
 
@@ -10425,7 +9332,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"util-deprecate@npm:^1.0.1, util-deprecate@npm:~1.0.1":
+"util-deprecate@npm:^1.0.1":
   version: 1.0.2
   resolution: "util-deprecate@npm:1.0.2"
   checksum: 10c0/41a5bdd214df2f6c3ecf8622745e4a366c4adced864bc3c833739791aeeeb1838119af7daed4ba36428114b5c67dcda034a79c882e97e43c03e66a4dd7389942
@@ -10455,13 +9362,6 @@ __metadata:
     glob-to-regexp: "npm:^0.4.1"
     graceful-fs: "npm:^4.1.2"
   checksum: 10c0/c5e35f9fb9338d31d2141d9835643c0f49b5f9c521440bb648181059e5940d93dd8ed856aa8a33fbcdd4e121dad63c7e8c15c063cf485429cd9d427be197fe62
-  languageName: node
-  linkType: hard
-
-"webextension-polyfill@npm:>=0.10.0 <1.0, webextension-polyfill@npm:^0.10.0":
-  version: 0.10.0
-  resolution: "webextension-polyfill@npm:0.10.0"
-  checksum: 10c0/6a45278f1fed8fbd5355f9b19a7b0b3fadc91fa3a6eef69125a1706bb3efa2181235eefbfb3f538443bb396cfcb97512361551888ce8465c08914431cb2d5b6d
   languageName: node
   linkType: hard
 
