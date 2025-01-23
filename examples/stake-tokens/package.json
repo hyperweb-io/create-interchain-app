@@ -13,7 +13,6 @@
   },
   "dependencies": {
     "@chain-registry/types": "^0.50.18",
-    "@cosmos-kit/react": "2.21.2",
     "@interchain-kit/core": "0.0.1-beta.62",
     "@interchain-kit/keplr-extension": "0.0.1-beta.62",
     "@interchain-kit/leap-extension": "0.0.1-beta.62",
