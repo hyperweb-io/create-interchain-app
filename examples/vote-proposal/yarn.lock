@@ -548,48 +548,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@cosmology/vote-proposal@workspace:.":
-  version: 0.0.0-use.local
-  resolution: "@cosmology/vote-proposal@workspace:."
-  dependencies:
-    "@chain-registry/types": "npm:^0.50.13"
-    "@emotion/react": "npm:11.10.6"
-    "@emotion/styled": "npm:11.10.6"
-    "@interchain-kit/core": "npm:0.0.1-beta.62"
-    "@interchain-kit/keplr-extension": "npm:0.0.1-beta.62"
-    "@interchain-kit/leap-extension": "npm:0.0.1-beta.62"
-    "@interchain-kit/react": "npm:0.0.1-beta.62"
-    "@interchain-ui/react": "npm:1.26.0"
-    "@interchain-ui/react-no-ssr": "npm:^0.1.6"
-    "@interchainjs/cosmos": "npm:^1.7.6"
-    "@interchainjs/cosmos-types": "npm:^1.7.6"
-    "@tanstack/react-query": "npm:4.32.0"
-    "@tanstack/react-query-devtools": "npm:4.32.0"
-    "@types/node": "npm:^18.19.37"
-    "@types/react": "npm:^18.3.3"
-    "@types/react-dom": "npm:^18.3.0"
-    bignumber.js: "npm:^9.1.1"
-    chain-registry: "npm:^1.69.32"
-    cosmos-kit: "npm:2.23.4"
-    dayjs: "npm:^1.11.7"
-    eslint: "npm:8.28.0"
-    eslint-config-next: "npm:13.0.5"
-    fast-fuzzy: "npm:1.12.0"
-    framer-motion: "npm:9.0.7"
-    generate-lockfile: "npm:0.0.12"
-    interchain-kit: "npm:0.0.1-beta.62"
-    interchain-query: "npm:1.10.1"
-    match-sorter: "npm:^6.3.3"
-    next: "npm:^13"
-    react: "npm:^18.2.0"
-    react-dom: "npm:^18.2.0"
-    react-icons: "npm:4.6.0"
-    react-markdown: "npm:9.0.1"
-    react-minimal-pie-chart: "npm:^8.4.0"
-    typescript: "npm:^5.1.6"
-  languageName: unknown
-  linkType: soft
-
 "@cosmos-kit/cdcwallet-extension@npm:^2.15.6":
   version: 2.15.6
   resolution: "@cosmos-kit/cdcwallet-extension@npm:2.15.6"
@@ -1601,6 +1559,48 @@ __metadata:
   checksum: 10c0/80520eabbfc2d32fe195a93557cef50dfe8c8905de447f022675aaf66abc33ae54098f5ea78548d925aa671cd4ab7c7daa5ad704fe42358c9b5e7db60f80696c
   languageName: node
   linkType: hard
+
+"@hyperweb/vote-proposal@workspace:.":
+  version: 0.0.0-use.local
+  resolution: "@hyperweb/vote-proposal@workspace:."
+  dependencies:
+    "@chain-registry/types": "npm:^0.50.13"
+    "@emotion/react": "npm:11.10.6"
+    "@emotion/styled": "npm:11.10.6"
+    "@interchain-kit/core": "npm:0.0.1-beta.62"
+    "@interchain-kit/keplr-extension": "npm:0.0.1-beta.62"
+    "@interchain-kit/leap-extension": "npm:0.0.1-beta.62"
+    "@interchain-kit/react": "npm:0.0.1-beta.62"
+    "@interchain-ui/react": "npm:1.26.0"
+    "@interchain-ui/react-no-ssr": "npm:^0.1.6"
+    "@interchainjs/cosmos": "npm:^1.7.6"
+    "@interchainjs/cosmos-types": "npm:^1.7.6"
+    "@tanstack/react-query": "npm:4.32.0"
+    "@tanstack/react-query-devtools": "npm:4.32.0"
+    "@types/node": "npm:^18.19.37"
+    "@types/react": "npm:^18.3.3"
+    "@types/react-dom": "npm:^18.3.0"
+    bignumber.js: "npm:^9.1.1"
+    chain-registry: "npm:^1.69.32"
+    cosmos-kit: "npm:2.23.4"
+    dayjs: "npm:^1.11.7"
+    eslint: "npm:8.28.0"
+    eslint-config-next: "npm:13.0.5"
+    fast-fuzzy: "npm:1.12.0"
+    framer-motion: "npm:9.0.7"
+    generate-lockfile: "npm:0.0.12"
+    interchain-kit: "npm:0.0.1-beta.62"
+    interchain-query: "npm:1.10.1"
+    match-sorter: "npm:^6.3.3"
+    next: "npm:^13"
+    react: "npm:^18.2.0"
+    react-dom: "npm:^18.2.0"
+    react-icons: "npm:4.6.0"
+    react-markdown: "npm:9.0.1"
+    react-minimal-pie-chart: "npm:^8.4.0"
+    typescript: "npm:^5.1.6"
+  languageName: unknown
+  linkType: soft
 
 "@interchain-kit/core@npm:0.0.1-beta.62":
   version: 0.0.1-beta.62

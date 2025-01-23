@@ -3,6 +3,8 @@ import { useChain } from '@interchain-kit/react';
 import { assetLists } from '@chain-registry/v2'
 import { DeliverTxResponse, StdFee } from '@interchainjs/cosmos-types/types'
 import { isDeliverTxSuccess } from '@interchainjs/cosmos/utils/asserts'
+import { toEncoders } from '@interchainjs/cosmos/utils'
+import { MsgVote } from 'interchainjs/cosmos/gov/v1beta1/tx'
 
 export type Msg = {
   typeUrl: string;
@@ -47,7 +49,6 @@ export class TxResult {
 export function useTx(chainName: string) {
   const {
     address,
-    // getSigningStargateClient, 
     getSigningClient,
     // estimateFee // no estimateFee in interchain-kit
   } = useChain(chainName);
@@ -73,6 +74,8 @@ export function useTx(chainName: string) {
         gas: '200000'
       }
       const client = await getSigningClient();
+      client.addEncoders(toEncoders(MsgVote))
+      console.log('msgs', msgs)
       const signed = await client.sign(address, msgs, fee, '');
 
       if (!client) return new TxResult({ error: new TxError('Invalid stargate client') });
