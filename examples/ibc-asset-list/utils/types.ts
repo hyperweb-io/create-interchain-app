@@ -1,4 +1,4 @@
-import { DenomUnit } from '@chain-registry/types';
+import { DenomUnit } from '@chain-registry/v2-types';
 import { Duration } from 'osmo-query/dist/codegen/google/protobuf/duration';
 import { Gauge } from 'osmo-query/dist/codegen/osmosis/incentives/gauge';
 import { SuperfluidAsset } from 'osmo-query/dist/codegen/osmosis/superfluid/superfluid';

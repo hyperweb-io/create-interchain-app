@@ -7,7 +7,7 @@ import {
   PriceHash,
   CoinGeckoUSDResponse,
 } from './types';
-import { Asset as OsmosisAsset } from '@chain-registry/types';
+import { Asset as OsmosisAsset } from '@chain-registry/v2-types';
 import BigNumber from 'bignumber.js';
 
 export const getOsmoAssetByDenom = (denom: CoinDenom): OsmosisAsset => {
@@ -43,7 +43,7 @@ export const symbolToOsmoDenom = (token: CoinSymbol): CoinDenom => {
 
 export const getExponentByDenom = (denom: CoinDenom): Exponent => {
   const asset = getOsmoAssetByDenom(denom);
-  const unit = asset.denom_units.find(({ denom }) => denom === asset.display);
+  const unit = asset.denomUnits.find(({ denom }) => denom === asset.display);
   // @ts-ignore
   return unit.exponent;
 };

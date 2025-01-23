@@ -1,5 +1,5 @@
-import { Coin } from '@cosmjs/stargate';
-import { useChain } from '@cosmos-kit/react';
+import { Coin } from '@interchainjs/cosmos-types/types';
+import { useChain } from '@interchain-kit/react';
 import { UseQueryResult } from '@tanstack/react-query';
 import { useEffect } from 'react';
 import { useQueryHooks } from './useQueryHooks';
@@ -7,9 +7,9 @@ import { useQueryHooks } from './useQueryHooks';
 export const useBalance = (chainName: string, enabled: boolean = true,
   displayDenom?: string
 ) => {
-  const { address, assets } = useChain(chainName);
-  let denom = assets?.assets[0].base!;
-  for (const asset of assets?.assets || []) {
+  const { address, assetList } = useChain(chainName);
+  let denom = assetList?.assets[0].base!;
+  for (const asset of assetList?.assets || []) {
     if (asset.display.toLowerCase() === displayDenom?.toLowerCase()) {
       denom = asset.base;
       break;

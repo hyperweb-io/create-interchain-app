@@ -1,6 +1,7 @@
-import { assets } from 'chain-registry';
-import { AssetList, Asset } from '@chain-registry/types';
-import { GeneratedType, Registry } from '@cosmjs/proto-signing';
+import { assetLists as assets } from '@chain-registry/v2';
+import { AssetList, Asset } from '@chain-registry/v2-types';
+import { GeneratedType } from '@interchainjs/cosmos-types/types';
+import { Registry } from '@cosmjs/proto-signing';
 import { AminoTypes } from '@cosmjs/stargate';
 import {
   cosmosAminoConverters,
@@ -17,7 +18,7 @@ export const defaultChainName = 'osmosis';
 export const KeplrWalletName = 'keplr-extension';
 
 export const chainassets: AssetList = assets.find(
-  (chain) => chain.chain_name === defaultChainName
+  (chain) => chain.chainName === defaultChainName
 ) as AssetList;
 
 export const coin: Asset = chainassets.assets.find(

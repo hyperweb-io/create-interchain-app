@@ -1,7 +1,6 @@
-// @ts-nocheck
 import Image from 'next/image';
 import { Box, ClipboardCopyText, Stack } from '@interchain-ui/react';
-import { WalletStatus } from 'cosmos-kit';
+import { WalletState } from '@interchain-kit/core';
 import React, { ReactNode, useEffect, useState } from 'react';
 
 const SIZES = {
@@ -91,11 +90,11 @@ export const CopyAddressBtn = ({
   walletStatus,
   connected,
 }: {
-  walletStatus: WalletStatus;
+  walletStatus: WalletState;
   connected: ReactNode;
 }) => {
   switch (walletStatus) {
-    case WalletStatus.Connected:
+    case WalletState.Connected:
       return <>{connected}</>;
     default:
       return <></>;

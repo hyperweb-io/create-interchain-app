@@ -1,21 +1,20 @@
-// @ts-nocheck
 import React from 'react';
 import { Text, Box } from '@interchain-ui/react';
 import AssetsOverview from './AssetsOverview';
-import { useChain } from '@cosmos-kit/react';
+import { useChain } from '@interchain-kit/react';
+import { WalletState } from '@interchain-kit/core'
 import { useAssets } from '../../hooks';
-import { ChainName } from 'cosmos-kit';
 
 interface AssetListSectionProps {
-  chainName: ChainName;
+  chainName: string;
   children?: React.ReactNode;
 }
 
 export const AssetListSection = ({ chainName }: AssetListSectionProps) => {
-  const { isWalletConnected } = useChain(chainName);
+  const { status } = useChain(chainName);
   const { data, isLoading, refetch } = useAssets(chainName);
 
-  if (!isWalletConnected) {
+  if (status !== WalletState.Connected) {
     return (
       <Box maxWidth="768px" marginX="auto" marginBottom="60px">
         <Text

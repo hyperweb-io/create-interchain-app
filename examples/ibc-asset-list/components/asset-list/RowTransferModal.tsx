@@ -1,12 +1,12 @@
 import React, { useEffect, useMemo, useState } from 'react';
 import { BasicModal, AssetWithdrawTokens } from '@interchain-ui/react';
-import { useChainWallet, useManager } from '@cosmos-kit/react';
+import { useChainWallet } from '@interchain-kit/react';
 import BigNumber from 'bignumber.js';
-import { ChainName } from 'cosmos-kit';
-import { coins, StdFee } from '@cosmjs/amino';
+import { StdFee } from '@interchainjs/cosmos-types/types';
 import { useDisclosure, useChainUtils, useBalance, useTx } from '@/hooks';
 import { KeplrWalletName } from '@/config';
 import { ibc } from 'osmo-query';
+import { chains } from '@chain-registry/v2'
 
 import { PriceHash, TransferInfo, Transfer } from './types';
 
@@ -17,7 +17,7 @@ interface IProps {
   transferInfo: TransferInfo;
   modalControl: ReturnType<typeof useDisclosure>;
   updateData: () => void;
-  selectedChainName: ChainName;
+  selectedChainName: string;
 }
 
 const TransferModalBody = (
@@ -70,7 +70,6 @@ const TransferModalBody = (
     transferInfo.token.symbol
   );
 
-  const { getChainLogo } = useManager();
   const { tx } = useTx(sourceChainName);
 
   const availableAmount = useMemo(() => {
@@ -114,7 +113,10 @@ const TransferModalBody = (
     );
 
     const fee: StdFee = {
-      amount: coins('1000', transferToken.denom ?? ''),
+      amount: [{
+        denom: transferToken.denom ?? '',
+        amount: '1000'
+      }],
       gas: '250000',
     };
 
@@ -150,20 +152,20 @@ const TransferModalBody = (
 
   const sourceChain = useMemo(() => {
     return {
-      name: sourceChainInfo.pretty_name,
+      name: sourceChainInfo.prettyName,
       address: sourceAddress ?? '',
-      imgSrc: getChainLogo(sourceChainName) ?? '',
+      imgSrc: chains.find(c => c.chainName === sourceChainName)?.logoURIs?.png
     };
-  }, [getChainLogo, sourceAddress, sourceChainInfo, sourceChainName]);
+  }, [sourceAddress, sourceChainInfo, sourceChainName]);
 
   const destChain = useMemo(() => {
     return {
-      symbol: destChainInfo.chain_name.toUpperCase(),
-      name: destChainInfo.pretty_name,
+      symbol: destChainInfo.chainName.toUpperCase(),
+      name: destChainInfo.prettyName,
       address: destAddress ?? '',
-      imgSrc: getChainLogo(destChainName) ?? '',
+      imgSrc: chains.find(c => c.chainName === destChainName)?.logoURIs?.png
     };
-  }, [destChainInfo, destAddress, getChainLogo, destChainName]);
+  }, [destChainInfo, destAddress, destChainName]);
 
   const handleSubmitTransfer = async () => {
     if (!sourceAddress || !destAddress) return;
@@ -179,7 +181,10 @@ const TransferModalBody = (
     );
 
     const fee: StdFee = {
-      amount: coins('1000', transferToken.denom ?? ''),
+      amount: [{
+        denom: transferToken.denom ?? '',
+        amount: '1000'
+      }],
       gas: '250000',
     };
 
@@ -217,12 +222,12 @@ const TransferModalBody = (
     <AssetWithdrawTokens
       isDropdown={false}
       fromSymbol={transferInfo.token.symbol}
-      fromName={sourceChain.name}
+      fromName={sourceChain.name!}
       fromAddress={sourceChain.address}
-      fromImgSrc={sourceChain.imgSrc}
-      toName={destChain.name}
+      fromImgSrc={sourceChain.imgSrc!}
+      toName={destChain.name!}
       toAddress={destChain.address}
-      toImgSrc={destChain.imgSrc}
+      toImgSrc={destChain.imgSrc!}
       isSubmitDisabled={
         isLoading ||
         !inputValue ||

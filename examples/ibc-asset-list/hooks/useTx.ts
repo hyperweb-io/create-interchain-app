@@ -1,8 +1,10 @@
 import { cosmos } from 'osmo-query';
-import { isDeliverTxSuccess, StdFee } from '@cosmjs/stargate';
+import { StdFee } from '@interchainjs/cosmos-types/types';
+import { isDeliverTxSuccess } from '@interchainjs/cosmos/utils/asserts';
 import { toast, ToastShape } from '@interchain-ui/react';
-import { useChain } from '@cosmos-kit/react';
+import { useChain } from '@interchain-kit/react';
 import { TxRaw } from 'osmo-query/dist/codegen/cosmos/tx/v1beta1/tx';
+import { assetLists } from '@chain-registry/v2';
 
 interface Msg {
   typeUrl: string;
@@ -24,7 +26,7 @@ export enum TxStatus {
 const txRaw = cosmos.tx.v1beta1.TxRaw;
 
 export const useTx = (chainName: string) => {
-  const { address, getSigningStargateClient, estimateFee } =
+  const { address, getSigningClient } =
     useChain(chainName);
 
   const tx = async (msgs: Msg[], options: TxOptions) => {
@@ -35,21 +37,22 @@ export const useTx = (chainName: string) => {
     }
 
     let signed: TxRaw;
-    let client: Awaited<ReturnType<typeof getSigningStargateClient>>;
+    let client: Awaited<ReturnType<typeof getSigningClient>>;
+
+    const assetList = assetLists.find((asset) => asset.chainName === chainName);
+    const denomUnit = assetList?.assets[0].denomUnits[0]
 
     try {
-      let fee: StdFee;
-      if (options?.fee) {
-        fee = options.fee;
-        client = await getSigningStargateClient();
-      } else {
-        const [_fee, _client] = await Promise.all([
-          estimateFee(msgs),
-          getSigningStargateClient(),
-        ]);
-        fee = _fee;
-        client = _client;
+      let fee = {
+        amount: [
+          {
+            denom: denomUnit?.denom!,
+            amount: (BigInt(10 ** (denomUnit?.exponent || 6)) / 100n).toString()
+          }
+        ],
+        gas: '200000'
       }
+      client = await getSigningClient();
       signed = await client.sign(address, msgs, fee, '');
     } catch (e: any) {
       console.error(e);
@@ -61,7 +64,7 @@ export const useTx = (chainName: string) => {
 
     if (client && signed) {
       const promise = client.broadcastTx(
-        Uint8Array.from(txRaw.encode(signed).finish())
+        Uint8Array.from(txRaw.encode(signed).finish()), {}
       );
 
       toast.promise(promise, {

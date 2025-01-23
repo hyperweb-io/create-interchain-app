@@ -1,5 +1,5 @@
-import { Coin } from '@cosmjs/stargate';
-import { useChain } from '@cosmos-kit/react';
+import { Coin } from '@interchainjs/cosmos-types/types';
+import { useChain } from '@interchain-kit/react';
 import { UseQueryResult } from '@tanstack/react-query';
 import BigNumber from 'bignumber.js';
 import { useEffect, useMemo } from 'react';

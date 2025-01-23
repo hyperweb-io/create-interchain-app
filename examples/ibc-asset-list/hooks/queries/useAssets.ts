@@ -1,6 +1,6 @@
 import { PrettyAsset } from '@/components';
-import { Coin } from '@cosmjs/stargate';
-import { useChain } from '@cosmos-kit/react';
+import { Coin } from '@interchainjs/cosmos-types/types';
+import { useChain } from '@interchain-kit/react';
 import { UseQueryResult } from '@tanstack/react-query';
 import BigNumber from 'bignumber.js';
 import { useEffect, useMemo } from 'react';
@@ -92,7 +92,7 @@ export const useAssets = (chainName: string) => {
       })
       .filter((asset) => {
         const isWithinLimit = ibcAssets.length <= MAX_TOKENS_TO_SHOW;
-        return isWithinLimit || topTokens.includes(asset.symbol);
+        return isWithinLimit || topTokens?.includes(asset.symbol);
       })
       .map((asset) => ({ denom: asset.base, amount: '0' }));
 
@@ -103,7 +103,7 @@ export const useAssets = (chainName: string) => {
         const dollarValue = calcCoinDollarValue(prices, { amount, denom });
         return {
           symbol,
-          logoUrl: asset.logo_URIs?.png || asset.logo_URIs?.svg,
+          logoUrl: asset.logoURIs?.png || asset.logoURIs?.svg,
           prettyChainName: getPrettyChainName(denom),
           displayAmount: convRawToDispAmount(denom, amount),
           dollarValue,

@@ -1,4 +1,3 @@
-// @ts-nocheck
 import * as React from 'react';
 import {
   Button,
@@ -9,7 +8,7 @@ import {
 } from '@interchain-ui/react';
 import { IoWallet } from 'react-icons/io5';
 import { FiAlertTriangle } from 'react-icons/fi';
-import { WalletStatus } from 'cosmos-kit';
+import { WalletState } from '@interchain-kit/core';
 
 interface IConnectWalletButton {
   buttonText?: string;
@@ -218,7 +217,7 @@ export const WalletConnectComponent = ({
   error,
   notExist,
 }: {
-  walletStatus: WalletStatus;
+  walletStatus: WalletState;
   disconnect: React.ReactNode;
   connecting: React.ReactNode;
   connected: React.ReactNode;
@@ -227,18 +226,14 @@ export const WalletConnectComponent = ({
   notExist: React.ReactNode;
 }) => {
   switch (walletStatus) {
-    case WalletStatus.Disconnected:
+    case WalletState.Disconnected:
       return <>{disconnect}</>;
-    case WalletStatus.Connecting:
+    case WalletState.Connecting:
       return <>{connecting}</>;
-    case WalletStatus.Connected:
+    case WalletState.Connected:
       return <>{connected}</>;
-    case WalletStatus.Rejected:
+    case WalletState.Rejected:
       return <>{rejected}</>;
-    case WalletStatus.Error:
-      return <>{error}</>;
-    case WalletStatus.NotExist:
-      return <>{notExist}</>;
     default:
       return <>{disconnect}</>;
   }

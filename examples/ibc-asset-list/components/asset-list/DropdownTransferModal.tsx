@@ -4,11 +4,11 @@ import {
   OverviewTransfer,
   OverviewTransferProps,
 } from '@interchain-ui/react';
-import { useChainWallet, useManager } from '@cosmos-kit/react';
+import { useChainWallet } from '@interchain-kit/react';
+import { chains } from '@chain-registry/v2'
 import BigNumber from 'bignumber.js';
 import { ibc } from 'osmo-query';
-import { StdFee, coins } from '@cosmjs/amino';
-import { ChainName } from 'cosmos-kit';
+import { StdFee } from '@interchainjs/cosmos-types/types';
 import { KeplrWalletName } from '@/config';
 import { useDisclosure, useChainUtils, useTx, useBalance } from '@/hooks';
 import { truncDecimals } from '@/utils';
@@ -36,7 +36,7 @@ interface OverviewTransferWrapperProps {
       React.SetStateAction<TransferInfo | undefined>
     >;
   };
-  selectedChainName: ChainName;
+  selectedChainName: string;
 }
 
 const OverviewTransferWrapper = (
@@ -92,7 +92,6 @@ const OverviewTransferWrapper = (
     KeplrWalletName
   );
 
-  const { getChainLogo } = useManager();
   const { tx } = useTx(sourceChainName);
 
   const availableAmount = useMemo((): number => {
@@ -142,7 +141,10 @@ const OverviewTransferWrapper = (
     );
 
     const fee: StdFee = {
-      amount: coins('1000', transferToken.denom ?? ''),
+      amount: [{
+        denom: transferToken.denom ?? '',
+        amount: '1000'
+      }],
       gas: '250000',
     };
 
@@ -239,8 +241,8 @@ const OverviewTransferWrapper = (
         new BigNumber(inputValue).isEqualTo(0) ||
         isNaN(Number(inputValue))
       }
-      fromChainLogoUrl={getChainLogo(transferInfo?.sourceChainName ?? '') ?? ''}
-      toChainLogoUrl={getChainLogo(transferInfo?.destChainName ?? '') ?? ''}
+      fromChainLogoUrl={chains.find(c => c.chainName === transferInfo?.sourceChainName)?.logoURIs?.png || ''}
+      toChainLogoUrl={chains.find(c => c.chainName === transferInfo?.destChainName)?.logoURIs?.png || ''}
       dropdownList={assetOptions}
       onTransfer={() => {
         handleTransferSubmit();

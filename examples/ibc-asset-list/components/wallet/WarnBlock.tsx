@@ -1,7 +1,6 @@
-// @ts-nocheck
 import React, { ReactNode } from 'react';
 import { Box, Text, useColorModeValue } from '@interchain-ui/react';
-import { WalletStatus } from 'cosmos-kit';
+import { WalletState as WalletStatus } from '@interchain-kit/core';
 
 export const WarnBlock = ({
   wordOfWarning,
@@ -92,8 +91,6 @@ export const ConnectStatusWarn = ({
   switch (walletStatus) {
     case WalletStatus.Rejected:
       return <>{rejected}</>;
-    case WalletStatus.Error:
-      return <>{error}</>;
     default:
       return <></>;
   }
