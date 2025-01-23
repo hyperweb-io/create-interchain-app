@@ -1,4 +1,4 @@
-import { useChain } from '@cosmos-kit/react';
+import { useChain } from '@interchain-kit/react';
 import {
   useRpcEndpoint,
   useRpcClient,

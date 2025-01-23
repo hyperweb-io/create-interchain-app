@@ -6,14 +6,14 @@ export type Project = {
 
 export const products: Project[] = [
   {
-    name: 'Cosmos Kit',
+    name: 'Interchain Kit',
     desc: 'A wallet adapter for react with mobile WalletConnect support for the Cosmos ecosystem.',
-    link: 'https://github.com/cosmology-tech/cosmos-kit',
+    link: 'https://github.com/hyperweb-io/interchain-kit',
   },
   {
     name: 'Telescope',
     desc: 'A TypeScript Transpiler for Cosmos Protobufs to generate libraries for Cosmos blockchains.',
-    link: 'https://github.com/cosmology-tech/telescope',
+    link: 'https://github.com/hyperweb-io/telescope',
   },
   {
     name: 'TS Codegen',
@@ -28,12 +28,12 @@ export const products: Project[] = [
   {
     name: 'Chain Registry',
     desc: 'Get chain and asset list information from the npm package for the Official Cosmos chain registry.',
-    link: 'https://github.com/cosmology-tech/chain-registry',
+    link: 'https://github.com/hyperweb-io/chain-registry',
   },
   {
     name: 'Videos',
-    desc: 'How-to videos from the official Cosmology website, with learning resources for building in Cosmos.',
-    link: 'https://cosmology.tech/learn',
+    desc: 'How-to videos from the official HyperWeb website, with learning resources for building in Cosmos.',
+    link: 'https://hyperweb.io/learn',
   },
 ];
 

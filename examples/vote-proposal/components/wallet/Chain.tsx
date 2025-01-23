@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState } from "react";
-import { Chain } from "@chain-registry/types";
+import { Chain } from "@chain-registry/v2-types";
 import { matchSorter } from "match-sorter";
 import {
   Avatar,
@@ -30,7 +30,7 @@ export function ChainSelect({
   const cache = useMemo(
     () =>
       chains.reduce(
-        (cache, chain) => (cache[chain.chain_name] = chain, cache),
+        (cache, chain) => (cache[chain.chainName] = chain, cache),
         {} as Record<string, Chain[][number]>,
       ),
     [chains],
@@ -40,9 +40,9 @@ export function ChainSelect({
     matchSorter(
       chains
         .map((chain) => ({
-          logo: chain.logo_URIs?.png || chain.logo_URIs?.svg || "",
-          value: chain.chain_name,
-          label: chain.pretty_name,
+          logo: chain.logoURIs?.png || chain.logoURIs?.svg || "",
+          value: chain.chainName,
+          label: chain.prettyName,
         }))
         .filter((chain) => chain.value && chain.label),
       input,
@@ -56,13 +56,13 @@ export function ChainSelect({
       const chain = cache[chainName];
 
       if (chain) {
-        setValue(chain.chain_name);
-        setInput(chain.pretty_name || '');
+        setValue(chain.chainName);
+        setInput(chain.prettyName || '');
       }
     }
   }, [chains, chainName]);
 
-  const avatar = cache[value!]?.logo_URIs?.png || cache[value!]?.logo_URIs?.svg;
+  const avatar = cache[value!]?.logoURIs?.png || cache[value!]?.logoURIs?.svg;
 
   return (
     <ThemeProvider>
@@ -84,7 +84,7 @@ export function ChainSelect({
             if (name) {
               setValue(name);
               if (cache[name]) {
-                onChange(cache[name].chain_name);
+                onChange(cache[name].chainName);
               }
             }
           }}

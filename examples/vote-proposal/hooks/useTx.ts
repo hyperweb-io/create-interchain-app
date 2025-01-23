@@ -1,6 +1,8 @@
 import { cosmos } from 'interchain-query';
-import { useChain } from '@cosmos-kit/react';
-import { DeliverTxResponse, isDeliverTxSuccess, StdFee } from '@cosmjs/stargate';
+import { useChain } from '@interchain-kit/react';
+import { assetLists } from '@chain-registry/v2'
+import { DeliverTxResponse, StdFee } from '@interchainjs/cosmos-types/types'
+import { isDeliverTxSuccess } from '@interchainjs/cosmos/utils/asserts'
 
 export type Msg = {
   typeUrl: string;
@@ -43,7 +45,16 @@ export class TxResult {
 }
 
 export function useTx(chainName: string) {
-  const { address, getSigningStargateClient, estimateFee } = useChain(chainName);
+  const {
+    address,
+    // getSigningStargateClient, 
+    getSigningClient,
+    // estimateFee // no estimateFee in interchain-kit
+  } = useChain(chainName);
+  const assetList = assetLists.find((asset) => asset.chainName === chainName);
+  const denom = assetList?.assets[0].base!
+  const denomUnit = assetList?.assets[0].denomUnits[0]
+  console.log('denom', denom)
 
   async function tx(msgs: Msg[], options: TxOptions = {}) {
     if (!address) {
@@ -52,15 +63,22 @@ export function useTx(chainName: string) {
 
     try {
       const txRaw = cosmos.tx.v1beta1.TxRaw;
-      const fee = options.fee || await estimateFee(msgs);
-      const client = await getSigningStargateClient();
+      const fee = {
+        amount: [
+          {
+            denom: denomUnit?.denom!,
+            amount: (BigInt(10 ** (denomUnit?.exponent || 6)) / 100n).toString()
+          }
+        ],
+        gas: '200000'
+      }
+      const client = await getSigningClient();
       const signed = await client.sign(address, msgs, fee, '');
 
       if (!client) return new TxResult({ error: new TxError('Invalid stargate client') });
       if (!signed) return new TxResult({ error: new TxError('Invalid transaction') });
 
-      const response = await client.broadcastTx(Uint8Array.from(txRaw.encode(signed).finish()));
-      // Type error: Argument of type 'import("/Users/redacted/code/cosmology/products/create-cosmos-app/node_modules/@cosmos-kit/core/node_modules/@cosmjs/stargate/build/stargateclient").DeliverTxResponse' is not assignable to parameter of type 'import("/Users/redacted/code/cosmology/products/create-cosmos-app/node_modules/@cosmjs/stargate/build/stargateclient").DeliverTxResponse'.
+      const response = await client.broadcastTx(Uint8Array.from(txRaw.encode(signed).finish()), {});
       // Types of property 'gasUsed' are incompatible.
       //   Type 'bigint' is not assignable to type 'number'.
       // @ts-ignore

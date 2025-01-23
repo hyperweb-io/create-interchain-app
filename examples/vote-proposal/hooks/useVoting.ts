@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import { cosmos } from 'interchain-query';
 import { toast } from '@interchain-ui/react';
-import { useChain } from '@cosmos-kit/react';
-import { coins, StdFee } from '@cosmjs/stargate';
+import { useChain } from '@interchain-kit/react';
+import { StdFee } from '@interchainjs/cosmos-types/types';
 import { Proposal } from "interchain-query/cosmos/gov/v1/gov";
 import { useTx } from '@/hooks';
 import { getCoin } from '@/utils';
@@ -37,7 +37,10 @@ export function useVoting({ chainName, proposal }: useVotingOptions) {
     });
 
     const fee: StdFee = {
-      amount: coins('1000', coin.base),
+      amount: [{
+        amount: '10000',
+        denom: coin.base,
+      }],
       gas: '100000',
     };
 

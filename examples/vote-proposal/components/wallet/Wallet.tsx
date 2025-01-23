@@ -5,9 +5,9 @@ import {
   Stack,
   useColorModeValue,
 } from "@interchain-ui/react";
-import { WalletStatus } from "@cosmos-kit/core";
-import { useChain } from "@cosmos-kit/react";
-import { chains } from "chain-registry";
+import { WalletState } from "@interchain-kit/core";
+import { useChain } from "@interchain-kit/react";
+import { chains } from "@chain-registry/v2";
 import { ChainSelect } from "./Chain";
 import { Warning } from "./Warning";
 import { User } from "./User";
@@ -31,7 +31,7 @@ export type WalletProps = {
 
 export function Wallet({
   chainName = CHAIN_NAME,
-  onChainChange = () => {},
+  onChainChange = () => { },
 }: WalletProps) {
   const {
     chain,
@@ -45,12 +45,12 @@ export function Wallet({
   } = useChain(chainName);
 
   const ConnectButton = {
-    [WalletStatus.Connected]: <ButtonConnected onClick={openView} />,
-    [WalletStatus.Connecting]: <ButtonConnecting />,
-    [WalletStatus.Disconnected]: <ButtonDisconnected onClick={connect} />,
-    [WalletStatus.Error]: <ButtonError onClick={openView} />,
-    [WalletStatus.Rejected]: <ButtonRejected onClick={connect} />,
-    [WalletStatus.NotExist]: <ButtonNotExist onClick={openView} />,
+    [WalletState.Connected]: <ButtonConnected onClick={openView} />,
+    [WalletState.Connecting]: <ButtonConnecting />,
+    [WalletState.Disconnected]: <ButtonDisconnected onClick={connect} />,
+    // [WalletState.Error]: <ButtonError onClick={openView} />,
+    [WalletState.Rejected]: <ButtonRejected onClick={connect} />,
+    // [WalletState.NotExist]: <ButtonNotExist onClick={openView} />,
   }[status] || <ButtonConnect onClick={connect} />;
 
   function handleChainChange(chainName?: string) {
@@ -72,7 +72,7 @@ export function Wallet({
       <Box mx="auto" maxWidth="28rem" attributes={{ mb: "$12" }}>
         <ChainSelect
           chains={chains}
-          chainName={chain.chain_name}
+          chainName={chain.chainName}
           onChange={handleChainChange}
         />
       </Box>
@@ -110,8 +110,8 @@ export function Wallet({
         </Box>
 
         {message &&
-            [WalletStatus.Error, WalletStatus.Rejected].includes(status)
-          ? <Warning text={`${wallet?.prettyName}: ${message}`} />
+          [WalletState.Rejected].includes(status)
+          ? <Warning text={`${wallet?.info?.prettyName}: ${message}`} />
           : null}
       </Stack>
     </Box>

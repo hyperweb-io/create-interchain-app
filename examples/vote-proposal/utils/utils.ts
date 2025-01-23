@@ -1,11 +1,11 @@
 import dayjs from 'dayjs';
 import BigNumber from 'bignumber.js';
-import { Chain } from '@chain-registry/types';
-import { assets } from 'chain-registry';
-import { AssetList, Asset } from '@chain-registry/types';
+import { Chain } from '@chain-registry/v2-types';
+import { assetLists } from '@chain-registry/v2';
+import { AssetList, Asset } from '@chain-registry/v2-types';
 
 export function getChainLogo(chain: Chain) {
-  return chain.logo_URIs?.svg || chain.logo_URIs?.png;
+  return chain.logoURIs?.svg || chain.logoURIs?.png;
 }
 
 export function formatDate(date?: Date) {
@@ -28,7 +28,7 @@ export function percent(num: number | string = 0, total: number, decimals = 2) {
 }
 
 export const getChainAssets = (chainName: string) => {
-  return assets.find((chain) => chain.chain_name === chainName) as AssetList;
+  return assetLists.find((chain) => chain.chainName === chainName) as AssetList;
 };
 
 export const getCoin = (chainName: string) => {
@@ -37,7 +37,7 @@ export const getCoin = (chainName: string) => {
 };
 
 export const getExponent = (chainName: string) => {
-  return getCoin(chainName).denom_units.find(
+  return getCoin(chainName).denomUnits.find(
     (unit) => unit.denom === getCoin(chainName).display
   )?.exponent as number;
 };
