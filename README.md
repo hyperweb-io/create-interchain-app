@@ -6,8 +6,8 @@
 
 <p align="center" width="100%">
    <a href="https://www.npmjs.com/package/create-interchain-app"><img height="20" src="https://img.shields.io/npm/dt/create-interchain-app"></a>
-   <a href="https://github.com/cosmology-tech/create-interchain-app/blob/main/LICENSE"><img height="20" src="https://img.shields.io/badge/license-MIT-blue.svg"></a>
-   <a href="https://www.npmjs.com/package/create-interchain-app"><img height="20" src="https://img.shields.io/github/package-json/v/cosmology-tech/create-interchain-app?filename=packages%2Fcreate-interchain-app%2Fpackage.json"></a>
+   <a href="https://github.com/hyperweb-io/create-interchain-app/blob/main/LICENSE"><img height="20" src="https://img.shields.io/badge/license-MIT-blue.svg"></a>
+   <a href="https://www.npmjs.com/package/create-interchain-app"><img height="20" src="https://img.shields.io/github/package-json/v/hyperweb-io/create-interchain-app?filename=packages%2Fcreate-interchain-app%2Fpackage.json"></a>
 </p>
 
 Set up a modern Cosmos app by running one command ⚛️
@@ -58,17 +58,17 @@ You don’t need to install or configure cosmjs, keplr, nextjs, webpack or Babel
 
 Everything is preconfigured, ready-to-go, so you can focus on your code!
 
-- ⚡️ Connect easily to 20+ wallets via [Interchain Kit](https://github.com/cosmology-tech/interchain-kit) — including Ledger, Keplr, Cosmostation, Leap, Trust Wallet, OKX, XDEFI, Exodus, Wallet Connect and more!
-- ⚛️ Sign and broadcast with [cosmjs](https://github.com/cosmos/cosmjs) stargate + cosmwasm signers
-- 🎨 Build awesome UI with [Interchain UI](https://cosmology.zone/products/interchain-ui) and [Explore Components](https://cosmology.zone/components)
+- ⚡️ Connect easily to 20+ wallets via [Interchain Kit](https://github.com/hyperweb-io/interchain-kit) — including Ledger, Keplr, Cosmostation, Leap, Trust Wallet, OKX, XDEFI, Exodus, Wallet Connect and more!
+- ⚛️ Sign and broadcast with [interchainjs](https://github.com/hyperweb-io/interchainjs) stargate + cosmwasm signers
+- 🎨 Build awesome UI with [Interchain UI](https://hyperweb.io/products/interchain-ui) and [Explore Components](https://hyperweb.io/components)
 - 🛠 Render pages with [next.js](https://nextjs.org/) hybrid static & server rendering
-- 📝 Leverage [chain-registry](https://github.com/cosmology-tech/chain-registry) for Chain and Asset info for all Cosmos chains
+- 📝 Leverage [chain-registry](https://github.com/hyperweb-io/chain-registry) for Chain and Asset info for all Cosmos chains
 
 ## Education & Resources
 
-🎥 [Checkout our videos](https://cosmology.zone/learn) to learn to learn more about `create-interchain-app` and tooling for building frontends in the Cosmos!
+🎥 [Checkout our videos](https://hyperweb.io/learn) to learn to learn more about `create-interchain-app` and tooling for building frontends in the Cosmos!
 
-Checkout [interchain-kit](https://github.com/cosmology-tech/interchain-kit) for more docs as well as [interchain-kit/react](https://github.com/cosmology-tech/interchain-kit/tree/main/packages/react#signing-clients) for getting cosmjs stargate and cosmjs signers.
+Checkout [interchain-kit](https://github.com/hyperweb-io/interchain-kit) for more docs as well as [interchain-kit/react](https://github.com/hyperweb-io/interchain-kit/tree/main/packages/react#signing-clients) for getting cosmjs stargate and cosmjs signers.
 
 ## Creating an App
 
@@ -101,13 +101,13 @@ npx create-interchain-app
 ### npm
 
 ```sh
-npm init cosmos-app
+npm init interchain-app
 ```
 
 ### Yarn
 
 ```sh
-yarn create cosmos-app
+yarn create interchain-app
 ```
 
 ## Examples
@@ -214,7 +214,7 @@ cia --name liquidity-example --example provide-liquidity
 Create and manage an asset list, offering comprehensive insights into the available assets, and empower your application with Inter-Blockchain Communication (IBC) capabilities for transferring tokens across different chains.
 
 ```
-cia --name asset-list-example --example asset-list
+cia --name ibc-asset-list-example --example ibc-asset-list
 ```
 
 ### NFT
@@ -223,7 +223,7 @@ cia --name asset-list-example --example asset-list
     <img height="48" src="https://user-images.githubusercontent.com/545047/184694732-f4a3d397-14fb-415a-9562-a532f510f812.png" />
 </p>
 
-Incorporate NFT functionalities into your Stargaze app using [stargazejs](https://github.com/cosmology-tech/stargazejs), enabling seamless NFT minting, transfer, and management.
+Incorporate NFT functionalities into your Stargaze app using [stargazejs](https://github.com/hyperweb-io/stargazejs), enabling seamless NFT minting, transfer, and management.
 
 ```
 cia --name nft-example --example nft
@@ -263,17 +263,17 @@ yarn locks
 
 Checkout these related projects:
 
-- [@cosmology/telescope](https://github.com/cosmology-tech/telescope) Your Frontend Companion for Building with TypeScript with Cosmos SDK Modules.
+- [@cosmology/telescope](https://github.com/hyperweb-io/telescope) Your Frontend Companion for Building with TypeScript with Cosmos SDK Modules.
 - [@cosmwasm/ts-codegen](https://github.com/CosmWasm/ts-codegen) Convert your CosmWasm smart contracts into dev-friendly TypeScript classes.
-- [chain-registry](https://github.com/cosmology-tech/chain-registry) Everything from token symbols, logos, and IBC denominations for all assets you want to support in your application.
-- [interchain-kit](https://github.com/cosmology-tech/interchain-kit) Experience the convenience of connecting with a variety of web3 wallets through a single, streamlined interface.
-- [create-interchain-app](https://github.com/cosmology-tech/create-interchain-app) Set up a modern Cosmos app by running one command.
-- [interchain-ui](https://github.com/cosmology-tech/interchain-ui) The Interchain Design System, empowering developers with a flexible, easy-to-use UI kit.
-- [starship](https://github.com/cosmology-tech/starship) Unified Testing and Development for the Interchain.
+- [chain-registry](https://github.com/hyperweb-io/chain-registry) Everything from token symbols, logos, and IBC denominations for all assets you want to support in your application.
+- [interchain-kit](https://github.com/hyperweb-io/interchain-kit) Experience the convenience of connecting with a variety of web3 wallets through a single, streamlined interface.
+- [create-interchain-app](https://github.com/hyperweb-io/create-interchain-app) Set up a modern Cosmos app by running one command.
+- [interchain-ui](https://github.com/hyperweb-io/interchain-ui) The Interchain Design System, empowering developers with a flexible, easy-to-use UI kit.
+- [starship](https://github.com/hyperweb-io/starship) Unified Testing and Development for the Interchain.
 
 ## Credits
 
-🛠 Built by Cosmology — if you like our tools, please consider delegating to [our validator ⚛️](https://cosmology.zone/validator)
+🛠 Built by HyperWeb — if you like our tools, please consider delegating to [our validator ⚛️](https://hyperweb.io/validator)
 
 ## Disclaimer
 
