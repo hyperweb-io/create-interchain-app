@@ -40,7 +40,7 @@ export function Header() {
             marginBottom: '$2',
           }}
         >
-          Create Cosmos App
+          Create Interchain App
         </Text>
         <Text as="h2" fontWeight="$bold">
           <Text
