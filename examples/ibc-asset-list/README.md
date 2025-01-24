@@ -26,7 +26,7 @@ Checkout more videos for how to use various frontend tooling in the Cosmos!
 
 * https://hyperweb.io/learn
 
-### Cosmos Kit
+### Interchain Kit
 
 A wallet connector for the Cosmos ⚛️
 

@@ -2,7 +2,7 @@
 import { Link, Box, Button, Icon, Text, useTheme } from '@interchain-ui/react';
 import { dependencies } from '@/config';
 
-const stacks = ['Cosmos Kit', 'Next.js'];
+const stacks = ['Interchain Kit', 'Next.js'];
 
 const osmojs = dependencies[0];
 
@@ -37,7 +37,7 @@ export function Header() {
             marginBottom: '$6',
           }}
         >
-          Create Cosmos App
+          Create Interchain App
         </Text>
         <Text as="h1" fontWeight="$bold">
           <Text

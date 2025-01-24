@@ -1,7 +1,6 @@
 import { useMemo } from 'react';
-import { Asset, AssetList } from '@chain-registry/v2-types';
-import { asset_lists as ibcAssetLists } from '@chain-registry/assets';
-import { assetLists as chainAssets, ibcData as ibc } from '@chain-registry/v2';
+import { Asset } from '@chain-registry/v2-types';
+import { assetLists, ibcData as ibc } from '@chain-registry/v2';
 import { CoinDenom, CoinSymbol, Exponent, PriceHash } from '../utils/types';
 import BigNumber from 'bignumber.js';
 import { Coin } from '@interchainjs/cosmos-types/types';
@@ -10,21 +9,9 @@ import { chains } from '@chain-registry/v2'
 
 export const useChainUtils = (chainName: string) => {
 
-  const filterAssets = (assetList: AssetList[]): Asset[] => {
-    return (
-      assetList
-        .find(({ chainName }) => chainName === chainName)
-        ?.assets?.filter(({ typeAsset }) => typeAsset !== 'ics20')
-      // @ts-ignore
-      // || assetList.find(({ chain_name }) => chain_name === chainName)?.assets?.filter(({ type_asset }) => type_asset !== 'ics20')
-      || []
-    );
-  };
-
   const { nativeAssets, ibcAssets } = useMemo(() => {
-    const nativeAssets = filterAssets(chainAssets);
-    const ibcAssets = filterAssets(ibcAssetLists);
-
+    const nativeAssets = assetLists.find(a => a.chainName === chainName)?.assets.filter(a => a.typeAsset !== 'ics20')!
+    const ibcAssets = assetLists.find(a => a.chainName === chainName)?.assets.filter(a => a.typeAsset === 'ics20')!
     return { nativeAssets, ibcAssets };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [chainName]);
