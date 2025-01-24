@@ -4,8 +4,8 @@ import {
   Stack,
   useColorModeValue,
 } from "@interchain-ui/react";
-import { WalletStatus } from "cosmos-kit";
-import { useChain } from "@cosmos-kit/react";
+import { WalletState as WalletStatus } from "@interchain-kit/core";
+import { useChain } from "@interchain-kit/react";
 import { getChainLogo } from "@/utils";
 import { CHAIN_NAME } from "@/config";
 import { User } from "./User";
@@ -37,17 +37,17 @@ export function Wallet() {
     [WalletStatus.Connected]: <ButtonConnected onClick={openView} />,
     [WalletStatus.Connecting]: <ButtonConnecting />,
     [WalletStatus.Disconnected]: <ButtonDisconnected onClick={connect} />,
-    [WalletStatus.Error]: <ButtonError onClick={openView} />,
+    // [WalletStatus.Error]: <ButtonError onClick={openView} />,
     [WalletStatus.Rejected]: <ButtonRejected onClick={connect} />,
-    [WalletStatus.NotExist]: <ButtonNotExist onClick={openView} />,
+    // [WalletStatus.NotExist]: <ButtonNotExist onClick={openView} />,
   }[status] || <ButtonConnect onClick={connect} />;
 
   return (
     <Box py="$16">
       <Stack attributes={{ mb: "$12", justifyContent: "center" }}>
         <Chain
-          name={chain.pretty_name}
-          logo={getChainLogo(chain.chain_name)!}
+          name={chain.prettyName!}
+          logo={getChainLogo(chain.chainName)!}
         />
       </Stack>
       <Stack
@@ -83,8 +83,11 @@ export function Wallet() {
           {ConnectButton}
         </Box>
 
-        {message && [WalletStatus.Error, WalletStatus.Rejected].includes(status)
-          ? <Warning text={`${wallet?.prettyName}: ${message}`} />
+        {message && [
+          // WalletStatus.Error,
+          WalletStatus.Rejected
+        ].includes(status)
+          ? <Warning text={`${wallet?.info?.prettyName}: ${message}`} />
           : null}
       </Stack>
     </Box>

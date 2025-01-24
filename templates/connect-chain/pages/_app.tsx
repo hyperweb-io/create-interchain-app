@@ -2,9 +2,10 @@ import "../styles/globals.css";
 import "@interchain-ui/react/styles";
 
 import type { AppProps } from "next/app";
-import { SignerOptions, wallets } from "cosmos-kit";
-import { ChainProvider } from "@cosmos-kit/react";
-import { assets, chains } from "chain-registry";
+import { ChainProvider } from "@interchain-kit/react";
+import { assetLists, chains } from "@chain-registry/v2";
+import { keplrWallet } from "@interchain-kit/keplr-extension";
+import { leapWallet } from "@interchain-kit/leap-extension";
 import {
   Box,
   ThemeProvider,
@@ -12,37 +13,23 @@ import {
   useTheme,
 } from "@interchain-ui/react";
 
+const chain = chains.find((chain) => chain.chainName === 'cosmoshub')!
+
+console.log('keplrWallet', keplrWallet)
+
 function CreateCosmosApp({ Component, pageProps }: AppProps) {
   const { themeClass } = useTheme();
-
-  const signerOptions: SignerOptions = {
-    // signingStargate: () => {
-    //   return getSigningCosmosClientOptions();
-    // }
-  };
 
   return (
     <ThemeProvider>
       <ChainProvider
+        chains={[{ ...chain }]}
+        assetLists={assetLists}
         // @ts-ignore
-        chains={chains}
-        // @ts-ingore
-        assetLists={assets}
-        wallets={wallets}
-        walletConnectOptions={{
-          signClient: {
-            projectId: "a8510432ebb71e6948cfd6cde54b70f7",
-            relayUrl: "wss://relay.walletconnect.org",
-            metadata: {
-              name: 'Interchain Kit dApp',
-              description: 'Interchain Kit dApp built by Create Interchain App',
-              url: "https://docs.cosmology.zone/interchain-kit/",
-              icons: [],
-            },
-          },
-        }}
+        wallets={[keplrWallet, leapWallet]}
         // @ts-ignore
-        signerOptions={signerOptions}
+        signerOptions={{}}
+        endpointOptions={{ endpoints: {} }}
       >
         <Box
           className={themeClass}

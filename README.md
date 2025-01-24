@@ -54,15 +54,17 @@ Now your app should be running on `http://localhost:3000`!
 
 ### Get Started Immediately
 
-You don’t need to install or configure cosmjs, keplr, nextjs, webpack or Babel.
+#### Interchain JavaScript Stack Template
+
+This template provides everything you need to build modern Interchain applications. You don't need to install or configure interchainjs, keplr, nextjs, webpack or Babel.
 
 Everything is preconfigured, ready-to-go, so you can focus on your code!
 
-- ⚡️ Connect easily to 20+ wallets via [Interchain Kit](https://github.com/hyperweb-io/interchain-kit) — including Ledger, Keplr, Cosmostation, Leap, Trust Wallet, OKX, XDEFI, Exodus, Wallet Connect and more!
-- ⚛️ Sign and broadcast with [interchainjs](https://github.com/hyperweb-io/interchainjs) stargate + cosmwasm signers
-- 🎨 Build awesome UI with [Interchain UI](https://hyperweb.io/products/interchain-ui) and [Explore Components](https://hyperweb.io/components)
+- ⚡️ Connect easily to 20+ wallets via [Interchain Kit](https://github.com/hyperweb-io/interchain-kit) — including Ledger, Keplr, Cosmostation, Leap, Trust Wallet, OKX, XDEFI, Exodus, Wallet Connect and more!
+- ⚛️ Sign and broadcast with [InterchainJS](https://github.com/hyperweb-io/interchainjs)
+- 🎨 Build awesome UI with [Interchain UI](https://cosmology.zone/products/interchain-ui) and [Explore Components](https://hyperweb.io/components)
 - 🛠 Render pages with [next.js](https://nextjs.org/) hybrid static & server rendering
-- 📝 Leverage [chain-registry](https://github.com/hyperweb-io/chain-registry) for Chain and Asset info for all Cosmos chains
+- 📝 Leverage [chain-registry](https://github.com/hyperweb-io/chain-registry) for Chain and Asset info for all IBC-connected chains
 
 ## Education & Resources
 
@@ -263,7 +265,7 @@ yarn locks
 
 Checkout these related projects:
 
-- [@cosmology/telescope](https://github.com/hyperweb-io/telescope) Your Frontend Companion for Building with TypeScript with Cosmos SDK Modules.
+- [telescope](https://github.com/cosmology-tech/telescope) Your Frontend Companion for Building with TypeScript with Cosmos SDK Modules.
 - [@cosmwasm/ts-codegen](https://github.com/CosmWasm/ts-codegen) Convert your CosmWasm smart contracts into dev-friendly TypeScript classes.
 - [chain-registry](https://github.com/hyperweb-io/chain-registry) Everything from token symbols, logos, and IBC denominations for all assets you want to support in your application.
 - [interchain-kit](https://github.com/hyperweb-io/interchain-kit) Experience the convenience of connecting with a variety of web3 wallets through a single, streamlined interface.
@@ -273,7 +275,7 @@ Checkout these related projects:
 
 ## Credits
 
-🛠 Built by HyperWeb — if you like our tools, please consider delegating to [our validator ⚛️](https://hyperweb.io/validator)
+🛠 Built by Hyperweb (formerly Cosmology) — if you like our tools, please checkout and contribute to [our github ⚛️](https://github.com/hyperweb-io)
 
 ## Disclaimer
 

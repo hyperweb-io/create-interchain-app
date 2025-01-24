@@ -1,11 +1,11 @@
-import { chains } from 'chain-registry';
-import { Asset, Chain } from '@chain-registry/types';
+import { chains } from '@chain-registry/v2';
+import { Asset, Chain } from '@chain-registry/v2-types';
 
 export function getLogo(from: Asset | Chain) {
-  return from.logo_URIs?.svg || from.logo_URIs?.png;
+  return from.logoURIs?.svg || from.logoURIs?.png;
 }
 
 export function getChainLogo(name: string) {
-  const chain = chains.find(chain => chain.chain_name === name)
+  const chain = chains.find(chain => chain.chainName === name)
   return chain ? getLogo(chain) : null;
 }

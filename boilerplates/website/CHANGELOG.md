@@ -429,4 +429,4 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 ## 0.1.1 (2022-08-24)
 
-**Note:** Version bump only for package @cosmos-app/connect-chain
+**Note:** Version bump only for package @interchain-app/connect-chain
