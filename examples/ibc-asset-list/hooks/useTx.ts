@@ -5,6 +5,11 @@ import { toast, ToastShape } from '@interchain-ui/react';
 import { useChain } from '@interchain-kit/react';
 import { TxRaw } from 'osmo-query/dist/codegen/cosmos/tx/v1beta1/tx';
 import { assetLists } from '@chain-registry/v2';
+import {
+  toConverters,
+  toEncoders,
+} from '@interchainjs/cosmos/utils';
+import { MsgTransfer } from 'interchainjs/ibc/applications/transfer/v1/tx';
 
 interface Msg {
   typeUrl: string;
@@ -47,12 +52,14 @@ export const useTx = (chainName: string) => {
         amount: [
           {
             denom: denomUnit?.denom!,
-            amount: (BigInt(10 ** (denomUnit?.exponent || 6)) / 100n).toString()
+            amount: (BigInt(10 ** (denomUnit?.exponent || 6)) / 10n).toString()
           }
         ],
-        gas: '200000'
+        gas: '800000'
       }
       client = await getSigningClient();
+      client.addEncoders(toEncoders(MsgTransfer))
+      client.addConverters(toConverters(MsgTransfer))
       signed = await client.sign(address, msgs, fee, '');
     } catch (e: any) {
       console.error(e);
@@ -74,7 +81,7 @@ export const useTx = (chainName: string) => {
             if (options.onSuccess) options.onSuccess();
             return options.toast?.title || TxStatus.Successful;
           } else {
-            console.error(data?.rawLog);
+            console.error(data);
             return {
               message: TxStatus.Failed,
               toastType: 'error',

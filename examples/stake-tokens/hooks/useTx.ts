@@ -4,8 +4,9 @@ import { StdFee } from '@interchainjs/cosmos-types/types';
 import { isDeliverTxSuccess } from '@interchainjs/cosmos/utils/asserts'
 import { useToast, type CustomToast } from './useToast';
 import { assetLists } from '@chain-registry/v2';
-import { toEncoders } from '@interchainjs/cosmos/utils'
-import { MsgDelegate, MsgUndelegate } from 'interchainjs/cosmos/staking/v1beta1/tx'
+import { toEncoders, toConverters } from '@interchainjs/cosmos/utils'
+import { MsgDelegate, MsgUndelegate, MsgBeginRedelegate } from 'interchainjs/cosmos/staking/v1beta1/tx'
+import { MsgWithdrawDelegatorReward } from 'interchainjs/cosmos/distribution/v1beta1/tx'
 
 const txRaw = cosmos.tx.v1beta1.TxRaw;
 
@@ -55,13 +56,14 @@ export const useTx = (chainName: string) => {
         amount: [
           {
             denom: denomUnit?.denom!,
-            amount: (BigInt(10 ** (denomUnit?.exponent || 6)) / 100n).toString()
+            amount: (BigInt(10 ** (denomUnit?.exponent || 6)) / 10n).toString()
           }
         ],
-        gas: '200000'
+        gas: '800000'
       }
       client = await getSigningClient();
-      client.addEncoders(toEncoders(MsgDelegate, MsgUndelegate))
+      client.addEncoders(toEncoders(MsgDelegate, MsgUndelegate, MsgBeginRedelegate, MsgWithdrawDelegatorReward))
+      client.addConverters(toConverters(MsgDelegate, MsgUndelegate, MsgBeginRedelegate, MsgWithdrawDelegatorReward))
       signed = await client.sign(address, msgs, fee, '');
     } catch (e: any) {
       console.error(e);

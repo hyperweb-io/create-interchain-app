@@ -65,8 +65,8 @@ const Overview = ({
       <Box mb={{ mobile: '$8', tablet: '$12' }}>
         <StakingAssetHeader
           imgSrc={
-            coin.logo_URIs?.png ||
-            coin.logo_URIs?.svg ||
+            coin.logoURIs?.png ||
+            coin.logoURIs?.svg ||
             ''
           }
           symbol={coin.symbol}
