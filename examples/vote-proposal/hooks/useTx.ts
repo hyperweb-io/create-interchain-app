@@ -3,7 +3,7 @@ import { useChain } from '@interchain-kit/react';
 import { assetLists } from '@chain-registry/v2'
 import { DeliverTxResponse, StdFee } from '@interchainjs/cosmos-types/types'
 import { isDeliverTxSuccess } from '@interchainjs/cosmos/utils/asserts'
-import { toEncoders } from '@interchainjs/cosmos/utils'
+import { toEncoders, toConverters } from '@interchainjs/cosmos/utils'
 import { MsgVote } from 'interchainjs/cosmos/gov/v1beta1/tx'
 
 export type Msg = {
@@ -75,6 +75,7 @@ export function useTx(chainName: string) {
       }
       const client = await getSigningClient();
       client.addEncoders(toEncoders(MsgVote))
+      client.addConverters(toConverters(MsgVote))
       console.log('msgs', msgs)
       const signed = await client.sign(address, msgs, fee, '');
 
