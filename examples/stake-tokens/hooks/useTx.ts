@@ -6,6 +6,7 @@ import { useToast, type CustomToast } from './useToast';
 import { assetLists } from '@chain-registry/v2';
 import { toEncoders, toConverters } from '@interchainjs/cosmos/utils'
 import { MsgDelegate, MsgUndelegate, MsgBeginRedelegate } from 'interchainjs/cosmos/staking/v1beta1/tx'
+import { MsgWithdrawDelegatorReward } from 'interchainjs/cosmos/distribution/v1beta1/tx'
 
 const txRaw = cosmos.tx.v1beta1.TxRaw;
 
@@ -61,8 +62,8 @@ export const useTx = (chainName: string) => {
         gas: '800000'
       }
       client = await getSigningClient();
-      client.addEncoders(toEncoders(MsgDelegate, MsgUndelegate, MsgBeginRedelegate))
-      client.addConverters(toConverters(MsgDelegate, MsgUndelegate, MsgBeginRedelegate))
+      client.addEncoders(toEncoders(MsgDelegate, MsgUndelegate, MsgBeginRedelegate, MsgWithdrawDelegatorReward))
+      client.addConverters(toConverters(MsgDelegate, MsgUndelegate, MsgBeginRedelegate, MsgWithdrawDelegatorReward))
       signed = await client.sign(address, msgs, fee, '');
     } catch (e: any) {
       console.error(e);
