@@ -134,10 +134,10 @@ export const DelegateModal = ({
         amount: [
           {
             denom: denomUnit?.denom!,
-            amount: (BigInt(10 ** (denomUnit?.exponent || 6)) / 100n).toString()
+            amount: (BigInt(10 ** (denomUnit?.exponent || 6)) / 10n).toString()
           }
         ],
-        gas: '200000'
+        gas: '800000'
       }
       const feeAmount = new BigNumber(fee.amount[0].amount).shiftedBy(-exp);
       const balanceAfterFee = new BigNumber(balance)
