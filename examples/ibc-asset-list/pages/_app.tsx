@@ -31,6 +31,13 @@ function CreateCosmosApp({ Component, pageProps }: AppProps) {
         assetLists={assetLists}
         wallets={[keplrWallet, leapWallet]}
         signerOptions={{}}
+        endpointOptions={{
+          endpoints: {
+            'osmosis': {
+              rpc: ['https://rpc.osmosis.zone'],
+            },
+          },
+        }}
       >
         <QueryClientProvider client={queryClient}>
           <main id="main" className={themeClass}>
