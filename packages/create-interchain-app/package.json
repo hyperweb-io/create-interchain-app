@@ -38,10 +38,12 @@
     "url": "https://github.com/hyperweb-io/create-interchain-app"
   },
   "keywords": [
+    "interchain",
     "cosmos",
-    "cosmology",
+    "hyperweb",
     "create-interchain-app",
-    "interchain-kit"
+    "interchain-kit",
+    "interchainjs"
   ],
   "bugs": {
     "url": "https://github.com/hyperweb-io/create-interchain-app/issues"
