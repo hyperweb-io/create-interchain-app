@@ -6974,7 +6974,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@interchain-kit/core@npm:0.0.1-beta.39, @interchain-kit/core@npm:^0.0.1-beta.39":
+"@interchain-kit/core@npm:0.0.1-beta.39":
   version: 0.0.1-beta.39
   resolution: "@interchain-kit/core@npm:0.0.1-beta.39"
   dependencies:
@@ -7032,6 +7032,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@interchain-kit/keplr-extension@npm:0.0.1-beta.39":
+  version: 0.0.1-beta.39
+  resolution: "@interchain-kit/keplr-extension@npm:0.0.1-beta.39"
+  dependencies:
+    "@interchain-kit/core": "npm:0.0.1-beta.39"
+    "@keplr-wallet/provider-extension": "npm:^0.12.102"
+  checksum: 10c0/8b5b7bb5806dab30a9d38ae2f47f224fce07c7ce0b796f2afac977b00521a99f0adc6589161e0ad0591722730b41a7a4f776f5619e494fb846cf283c9d3dd346
+  languageName: node
+  linkType: hard
+
 "@interchain-kit/keplr-extension@npm:0.0.1-beta.62, @interchain-kit/keplr-extension@npm:^0.0.1-beta.62":
   version: 0.0.1-beta.62
   resolution: "@interchain-kit/keplr-extension@npm:0.0.1-beta.62"
@@ -7039,16 +7049,6 @@ __metadata:
     "@interchain-kit/core": "npm:0.0.1-beta.62"
     "@keplr-wallet/provider-extension": "npm:^0.12.102"
   checksum: 10c0/d046e4456241c8aabeefb233263b9d254584192b4bc41bdc1b7ad7eb76347603099f2445434718f516d63cbb659f20ce4f559894d0cd24a25bb370343a58b3a8
-  languageName: node
-  linkType: hard
-
-"@interchain-kit/keplr-extension@npm:^0.0.1-beta.39":
-  version: 0.0.1-beta.39
-  resolution: "@interchain-kit/keplr-extension@npm:0.0.1-beta.39"
-  dependencies:
-    "@interchain-kit/core": "npm:0.0.1-beta.39"
-    "@keplr-wallet/provider-extension": "npm:^0.12.102"
-  checksum: 10c0/8b5b7bb5806dab30a9d38ae2f47f224fce07c7ce0b796f2afac977b00521a99f0adc6589161e0ad0591722730b41a7a4f776f5619e494fb846cf283c9d3dd346
   languageName: node
   linkType: hard
 
@@ -7061,21 +7061,21 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@interchain-kit/leap-extension@npm:0.0.1-beta.39":
+  version: 0.0.1-beta.39
+  resolution: "@interchain-kit/leap-extension@npm:0.0.1-beta.39"
+  dependencies:
+    "@interchain-kit/core": "npm:0.0.1-beta.39"
+  checksum: 10c0/83cf37b30be4fcc6b7dfaff0e343b9c10ab783dfd3cacd986d173d2212c139fc487e69dde201e9607c0b7d32204924d1d941b7c5840c2f8ea11a289ca39a95c8
+  languageName: node
+  linkType: hard
+
 "@interchain-kit/leap-extension@npm:0.0.1-beta.62, @interchain-kit/leap-extension@npm:^0.0.1-beta.62":
   version: 0.0.1-beta.62
   resolution: "@interchain-kit/leap-extension@npm:0.0.1-beta.62"
   dependencies:
     "@interchain-kit/core": "npm:0.0.1-beta.62"
   checksum: 10c0/a7a95c90cb863f77262d14a1124bee020701f0379f893127ddb393a37094573c002abad42ed20ca0a9fca83e05d2ac2d452731470b2cc74eb29f8b7712d8fb3e
-  languageName: node
-  linkType: hard
-
-"@interchain-kit/leap-extension@npm:^0.0.1-beta.39":
-  version: 0.0.1-beta.39
-  resolution: "@interchain-kit/leap-extension@npm:0.0.1-beta.39"
-  dependencies:
-    "@interchain-kit/core": "npm:0.0.1-beta.39"
-  checksum: 10c0/83cf37b30be4fcc6b7dfaff0e343b9c10ab783dfd3cacd986d173d2212c139fc487e69dde201e9607c0b7d32204924d1d941b7c5840c2f8ea11a289ca39a95c8
   languageName: node
   linkType: hard
 
@@ -7118,7 +7118,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@interchain-kit/vue@npm:^0.0.1-beta.38":
+"@interchain-kit/vue@npm:0.0.1-beta.38":
   version: 0.0.1-beta.38
   resolution: "@interchain-kit/vue@npm:0.0.1-beta.38"
   dependencies:
@@ -20350,10 +20350,10 @@ __metadata:
     "@cosmjs/amino": "npm:^0.32.4"
     "@cosmjs/stargate": "npm:^0.32.4"
     "@esbuild-plugins/node-globals-polyfill": "npm:^0.2.3"
-    "@interchain-kit/core": "npm:^0.0.1-beta.39"
-    "@interchain-kit/keplr-extension": "npm:^0.0.1-beta.39"
-    "@interchain-kit/leap-extension": "npm:^0.0.1-beta.39"
-    "@interchain-kit/vue": "npm:^0.0.1-beta.38"
+    "@interchain-kit/core": "npm:0.0.1-beta.39"
+    "@interchain-kit/keplr-extension": "npm:0.0.1-beta.39"
+    "@interchain-kit/leap-extension": "npm:0.0.1-beta.39"
+    "@interchain-kit/vue": "npm:0.0.1-beta.38"
     "@interchain-ui/vue": "npm:^1.4.1"
     "@interchainjs/cosmos": "npm:1.6.1"
     "@interchainjs/injective": "npm:1.6.1"
