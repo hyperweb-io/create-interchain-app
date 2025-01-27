@@ -12,7 +12,7 @@ import {
     getQuestionsAndAnswers,
     getTemplateFolder
 } from './utils';
-import { CCA_URL } from './constants';
+import { CIA_URL } from './constants';
 
 const posixPath = require('path').posix;
 const requiredTools = ['git', 'yarn'];
@@ -67,7 +67,7 @@ async function setupAppDirectory(repo, argv, name) {
 
 
 async function warnIfOutdated(repo, clonedRepoDir, version) {
-    if (repo === CCA_URL) {
+    if (repo === CIA_URL) {
         const rootPkgPath = join(clonedRepoDir, 'packages/create-interchain-app/package.json');
         const rootPkg = JSON.parse(fs.readFileSync(rootPkgPath, 'utf-8'));
         if (semver.lt(rootPkg.version, version)) {

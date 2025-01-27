@@ -3,18 +3,26 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
-# [2.4.0](https://github.com/cosmology-tech/create-interchain-app/compare/create-interchain-app@0.0.6...create-interchain-app@2.4.0) (2024-10-08)
+## 2.4.1 (2025-01-27)
+
+**Note:** Version bump only for package create-interchain-app
+
+
+
+
+
+# [2.4.0](https://github.com/hyperweb-io/create-interchain-app/compare/create-interchain-app@0.0.6...create-interchain-app@2.4.0) (2024-10-08)
 
 
 ### Bug Fixes
 
-* correctly handle images ([f14a9ba](https://github.com/cosmology-tech/create-interchain-app/commit/f14a9bafa264cf8085f5f5b0701a42c789a2c945))
+* correctly handle images ([f14a9ba](https://github.com/hyperweb-io/create-interchain-app/commit/f14a9bafa264cf8085f5f5b0701a42c789a2c945))
 
 
 
 
 
-## [2.3.3](https://github.com/cosmology-tech/create-interchain-app/compare/create-interchain-app@2.3.2...create-interchain-app@2.3.3) (2024-04-19)
+## [2.3.3](https://github.com/hyperweb-io/create-interchain-app/compare/create-interchain-app@2.3.2...create-interchain-app@2.3.3) (2024-04-19)
 
 **Note:** Version bump only for package create-interchain-app
 
@@ -22,7 +30,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 
 
-## [2.3.2](https://github.com/cosmology-tech/create-interchain-app/compare/create-interchain-app@2.3.1...create-interchain-app@2.3.2) (2024-04-12)
+## [2.3.2](https://github.com/hyperweb-io/create-interchain-app/compare/create-interchain-app@2.3.1...create-interchain-app@2.3.2) (2024-04-12)
 
 **Note:** Version bump only for package create-interchain-app
 
@@ -30,7 +38,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 
 
-## [2.3.1](https://github.com/cosmology-tech/create-interchain-app/compare/create-interchain-app@2.3.0...create-interchain-app@2.3.1) (2024-04-12)
+## [2.3.1](https://github.com/hyperweb-io/create-interchain-app/compare/create-interchain-app@2.3.0...create-interchain-app@2.3.1) (2024-04-12)
 
 **Note:** Version bump only for package create-interchain-app
 
@@ -38,7 +46,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 
 
-# [2.3.0](https://github.com/cosmology-tech/create-interchain-app/compare/create-interchain-app@2.2.0...create-interchain-app@2.3.0) (2024-04-12)
+# [2.3.0](https://github.com/hyperweb-io/create-interchain-app/compare/create-interchain-app@2.2.0...create-interchain-app@2.3.0) (2024-04-12)
 
 **Note:** Version bump only for package create-interchain-app
 
@@ -46,7 +54,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 
 
-# [2.2.0](https://github.com/cosmology-tech/create-interchain-app/compare/create-interchain-app@2.1.3...create-interchain-app@2.2.0) (2024-04-12)
+# [2.2.0](https://github.com/hyperweb-io/create-interchain-app/compare/create-interchain-app@2.1.3...create-interchain-app@2.2.0) (2024-04-12)
 
 **Note:** Version bump only for package create-interchain-app
 
@@ -54,7 +62,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 
 
-## [2.1.3](https://github.com/cosmology-tech/create-interchain-app/compare/create-interchain-app@2.1.2...create-interchain-app@2.1.3) (2024-04-06)
+## [2.1.3](https://github.com/hyperweb-io/create-interchain-app/compare/create-interchain-app@2.1.2...create-interchain-app@2.1.3) (2024-04-06)
 
 **Note:** Version bump only for package create-interchain-app
 
@@ -62,7 +70,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 
 
-## [2.1.2](https://github.com/cosmology-tech/create-interchain-app/compare/create-interchain-app@2.1.1...create-interchain-app@2.1.2) (2024-04-06)
+## [2.1.2](https://github.com/hyperweb-io/create-interchain-app/compare/create-interchain-app@2.1.1...create-interchain-app@2.1.2) (2024-04-06)
 
 **Note:** Version bump only for package create-interchain-app
 
@@ -70,7 +78,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 
 
-## [2.1.1](https://github.com/cosmology-tech/create-interchain-app/compare/create-interchain-app@2.1.0...create-interchain-app@2.1.1) (2024-04-06)
+## [2.1.1](https://github.com/hyperweb-io/create-interchain-app/compare/create-interchain-app@2.1.0...create-interchain-app@2.1.1) (2024-04-06)
 
 **Note:** Version bump only for package create-interchain-app
 
@@ -78,7 +86,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 
 
-# [2.1.0](https://github.com/cosmology-tech/create-interchain-app/compare/create-interchain-app@2.0.0...create-interchain-app@2.1.0) (2024-04-06)
+# [2.1.0](https://github.com/hyperweb-io/create-interchain-app/compare/create-interchain-app@2.0.0...create-interchain-app@2.1.0) (2024-04-06)
 
 **Note:** Version bump only for package create-interchain-app
 
@@ -86,7 +94,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 
 
-# [2.0.0](https://github.com/cosmology-tech/create-interchain-app/compare/create-interchain-app@1.4.8...create-interchain-app@2.0.0) (2024-04-06)
+# [2.0.0](https://github.com/hyperweb-io/create-interchain-app/compare/create-interchain-app@1.4.8...create-interchain-app@2.0.0) (2024-04-06)
 
 **Note:** Version bump only for package create-interchain-app
 
@@ -94,7 +102,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 
 
-## [1.4.8](https://github.com/cosmology-tech/create-interchain-app/compare/create-interchain-app@1.4.7...create-interchain-app@1.4.8) (2024-01-20)
+## [1.4.8](https://github.com/hyperweb-io/create-interchain-app/compare/create-interchain-app@1.4.7...create-interchain-app@1.4.8) (2024-01-20)
 
 **Note:** Version bump only for package create-interchain-app
 
@@ -102,7 +110,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 
 
-## [1.4.7](https://github.com/cosmology-tech/create-interchain-app/compare/create-interchain-app@1.4.6...create-interchain-app@1.4.7) (2024-01-20)
+## [1.4.7](https://github.com/hyperweb-io/create-interchain-app/compare/create-interchain-app@1.4.6...create-interchain-app@1.4.7) (2024-01-20)
 
 **Note:** Version bump only for package create-interchain-app
 
@@ -110,7 +118,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 
 
-## [1.4.6](https://github.com/cosmology-tech/create-interchain-app/compare/create-interchain-app@1.4.5...create-interchain-app@1.4.6) (2024-01-19)
+## [1.4.6](https://github.com/hyperweb-io/create-interchain-app/compare/create-interchain-app@1.4.5...create-interchain-app@1.4.6) (2024-01-19)
 
 **Note:** Version bump only for package create-interchain-app
 
@@ -118,7 +126,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 
 
-## [1.4.5](https://github.com/cosmology-tech/create-interchain-app/compare/create-interchain-app@1.4.4...create-interchain-app@1.4.5) (2024-01-19)
+## [1.4.5](https://github.com/hyperweb-io/create-interchain-app/compare/create-interchain-app@1.4.4...create-interchain-app@1.4.5) (2024-01-19)
 
 **Note:** Version bump only for package create-interchain-app
 
@@ -126,7 +134,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 
 
-## [1.4.4](https://github.com/cosmology-tech/create-interchain-app/compare/create-interchain-app@1.4.3...create-interchain-app@1.4.4) (2024-01-19)
+## [1.4.4](https://github.com/hyperweb-io/create-interchain-app/compare/create-interchain-app@1.4.3...create-interchain-app@1.4.4) (2024-01-19)
 
 **Note:** Version bump only for package create-interchain-app
 
@@ -134,7 +142,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 
 
-## [1.4.3](https://github.com/cosmology-tech/create-interchain-app/compare/create-interchain-app@1.4.2...create-interchain-app@1.4.3) (2023-09-27)
+## [1.4.3](https://github.com/hyperweb-io/create-interchain-app/compare/create-interchain-app@1.4.2...create-interchain-app@1.4.3) (2023-09-27)
 
 **Note:** Version bump only for package create-interchain-app
 
@@ -142,7 +150,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 
 
-## [1.4.2](https://github.com/cosmology-tech/create-interchain-app/compare/create-interchain-app@1.4.1...create-interchain-app@1.4.2) (2023-07-30)
+## [1.4.2](https://github.com/hyperweb-io/create-interchain-app/compare/create-interchain-app@1.4.1...create-interchain-app@1.4.2) (2023-07-30)
 
 **Note:** Version bump only for package create-interchain-app
 
@@ -150,7 +158,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 
 
-## [1.4.1](https://github.com/cosmology-tech/create-interchain-app/compare/create-interchain-app@1.4.0...create-interchain-app@1.4.1) (2023-07-17)
+## [1.4.1](https://github.com/hyperweb-io/create-interchain-app/compare/create-interchain-app@1.4.0...create-interchain-app@1.4.1) (2023-07-17)
 
 **Note:** Version bump only for package create-interchain-app
 
@@ -158,7 +166,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 
 
-# [1.4.0](https://github.com/cosmology-tech/create-interchain-app/compare/create-interchain-app@1.3.0...create-interchain-app@1.4.0) (2023-07-17)
+# [1.4.0](https://github.com/hyperweb-io/create-interchain-app/compare/create-interchain-app@1.3.0...create-interchain-app@1.4.0) (2023-07-17)
 
 **Note:** Version bump only for package create-interchain-app
 
@@ -166,7 +174,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 
 
-# [1.3.0](https://github.com/cosmology-tech/create-interchain-app/compare/create-interchain-app@1.2.1...create-interchain-app@1.3.0) (2023-07-16)
+# [1.3.0](https://github.com/hyperweb-io/create-interchain-app/compare/create-interchain-app@1.2.1...create-interchain-app@1.3.0) (2023-07-16)
 
 **Note:** Version bump only for package create-interchain-app
 
@@ -174,7 +182,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 
 
-## [1.2.1](https://github.com/cosmology-tech/create-interchain-app/compare/create-interchain-app@1.2.0...create-interchain-app@1.2.1) (2023-07-16)
+## [1.2.1](https://github.com/hyperweb-io/create-interchain-app/compare/create-interchain-app@1.2.0...create-interchain-app@1.2.1) (2023-07-16)
 
 **Note:** Version bump only for package create-interchain-app
 
@@ -182,7 +190,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 
 
-# [1.2.0](https://github.com/cosmology-tech/create-interchain-app/compare/create-interchain-app@1.1.0...create-interchain-app@1.2.0) (2023-07-16)
+# [1.2.0](https://github.com/hyperweb-io/create-interchain-app/compare/create-interchain-app@1.1.0...create-interchain-app@1.2.0) (2023-07-16)
 
 **Note:** Version bump only for package create-interchain-app
 
@@ -190,7 +198,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 
 
-# [1.1.0](https://github.com/cosmology-tech/create-interchain-app/compare/create-interchain-app@1.0.2...create-interchain-app@1.1.0) (2023-07-16)
+# [1.1.0](https://github.com/hyperweb-io/create-interchain-app/compare/create-interchain-app@1.0.2...create-interchain-app@1.1.0) (2023-07-16)
 
 **Note:** Version bump only for package create-interchain-app
 
@@ -198,7 +206,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 
 
-## [1.0.2](https://github.com/cosmology-tech/create-interchain-app/compare/create-interchain-app@1.0.1...create-interchain-app@1.0.2) (2023-07-16)
+## [1.0.2](https://github.com/hyperweb-io/create-interchain-app/compare/create-interchain-app@1.0.1...create-interchain-app@1.0.2) (2023-07-16)
 
 **Note:** Version bump only for package create-interchain-app
 
@@ -206,7 +214,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 
 
-## [1.0.1](https://github.com/cosmology-tech/create-interchain-app/compare/create-interchain-app@1.0.0...create-interchain-app@1.0.1) (2023-07-16)
+## [1.0.1](https://github.com/hyperweb-io/create-interchain-app/compare/create-interchain-app@1.0.0...create-interchain-app@1.0.1) (2023-07-16)
 
 **Note:** Version bump only for package create-interchain-app
 
@@ -214,7 +222,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 
 
-# [1.0.0](https://github.com/cosmology-tech/create-interchain-app/compare/create-interchain-app@0.11.3...create-interchain-app@1.0.0) (2023-07-16)
+# [1.0.0](https://github.com/hyperweb-io/create-interchain-app/compare/create-interchain-app@0.11.3...create-interchain-app@1.0.0) (2023-07-16)
 
 **Note:** Version bump only for package create-interchain-app
 
@@ -222,7 +230,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 
 
-## [0.11.3](https://github.com/cosmology-tech/create-interchain-app/compare/create-interchain-app@0.11.2...create-interchain-app@0.11.3) (2023-07-14)
+## [0.11.3](https://github.com/hyperweb-io/create-interchain-app/compare/create-interchain-app@0.11.2...create-interchain-app@0.11.3) (2023-07-14)
 
 **Note:** Version bump only for package create-interchain-app
 
@@ -230,7 +238,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 
 
-## [0.11.2](https://github.com/cosmology-tech/create-interchain-app/compare/create-interchain-app@0.11.1...create-interchain-app@0.11.2) (2023-07-14)
+## [0.11.2](https://github.com/hyperweb-io/create-interchain-app/compare/create-interchain-app@0.11.1...create-interchain-app@0.11.2) (2023-07-14)
 
 **Note:** Version bump only for package create-interchain-app
 
@@ -238,7 +246,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 
 
-## [0.11.1](https://github.com/cosmology-tech/create-interchain-app/compare/create-interchain-app@0.11.0...create-interchain-app@0.11.1) (2023-04-13)
+## [0.11.1](https://github.com/hyperweb-io/create-interchain-app/compare/create-interchain-app@0.11.0...create-interchain-app@0.11.1) (2023-04-13)
 
 **Note:** Version bump only for package create-interchain-app
 
@@ -246,7 +254,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 
 
-# [0.11.0](https://github.com/cosmology-tech/create-interchain-app/compare/create-interchain-app@0.10.2...create-interchain-app@0.11.0) (2023-04-12)
+# [0.11.0](https://github.com/hyperweb-io/create-interchain-app/compare/create-interchain-app@0.10.2...create-interchain-app@0.11.0) (2023-04-12)
 
 **Note:** Version bump only for package create-interchain-app
 
@@ -254,7 +262,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 
 
-## [0.10.2](https://github.com/cosmology-tech/create-interchain-app/compare/create-interchain-app@0.10.1...create-interchain-app@0.10.2) (2023-02-15)
+## [0.10.2](https://github.com/hyperweb-io/create-interchain-app/compare/create-interchain-app@0.10.1...create-interchain-app@0.10.2) (2023-02-15)
 
 **Note:** Version bump only for package create-interchain-app
 
@@ -262,7 +270,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 
 
-## [0.10.1](https://github.com/cosmology-tech/create-interchain-app/compare/create-interchain-app@0.10.0...create-interchain-app@0.10.1) (2022-11-25)
+## [0.10.1](https://github.com/hyperweb-io/create-interchain-app/compare/create-interchain-app@0.10.0...create-interchain-app@0.10.1) (2022-11-25)
 
 **Note:** Version bump only for package create-interchain-app
 
@@ -270,7 +278,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 
 
-# [0.10.0](https://github.com/cosmology-tech/create-interchain-app/compare/create-interchain-app@0.9.1...create-interchain-app@0.10.0) (2022-11-09)
+# [0.10.0](https://github.com/hyperweb-io/create-interchain-app/compare/create-interchain-app@0.9.1...create-interchain-app@0.10.0) (2022-11-09)
 
 **Note:** Version bump only for package create-interchain-app
 
@@ -278,7 +286,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 
 
-## [0.9.1](https://github.com/cosmology-tech/create-interchain-app/compare/create-interchain-app@0.9.0...create-interchain-app@0.9.1) (2022-11-05)
+## [0.9.1](https://github.com/hyperweb-io/create-interchain-app/compare/create-interchain-app@0.9.0...create-interchain-app@0.9.1) (2022-11-05)
 
 **Note:** Version bump only for package create-interchain-app
 
@@ -286,7 +294,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 
 
-# [0.9.0](https://github.com/cosmology-tech/create-interchain-app/compare/create-interchain-app@0.8.1...create-interchain-app@0.9.0) (2022-11-01)
+# [0.9.0](https://github.com/hyperweb-io/create-interchain-app/compare/create-interchain-app@0.8.1...create-interchain-app@0.9.0) (2022-11-01)
 
 **Note:** Version bump only for package create-interchain-app
 
@@ -294,7 +302,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 
 
-## [0.8.1](https://github.com/cosmology-tech/create-interchain-app/compare/create-interchain-app@0.8.0...create-interchain-app@0.8.1) (2022-11-01)
+## [0.8.1](https://github.com/hyperweb-io/create-interchain-app/compare/create-interchain-app@0.8.0...create-interchain-app@0.8.1) (2022-11-01)
 
 **Note:** Version bump only for package create-interchain-app
 
@@ -302,7 +310,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 
 
-# [0.8.0](https://github.com/cosmology-tech/create-interchain-app/compare/create-interchain-app@0.7.0...create-interchain-app@0.8.0) (2022-10-26)
+# [0.8.0](https://github.com/hyperweb-io/create-interchain-app/compare/create-interchain-app@0.7.0...create-interchain-app@0.8.0) (2022-10-26)
 
 **Note:** Version bump only for package create-interchain-app
 
@@ -310,7 +318,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 
 
-# [0.7.0](https://github.com/cosmology-tech/create-interchain-app/compare/create-interchain-app@0.6.1...create-interchain-app@0.7.0) (2022-10-24)
+# [0.7.0](https://github.com/hyperweb-io/create-interchain-app/compare/create-interchain-app@0.6.1...create-interchain-app@0.7.0) (2022-10-24)
 
 **Note:** Version bump only for package create-interchain-app
 
@@ -318,7 +326,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 
 
-## [0.6.1](https://github.com/cosmology-tech/create-interchain-app/compare/create-interchain-app@0.6.0...create-interchain-app@0.6.1) (2022-10-24)
+## [0.6.1](https://github.com/hyperweb-io/create-interchain-app/compare/create-interchain-app@0.6.0...create-interchain-app@0.6.1) (2022-10-24)
 
 **Note:** Version bump only for package create-interchain-app
 
@@ -326,7 +334,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 
 
-# [0.6.0](https://github.com/cosmology-tech/create-interchain-app/compare/create-interchain-app@0.5.0...create-interchain-app@0.6.0) (2022-10-15)
+# [0.6.0](https://github.com/hyperweb-io/create-interchain-app/compare/create-interchain-app@0.5.0...create-interchain-app@0.6.0) (2022-10-15)
 
 **Note:** Version bump only for package create-interchain-app
 
@@ -334,7 +342,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 
 
-# [0.5.0](https://github.com/cosmology-tech/create-interchain-app/compare/create-interchain-app@0.4.12...create-interchain-app@0.5.0) (2022-10-15)
+# [0.5.0](https://github.com/hyperweb-io/create-interchain-app/compare/create-interchain-app@0.4.12...create-interchain-app@0.5.0) (2022-10-15)
 
 **Note:** Version bump only for package create-interchain-app
 
@@ -342,7 +350,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 
 
-## [0.4.12](https://github.com/cosmology-tech/create-interchain-app/compare/create-interchain-app@0.4.11...create-interchain-app@0.4.12) (2022-10-15)
+## [0.4.12](https://github.com/hyperweb-io/create-interchain-app/compare/create-interchain-app@0.4.11...create-interchain-app@0.4.12) (2022-10-15)
 
 **Note:** Version bump only for package create-interchain-app
 
@@ -350,7 +358,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 
 
-## [0.4.11](https://github.com/cosmology-tech/create-interchain-app/compare/create-interchain-app@0.4.10...create-interchain-app@0.4.11) (2022-10-15)
+## [0.4.11](https://github.com/hyperweb-io/create-interchain-app/compare/create-interchain-app@0.4.10...create-interchain-app@0.4.11) (2022-10-15)
 
 **Note:** Version bump only for package create-interchain-app
 
@@ -358,7 +366,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 
 
-## [0.4.10](https://github.com/cosmology-tech/create-interchain-app/compare/create-interchain-app@0.4.9...create-interchain-app@0.4.10) (2022-10-15)
+## [0.4.10](https://github.com/hyperweb-io/create-interchain-app/compare/create-interchain-app@0.4.9...create-interchain-app@0.4.10) (2022-10-15)
 
 **Note:** Version bump only for package create-interchain-app
 
@@ -366,7 +374,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 
 
-## [0.4.9](https://github.com/cosmology-tech/create-interchain-app/compare/create-interchain-app@0.4.8...create-interchain-app@0.4.9) (2022-10-15)
+## [0.4.9](https://github.com/hyperweb-io/create-interchain-app/compare/create-interchain-app@0.4.8...create-interchain-app@0.4.9) (2022-10-15)
 
 **Note:** Version bump only for package create-interchain-app
 
@@ -374,7 +382,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 
 
-## [0.4.8](https://github.com/cosmology-tech/create-interchain-app/compare/create-interchain-app@0.4.7...create-interchain-app@0.4.8) (2022-10-01)
+## [0.4.8](https://github.com/hyperweb-io/create-interchain-app/compare/create-interchain-app@0.4.7...create-interchain-app@0.4.8) (2022-10-01)
 
 **Note:** Version bump only for package create-interchain-app
 
@@ -382,7 +390,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 
 
-## [0.4.7](https://github.com/cosmology-tech/create-interchain-app/compare/create-interchain-app@0.4.6...create-interchain-app@0.4.7) (2022-09-30)
+## [0.4.7](https://github.com/hyperweb-io/create-interchain-app/compare/create-interchain-app@0.4.6...create-interchain-app@0.4.7) (2022-09-30)
 
 **Note:** Version bump only for package create-interchain-app
 
@@ -390,7 +398,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 
 
-## [0.4.6](https://github.com/cosmology-tech/create-interchain-app/compare/create-interchain-app@0.4.5...create-interchain-app@0.4.6) (2022-09-30)
+## [0.4.6](https://github.com/hyperweb-io/create-interchain-app/compare/create-interchain-app@0.4.5...create-interchain-app@0.4.6) (2022-09-30)
 
 **Note:** Version bump only for package create-interchain-app
 
@@ -398,7 +406,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 
 
-## [0.4.5](https://github.com/cosmology-tech/create-interchain-app/compare/create-interchain-app@0.4.4...create-interchain-app@0.4.5) (2022-09-25)
+## [0.4.5](https://github.com/hyperweb-io/create-interchain-app/compare/create-interchain-app@0.4.4...create-interchain-app@0.4.5) (2022-09-25)
 
 **Note:** Version bump only for package create-interchain-app
 
@@ -406,7 +414,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 
 
-## [0.4.4](https://github.com/cosmology-tech/create-interchain-app/compare/create-interchain-app@0.4.3...create-interchain-app@0.4.4) (2022-09-25)
+## [0.4.4](https://github.com/hyperweb-io/create-interchain-app/compare/create-interchain-app@0.4.3...create-interchain-app@0.4.4) (2022-09-25)
 
 **Note:** Version bump only for package create-interchain-app
 
@@ -414,7 +422,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 
 
-## [0.4.3](https://github.com/cosmology-tech/create-interchain-app/compare/create-interchain-app@0.4.2...create-interchain-app@0.4.3) (2022-09-25)
+## [0.4.3](https://github.com/hyperweb-io/create-interchain-app/compare/create-interchain-app@0.4.2...create-interchain-app@0.4.3) (2022-09-25)
 
 **Note:** Version bump only for package create-interchain-app
 
@@ -422,7 +430,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 
 
-## [0.4.2](https://github.com/cosmology-tech/create-interchain-app/compare/create-interchain-app@0.4.1...create-interchain-app@0.4.2) (2022-09-24)
+## [0.4.2](https://github.com/hyperweb-io/create-interchain-app/compare/create-interchain-app@0.4.1...create-interchain-app@0.4.2) (2022-09-24)
 
 **Note:** Version bump only for package create-interchain-app
 
@@ -430,7 +438,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 
 
-## [0.4.1](https://github.com/cosmology-tech/create-interchain-app/compare/create-interchain-app@0.4.0...create-interchain-app@0.4.1) (2022-09-23)
+## [0.4.1](https://github.com/hyperweb-io/create-interchain-app/compare/create-interchain-app@0.4.0...create-interchain-app@0.4.1) (2022-09-23)
 
 **Note:** Version bump only for package create-interchain-app
 
@@ -438,7 +446,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 
 
-# [0.4.0](https://github.com/cosmology-tech/create-interchain-app/compare/create-interchain-app@0.3.2...create-interchain-app@0.4.0) (2022-09-22)
+# [0.4.0](https://github.com/hyperweb-io/create-interchain-app/compare/create-interchain-app@0.3.2...create-interchain-app@0.4.0) (2022-09-22)
 
 **Note:** Version bump only for package create-interchain-app
 
@@ -446,7 +454,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 
 
-## [0.3.2](https://github.com/cosmology-tech/create-interchain-app/compare/create-interchain-app@0.3.1...create-interchain-app@0.3.2) (2022-09-08)
+## [0.3.2](https://github.com/hyperweb-io/create-interchain-app/compare/create-interchain-app@0.3.1...create-interchain-app@0.3.2) (2022-09-08)
 
 **Note:** Version bump only for package create-interchain-app
 
@@ -454,7 +462,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 
 
-## [0.3.1](https://github.com/cosmology-tech/create-interchain-app/compare/create-interchain-app@0.3.0...create-interchain-app@0.3.1) (2022-09-02)
+## [0.3.1](https://github.com/hyperweb-io/create-interchain-app/compare/create-interchain-app@0.3.0...create-interchain-app@0.3.1) (2022-09-02)
 
 **Note:** Version bump only for package create-interchain-app
 
@@ -462,7 +470,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 
 
-# [0.3.0](https://github.com/cosmology-tech/create-interchain-app/compare/create-interchain-app@0.2.4...create-interchain-app@0.3.0) (2022-09-02)
+# [0.3.0](https://github.com/hyperweb-io/create-interchain-app/compare/create-interchain-app@0.2.4...create-interchain-app@0.3.0) (2022-09-02)
 
 **Note:** Version bump only for package create-interchain-app
 
@@ -470,7 +478,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 
 
-## [0.2.4](https://github.com/cosmology-tech/create-interchain-app/compare/create-interchain-app@0.2.3...create-interchain-app@0.2.4) (2022-09-02)
+## [0.2.4](https://github.com/hyperweb-io/create-interchain-app/compare/create-interchain-app@0.2.3...create-interchain-app@0.2.4) (2022-09-02)
 
 **Note:** Version bump only for package create-interchain-app
 
@@ -478,7 +486,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 
 
-## [0.2.3](https://github.com/cosmology-tech/create-interchain-app/compare/create-interchain-app@0.2.2...create-interchain-app@0.2.3) (2022-09-02)
+## [0.2.3](https://github.com/hyperweb-io/create-interchain-app/compare/create-interchain-app@0.2.2...create-interchain-app@0.2.3) (2022-09-02)
 
 **Note:** Version bump only for package create-interchain-app
 
@@ -486,7 +494,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 
 
-## [0.2.2](https://github.com/cosmology-tech/create-interchain-app/compare/create-interchain-app@0.2.1...create-interchain-app@0.2.2) (2022-08-27)
+## [0.2.2](https://github.com/hyperweb-io/create-interchain-app/compare/create-interchain-app@0.2.1...create-interchain-app@0.2.2) (2022-08-27)
 
 **Note:** Version bump only for package create-interchain-app
 
@@ -494,7 +502,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 
 
-## [0.2.1](https://github.com/cosmology-tech/create-interchain-app/compare/create-interchain-app@0.2.0...create-interchain-app@0.2.1) (2022-08-25)
+## [0.2.1](https://github.com/hyperweb-io/create-interchain-app/compare/create-interchain-app@0.2.0...create-interchain-app@0.2.1) (2022-08-25)
 
 **Note:** Version bump only for package create-interchain-app
 
@@ -502,7 +510,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 
 
-# [0.2.0](https://github.com/cosmology-tech/create-interchain-app/compare/create-interchain-app@0.1.0...create-interchain-app@0.2.0) (2022-08-25)
+# [0.2.0](https://github.com/hyperweb-io/create-interchain-app/compare/create-interchain-app@0.1.0...create-interchain-app@0.2.0) (2022-08-25)
 
 **Note:** Version bump only for package create-interchain-app
 
@@ -510,7 +518,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 
 
-# [0.1.0](https://github.com/cosmology-tech/create-interchain-app/compare/create-interchain-app@0.0.12...create-interchain-app@0.1.0) (2022-08-25)
+# [0.1.0](https://github.com/hyperweb-io/create-interchain-app/compare/create-interchain-app@0.0.12...create-interchain-app@0.1.0) (2022-08-25)
 
 **Note:** Version bump only for package create-interchain-app
 
@@ -518,7 +526,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 
 
-## [0.0.12](https://github.com/cosmology-tech/create-interchain-app/compare/create-interchain-app@0.0.11...create-interchain-app@0.0.12) (2022-08-25)
+## [0.0.12](https://github.com/hyperweb-io/create-interchain-app/compare/create-interchain-app@0.0.11...create-interchain-app@0.0.12) (2022-08-25)
 
 **Note:** Version bump only for package create-interchain-app
 
@@ -526,7 +534,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 
 
-## [0.0.11](https://github.com/cosmology-tech/create-interchain-app/compare/create-interchain-app@0.0.10...create-interchain-app@0.0.11) (2022-08-25)
+## [0.0.11](https://github.com/hyperweb-io/create-interchain-app/compare/create-interchain-app@0.0.10...create-interchain-app@0.0.11) (2022-08-25)
 
 **Note:** Version bump only for package create-interchain-app
 
@@ -534,7 +542,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 
 
-## [0.0.10](https://github.com/cosmology-tech/create-interchain-app/compare/create-interchain-app@0.0.9...create-interchain-app@0.0.10) (2022-08-24)
+## [0.0.10](https://github.com/hyperweb-io/create-interchain-app/compare/create-interchain-app@0.0.9...create-interchain-app@0.0.10) (2022-08-24)
 
 **Note:** Version bump only for package create-interchain-app
 
@@ -542,7 +550,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 
 
-## [0.0.9](https://github.com/cosmology-tech/create-interchain-app/compare/create-interchain-app@0.0.8...create-interchain-app@0.0.9) (2022-08-24)
+## [0.0.9](https://github.com/hyperweb-io/create-interchain-app/compare/create-interchain-app@0.0.8...create-interchain-app@0.0.9) (2022-08-24)
 
 **Note:** Version bump only for package create-interchain-app
 
@@ -550,7 +558,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 
 
-## [0.0.8](https://github.com/cosmology-tech/create-interchain-app/compare/create-interchain-app@0.0.7...create-interchain-app@0.0.8) (2022-08-24)
+## [0.0.8](https://github.com/hyperweb-io/create-interchain-app/compare/create-interchain-app@0.0.7...create-interchain-app@0.0.8) (2022-08-24)
 
 **Note:** Version bump only for package create-interchain-app
 
@@ -558,7 +566,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 
 
-## [0.0.7](https://github.com/cosmology-tech/create-interchain-app/compare/create-interchain-app@0.0.6...create-interchain-app@0.0.7) (2022-08-24)
+## [0.0.7](https://github.com/hyperweb-io/create-interchain-app/compare/create-interchain-app@0.0.6...create-interchain-app@0.0.7) (2022-08-24)
 
 **Note:** Version bump only for package create-interchain-app
 
@@ -566,7 +574,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 
 
-## [0.0.6](https://github.com/cosmology-tech/create-interchain-app/compare/create-interchain-app@0.0.5...create-interchain-app@0.0.6) (2022-08-18)
+## [0.0.6](https://github.com/hyperweb-io/create-interchain-app/compare/create-interchain-app@0.0.5...create-interchain-app@0.0.6) (2022-08-18)
 
 **Note:** Version bump only for package create-interchain-app
 
@@ -574,7 +582,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 
 
-## [0.0.5](https://github.com/cosmology-tech/create-interchain-app/compare/create-interchain-app@0.0.4...create-interchain-app@0.0.5) (2022-07-29)
+## [0.0.5](https://github.com/hyperweb-io/create-interchain-app/compare/create-interchain-app@0.0.4...create-interchain-app@0.0.5) (2022-07-29)
 
 **Note:** Version bump only for package create-interchain-app
 
@@ -582,7 +590,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 
 
-## [0.0.4](https://github.com/cosmology-tech/create-interchain-app/compare/create-interchain-app@0.0.2...create-interchain-app@0.0.4) (2022-07-29)
+## [0.0.4](https://github.com/hyperweb-io/create-interchain-app/compare/create-interchain-app@0.0.2...create-interchain-app@0.0.4) (2022-07-29)
 
 **Note:** Version bump only for package create-interchain-app
 
