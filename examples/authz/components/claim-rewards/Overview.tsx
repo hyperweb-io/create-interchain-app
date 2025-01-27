@@ -70,7 +70,7 @@ const Overview = ({
 
     exec(
       {
-        granter,
+        signerAddress: grantee,
         message: createExecMsg({ msgs, grantee }),
         fee: 'auto',
         memo: 'executing permission',

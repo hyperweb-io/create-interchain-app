@@ -166,7 +166,7 @@ export function Proposal({
 
     exec(
       {
-        granter,
+        signerAddress: grantee,
         message: createExecMsg({ msgs: [msg], grantee }),
         fee: 'auto',
         memo: 'executing permission',
