@@ -135,7 +135,7 @@ const {
 
 ⚡️ For web interfaces, we recommend using [interchain-kit](https://github.com/hyperweb-io/interchain-kit). Continue below to see how to manually construct signers and clients.
 
-Here are the docs on [creating signers](https://docs.cosmology.zone/interchain-kit) in interchain-kit that can be used with Keplr and other wallets.
+Here are the docs on [creating signers](https://docs.hyperweb.io/interchain-kit) in interchain-kit that can be used with Keplr and other wallets.
 
 ### Initializing the Stargate Client
 
@@ -153,7 +153,7 @@ const stargateClient = await getSigning__CHAIN_UPPER__Client({
 
 To broadcast messages, you can create signers with a variety of options:
 
-* [interchain-kit](https://docs.cosmology.zone/interchain-kit) (recommended)
+* [interchain-kit](https://docs.hyperweb.io/interchain-kit) (recommended)
 * [keplr](https://docs.keplr.app/api/cosmjs.html)
 * [cosmjs](https://gist.github.com/webmaster128/8444d42a7eceeda2544c8a59fbd7e1d9)
 ### Amino Signer
@@ -303,7 +303,7 @@ npm publish
 
 Checkout these related projects:
 
-* [@cosmology/telescope](https://github.com/hyperweb-io/telescope) Your Frontend Companion for Building with TypeScript with Cosmos SDK Modules.
+* [@hyperweb/telescope](https://github.com/hyperweb-io/telescope) Your Frontend Companion for Building with TypeScript with Cosmos SDK Modules.
 * [@cosmwasm/ts-codegen](https://github.com/CosmWasm/ts-codegen) Convert your CosmWasm smart contracts into dev-friendly TypeScript classes.
 * [chain-registry](https://github.com/hyperweb-io/chain-registry) Everything from token symbols, logos, and IBC denominations for all assets you want to support in your application.
 * [interchain-kit](https://github.com/hyperweb-io/interchain-kit) Experience the convenience of connecting with a variety of web3 wallets through a single, streamlined interface.

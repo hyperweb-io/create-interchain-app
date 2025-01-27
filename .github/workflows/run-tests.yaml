@@ -26,10 +26,10 @@ jobs:
           echo "YARN_ENABLE_IMMUTABLE_INSTALLS=false" >> $GITHUB_ENV
           npm install -g create-interchain-app
 
-      - name: asset-list
+      - name: ibc-asset-list
         run: |
-          cia --example asset-list --name asset-list
-          cd asset-list
+          cia --example ibc-asset-list --name ibc-asset-list
+          cd ibc-asset-list
           yarn build
 
       - name: vote-proposal

@@ -1,4 +1,4 @@
-This is a Cosmos Interchain project bootstrapped with [`create-interchain-app`](https://github.com/hyperweb-io/create-cosmos-app).
+This is a Cosmos Interchain project bootstrapped with [`create-interchain-app`](https://github.com/hyperweb-io/create-interchain-app).
 
 ## Getting Started
 
@@ -72,7 +72,7 @@ Checkout these related projects:
 * [@cosmwasm/ts-codegen](https://github.com/CosmWasm/ts-codegen) Convert your CosmWasm smart contracts into dev-friendly TypeScript classes.
 * [chain-registry](https://github.com/hyperweb-io/chain-registry) Everything from token symbols, logos, and IBC denominations for all assets you want to support in your application.
 * [interchain-kit](https://github.com/hyperweb-io/interchain-kit) Experience the convenience of connecting with a variety of web3 wallets through a single, streamlined interface.
-* [create-cosmos-app](https://github.com/hyperweb-io/create-cosmos-app) Set up a modern Cosmos app by running one command.
+* [create-interchain-app](https://github.com/hyperweb-io/create-interchain-app) Set up a modern Cosmos app by running one command.
 * [interchain-ui](https://github.com/hyperweb-io/interchain-ui) The Interchain Design System, empowering developers with a flexible, easy-to-use UI kit.
 * [starship](https://github.com/hyperweb-io/starship) Unified Testing and Development for the Interchain.
 
