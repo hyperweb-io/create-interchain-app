@@ -1,11 +1,11 @@
-import { useChain } from '@interchain-kit/react';
-import { Box, Spinner, Text } from '@interchain-ui/react';
-import { WalletState } from '@interchain-kit/core'
+import { useChain } from "@interchain-kit/react";
+import { Box, Spinner, Text } from "@interchain-ui/react";
+import { WalletState } from "@interchain-kit/core";
 
-import Overview from './Overview';
-import { MyValidators } from './MyValidators';
-import { AllValidators } from './AllValidators';
-import { useStakingData, useValidatorLogos } from '@/hooks';
+import Overview from "./Overview";
+import { MyValidators } from "./MyValidators";
+import { AllValidators } from "./AllValidators";
+import { useStakingData, useValidatorLogos } from "@/hooks";
 
 export const StakingSection = ({ chainName }: { chainName: string }) => {
   const { status } = useChain(chainName);
@@ -14,6 +14,8 @@ export const StakingSection = ({ chainName }: { chainName: string }) => {
     chainName,
     data?.allValidators || []
   );
+
+  const isChainDataLoading = isFetchingLogos || !data;
 
   return (
     <Box my="$16">
@@ -35,7 +37,7 @@ export const StakingSection = ({ chainName }: { chainName: string }) => {
           justifyContent="center"
           alignItems="center"
         >
-          <Spinner size="$7xl" />
+          <Spinner size="$7xl" color="$primary" />
         </Box>
       ) : (
         <>
