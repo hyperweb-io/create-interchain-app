@@ -1,4 +1,5 @@
-import { InjSigningClient } from '@interchainjs/injective/signing-client';
+import { defaultSignerOptions } from '@interchainjs/injective/defaults';
+import { SigningClient } from '@interchainjs/cosmos/signing-client';
 import { Ref, computed, ref, watch } from 'vue'
 import { ExtensionWallet } from '@interchain-kit/core'
 import { useChain, useWalletManager } from '@interchain-kit/vue'
@@ -21,7 +22,7 @@ export const useInjectiveClient = (chainName: Ref<string>) => {
       return
     }
     signer.signMode = 'direct'
-    let res = await InjSigningClient.connectWithSigner(rpcEndpoint, signer)
+    let res = await SigningClient.connectWithSigner(rpcEndpoint, signer, defaultSignerOptions.Cosmos)
 
     injectiveClient.value = res
     injectiveClient.value?.addEncoders(toEncoders(MsgSend));
