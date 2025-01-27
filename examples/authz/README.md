@@ -1,4 +1,4 @@
-This is a Cosmos App project bootstrapped with [`create-cosmos-app`](https://github.com/hyperweb-io/create-cosmos-app).
+This is a Cosmos App project bootstrapped with [`create-interchain-app`](https://github.com/hyperweb-io/create-interchain-app).
 
 ## Getting Started
 
@@ -20,11 +20,11 @@ The npm package for the Official Cosmos chain registry. Get chain and token data
 
 * https://github.com/hyperweb-io/chain-registry
 
-### Cosmology Videos
+### Hyperweb Videos
 
 Checkout more videos for how to use various frontend tooling in the Cosmos!
 
-* https://cosmology.zone/learn
+* https://hyperweb.io/learn
 
 ### Interchain Kit
 
@@ -68,17 +68,17 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 
 Checkout these related projects:
 
-* [@cosmology/telescope](https://github.com/hyperweb-io/telescope) Your Frontend Companion for Building with TypeScript with Cosmos SDK Modules.
+* [@hyperweb/telescope](https://github.com/hyperweb-io/telescope) Your Frontend Companion for Building with TypeScript with Cosmos SDK Modules.
 * [@cosmwasm/ts-codegen](https://github.com/CosmWasm/ts-codegen) Convert your CosmWasm smart contracts into dev-friendly TypeScript classes.
 * [chain-registry](https://github.com/hyperweb-io/chain-registry) Everything from token symbols, logos, and IBC denominations for all assets you want to support in your application.
 * [interchain-kit](https://github.com/hyperweb-io/interchain-kit) Experience the convenience of connecting with a variety of web3 wallets through a single, streamlined interface.
-* [create-cosmos-app](https://github.com/hyperweb-io/create-cosmos-app) Set up a modern Cosmos app by running one command.
+* [create-interchain-app](https://github.com/hyperweb-io/create-interchain-app) Set up a modern Cosmos app by running one command.
 * [interchain-ui](https://github.com/hyperweb-io/interchain-ui) The Interchain Design System, empowering developers with a flexible, easy-to-use UI kit.
 * [starship](https://github.com/hyperweb-io/starship) Unified Testing and Development for the Interchain.
 
 ## Credits
 
-🛠 Built by Cosmology — if you like our tools, please consider delegating to [our validator ⚛️](https://cosmology.zone/validator)
+🛠 Built by Hyperweb — if you like our tools, please consider delegating to [our validator ⚛️](https://hyperweb.io/validator)
 
 
 ## Disclaimer
