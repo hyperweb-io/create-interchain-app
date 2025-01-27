@@ -5,7 +5,6 @@ import {
   StakingClaimHeader,
 } from '@interchain-ui/react';
 import { useChain } from '@cosmos-kit/react';
-import { ChainName } from 'cosmos-kit';
 import { cosmos } from 'interchain-query';
 
 import { getCoin } from '@/utils';
@@ -32,7 +31,7 @@ const Overview = ({
   rewards: Rewards;
   staked: string;
   updateData: () => void;
-  chainName: ChainName;
+  chainName: string;
   prices: Prices;
 }) => {
   const [isClaiming, setIsClaiming] = useState(false);
