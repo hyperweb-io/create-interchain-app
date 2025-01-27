@@ -49,11 +49,21 @@ export const GrantDetailsModal = ({
   const handleRevoke = (permissions: PrettyPermission[]) => {
     setIsRevoking(true);
 
+    const fee = {
+      amount: [
+        {
+          denom: token.base,
+          amount: '2500',
+        },
+      ],
+      gas: '1000000',
+    };
+
     revoke(
       {
         signerAddress,
         message: permissions.map(createRevokeMsg),
-        fee: 'auto',
+        fee: fee,
         memo: 'revoking permission',
       },
       {

@@ -62,11 +62,21 @@ const Overview = ({
       })
     );
 
+    const fee = {
+      amount: [
+        {
+          denom: coin.base,
+          amount: '2500',
+        },
+      ],
+      gas: '1000000',
+    };
+
     withdrawDelegatorReward(
       {
         address,
         message: msgs,
-        fee: 'auto',
+        fee: fee,
         memo: 'Claiming rewards',
       },
       {

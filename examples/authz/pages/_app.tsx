@@ -45,12 +45,25 @@ function CreateCosmosApp({ Component, pageProps }: AppProps) {
         assetLists={assetLists}
         wallets={[keplrWallet, leapWallet]}
         signerOptions={{
-          preferredSignType: 'direct',
+          signing: (chain) => {
+            if (chain === 'juno') {
+              return {
+                preferredSignType: 'direct',
+                broadcast: {
+                  checkTx: true,
+                  deliverTx: true,
+                },
+              };
+            }
+          },
         }}
         endpointOptions={{
           endpoints: {
             osmosis: {
               rpc: ['https://rpc.osmosis.zone'],
+            },
+            juno: {
+              rpc: ['https://juno-rpc.stakeandrelax.net/'],
             },
           },
         }}

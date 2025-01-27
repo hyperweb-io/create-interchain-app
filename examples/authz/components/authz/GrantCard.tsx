@@ -84,11 +84,21 @@ export const GrantCard = ({
   const handleRevoke = (permission: PrettyPermission) => {
     setIsRevoking(true);
 
+    const fee = {
+      amount: [
+        {
+          denom: token.base,
+          amount: '2500',
+        },
+      ],
+      gas: '1000000',
+    };
+
     revoke(
       {
         signerAddress,
         message: createRevokeMsg(permission),
-        fee: 'auto',
+        fee: fee,
         memo: 'revoking permission',
       },
       {

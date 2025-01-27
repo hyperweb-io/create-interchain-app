@@ -135,11 +135,21 @@ export const DelegateModal = ({
       },
     });
 
+    const fee = {
+      amount: [
+        {
+          denom: coin.base,
+          amount: '2500',
+        },
+      ],
+      gas: '1000000',
+    };
+
     exec(
       {
         signerAddress: grantee,
         message: createExecMsg({ msgs: [msg], grantee }),
-        fee: 'auto',
+        fee: fee,
         memo: 'executing permission',
       },
       {

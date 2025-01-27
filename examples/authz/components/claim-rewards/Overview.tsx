@@ -67,11 +67,21 @@ const Overview = ({
       })
     );
 
+    const fee = {
+      amount: [
+        {
+          denom: token.base,
+          amount: '2500',
+        },
+      ],
+      gas: '1000000',
+    };
+
     exec(
       {
         signerAddress: grantee,
         message: createExecMsg({ msgs, grantee }),
-        fee: 'auto',
+        fee: fee,
         memo: 'executing permission',
       },
       {
@@ -90,9 +100,9 @@ const Overview = ({
       <Box mb={{ mobile: '$8', tablet: '$12' }}>
         <StakingAssetHeader
           imgSrc={
-            coin.logo_URIs?.png ||
-            coin.logo_URIs?.svg ||
-            coin.logo_URIs?.jpeg ||
+            coin.logoURIs?.png ||
+            coin.logoURIs?.svg ||
+            coin.logoURIs?.jpeg ||
             ''
           }
           symbol={coin.symbol}
