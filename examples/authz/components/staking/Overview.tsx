@@ -9,8 +9,7 @@ import {
 } from '@interchain-ui/react';
 import { useChain } from '@cosmos-kit/react';
 import { ChainName } from 'cosmos-kit';
-import { cosmos } from 'interchain-query';
-import { useWithdrawDelegatorReward } from 'interchain-react/cosmos/distribution/v1beta1/tx.rpc.func';
+import { useWithdrawDelegatorReward } from '@interchainjs/react/cosmos/distribution/v1beta1/tx.rpc.react';
 
 import { getCoin } from '@/configs';
 import { Prices, useSigningClientDirect, useTx } from '@/hooks';
@@ -21,7 +20,7 @@ import {
   type ParsedRewards as Rewards,
 } from '@/utils';
 import { defaultContext } from '@tanstack/react-query';
-import { MsgWithdrawDelegatorReward } from 'interchain-react/cosmos/distribution/v1beta1/tx';
+import { MsgWithdrawDelegatorReward } from '@interchainjs/react/cosmos/distribution/v1beta1/tx';
 
 const Overview = ({
   balance,

@@ -8,7 +8,7 @@ import {
   ProposalStatus,
   TallyResult,
   TextProposal,
-} from 'interchain-query/cosmos/gov/v1beta1/gov';
+} from '@interchainjs/react/cosmos/gov/v1beta1/gov';
 import {
   BasicModal,
   Box,

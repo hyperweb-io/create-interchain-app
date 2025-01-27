@@ -1,27 +1,27 @@
 import { useChain } from '@cosmos-kit/react';
 import { isDeliverTxSuccess, StdFee } from '@cosmjs/stargate';
 
-import { MsgVote } from 'interchain-react/cosmos/gov/v1beta1/tx';
-import { MsgWithdrawDelegatorReward } from 'interchain-react/cosmos/distribution/v1beta1/tx';
-import { MsgExec, MsgGrant } from 'interchain-react/cosmos/authz/v1beta1/tx';
-import { EncodeObject } from 'interchain-react/types';
-import { SendAuthorization } from 'interchain-react/cosmos/bank/v1beta1/authz';
+import { MsgVote } from '@interchainjs/react/cosmos/gov/v1beta1/tx';
+import { MsgWithdrawDelegatorReward } from '@interchainjs/react/cosmos/distribution/v1beta1/tx';
+import { MsgExec, MsgGrant } from '@interchainjs/react/cosmos/authz/v1beta1/tx';
+import { EncodeObject } from '@interchainjs/react/types';
+import { SendAuthorization } from '@interchainjs/react/cosmos/bank/v1beta1/authz';
 import {
   AuthorizationType,
   StakeAuthorization,
-} from 'interchain-react/cosmos/staking/v1beta1/authz';
-import { GenericAuthorization } from 'interchain-react/cosmos/authz/v1beta1/authz';
+} from '@interchainjs/react/cosmos/staking/v1beta1/authz';
+import { GenericAuthorization } from '@interchainjs/react/cosmos/authz/v1beta1/authz';
 
 import { getTokenByChainName, PrettyPermission } from '@/utils';
 import { Permission } from '@/configs';
 import { useToast, type CustomToast } from './useToast';
 import { coin } from '@cosmjs/amino';
-import { MsgSend } from 'interchain-react/cosmos/bank/v1beta1/tx';
+import { MsgSend } from '@interchainjs/react/cosmos/bank/v1beta1/tx';
 import {
   MsgDelegate,
   MsgBeginRedelegate,
   MsgUndelegate,
-} from 'interchain-react/cosmos/staking/v1beta1/tx';
+} from '@interchainjs/react/cosmos/staking/v1beta1/tx';
 import dayjs from 'dayjs';
 
 // ==========================================

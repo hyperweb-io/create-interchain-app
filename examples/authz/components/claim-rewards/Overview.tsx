@@ -17,9 +17,9 @@ import {
   isGreaterThanZero,
   type ParsedRewards as Rewards,
 } from '@/utils';
-import { MsgWithdrawDelegatorReward } from 'interchain-react/cosmos/distribution/v1beta1/tx';
+import { MsgWithdrawDelegatorReward } from '@interchainjs/react/cosmos/distribution/v1beta1/tx';
 import { useAuthzContext } from '@/context';
-import { useExec } from 'interchain-react/cosmos/authz/v1beta1/tx.rpc.func';
+import { useExec } from '@interchainjs/react/cosmos/authz/v1beta1/tx.rpc.react';
 import { defaultContext } from '@tanstack/react-query';
 
 const Overview = ({

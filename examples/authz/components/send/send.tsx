@@ -20,9 +20,9 @@ import {
 } from '@/utils';
 import { useAuthzContext } from '@/context';
 import { AddressInput } from '@/components';
-import { MsgSend } from 'interchain-react/cosmos/bank/v1beta1/tx';
-import { SendAuthorization } from 'interchain-react/cosmos/bank/v1beta1/authz';
-import { useExec } from 'interchain-react/cosmos/authz/v1beta1/tx.rpc.func';
+import { MsgSend } from '@interchainjs/react/cosmos/bank/v1beta1/tx';
+import { SendAuthorization } from '@interchainjs/react/cosmos/bank/v1beta1/authz';
+import { useExec } from '@interchainjs/react/cosmos/authz/v1beta1/tx.rpc.react';
 import { defaultContext } from '@tanstack/react-query';
 
 type SendSectionProps = {

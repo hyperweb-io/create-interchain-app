@@ -12,7 +12,7 @@ import {
 } from '@/hooks';
 import { PrettyGrant, PrettyPermission } from '@/utils';
 import { PermissionDetailCard } from './PermissionDetailCard';
-import { useRevoke } from 'interchain-react/cosmos/authz/v1beta1/tx.rpc.func';
+import { useRevoke } from '@interchainjs/react/cosmos/authz/v1beta1/tx.rpc.react';
 import { defaultContext } from '@tanstack/react-query';
 import { useChain } from '@cosmos-kit/react';
 

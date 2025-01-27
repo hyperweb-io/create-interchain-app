@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState } from 'react';
 import { defaultContext, useQueries } from '@tanstack/react-query';
-import { ProposalStatus } from 'interchain-react/cosmos/gov/v1beta1/gov';
+import { ProposalStatus } from '@interchainjs/react/cosmos/gov/v1beta1/gov';
 
 import { paginate, parseQuorum, processProposals } from '@/utils';
 import { useQueryHooks } from './useQueryHooks';
@@ -10,14 +10,14 @@ import {
   useGetProposals,
   useGetParams as useGetGovParams,
   useGetVote,
-  createGetVote,
-} from 'interchain-react/cosmos/gov/v1beta1/query.rpc.func';
+} from '@interchainjs/react/cosmos/gov/v1beta1/query.rpc.react';
+import { createGetVote } from "@interchainjs/react/cosmos/gov/v1beta1/query.rpc.func";
 import {
   useGetDelegatorDelegations,
   useGetDelegatorValidators,
   useGetPool,
   useGetValidators,
-} from 'interchain-react/cosmos/staking/v1beta1/query.rpc.func';
+} from '@interchainjs/react/cosmos/staking/v1beta1/query.rpc.react';
 
 (BigInt.prototype as any).toJSON = function () {
   return this.toString();
@@ -33,7 +33,13 @@ export function useVotingData(chainName: string) {
 
   const address = permission?.granter;
 
-  const { rpcEndpoint, isReady, isFetching } = useQueryHooks(chainName);
+  const {
+    rpcEndpoint,
+    isReady,
+    isFetching,
+  } = useQueryHooks(chainName, {
+    context: defaultContext,
+  });
 
   const proposalsQuery = useGetProposals({
     request: {

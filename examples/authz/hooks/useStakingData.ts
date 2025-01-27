@@ -15,23 +15,23 @@ import {
 } from '@/utils';
 import { useAuthzContext } from '@/context';
 import { useQueryHooks } from './useQueryHooks';
-import { useGetBalance } from 'interchain-react/cosmos/bank/v1beta1/query.rpc.func';
+import { useGetBalance } from '@interchainjs/react/cosmos/bank/v1beta1/query.rpc.react';
 import {
   useGetDelegatorDelegations,
   useGetDelegatorValidators,
   useGetParams as useGetStakingParams,
   useGetPool,
   useGetValidators,
-} from 'interchain-react/cosmos/staking/v1beta1/query.rpc.func';
+} from '@interchainjs/react/cosmos/staking/v1beta1/query.rpc.react';
 import {
   useGetDelegationTotalRewards,
   useGetParams as useGetDistributionParams,
-} from 'interchain-react/cosmos/distribution/v1beta1/query.rpc.func';
-import { useGetAnnualProvisions } from 'interchain-react/cosmos/mint/v1beta1/query.rpc.func';
+} from '@interchainjs/react/cosmos/distribution/v1beta1/query.rpc.react';
+import { useGetAnnualProvisions } from '@interchainjs/react/cosmos/mint/v1beta1/query.rpc.react';
 import {
   BondStatus,
   bondStatusToJSON,
-} from 'interchain-react/cosmos/staking/v1beta1/staking';
+} from '@interchainjs/react/cosmos/staking/v1beta1/staking';
 import { defaultContext } from '@tanstack/react-query';
 
 (BigInt.prototype as any).toJSON = function () {
@@ -50,7 +50,9 @@ export const useStakingData = (chainName: string) => {
     rpcEndpoint,
     isReady: isQueryHooksReady,
     isFetching: isQueryHooksFetching,
-  } = useQueryHooks(chainName);
+  } = useQueryHooks(chainName, {
+    context: defaultContext,
+  });
 
   const balanceQuery = useGetBalance({
     request: {

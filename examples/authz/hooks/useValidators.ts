@@ -7,11 +7,11 @@ import { useQueryHooks } from './useQueryHooks';
 import {
   BondStatus,
   bondStatusToJSON,
-} from 'interchain-react/cosmos/staking/v1beta1/staking';
+} from '@interchainjs/react/cosmos/staking/v1beta1/staking';
 import {
   useGetValidator,
   useGetValidators,
-} from 'interchain-react/cosmos/staking/v1beta1/query.rpc.func';
+} from '@interchainjs/react/cosmos/staking/v1beta1/query.rpc.react';
 
 (BigInt.prototype as any).toJSON = function () {
   return this.toString();
@@ -29,7 +29,9 @@ export const useValidators = (
     rpcEndpoint,
     isReady: isQueryHooksReady,
     isFetching: isQueryHooksFetching,
-  } = useQueryHooks(chainName);
+  } = useQueryHooks(chainName, {
+    context: defaultContext,
+  });
 
   const validatorsQuery = useGetValidators({
     request: {

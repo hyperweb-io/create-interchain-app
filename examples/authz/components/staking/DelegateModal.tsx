@@ -31,9 +31,9 @@ import {
   useSigningClientDirect,
   useToast,
 } from '@/hooks';
-import { MsgDelegate } from 'interchain-react/cosmos/staking/v1beta1/tx';
-import { StakeAuthorization } from 'interchain-react/cosmos/staking/v1beta1/authz';
-import { useExec } from 'interchain-react/cosmos/authz/v1beta1/tx.rpc.func';
+import { MsgDelegate } from '@interchainjs/react/cosmos/staking/v1beta1/tx';
+import { StakeAuthorization } from '@interchainjs/react/cosmos/staking/v1beta1/authz';
+import { useExec } from '@interchainjs/react/cosmos/authz/v1beta1/tx.rpc.react';
 import { defaultContext } from '@tanstack/react-query';
 
 export const DelegateModal = ({

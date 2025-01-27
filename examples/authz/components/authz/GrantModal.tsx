@@ -28,7 +28,7 @@ import {
   PermissionItem,
   permissions,
 } from '@/configs';
-import { AuthorizationType } from 'interchain-react/cosmos/staking/v1beta1/authz';
+import { AuthorizationType } from '@interchainjs/react/cosmos/staking/v1beta1/authz';
 import {
   GrantMsg,
   useAuthzTx,
@@ -41,9 +41,9 @@ import { CustomizationField } from './CustomizationField';
 import { AddressInput } from '@/components';
 
 import styles from '@/styles/custom.module.css';
-import { useGrant } from 'interchain-react/cosmos/authz/v1beta1/tx.rpc.func';
+import { useGrant } from '@interchainjs/react/cosmos/authz/v1beta1/tx.rpc.react';
 import { defaultContext } from '@tanstack/react-query';
-import { SendAuthorization } from 'interchain-react/cosmos/bank/v1beta1/authz';
+import { SendAuthorization } from '@interchainjs/react/cosmos/bank/v1beta1/authz';
 
 export type AccessList = {
   type: 'allowList' | 'denyList';

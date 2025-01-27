@@ -29,7 +29,7 @@ import {
 import { getCoin, permissionNameToRouteMap } from '@/configs';
 
 import styles from '@/styles/custom.module.css';
-import { useRevoke } from 'interchain-react/cosmos/authz/v1beta1/tx.rpc.func';
+import { useRevoke } from '@interchainjs/react/cosmos/authz/v1beta1/tx.rpc.react';
 import { defaultContext } from '@tanstack/react-query';
 
 type GrantCardProps = {

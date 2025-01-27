@@ -15,7 +15,7 @@ import {
 import {
   Proposal as IProposal,
   ProposalStatus,
-} from 'interchain-query/cosmos/gov/v1beta1/gov';
+} from '@interchainjs/react/cosmos/gov/v1beta1/gov';
 import {
   exponentiate,
   formatDate,
@@ -27,8 +27,8 @@ import Markdown from 'react-markdown';
 import { useEffect, useState } from 'react';
 import { useAuthzTx, useSigningClientDirect, Votes } from '@/hooks';
 import { useAuthzContext } from '@/context';
-import { MsgVote } from 'interchain-react/cosmos/gov/v1beta1/tx';
-import { useExec } from 'interchain-react/cosmos/authz/v1beta1/tx.rpc.func';
+import { MsgVote } from '@interchainjs/react/cosmos/gov/v1beta1/tx';
+import { useExec } from '@interchainjs/react/cosmos/authz/v1beta1/tx.rpc.react';
 
 // export declare enum VoteOption {
 //   /** VOTE_OPTION_UNSPECIFIED - VOTE_OPTION_UNSPECIFIED defines a no-op vote option. */

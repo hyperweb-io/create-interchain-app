@@ -1,11 +1,13 @@
 import { useChain } from '@cosmos-kit/react';
 import {
   useRpcEndpoint,
-  useRpcClient,
-  createRpcQueryHooks,
-} from 'interchain-query';
-
-export const useQueryHooks = (chainName: string) => {
+} from '@interchainjs/react/react-query';
+import { UseQueryOptions } from '@tanstack/react-query';
+import { HttpEndpoint } from '@interchainjs/types';
+export const useQueryHooks = (
+  chainName: string,
+  options?: UseQueryOptions<string | HttpEndpoint, Error>
+) => {
   const { getRpcEndpoint } = useChain(chainName);
 
   const rpcEndpointQuery = useRpcEndpoint({
@@ -15,19 +17,12 @@ export const useQueryHooks = (chainName: string) => {
       queryKeyHashFn: (queryKey) => {
         return JSON.stringify([...queryKey, chainName]);
       },
+      ...options,
     },
   });
 
-  const rpcClientQuery = useRpcClient({
-    rpcEndpoint: rpcEndpointQuery.data || '',
-    options: {
-      enabled: Boolean(rpcEndpointQuery.data),
-      staleTime: Infinity,
-    },
-  });
-
-  const isReady = Boolean(rpcClientQuery.data);
-  const isFetching = rpcEndpointQuery.isFetching || rpcClientQuery.isFetching;
+  const isReady = Boolean(rpcEndpointQuery.data);
+  const isFetching = rpcEndpointQuery.isFetching || rpcEndpointQuery.isFetching;
 
   return {
     isReady,

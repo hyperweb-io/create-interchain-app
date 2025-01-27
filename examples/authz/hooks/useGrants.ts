@@ -7,14 +7,16 @@ import { useQueryHooks } from './useQueryHooks';
 import {
   useGetGranteeGrants,
   useGetGranterGrants,
-} from 'interchain-react/cosmos/authz/v1beta1/query.rpc.func';
+} from '@interchainjs/react/cosmos/authz/v1beta1/query.rpc.react';
 
 export const useGrants = (chainName: string) => {
   const { address } = useChain(chainName);
   const prevAddressRef = useRef(address);
 
   const { rpcEndpoint, isFetching: isRpcQueryClientLoading } =
-    useQueryHooks(chainName);
+    useQueryHooks(chainName, {
+      context: defaultContext,
+    });
 
   const granterGrantsQuery = useGetGranterGrants({
     request: {
