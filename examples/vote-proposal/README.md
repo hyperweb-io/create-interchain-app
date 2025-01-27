@@ -71,6 +71,6 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 Code built with the help of these related projects:
 
 * [@cosmwasm/ts-codegen](https://github.com/CosmWasm/ts-codegen) for generated CosmWasm contract Typescript classes
-* [@hyperweb/telescope](https://github.com/hyperweb-io/telescope) a "babel for the Cosmos", Telescope is a TypeScript Transpiler for Cosmos Protobufs.
+* [telescope](https://github.com/hyperweb-io/telescope) a "babel for the Cosmos", Telescope is a TypeScript Transpiler for Cosmos Protobufs.
 * [chain-registry](https://github.com/hyperweb-io/chain-registry) Cosmos chain registry and chain info.
 * [interchain-kit](https://github.com/hyperweb-io/interchain-kit) A wallet connector for the Cosmos.
