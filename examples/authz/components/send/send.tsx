@@ -2,16 +2,11 @@
 // @ts-nocheck
 
 import { useState } from 'react';
-import { useChain } from '@cosmos-kit/react';
+import { useChain } from '@interchain-kit/react';
 import { Box, Button, Spinner, Text, TokenInput } from '@interchain-ui/react';
 import BigNumber from 'bignumber.js';
 
-import {
-  useAuthzTx,
-  useSendData,
-  useSigningClientDirect,
-  useToast,
-} from '@/hooks';
+import { useAuthzTx, useSendData, useSigningClient, useToast } from '@/hooks';
 import {
   getCoin,
   getExponent,
@@ -24,6 +19,7 @@ import { MsgSend } from '@interchainjs/react/cosmos/bank/v1beta1/tx';
 import { SendAuthorization } from '@interchainjs/react/cosmos/bank/v1beta1/authz';
 import { useExec } from '@interchainjs/react/cosmos/authz/v1beta1/tx.rpc.react';
 import { defaultContext } from '@tanstack/react-query';
+import { WalletState } from '@interchain-kit/core';
 
 type SendSectionProps = {
   chainName: string;
@@ -35,10 +31,10 @@ export const SendSection = ({ chainName }: SendSectionProps) => {
   const [isSending, setIsSending] = useState(false);
   const [errorMsg, setErrorMsg] = useState('');
 
-  const { isWalletConnected } = useChain(chainName);
+  const { status } = useChain(chainName);
   const { data, isLoading, refetch } = useSendData(chainName);
   const { createExecMsg } = useAuthzTx(chainName);
-  const { data: client } = useSigningClientDirect(chainName);
+  const { data: client } = useSigningClient(chainName);
 
   const { mutate: exec } = useExec({
     clientResolver: client,
@@ -104,7 +100,7 @@ export const SendSection = ({ chainName }: SendSectionProps) => {
     );
   };
 
-  if (!isWalletConnected) {
+  if (status !== WalletState.Connected) {
     return (
       <Text
         color="$textSecondary"

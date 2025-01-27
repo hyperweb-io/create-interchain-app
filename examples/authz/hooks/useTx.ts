@@ -1,4 +1,4 @@
-import { useChain } from '@cosmos-kit/react';
+import { useChain } from '@interchain-kit/react';
 import { isDeliverTxSuccess, StdFee } from '@cosmjs/stargate';
 import { useToast, type CustomToast } from './useToast';
 import { useQuery } from '@tanstack/react-query';
@@ -26,52 +26,13 @@ export enum TxStatus {
   Broadcasting = 'Transaction Broadcasting',
 }
 
-export const useSigningClientDirect = (chainName: string) => {
-  const { getRpcEndpoint, getOfflineSignerDirect } = useChain(chainName);
+export const useSigningClient = (chainName: string) => {
+  const { getSigningClient } = useChain(chainName);
 
   return useQuery(
-    ['signingClientDirect', chainName],
+    ['signingClient', chainName],
     async () => {
-      const endpoint = await getRpcEndpoint();
-      const offlineSigner = await getOfflineSignerDirect();
-      const client = SigningClient.connectWithSigner(
-        endpoint,
-        // @ts-ignore
-        new DirectGenericOfflineSigner(offlineSigner),
-        {
-          broadcast: {
-            checkTx: true,
-            deliverTx: true,
-          },
-        }
-      );
-      return client;
-    },
-    {
-      enabled: !!chainName,
-    }
-  );
-};
-
-export const useSigningClientAmino = (chainName: string) => {
-  const { getRpcEndpoint, getOfflineSignerAmino } = useChain(chainName);
-
-  return useQuery(
-    ['signingClientAmino', chainName],
-    async () => {
-      const endpoint = await getRpcEndpoint();
-      const offlineSigner = await getOfflineSignerAmino();
-      const client = SigningClient.connectWithSigner(
-        endpoint,
-        // @ts-ignore
-        new AminoGenericOfflineSigner(offlineSigner),
-        {
-          broadcast: {
-            checkTx: true,
-            deliverTx: true,
-          },
-        }
-      );
+      const client = await getSigningClient();
       return client;
     },
     {

@@ -7,10 +7,9 @@ import {
   StakingAssetHeader,
   StakingClaimHeader,
 } from '@interchain-ui/react';
-import { ChainName } from 'cosmos-kit';
 
 import { getCoin } from '@/configs';
-import { Prices, useAuthzTx, useSigningClientDirect } from '@/hooks';
+import { Prices, useAuthzTx, useSigningClient } from '@/hooks';
 import {
   sum,
   calcDollarValue,
@@ -34,7 +33,7 @@ const Overview = ({
   rewards: Rewards;
   staked: string;
   updateData: () => void;
-  chainName: ChainName;
+  chainName: string;
   prices: Prices;
 }) => {
   const [isClaiming, setIsClaiming] = useState(false);
@@ -42,7 +41,7 @@ const Overview = ({
   const { permission } = useAuthzContext();
   const { createExecMsg } = useAuthzTx(chainName);
 
-  const { data: client } = useSigningClientDirect(chainName);
+  const { data: client } = useSigningClient(chainName);
 
   const { mutate: exec } = useExec({
     clientResolver: client,

@@ -1,24 +1,20 @@
 // TODO fix type issues
 // @ts-nocheck
 
-import { useChain } from '@cosmos-kit/react';
-import { ChainName } from 'cosmos-kit';
+import { useChain } from '@interchain-kit/react';
 import { Box, Spinner, Text } from '@interchain-ui/react';
 
 import { useStakingData } from '@/hooks';
 import Overview from './Overview';
+import { WalletState } from '@interchain-kit/core';
 
-export const ClaimRewardsSection = ({
-  chainName,
-}: {
-  chainName: ChainName;
-}) => {
-  const { isWalletConnected } = useChain(chainName);
+export const ClaimRewardsSection = ({ chainName }: { chainName: string }) => {
+  const { status } = useChain(chainName);
   const { data, isLoading, refetch } = useStakingData(chainName);
 
   return (
     <Box mt="$16" mb="$26">
-      {!isWalletConnected ? (
+      {status !== WalletState.Connected ? (
         <Box
           height="$28"
           display="flex"

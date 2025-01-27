@@ -2,14 +2,13 @@
 // @ts-nocheck
 
 import { useState } from 'react';
-import { ChainName } from 'cosmos-kit';
-import { useChain } from '@cosmos-kit/react';
+import { useChain } from '@interchain-kit/react';
 import { Box, Button, Tabs, Text } from '@interchain-ui/react';
 
 import { Grants } from './Grants';
 import { GrantModal } from './GrantModal';
 
-export const AuthzSection = ({ chainName }: { chainName: ChainName }) => {
+export const AuthzSection = ({ chainName }: { chainName: string }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [activeTab, setActiveTab] = useState(0);
   const { address } = useChain(chainName);

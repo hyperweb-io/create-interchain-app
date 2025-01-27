@@ -2,8 +2,6 @@
 // @ts-nocheck
 
 import React, { Dispatch, SetStateAction, useMemo } from 'react';
-import { ChainName } from 'cosmos-kit';
-
 import { getCoin } from '@/configs';
 import { shiftDigits, type ExtendedValidator as Validator } from '@/utils';
 import {
@@ -18,19 +16,19 @@ import {
 const AllValidatorsList = ({
   validators,
   openModal,
-  chainName,
+  chainName: string,
   logos,
   setSelectedValidator,
 }: {
   validators: Validator[];
-  chainName: ChainName;
+  chainName: string;
   openModal: () => void;
   setSelectedValidator: Dispatch<SetStateAction<Validator | undefined>>;
   logos: {
     [key: string]: string;
   };
 }) => {
-  const coin = getCoin(chainName);
+  const coin = getCoin(string);
 
   const columns = useMemo(() => {
     const _columns: GridColumn[] = [
@@ -105,7 +103,7 @@ const AllValidatorsList = ({
     }
 
     return _columns;
-  }, [chainName]);
+  }, [string]);
 
   return (
     <ValidatorList

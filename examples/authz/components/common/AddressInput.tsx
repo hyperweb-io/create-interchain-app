@@ -2,7 +2,7 @@
 // @ts-nocheck
 
 import { useMemo } from 'react';
-import { useChain } from '@cosmos-kit/react';
+import { useChain } from '@interchain-kit/react';
 import { fromBech32 } from '@cosmjs/encoding';
 import { TextField, Text, Box, BoxProps } from '@interchain-ui/react';
 
@@ -37,8 +37,8 @@ export const AddressInput = ({
 
     try {
       const res = fromBech32(address);
-      if (!address.startsWith(chain.bech32_prefix)) {
-        errorMsg = `Invalid address: Unexpected prefix (expected: ${chain.bech32_prefix}, actual: ${res.prefix})`;
+      if (!address.startsWith(chain.bech32Prefix)) {
+        errorMsg = `Invalid address: Unexpected prefix (expected: ${chain.bech32Prefix}, actual: ${res.prefix})`;
       }
     } catch (error) {
       errorMsg = 'Invalid address';

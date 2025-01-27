@@ -4,17 +4,12 @@
 import { useState } from 'react';
 import { BasicModal, Box, Button } from '@interchain-ui/react';
 
-import {
-  useAuthzTx,
-  useGrants,
-  useSigningClientAmino,
-  useSigningClientDirect,
-} from '@/hooks';
+import { useAuthzTx, useGrants, useSigningClient } from '@/hooks';
 import { PrettyGrant, PrettyPermission } from '@/utils';
 import { PermissionDetailCard } from './PermissionDetailCard';
 import { useRevoke } from '@interchainjs/react/cosmos/authz/v1beta1/tx.rpc.react';
 import { defaultContext } from '@tanstack/react-query';
-import { useChain } from '@cosmos-kit/react';
+import { useChain } from '@interchain-kit/react';
 
 type GrantDetailsModalProps = {
   grant: PrettyGrant;
@@ -42,7 +37,7 @@ export const GrantDetailsModal = ({
   const { refetch } = useGrants(chainName);
   const { createRevokeMsg } = useAuthzTx(chainName);
 
-  const { data: client } = useSigningClientDirect(chainName);
+  const { data: client } = useSigningClient(chainName);
 
   const { mutate: revoke } = useRevoke({
     clientResolver: client,

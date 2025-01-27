@@ -1,5 +1,4 @@
-import { useChain } from '@cosmos-kit/react';
-import { isDeliverTxSuccess, StdFee } from '@cosmjs/stargate';
+import { StdFee } from '@cosmjs/stargate';
 
 import { MsgVote } from '@interchainjs/react/cosmos/gov/v1beta1/tx';
 import { MsgWithdrawDelegatorReward } from '@interchainjs/react/cosmos/distribution/v1beta1/tx';

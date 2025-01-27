@@ -1,10 +1,10 @@
-import { assets } from 'chain-registry';
-import { AssetList, Asset } from '@chain-registry/types';
+import { assetLists } from '@chain-registry/v2';
+import { AssetList, Asset } from '@chain-registry/v2-types';
 
 export const defaultChainName = 'osmosis';
 
 export const getChainAssets = (chainName: string = defaultChainName) => {
-  return assets.find((chain) => chain.chain_name === chainName) as AssetList;
+  return assetLists.find((chain) => chain.chainName === chainName) as AssetList;
 };
 
 export const getCoin = (chainName: string = defaultChainName) => {
@@ -13,7 +13,7 @@ export const getCoin = (chainName: string = defaultChainName) => {
 };
 
 export const getExponent = (chainName: string) => {
-  return getCoin(chainName).denom_units.find(
+  return getCoin(chainName).denomUnits.find(
     (unit) => unit.denom === getCoin(chainName).display
   )?.exponent as number;
 };

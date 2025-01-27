@@ -1,18 +1,18 @@
-import { assets } from 'chain-registry';
-import { Asset, AssetList, Chain } from '@chain-registry/types';
+import { assetLists } from '@chain-registry/v2';
+import { Asset, AssetList, Chain } from '@chain-registry/v2-types';
 
 export const getChainLogoByChainName = (chainName: string): string => {
-  const asset = assets.find(({ chain_name }) => chain_name === chainName)
+  const asset = assetLists.find(({ chainName: n }) => n === chainName)
     ?.assets?.[0];
-  return Object.values(asset?.logo_URIs || {})?.[0] || '';
+  return Object.values(asset?.logoURIs || {})?.[0] || '';
 };
 
 export const getChainLogoFromChain = (chain: Chain) => {
-  return Object.values(chain?.logo_URIs || {})?.[0] || '';
+  return Object.values(chain?.logoURIs || {})?.[0] || '';
 };
 
 export const getChainAssets = (chainName: string) => {
-  return assets.find((chain) => chain.chain_name === chainName) as AssetList;
+  return assetLists.find((chain) => chain.chainName === chainName) as AssetList;
 };
 
 export const getTokenByChainName = (chainName: string) => {
@@ -22,23 +22,23 @@ export const getTokenByChainName = (chainName: string) => {
 
 export const getExponentByChainName = (chainName: string) => {
   return (
-    getTokenByChainName(chainName).denom_units.find(
+    getTokenByChainName(chainName).denomUnits.find(
       (unit) => unit.denom === getTokenByChainName(chainName).display
     )?.exponent || 6
   );
 };
 
 export const getExponentByDenom = (denom: string) => {
-  const asset = assets.find((chain) => chain.assets[0].base === denom)
+  const asset = assetLists.find((chain) => chain.assets[0].base === denom)
     ?.assets[0];
-  const exponent = asset?.denom_units.find(
+  const exponent = asset?.denomUnits.find(
     (unit) => unit.denom === asset.display
   )?.exponent;
   return exponent || 6;
 };
 
 export const getSymbolByDenom = (denom: string) => {
-  const asset = assets.find((chain) => chain.assets[0].base === denom)
+  const asset = assetLists.find((chain) => chain.assets[0].base === denom)
     ?.assets[0];
   return asset?.symbol || '';
 };

@@ -1,6 +1,6 @@
 import dayjs from 'dayjs';
 import BigNumber from 'bignumber.js';
-import { Chain, Asset } from '@chain-registry/types';
+import { Chain, Asset } from '@chain-registry/v2-types';
 import {
   Proposal,
   ProposalStatus,
@@ -8,7 +8,7 @@ import {
 import { getChainAssets } from './chain';
 
 export function getChainLogo(chain: Chain) {
-  return chain.logo_URIs?.svg || chain.logo_URIs?.png;
+  return chain.logoURIs?.svg || chain.logoURIs?.png;
 }
 
 export function formatDate(date?: Date) {
@@ -42,7 +42,7 @@ export const getCoin = (chainName: string) => {
 };
 
 export const getExponent = (chainName: string) => {
-  return getCoin(chainName).denom_units.find(
+  return getCoin(chainName).denomUnits.find(
     (unit) => unit.denom === getCoin(chainName).display
   )?.exponent as number;
 };

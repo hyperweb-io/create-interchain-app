@@ -2,7 +2,6 @@
 // @ts-nocheck
 
 import { useState } from 'react';
-import { ChainName } from 'cosmos-kit';
 import BigNumber from 'bignumber.js';
 import {
   BasicModal,
@@ -28,7 +27,7 @@ import {
   Prices,
   useAuthzTx,
   UseDisclosureReturn,
-  useSigningClientDirect,
+  useSigningClient,
   useToast,
 } from '@/hooks';
 import { MsgDelegate } from '@interchainjs/react/cosmos/staking/v1beta1/tx';
@@ -52,7 +51,7 @@ export const DelegateModal = ({
   balance: string;
   updateData: () => void;
   unbondingDays: string;
-  chainName: ChainName;
+  chainName: string;
   modalControl: UseDisclosureReturn;
   selectedValidator: Validator;
   logoUrl: string;
@@ -72,7 +71,7 @@ export const DelegateModal = ({
 
   const { createExecMsg } = useAuthzTx(chainName);
 
-  const { data: client } = useSigningClientDirect(chainName);
+  const { data: client } = useSigningClient(chainName);
 
   const { mutate: exec } = useExec({
     clientResolver: client,

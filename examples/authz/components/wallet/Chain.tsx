@@ -2,7 +2,7 @@
 // @ts-nocheck
 
 import * as React from 'react';
-import { chains } from 'chain-registry';
+import { chains } from '@chain-registry/v2';
 import {
   Box,
   Combobox,
@@ -56,8 +56,8 @@ export const Chain = (props: ChooseChainProps) => {
     // Init selected key to provided chainName
     if (chainName && chainInfos.length > 0) {
       const initKey = chainInfos.filter(
-        (option) => option.chain_name === chainName
-      )[0].chain_name;
+        (option) => option.chainName === chainName
+      )[0].chainName;
 
       return setSelectedKey(initKey);
     }
@@ -67,9 +67,9 @@ export const Chain = (props: ChooseChainProps) => {
 
   const chainOptions = chainInfos
     .map((chainInfo) => ({
-      iconUrl: chainInfo.logo_URIs?.png ?? '',
-      label: chainInfo.pretty_name,
-      value: chainInfo.chain_name,
+      iconUrl: chainInfo.logoURIs?.png ?? '',
+      label: chainInfo.prettyName,
+      value: chainInfo.chainName,
     }))
     .filter((chainInfo) => chainInfo.label && chainInfo.value);
 

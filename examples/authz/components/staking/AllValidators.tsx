@@ -3,7 +3,6 @@
 
 import { useState } from 'react';
 import { Text } from '@interchain-ui/react';
-import { ChainName } from 'cosmos-kit';
 
 import { DelegateModal } from './DelegateModal';
 import AllValidatorsList from './AllValidatorsList';
@@ -23,7 +22,7 @@ export const AllValidators = ({
   balance: string;
   updateData: () => void;
   unbondingDays: string;
-  chainName: ChainName;
+  chainName: string;
   logos: {
     [key: string]: string;
   };

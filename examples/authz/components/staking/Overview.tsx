@@ -7,12 +7,11 @@ import {
   StakingAssetHeader,
   StakingClaimHeader,
 } from '@interchain-ui/react';
-import { useChain } from '@cosmos-kit/react';
-import { ChainName } from 'cosmos-kit';
+import { useChain } from '@interchain-kit/react';
 import { useWithdrawDelegatorReward } from '@interchainjs/react/cosmos/distribution/v1beta1/tx.rpc.react';
 
 import { getCoin } from '@/configs';
-import { Prices, useSigningClientDirect, useTx } from '@/hooks';
+import { Prices, useSigningClient, useTx } from '@/hooks';
 import {
   sum,
   calcDollarValue,
@@ -34,13 +33,13 @@ const Overview = ({
   rewards: Rewards;
   staked: string;
   updateData: () => void;
-  chainName: ChainName;
+  chainName: string;
   prices: Prices;
 }) => {
   const [isClaiming, setIsClaiming] = useState(false);
   const { address } = useChain(chainName);
 
-  const { data: client } = useSigningClientDirect(chainName);
+  const { data: client } = useSigningClient(chainName);
 
   const totalAmount = sum(balance, staked, rewards?.total ?? 0);
   const coin = getCoin(chainName);
@@ -83,9 +82,9 @@ const Overview = ({
       <Box mb={{ mobile: '$8', tablet: '$12' }}>
         <StakingAssetHeader
           imgSrc={
-            coin.logo_URIs?.png ||
-            coin.logo_URIs?.svg ||
-            coin.logo_URIs?.jpeg ||
+            coin.logoURIs?.png ||
+            coin.logoURIs?.svg ||
+            coin.logoURIs?.jpeg ||
             ''
           }
           symbol={coin.symbol}

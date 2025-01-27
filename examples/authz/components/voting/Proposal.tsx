@@ -25,7 +25,7 @@ import {
 } from '@/utils';
 import Markdown from 'react-markdown';
 import { useEffect, useState } from 'react';
-import { useAuthzTx, useSigningClientDirect, Votes } from '@/hooks';
+import { useAuthzTx, useSigningClient, Votes } from '@/hooks';
 import { useAuthzContext } from '@/context';
 import { MsgVote } from '@interchainjs/react/cosmos/gov/v1beta1/tx';
 import { useExec } from '@interchainjs/react/cosmos/authz/v1beta1/tx.rpc.react';
@@ -73,7 +73,7 @@ export function Proposal({
   const exponent = getExponent(chainName);
 
   const { createExecMsg } = useAuthzTx(chainName);
-  const { data: client } = useSigningClientDirect(chainName);
+  const { data: client } = useSigningClient(chainName);
 
   const { mutate: exec } = useExec({
     clientResolver: client,

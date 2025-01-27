@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useRef } from 'react';
-import { useChain } from '@cosmos-kit/react';
+import { useChain } from '@interchain-kit/react';
 import { defaultContext, useQuery } from '@tanstack/react-query';
 
 import { prettyGrants } from '@/utils';

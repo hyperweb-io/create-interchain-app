@@ -1,6 +1,6 @@
-import { assets } from 'chain-registry';
+import { assetLists } from '@chain-registry/v2';
 import { useQuery } from '@tanstack/react-query';
-import { AssetList } from '@chain-registry/types';
+import { AssetList } from '@chain-registry/v2-types';
 
 type CoinGeckoId = string;
 type CoinGeckoUSD = { usd: number };
@@ -13,8 +13,8 @@ const handleError = (resp: Response) => {
 };
 
 const getGeckoIdsFromAssets = (assets: AssetList[]) => {
-  return assets
-    .map((asset) => asset.assets[0].coingecko_id)
+  return assetLists
+    .map((asset) => asset.assets[0].coingeckoId)
     .filter(Boolean) as string[];
 };
 
@@ -23,8 +23,8 @@ const formatPrices = (
   assets: AssetList[]
 ): Prices => {
   return Object.entries(prices).reduce((priceHash, cur) => {
-    const assetList = assets.find(
-      (asset) => asset.assets[0].coingecko_id === cur[0]
+    const assetList = assetLists.find(
+      (asset) => asset.assets[0].coingeckoId === cur[0]
     )!;
     const denom = assetList.assets[0].base;
     return { ...priceHash, [denom]: cur[1].usd };
@@ -42,12 +42,12 @@ const fetchPrices = async (
 };
 
 export const usePrices = () => {
-  const geckoIds = getGeckoIdsFromAssets(assets);
+  const geckoIds = getGeckoIdsFromAssets(assetLists);
 
   return useQuery({
     queryKey: ['prices'],
     queryFn: () => fetchPrices(geckoIds),
-    select: (data) => formatPrices(data, assets),
+    select: (data) => formatPrices(data, assetLists),
     staleTime: Infinity,
   });
 };

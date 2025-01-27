@@ -10,10 +10,11 @@ import type { AppProps } from 'next/app';
 import { QueryClientProvider, QueryClient } from '@tanstack/react-query';
 // import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 
-import { SignerOptions, wallets } from 'cosmos-kit';
-import { ChainProvider } from '@cosmos-kit/react';
-import { chains, assets } from 'chain-registry';
-import { GasPrice } from '@cosmjs/stargate';
+import { SignerOptions, wallets } from 'interchain-kit';
+import { ChainProvider } from '@interchain-kit/react';
+import { chains, assetLists } from '@chain-registry/v2';
+import { keplrWallet } from '@interchain-kit/keplr-extension';
+import { leapWallet } from '@interchain-kit/leap-extension';
 
 import {
   Box,
@@ -37,43 +38,22 @@ const queryClient = new QueryClient({
 function CreateCosmosApp({ Component, pageProps }: AppProps) {
   const { themeClass } = useTheme();
 
-  const signerOptions: SignerOptions = {
-    signingStargate: (_chain) => {
-      let gasPrice;
-      try {
-        const chain =
-          typeof _chain === 'string'
-            ? chains.find(({ chain_name }) => chain_name === _chain)!
-            : _chain;
-        const feeToken = chain.fees?.fee_tokens[0];
-        const fee = `${feeToken?.average_gas_price || 0.025}${feeToken?.denom}`;
-        gasPrice = GasPrice.fromString(fee);
-      } catch (error) {
-        gasPrice = GasPrice.fromString('0.025uosmo');
-      }
-      return { gasPrice };
-    },
-  };
-
   return (
     <ThemeProvider>
       <ChainProvider
         chains={chains}
-        assetLists={assets}
-        wallets={wallets}
-        walletConnectOptions={{
-          signClient: {
-            projectId: 'a8510432ebb71e6948cfd6cde54b70f7',
-            relayUrl: 'wss://relay.walletconnect.org',
-            metadata: {
-              name: 'Cosmos Kit dApp',
-              description: 'Cosmos Kit dApp built by Create Cosmos App',
-              url: 'https://docs.cosmology.zone/cosmos-kit/',
-              icons: [],
+        assetLists={assetLists}
+        wallets={[keplrWallet, leapWallet]}
+        signerOptions={{
+          preferredSignType: 'direct',
+        }}
+        endpointOptions={{
+          endpoints: {
+            osmosis: {
+              rpc: ['https://rpc.osmosis.zone'],
             },
           },
         }}
-        signerOptions={signerOptions}
       >
         <QueryClientProvider client={queryClient}>
           <AuthzProvider>

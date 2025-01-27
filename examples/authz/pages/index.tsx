@@ -3,13 +3,12 @@
 
 import { useState } from 'react';
 import { Divider } from '@interchain-ui/react';
-import { ChainName } from 'cosmos-kit';
 
 import { useAuthzContext } from '@/context';
 import { Layout, Wallet, AuthzSection } from '@/components';
 
 export default function Home() {
-  const [selectedChain, setSelectedChain] = useState<ChainName>();
+  const [selectedChain, setSelectedChain] = useState<string>();
   const { setChainName } = useAuthzContext();
 
   return (

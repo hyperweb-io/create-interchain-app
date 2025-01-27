@@ -12,7 +12,7 @@ import {
   Text,
   TextField,
 } from '@interchain-ui/react';
-import { useChain } from '@cosmos-kit/react';
+import { useChain } from '@interchain-kit/react';
 
 import {
   getChainLogoByChainName,
@@ -20,12 +20,7 @@ import {
   PrettyPermission,
 } from '@/utils';
 import { useAuthzContext } from '@/context';
-import {
-  useAuthzTx,
-  useGrants,
-  useSigningClientAmino,
-  useSigningClientDirect,
-} from '@/hooks';
+import { useAuthzTx, useGrants, useSigningClient } from '@/hooks';
 import { getCoin, permissionNameToRouteMap } from '@/configs';
 
 import styles from '@/styles/custom.module.css';
@@ -50,11 +45,15 @@ export const GrantCard = ({
   const [revokingPermission, setRevokingPermission] =
     useState<PrettyPermission>();
 
-  const { address: signerAddress, chain } = useChain(chainName);
+  const {
+    address: signerAddress,
+    chain,
+    getSigningClient,
+  } = useChain(chainName);
   const { refetch } = useGrants(chainName);
   const { setPermission } = useAuthzContext();
   const { createRevokeMsg } = useAuthzTx(chainName);
-  const { data: client } = useSigningClientDirect(chainName);
+  const { data: client } = useSigningClient(chainName);
 
   const { mutate: revoke } = useRevoke({
     clientResolver: client,

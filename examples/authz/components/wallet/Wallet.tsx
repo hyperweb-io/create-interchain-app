@@ -8,9 +8,9 @@ import {
   Stack,
   useColorModeValue,
 } from '@interchain-ui/react';
-import { WalletStatus } from 'cosmos-kit';
-import { useChain, useManager } from '@cosmos-kit/react';
-import { chains } from 'chain-registry';
+import { WalletState } from '@interchain-kit/core';
+import { useChain } from '@interchain-kit/react';
+import { chains } from '@chain-registry/v2';
 import { User } from './User';
 import { Chain } from './Chain';
 import { Warning } from './Warning';
@@ -24,6 +24,7 @@ import {
   ButtonRejected,
 } from './Connect';
 import { ChainCard } from './ChainCard';
+import { defaultChainName } from '@/configs';
 
 export const DEFAULT_CHAIN_NAME = 'cosmoshub';
 export const CHAIN_NAME_STORAGE_KEY = 'selected-chain';
@@ -49,15 +50,12 @@ export function Wallet({
     connect,
     openView,
   } = useChain(chainName);
-  const { getChainLogo } = useManager();
 
   const ConnectButton = {
-    [WalletStatus.Connected]: <ButtonConnected onClick={openView} />,
-    [WalletStatus.Connecting]: <ButtonConnecting />,
-    [WalletStatus.Disconnected]: <ButtonDisconnected onClick={connect} />,
-    [WalletStatus.Error]: <ButtonError onClick={openView} />,
-    [WalletStatus.Rejected]: <ButtonRejected onClick={connect} />,
-    [WalletStatus.NotExist]: <ButtonNotExist onClick={openView} />,
+    [WalletState.Connected]: <ButtonConnected onClick={openView} />,
+    [WalletState.Connecting]: <ButtonConnecting />,
+    [WalletState.Disconnected]: <ButtonDisconnected onClick={connect} />,
+    [WalletState.Rejected]: <ButtonRejected onClick={connect} />,
   }[status] || <ButtonConnect onClick={connect} />;
 
   function handleChainChange(chainName?: string) {
@@ -80,14 +78,16 @@ export function Wallet({
       <Box mx="auto" maxWidth="28rem" attributes={{ mb: '$12' }}>
         {isMultiChain ? (
           <Chain
-            chainName={chain.chain_name}
+            chainName={chain.chainName}
             chainInfos={chains}
             onChange={handleChainChange}
           />
         ) : (
           <ChainCard
-            prettyName={chain.pretty_name}
-            icon={getChainLogo(chainName)}
+            prettyName={chain.prettyName}
+            icon={
+              chains.find((c) => c.chainName === chain.chainName)?.logoURIs?.png
+            }
           />
         )}
       </Box>
@@ -124,10 +124,7 @@ export function Wallet({
           {ConnectButton}
         </Box>
 
-        {message &&
-        [WalletStatus.Error, WalletStatus.Rejected].includes(status) ? (
-          <Warning text={`${wallet?.prettyName}: ${message}`} />
-        ) : null}
+        {message}
       </Stack>
     </Box>
   );

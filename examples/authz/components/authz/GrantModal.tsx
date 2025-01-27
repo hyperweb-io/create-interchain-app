@@ -2,7 +2,6 @@
 // @ts-nocheck
 
 import { useState } from 'react';
-import { ChainName } from 'cosmos-kit';
 import {
   BasicModal,
   Box,
@@ -17,7 +16,7 @@ import {
   FieldLabel,
 } from '@interchain-ui/react';
 import { coin } from '@cosmjs/amino';
-import { useChain } from '@cosmos-kit/react';
+import { useChain } from '@interchain-kit/react';
 import { IoMdCalendar } from 'react-icons/io';
 import Calendar from 'react-calendar';
 import dayjs from 'dayjs';
@@ -29,13 +28,7 @@ import {
   permissions,
 } from '@/configs';
 import { AuthorizationType } from '@interchainjs/react/cosmos/staking/v1beta1/authz';
-import {
-  GrantMsg,
-  useAuthzTx,
-  useGrants,
-  useSigningClientAmino,
-  useSigningClientDirect,
-} from '@/hooks';
+import { GrantMsg, useAuthzTx, useGrants, useSigningClient } from '@/hooks';
 import { getTokenByChainName, shiftDigits } from '@/utils';
 import { CustomizationField } from './CustomizationField';
 import { AddressInput } from '@/components';
@@ -53,7 +46,7 @@ export type AccessList = {
 type GrantModalProps = {
   isOpen: boolean;
   onClose: () => void;
-  chainName: ChainName;
+  chainName: string;
 };
 
 export const GrantModal = ({ isOpen, onClose, chainName }: GrantModalProps) => {
@@ -80,7 +73,7 @@ export const GrantModal = ({ isOpen, onClose, chainName }: GrantModalProps) => {
   const { refetch } = useGrants(chainName);
   const { address } = useChain(chainName);
   const { createGrantMsg } = useAuthzTx(chainName);
-  const { data: client } = useSigningClientAmino(chainName);
+  const { data: client } = useSigningClient(chainName);
 
   const { mutate: grant } = useGrant({
     clientResolver: client,

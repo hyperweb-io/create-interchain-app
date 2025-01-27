@@ -1,7 +1,8 @@
 // TODO fix type issues
 // @ts-nocheck
 
-import { useChain } from '@cosmos-kit/react';
+import { WalletState } from '@interchain-kit/core';
+import { useChain } from '@interchain-kit/react';
 import { Box, Icon, Text } from '@interchain-ui/react';
 
 type LoginInfoBannerProps = {
@@ -13,9 +14,9 @@ export const LoginInfoBanner = ({
   loginAddress,
   chainName,
 }: LoginInfoBannerProps) => {
-  const { isWalletConnected } = useChain(chainName);
+  const { status } = useChain(chainName);
 
-  if (!isWalletConnected) return null;
+  if (status === WalletState.Connected) return null;
 
   return (
     <Box
