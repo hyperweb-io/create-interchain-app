@@ -62,13 +62,13 @@ Everything is preconfigured, ready-to-go, so you can focus on your code!
 
 - ⚡️ Connect easily to 20+ wallets via [Interchain Kit](https://github.com/hyperweb-io/interchain-kit) — including Ledger, Keplr, Cosmostation, Leap, Trust Wallet, OKX, XDEFI, Exodus, Wallet Connect and more!
 - ⚛️ Sign and broadcast with [InterchainJS](https://github.com/hyperweb-io/interchainjs)
-- 🎨 Build awesome UI with [Interchain UI](https://cosmology.zone/products/interchain-ui) and [Explore Components](https://hyperweb.io/components)
+- 🎨 Build awesome UI with [Interchain UI](https://hyperweb.io/products/interchain-ui) and [Explore Components](https://hyperweb.io/components)
 - 🛠 Render pages with [next.js](https://nextjs.org/) hybrid static & server rendering
 - 📝 Leverage [chain-registry](https://github.com/hyperweb-io/chain-registry) for Chain and Asset info for all IBC-connected chains
 
 ## Education & Resources
 
-🎥 [Checkout our videos](https://cosmology.zone/learn) to learn to learn more about `create-interchain-app` and tooling for building frontends in the Cosmos!
+🎥 [Checkout our videos](https://hyperweb.io/learn) to learn to learn more about `create-interchain-app` and tooling for building frontends in the Cosmos!
 
 Checkout [interchain-kit](https://github.com/hyperweb-io/interchain-kit) for more docs as well as [interchain-kit/react](https://github.com/hyperweb-io/interchain-kit/tree/main/packages/react#signing-clients) for getting cosmjs stargate and cosmjs signers.
 
@@ -216,19 +216,7 @@ cia --name liquidity-example --example provide-liquidity
 Create and manage an asset list, offering comprehensive insights into the available assets, and empower your application with Inter-Blockchain Communication (IBC) capabilities for transferring tokens across different chains.
 
 ```
-cia --name asset-list-example --example asset-list
-```
-
-### NFT
-
-<p align="center" width="100%">
-    <img height="48" src="https://user-images.githubusercontent.com/545047/184694732-f4a3d397-14fb-415a-9562-a532f510f812.png" />
-</p>
-
-Incorporate NFT functionalities into your Stargaze app using [stargazejs](https://github.com/hyperweb-io/stargazejs), enabling seamless NFT minting, transfer, and management.
-
-```
-cia --name nft-example --example nft
+cia --name ibc-asset-list-example --example ibc-asset-list
 ```
 
 ## Options

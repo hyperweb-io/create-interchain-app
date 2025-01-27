@@ -39,7 +39,7 @@ function CreateCosmosApp({ Component, pageProps }: AppProps) {
             metadata: {
               name: 'CosmosKit Template',
               description: 'CosmosKit dapp template',
-              url: 'https://docs.cosmology.zone/interchain-kit/',
+              url: 'https://docs.hyperweb.io/interchain-kit/',
               icons: [],
             },
           },

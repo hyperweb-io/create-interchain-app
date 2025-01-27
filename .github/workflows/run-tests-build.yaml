@@ -14,12 +14,11 @@ jobs:
       matrix:
         example:
           [
-            asset-list,
+            ibc-asset-list,
             vote-proposal,
             ibc-transfer,
             swap-tokens,
             provide-liquidity,
-            nft,
             connect-chain,
             connect-multi-chain,
           ]
