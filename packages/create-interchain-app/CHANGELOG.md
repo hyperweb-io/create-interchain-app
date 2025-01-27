@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 2.4.1 (2025-01-27)
+
+**Note:** Version bump only for package create-interchain-app
+
+
+
+
+
 # [2.4.0](https://github.com/hyperweb-io/create-interchain-app/compare/create-interchain-app@0.0.6...create-interchain-app@2.4.0) (2024-10-08)
 
 
