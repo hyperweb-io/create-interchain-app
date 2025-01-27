@@ -1,7 +1,7 @@
 {
-  "name": "injective-vue",
+  "name": "@hyperweb/injective-vue",
   "private": true,
-  "version": "0.0.1",
+  "version": "0.0.3",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -19,10 +19,11 @@
     "@interchain-kit/vue": "0.0.1-beta.38",
     "@interchain-ui/vue": "^1.4.1",
     "@interchainjs/cosmos": "1.6.1",
-    "@interchainjs/injective": "1.6.1",
+    "@interchainjs/injective": "1.8.2",
     "@tanstack/vue-query": "5.62.7",
     "interchain-vue": "1.6.2",
     "osmojs": "^16.15.0",
+    "bignumber.js": "9.1.0",
     "vue": "^3.5.13",
     "vue-router": "^4.5.0"
   },
@@ -32,5 +33,6 @@
     "typescript": "~5.6.2",
     "vite": "^6.0.0",
     "vue-tsc": "^2.1.10"
-  }
+  },
+  "packageManager": "yarn@4.3.0"
 }

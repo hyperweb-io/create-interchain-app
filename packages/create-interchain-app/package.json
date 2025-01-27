@@ -1,6 +1,6 @@
 {
   "name": "create-interchain-app",
-  "version": "2.4.1",
+  "version": "2.4.2",
   "description": "Set up a modern Cosmos app by running one command ⚛️",
   "author": "Dan Lynch <pyramation@gmail.com>",
   "homepage": "https://github.com/hyperweb-io/create-interchain-app#readme",
@@ -38,10 +38,12 @@
     "url": "https://github.com/hyperweb-io/create-interchain-app"
   },
   "keywords": [
+    "interchain",
     "cosmos",
-    "cosmology",
+    "hyperweb",
     "create-interchain-app",
-    "interchain-kit"
+    "interchain-kit",
+    "interchainjs"
   ],
   "bugs": {
     "url": "https://github.com/hyperweb-io/create-interchain-app/issues"

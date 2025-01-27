@@ -18,11 +18,11 @@ The npm package for the Official Cosmos chain registry. Get chain and token data
 
 * https://github.com/hyperweb-io/chain-registry
 
-### Cosmology Videos
+### Hyperweb Videos
 
 Checkout more videos for how to use various frontend tooling in the Cosmos!
 
-* https://cosmology.zone/learn
+* https://hyperweb.io/learn
 
 ### Interchain Kit
 
@@ -66,7 +66,7 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 
 Checkout these related projects:
 
-* [@cosmology/telescope](https://github.com/hyperweb-io/telescope) Your Frontend Companion for Building with TypeScript with Cosmos SDK Modules.
+* [@hyperweb/telescope](https://github.com/hyperweb-io/telescope) Your Frontend Companion for Building with TypeScript with Cosmos SDK Modules.
 * [@cosmwasm/ts-codegen](https://github.com/CosmWasm/ts-codegen) Convert your CosmWasm smart contracts into dev-friendly TypeScript classes.
 * [chain-registry](https://github.com/hyperweb-io/chain-registry) Everything from token symbols, logos, and IBC denominations for all assets you want to support in your application.
 * [interchain-kit](https://github.com/hyperweb-io/interchain-kit) Experience the convenience of connecting with a variety of web3 wallets through a single, streamlined interface.

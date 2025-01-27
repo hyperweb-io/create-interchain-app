@@ -1,4 +1,4 @@
-This is a Cosmos App project bootstrapped with [`create-cosmos-app`](https://github.com/hyperweb-io/create-cosmos-app).
+This is a Cosmos App project bootstrapped with [`create-interchain-app`](https://github.com/hyperweb-io/create-interchain-app).
 
 ## Getting Started
 
@@ -26,7 +26,7 @@ Checkout more videos for how to use various frontend tooling in the Cosmos!
 
 * https://hyperweb.io/learn
 
-### Cosmos Kit
+### Interchain Kit
 
 A wallet connector for the Cosmos ⚛️
 

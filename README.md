@@ -62,7 +62,7 @@ Everything is preconfigured, ready-to-go, so you can focus on your code!
 
 - ⚡️ Connect easily to 20+ wallets via [Interchain Kit](https://github.com/hyperweb-io/interchain-kit) — including Ledger, Keplr, Cosmostation, Leap, Trust Wallet, OKX, XDEFI, Exodus, Wallet Connect and more!
 - ⚛️ Sign and broadcast with [InterchainJS](https://github.com/hyperweb-io/interchainjs)
-- 🎨 Build awesome UI with [Interchain UI](https://cosmology.zone/products/interchain-ui) and [Explore Components](https://hyperweb.io/components)
+- 🎨 Build awesome UI with [Interchain UI](https://hyperweb.io/products/interchain-ui) and [Explore Components](https://hyperweb.io/components)
 - 🛠 Render pages with [next.js](https://nextjs.org/) hybrid static & server rendering
 - 📝 Leverage [chain-registry](https://github.com/hyperweb-io/chain-registry) for Chain and Asset info for all IBC-connected chains
 
@@ -217,18 +217,6 @@ Create and manage an asset list, offering comprehensive insights into the availa
 
 ```
 cia --name ibc-asset-list-example --example ibc-asset-list
-```
-
-### NFT
-
-<p align="center" width="100%">
-    <img height="48" src="https://user-images.githubusercontent.com/545047/184694732-f4a3d397-14fb-415a-9562-a532f510f812.png" />
-</p>
-
-Incorporate NFT functionalities into your Stargaze app using [stargazejs](https://github.com/hyperweb-io/stargazejs), enabling seamless NFT minting, transfer, and management.
-
-```
-cia --name nft-example --example nft
 ```
 
 ## Options
