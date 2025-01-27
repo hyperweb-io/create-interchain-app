@@ -47,7 +47,7 @@ npm install __PACKAGE_IDENTIFIER__
 ```js
 import { __CHAINNAME__ } from '__PACKAGE_IDENTIFIER__';
 
-const { createRPCQueryClient } = __CHAINNAME__.ClientFactory; 
+const { createRPCQueryClient } = __CHAINNAME__.ClientFactory;
 const client = await createRPCQueryClient({ rpcEndpoint: RPC_ENDPOINT });
 
 // now you can query the cosmos modules
@@ -61,7 +61,7 @@ const balances = await client.__CHAINNAME__.exchange.v1beta1
 
 ### Composing Messages
 
-Import the `__CHAINNAME__` object from `__PACKAGE_IDENTIFIER__`. 
+Import the `__CHAINNAME__` object from `__PACKAGE_IDENTIFIER__`.
 
 ```js
 import { __CHAINNAME__ } from '__PACKAGE_IDENTIFIER__';
@@ -133,7 +133,7 @@ const {
 
 ## Connecting with Wallets and Signing Messages
 
-⚡️ For web interfaces, we recommend using [interchain-kit](https://github.com/cosmology-tech/interchain-kit). Continue below to see how to manually construct signers and clients.
+⚡️ For web interfaces, we recommend using [interchain-kit](https://github.com/hyperweb-io/interchain-kit). Continue below to see how to manually construct signers and clients.
 
 Here are the docs on [creating signers](https://docs.cosmology.zone/interchain-kit) in interchain-kit that can be used with Keplr and other wallets.
 
@@ -221,7 +221,7 @@ If you want to manually construct a stargate client
 import { OfflineSigner, GeneratedType, Registry } from "@cosmjs/proto-signing";
 import { AminoTypes, SigningStargateClient } from "@cosmjs/stargate";
 
-import { 
+import {
     cosmosAminoConverters,
     cosmosProtoRegistry,
     cosmwasmAminoConverters,
@@ -303,13 +303,13 @@ npm publish
 
 Checkout these related projects:
 
-* [@cosmology/telescope](https://github.com/cosmology-tech/telescope) Your Frontend Companion for Building with TypeScript with Cosmos SDK Modules.
+* [@cosmology/telescope](https://github.com/hyperweb-io/telescope) Your Frontend Companion for Building with TypeScript with Cosmos SDK Modules.
 * [@cosmwasm/ts-codegen](https://github.com/CosmWasm/ts-codegen) Convert your CosmWasm smart contracts into dev-friendly TypeScript classes.
-* [chain-registry](https://github.com/cosmology-tech/chain-registry) Everything from token symbols, logos, and IBC denominations for all assets you want to support in your application.
-* [interchain-kit](https://github.com/cosmology-tech/interchain-kit) Experience the convenience of connecting with a variety of web3 wallets through a single, streamlined interface.
-* [create-interchain-app](https://github.com/cosmology-tech/create-interchain-app) Set up a modern Cosmos app by running one command.
-* [interchain-ui](https://github.com/cosmology-tech/interchain-ui) The Interchain Design System, empowering developers with a flexible, easy-to-use UI kit.
-* [starship](https://github.com/cosmology-tech/starship) Unified Testing and Development for the Interchain.
+* [chain-registry](https://github.com/hyperweb-io/chain-registry) Everything from token symbols, logos, and IBC denominations for all assets you want to support in your application.
+* [interchain-kit](https://github.com/hyperweb-io/interchain-kit) Experience the convenience of connecting with a variety of web3 wallets through a single, streamlined interface.
+* [create-interchain-app](https://github.com/hyperweb-io/create-interchain-app) Set up a modern Cosmos app by running one command.
+* [interchain-ui](https://github.com/hyperweb-io/interchain-ui) The Interchain Design System, empowering developers with a flexible, easy-to-use UI kit.
+* [starship](https://github.com/hyperweb-io/starship) Unified Testing and Development for the Interchain.
 
 ## Credits
 
