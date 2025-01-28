@@ -1,4 +1,4 @@
-This is a Cosmos App project bootstrapped with [`create-interchain-app`](https://github.com/hyperweb-io/create-interchain-app).
+This is an Interchain App project bootstrapped with [`create-interchain-app`](https://github.com/hyperweb-io/create-interchain-app).
 
 ## Getting Started
 
