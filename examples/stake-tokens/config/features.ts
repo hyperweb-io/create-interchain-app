@@ -32,7 +32,7 @@ export const products: Project[] = [
   },
   {
     name: 'Videos',
-    desc: 'How-to videos from the official HyperWeb website, with learning resources for building in Cosmos.',
+    desc: 'How-to videos from the official Hyperweb website, with learning resources for building in Cosmos.',
     link: 'https://hyperweb.io/learn',
   },
 ];

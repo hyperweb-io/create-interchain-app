@@ -78,8 +78,7 @@ Checkout these related projects:
 
 ## Credits
 
-🛠 Built by Hyperweb — if you like our tools, please consider delegating to [our validator ⚛️](https://hyperweb.io/validator)
-
+🛠 Built by Hyperweb (formerly Cosmology) — if you like our tools, please checkout and contribute to [our github ⚛️](https://github.com/hyperweb-io)
 
 ## Disclaimer
 

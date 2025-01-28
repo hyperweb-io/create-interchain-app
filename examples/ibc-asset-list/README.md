@@ -20,7 +20,7 @@ The npm package for the Official Cosmos chain registry. Get chain and token data
 
 * https://github.com/hyperweb-io/chain-registry
 
-### HyperWeb Videos
+### Hyperweb Videos
 
 Checkout more videos for how to use various frontend tooling in the Cosmos!
 
@@ -78,8 +78,7 @@ Checkout these related projects:
 
 ## Credits
 
-🛠 Built by HyperWeb — if you like our tools, please consider delegating to [our validator ⚛️](https://hyperweb.io/validator)
-
+🛠 Built by Hyperweb (formerly Cosmology) — if you like our tools, please checkout and contribute to [our github ⚛️](https://github.com/hyperweb-io)
 
 ## Disclaimer
 
