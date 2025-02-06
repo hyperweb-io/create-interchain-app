@@ -42,7 +42,7 @@ const totalDayReward = computed(() => {
 useRewards2(chainName)
 
 const coin = computed(() => {
-  return allAssets.find(asset => asset.base === 'uosmo')
+  return allAssets?.find(asset => asset.base === 'uosmo')
 })
 const {prices, isLoading} = usePrices(chainName)
 

@@ -1,9 +1,9 @@
+import { ExtensionWallet } from '@interchain-kit/core';
+import { useChain, useWalletManager } from '@interchain-kit/vue';
+import { toConverters, toEncoders } from '@interchainjs/cosmos/utils';
 import { InjSigningClient } from '@interchainjs/injective/signing-client';
-import { Ref, computed, ref, watch } from 'vue'
-import { ExtensionWallet } from '@interchain-kit/core'
-import { useChain, useWalletManager } from '@interchain-kit/vue'
-import { toEncoders, toConverters } from '@interchainjs/cosmos/utils';
-import { MsgSend } from 'interchain-vue/cosmos/bank/v1beta1/tx';
+import { MsgSend } from '@interchainjs/vue/cosmos/bank/v1beta1/tx';
+import { Ref, computed, ref, watch } from 'vue';
 
 export const useInjectiveClient = (chainName: Ref<string>) => {
   const { rpcEndpoint, chain } = useChain(chainName)
