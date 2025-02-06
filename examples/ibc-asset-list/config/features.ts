@@ -32,16 +32,16 @@ export const products: Project[] = [
   },
   {
     name: 'Videos',
-    desc: 'How-to videos from the official HyperWeb website, with learning resources for building in Cosmos.',
+    desc: 'How-to videos from the official Hyperweb website, with learning resources for building in Cosmos.',
     link: 'https://hyperweb.io/learn',
   },
 ];
 
 export const dependencies: Project[] = [
   {
-    name: 'OsmoJS',
-    desc: 'OsmosJS makes it easy to compose and broadcast Osmosis and Cosmos messages',
-    link: 'https://github.com/osmosis-labs/osmojs',
+    name: 'InterchainJS',
+    desc: 'A single, universal signing interface for any network',
+    link: 'https://github.com/hyperweb-io/interchainjs',
   },
   {
     name: 'Interchain UI',

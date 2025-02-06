@@ -152,7 +152,7 @@ export function Footer() {
       >
         <Text>Built with</Text>
         <Link href="https://hyperweb.io" target="_blank">
-          HyperWeb
+          Hyperweb
         </Link>
       </Stack>
     </>

@@ -62,7 +62,7 @@ Everything is preconfigured, ready-to-go, so you can focus on your code!
 
 - ⚡️ Connect easily to 20+ wallets via [Interchain Kit](https://github.com/hyperweb-io/interchain-kit) — including Ledger, Keplr, Cosmostation, Leap, Trust Wallet, OKX, XDEFI, Exodus, Wallet Connect and more!
 - ⚛️ Sign and broadcast with [InterchainJS](https://github.com/hyperweb-io/interchainjs)
-- 🎨 Build awesome UI with [Interchain UI](https://hyperweb.io/products/interchain-ui) and [Explore Components](https://hyperweb.io/components)
+- 🎨 Build awesome UI with [Interchain UI](https://hyperweb.io/stack/interchain-ui) and [Explore Components](https://hyperweb.io/components)
 - 🛠 Render pages with [next.js](https://nextjs.org/) hybrid static & server rendering
 - 📝 Leverage [chain-registry](https://github.com/hyperweb-io/chain-registry) for Chain and Asset info for all IBC-connected chains
 

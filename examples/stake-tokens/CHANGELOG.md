@@ -3,6 +3,25 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.3](https://github.com/hyperweb-io/create-interchain-app/compare/@hyperweb/stake-tokens@1.1.2...@hyperweb/stake-tokens@1.1.3) (2025-01-27)
+
+**Note:** Version bump only for package @hyperweb/stake-tokens
+
+
+
+
+
+## [1.1.2](https://github.com/hyperweb-io/create-interchain-app/compare/@hyperweb/stake-tokens@1.1.1...@hyperweb/stake-tokens@1.1.2) (2025-01-27)
+
+
+### Bug Fixes
+
+* cannot stake action ([7edfc8d](https://github.com/hyperweb-io/create-interchain-app/commit/7edfc8dd51bbd4e3dc8371ea6f795af301542652))
+
+
+
+
+
 ## 1.1.1 (2025-01-27)
 
 
