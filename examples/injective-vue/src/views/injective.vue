@@ -15,7 +15,7 @@ const {
   isFetchingBalance,
   refetchBalance,
   denom,
-} = useBalanceVue(address);
+} = useBalanceVue(chainName);
 
 const txHash = ref("");
 

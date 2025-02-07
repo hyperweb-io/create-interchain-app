@@ -20,15 +20,8 @@ const { username, logoUrl, connect, status, address, openView } = chainInfo;
 
 console.log("chainInfo", chainInfo, username);
 
-let balanceVue: any;
+const balanceVue = useBalanceVue(chainName);
 
-if (address) {
-  try {
-    balanceVue = useBalanceVue(address);
-  } catch (e) {
-    console.log("error", e);
-  }
-}
 
 const { balance, isBalanceLoaded, isFetchingBalance, refetchBalance } = balanceVue || {};
 
