@@ -1,13 +1,18 @@
 import BigNumber from "bignumber.js";
-import { Ref, computed } from "vue";
+import { ref, computed } from "vue";
 import { assetLists } from "@chain-registry/v2";
 import { useGetBalance } from '@interchainjs/vue/cosmos/bank/v1beta1/query.rpc.vue';
+import { defaultRpcEndpoint } from '../../config/asset-list/defaults';
+import { useChain } from "@interchain-kit/vue";
 
-const defaultChainName = 'osmosistestnet' // 'cosmoshub'\
-const defaultAssetList = assetLists.find((assetList) => assetList.chainName === defaultChainName)
-const defaultRpcEndpoint = 'https://rpc.testnet.osmosis.zone' // 'https://cosmos-rpc.publicnode.com'
 
-export const useBalanceVue = (address: Ref) => {
+export const useBalanceVue = (chainName: ref) => {
+  const chainInfo = useChain(chainName);
+  
+  const { address } = chainInfo;
+  
+  const defaultAssetList = assetLists.find((assetList) => assetList.chainName === chainName.value)
+
   const coin = defaultAssetList?.assets[0];
 
   const denom = coin!.base!
