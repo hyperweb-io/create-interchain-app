@@ -5,7 +5,7 @@ import { useState } from 'react';
 import { BasicModal, Box, Button } from '@interchain-ui/react';
 
 import { useAuthzTx, useGrants, useSigningClient } from '@/hooks';
-import { PrettyGrant, PrettyPermission } from '@/utils';
+import { getTokenByChainName, PrettyGrant, PrettyPermission } from '@/utils';
 import { PermissionDetailCard } from './PermissionDetailCard';
 import { useRevoke } from '@interchainjs/react/cosmos/authz/v1beta1/tx.rpc.react';
 import { defaultContext } from '@tanstack/react-query';
@@ -45,6 +45,8 @@ export const GrantDetailsModal = ({
       context: defaultContext,
     },
   });
+
+  const token = getTokenByChainName(chainName);
 
   const handleRevoke = (permissions: PrettyPermission[]) => {
     setIsRevoking(true);
