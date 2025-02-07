@@ -44,6 +44,7 @@ export const useBalanceVue = (address: Ref) => {
     isBalanceLoaded,
     isFetchingBalance,
     refetchBalance,
+    denom,
   };
 };
 

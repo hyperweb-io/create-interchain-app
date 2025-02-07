@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { Box, Button, Text, Link } from "@interchain-ui/vue";
 import { computed, ref } from "vue";
-import { useBalance } from "../composables/injective/useBalance";
+import { useBalanceVue } from "../composables/injective/useBalanceVue";
 import { useChain } from "@interchain-kit/vue";
 import { MessageComposer } from "../../../injective/src/codegen/cosmos/bank/v1beta1/tx.registry";
 import { useInjectiveClient } from "../composables/common/useInjectiveClient";
@@ -9,15 +9,24 @@ import { useInjectiveClient } from "../composables/common/useInjectiveClient";
 const chainName = ref("injective");
 const injectiveClient = useInjectiveClient(chainName);
 const { address, chain } = useChain(chainName);
-const { balance, isLoading, COIN_DISPLAY_EXPONENT, symbol, denom, refetch } = useBalance(
-  chainName
-);
-const txHashMessageComposer = ref("");
+const {
+  balance,
+  isBalanceLoaded,
+  isFetchingBalance,
+  refetchBalance,
+  denom,
+} = useBalanceVue(address);
+
+const txHash = ref("");
 
 const sending = ref(false);
 console.log("chain>", chain);
 const txPage = computed(() => {
   return chain?.value.explorers?.[0]?.txPage;
+});
+
+const computedBalance = computed(() => {
+  return balance ?? null;
 });
 
 const handleSend = async () => {
@@ -60,7 +69,7 @@ const handleSend = async () => {
     )) as any;
     console.log("onSuccess", data);
     if (data.code === 0) {
-      refetch();
+      refetchBalance();
       txHash.value = data.hash;
     }
   } catch (error: any) {
@@ -75,9 +84,8 @@ const handleSend = async () => {
   <Box display="flex" flexDirection="column" alignItems="center">
     <Box mb="$4">
       <Text fontSize="$2xl"
-        >Balance: {{ isLoading ? "--" : balance?.toFixed(COIN_DISPLAY_EXPONENT) }}
-        {{ symbol }}</Text
-      >
+        >Balance: {{ isFetchingBalance ? "--" : computedBalance }}
+      </Text>
     </Box>
     <Button :disabled="sending" @click="handleSend"> Send </Button>
     <Box v-if="txHash" mt="$4" display="flex" flexDirection="row" alignItems="center">
