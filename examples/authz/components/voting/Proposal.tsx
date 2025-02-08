@@ -73,10 +73,8 @@ export function Proposal({
   const exponent = getExponent(chainName);
 
   const { createExecMsg } = useAuthzTx(chainName);
-  const { data: client } = useSigningClient(chainName);
 
   const { mutate: exec } = useExec({
-    clientResolver: client,
     options: {
       context: defaultContext,
     },

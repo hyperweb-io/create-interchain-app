@@ -44,6 +44,8 @@ export const prettyGrants = (
   grants: GrantAuthorization[],
   groupBy: 'granter' | 'grantee'
 ) => {
+  if (!grants) return [];
+
   return grants
     .reduce((acc, grant) => {
       const addr = grant[groupBy];

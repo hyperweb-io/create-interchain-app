@@ -1,9 +1,8 @@
 import { useEffect, useMemo, useRef } from 'react';
 import { useChain } from '@interchain-kit/react';
-import { defaultContext, useQuery } from '@tanstack/react-query';
+import { defaultContext } from '@tanstack/react-query';
 
 import { prettyGrants } from '@/utils';
-import { useQueryHooks } from './useQueryHooks';
 import {
   useGetGranteeGrants,
   useGetGranterGrants,
@@ -13,21 +12,15 @@ export const useGrants = (chainName: string) => {
   const { address } = useChain(chainName);
   const prevAddressRef = useRef(address);
 
-  const { rpcEndpoint, isFetching: isRpcQueryClientLoading } =
-    useQueryHooks(chainName, {
-      context: defaultContext,
-    });
-
   const granterGrantsQuery = useGetGranterGrants({
     request: {
       granter: address || '',
     },
     options: {
       context: defaultContext,
-      enabled: !!address && !!rpcEndpoint,
+      enabled: !!address,
       select: (data) => data?.grants,
     },
-    clientResolver: rpcEndpoint,
   });
 
   const granteeGrantsQuery = useGetGranteeGrants({
@@ -36,10 +29,9 @@ export const useGrants = (chainName: string) => {
     },
     options: {
       context: defaultContext,
-      enabled: !!address && !!rpcEndpoint,
+      enabled: !!address,
       select: (data) => data?.grants,
     },
-    clientResolver: rpcEndpoint,
   });
 
   const dataQueries = {
@@ -71,10 +63,9 @@ export const useGrants = (chainName: string) => {
     ({ isRefetching }) => isRefetching
   );
 
-  const isLoading =
-    isRpcQueryClientLoading || isInitialFetching || isRefetching;
+  const isLoading = isInitialFetching || isRefetching;
 
-  const isError = !rpcEndpoint && !isRpcQueryClientLoading;
+  const isError = false;
 
   type DataQueries = typeof dataQueries;
 

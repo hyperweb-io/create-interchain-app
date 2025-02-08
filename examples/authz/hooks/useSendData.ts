@@ -19,7 +19,6 @@ export const useSendData = (chainName: string) => {
   const {
     isReady: isQueryHooksReady,
     isFetching: isQueryHooksFetching,
-    rpcEndpoint,
   } = useQueryHooks(chainName, {
     context: defaultContext,
   });
@@ -35,7 +34,6 @@ export const useSendData = (chainName: string) => {
       select: ({ balance }) => shiftDigits(balance?.amount || '0', -exp),
       staleTime: 0,
     },
-    clientResolver: rpcEndpoint,
   });
 
   const pricesQuery = usePrices();

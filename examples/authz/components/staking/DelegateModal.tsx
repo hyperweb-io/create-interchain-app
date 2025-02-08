@@ -71,10 +71,7 @@ export const DelegateModal = ({
 
   const { createExecMsg } = useAuthzTx(chainName);
 
-  const { data: client } = useSigningClient(chainName);
-
   const { mutate: exec } = useExec({
-    clientResolver: client,
     options: {
       context: defaultContext,
     },

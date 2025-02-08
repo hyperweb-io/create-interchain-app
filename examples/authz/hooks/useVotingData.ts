@@ -34,7 +34,6 @@ export function useVotingData(chainName: string) {
   const address = permission?.granter;
 
   const {
-    rpcEndpoint,
     isReady,
     isFetching,
   } = useQueryHooks(chainName, {
@@ -54,7 +53,6 @@ export function useVotingData(chainName: string) {
       staleTime: Infinity,
       select: ({ proposals }) => processProposals(proposals),
     },
-    clientResolver: rpcEndpoint,
   });
 
   const bondedTokensQuery = useGetPool({
@@ -65,7 +63,6 @@ export function useVotingData(chainName: string) {
       staleTime: Infinity,
       select: ({ pool }) => pool?.bondedTokens,
     },
-    clientResolver: rpcEndpoint,
   });
 
   const quorumQuery = useGetGovParams({
@@ -78,7 +75,6 @@ export function useVotingData(chainName: string) {
       staleTime: Infinity,
       select: ({ tallyParams }) => parseQuorum(tallyParams?.quorum),
     },
-    clientResolver: rpcEndpoint,
   });
 
   const votedProposalsQuery = useGetProposals({
@@ -94,10 +90,9 @@ export function useVotingData(chainName: string) {
       select: ({ proposals }) => proposals,
       keepPreviousData: true,
     },
-    clientResolver: rpcEndpoint,
   });
 
-  const getVote = createGetVote(rpcEndpoint);
+  const getVote = createGetVote(chainName);
 
   const votesQueries = useQueries({
     queries: (votedProposalsQuery.data || []).map(({ proposalId }) => ({
@@ -108,7 +103,7 @@ export function useVotingData(chainName: string) {
           voter: address || '',
         }),
       enabled:
-        Boolean(rpcEndpoint) &&
+        Boolean(chainName) &&
         Boolean(address) &&
         Boolean(votedProposalsQuery.data),
       keepPreviousData: true,

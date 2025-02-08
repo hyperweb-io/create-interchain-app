@@ -37,10 +37,7 @@ export const GrantDetailsModal = ({
   const { refetch } = useGrants(chainName);
   const { createRevokeMsg } = useAuthzTx(chainName);
 
-  const { data: client } = useSigningClient(chainName);
-
   const { mutate: revoke } = useRevoke({
-    clientResolver: client,
     options: {
       context: defaultContext,
     },

@@ -1,13 +1,11 @@
 import { useChain } from '@interchain-kit/react';
-import { isDeliverTxSuccess, StdFee } from '@cosmjs/stargate';
-import { useToast, type CustomToast } from './useToast';
-import { useQuery } from '@tanstack/react-query';
+import { StdFee } from '@cosmjs/stargate';
+import { type CustomToast } from './useToast';
+import { defaultContext, useQuery } from '@tanstack/react-query';
 
-import { SigningClient } from '@interchainjs/cosmos/signing-client';
-import {
-  AminoGenericOfflineSigner,
-  DirectGenericOfflineSigner,
-} from '@interchainjs/cosmos/types/wallet';
+
+import { DEFAULT_SIGNING_CLIENT_QUERY_KEY } from '@interchainjs/react/react-query';
+import { WalletState } from '@interchain-kit/core';
 
 interface Msg {
   typeUrl: string;
@@ -26,17 +24,25 @@ export enum TxStatus {
   Broadcasting = 'Transaction Broadcasting',
 }
 
-export const useSigningClient = (chainName: string) => {
+export const useSigningClient = (
+  chainName: string,
+  options: {
+    walletStatus?: WalletState;
+  }
+) => {
   const { getSigningClient } = useChain(chainName);
 
   return useQuery(
-    ['signingClient', chainName],
+    [DEFAULT_SIGNING_CLIENT_QUERY_KEY, chainName],
     async () => {
       const client = await getSigningClient();
       return client;
     },
     {
-      enabled: !!chainName,
+      enabled:
+        !!chainName &&
+        (!options || options?.walletStatus === WalletState.Connected),
+      context: defaultContext,
     }
   );
 };

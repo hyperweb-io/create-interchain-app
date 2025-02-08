@@ -34,10 +34,8 @@ export const SendSection = ({ chainName }: SendSectionProps) => {
   const { status } = useChain(chainName);
   const { data, isLoading, refetch } = useSendData(chainName);
   const { createExecMsg } = useAuthzTx(chainName);
-  const { data: client } = useSigningClient(chainName);
 
   const { mutate: exec } = useExec({
-    clientResolver: client,
     options: {
       context: defaultContext,
     },

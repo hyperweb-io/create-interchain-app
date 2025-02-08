@@ -73,10 +73,8 @@ export const GrantModal = ({ isOpen, onClose, chainName }: GrantModalProps) => {
   const { refetch } = useGrants(chainName);
   const { address } = useChain(chainName);
   const { createGrantMsg } = useAuthzTx(chainName);
-  const { data: client } = useSigningClient(chainName);
 
   const { mutate: grant } = useGrant({
-    clientResolver: client,
     options: {
       context: defaultContext,
     },
