@@ -39,12 +39,9 @@ const Overview = ({
   const [isClaiming, setIsClaiming] = useState(false);
   const { address } = useChain(chainName);
 
-  const { data: client } = useSigningClient(chainName);
-
   const totalAmount = sum(balance, staked, rewards?.total ?? 0);
   const coin = getCoin(chainName);
   const withdrawDelegatorReward = useWithdrawDelegatorReward({
-    clientResolver: client,
     options: {
       context: defaultContext,
     },

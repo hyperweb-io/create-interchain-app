@@ -47,7 +47,6 @@ export const useStakingData = (chainName: string) => {
   const exp = getExponent(chainName);
 
   const {
-    rpcEndpoint,
     isReady: isQueryHooksReady,
     isFetching: isQueryHooksFetching,
   } = useQueryHooks(chainName, {
@@ -64,7 +63,6 @@ export const useStakingData = (chainName: string) => {
       enabled: isQueryHooksReady && !!address,
       select: ({ balance }) => shiftDigits(balance?.amount || '0', -exp),
     },
-    clientResolver: rpcEndpoint,
   });
 
   const myValidatorsQuery = useGetDelegatorValidators({
@@ -76,7 +74,6 @@ export const useStakingData = (chainName: string) => {
       enabled: isQueryHooksReady && !!address,
       select: ({ validators }) => parseValidators(validators),
     },
-    clientResolver: rpcEndpoint,
   });
 
   const rewardsQuery = useGetDelegationTotalRewards({
@@ -88,7 +85,6 @@ export const useStakingData = (chainName: string) => {
       enabled: isQueryHooksReady && !!address,
       select: (data) => parseRewards(data, coin.base, -exp),
     },
-    clientResolver: rpcEndpoint,
   });
 
   const validatorsQuery = useGetValidators({
@@ -112,7 +108,6 @@ export const useStakingData = (chainName: string) => {
         return parseValidators(sorted);
       },
     },
-    clientResolver: rpcEndpoint,
   });
 
   const delegationsQuery = useGetDelegatorDelegations({
@@ -132,7 +127,6 @@ export const useStakingData = (chainName: string) => {
       select: ({ delegationResponses }) =>
         parseDelegations(delegationResponses, -exp),
     },
-    clientResolver: rpcEndpoint,
   });
 
   const unbondingDaysQuery = useGetStakingParams<string>({
@@ -142,7 +136,6 @@ export const useStakingData = (chainName: string) => {
       enabled: isQueryHooksReady,
       select: ({ params }) => parseUnbondingDays(params),
     },
-    clientResolver: rpcEndpoint,
   });
 
   const annualProvisionsQuery = useGetAnnualProvisions({
@@ -153,7 +146,6 @@ export const useStakingData = (chainName: string) => {
       select: parseAnnualProvisions,
       retry: false,
     },
-    clientResolver: rpcEndpoint,
   });
 
   const poolQuery = useGetPool({
@@ -163,7 +155,6 @@ export const useStakingData = (chainName: string) => {
       enabled: isQueryHooksReady,
       select: ({ pool }) => pool,
     },
-    clientResolver: rpcEndpoint,
   });
 
   const communityTaxQuery = useGetDistributionParams({
@@ -173,7 +164,6 @@ export const useStakingData = (chainName: string) => {
       enabled: isQueryHooksReady,
       select: ({ params }) => shiftDigits(params?.communityTax || '0', -18),
     },
-    clientResolver: rpcEndpoint,
   });
 
   const pricesQuery = usePrices();

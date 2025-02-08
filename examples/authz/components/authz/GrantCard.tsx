@@ -53,10 +53,8 @@ export const GrantCard = ({
   const { refetch } = useGrants(chainName);
   const { setPermission } = useAuthzContext();
   const { createRevokeMsg } = useAuthzTx(chainName);
-  const { data: client } = useSigningClient(chainName);
 
   const { mutate: revoke } = useRevoke({
-    clientResolver: client,
     options: {
       context: defaultContext,
     },

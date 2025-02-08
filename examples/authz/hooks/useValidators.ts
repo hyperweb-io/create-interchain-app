@@ -26,7 +26,6 @@ export const useValidators = (
   { fetchLogos = true }: UseValidatorsConfig = {}
 ) => {
   const {
-    rpcEndpoint,
     isReady: isQueryHooksReady,
     isFetching: isQueryHooksFetching,
   } = useQueryHooks(chainName, {
@@ -58,7 +57,6 @@ export const useValidators = (
       },
       staleTime: Infinity,
     },
-    clientResolver: rpcEndpoint,
   });
 
   const validatorLogosQuery = useQuery({
