@@ -1,102 +1,97 @@
-import { cosmos } from 'osmo-query';
-import { StdFee } from '@interchainjs/cosmos-types/types';
-import { isDeliverTxSuccess } from '@interchainjs/cosmos/utils/asserts';
-import { toast, ToastShape } from '@interchain-ui/react';
+import { cosmos } from 'interchain-query';
 import { useChain } from '@interchain-kit/react';
-import { TxRaw } from 'osmo-query/dist/codegen/cosmos/tx/v1beta1/tx';
-import { assetLists } from '@chain-registry/v2';
-import {
-  toConverters,
-  toEncoders,
-} from '@interchainjs/cosmos/utils';
+import { assetLists } from '@chain-registry/v2'
+import { DeliverTxResponse, StdFee } from '@interchainjs/cosmos-types/types'
+import { isDeliverTxSuccess } from '@interchainjs/cosmos/utils/asserts'
+import { toEncoders, toConverters } from '@interchainjs/cosmos/utils'
 import { MsgTransfer } from 'interchainjs/ibc/applications/transfer/v1/tx';
 
-interface Msg {
+export type Msg = {
   typeUrl: string;
-  value: any;
+  value: { [key: string]: any };
 }
 
-interface TxOptions {
-  fee?: StdFee | null;
-  toast?: ToastShape;
+export type TxOptions = {
+  fee?: StdFee;
   onSuccess?: () => void;
 }
 
-export enum TxStatus {
-  Failed = 'Transaction Failed',
-  Successful = 'Transaction Successful',
-  Broadcasting = 'Transaction Broadcasting',
+export class TxError extends Error {
+  constructor(message: string = 'Tx Error', options?: ErrorOptions) {
+    super(message, options);
+    this.name = 'TxError';
+  }
 }
 
-const txRaw = cosmos.tx.v1beta1.TxRaw;
+export class TxResult {
+  error?: TxError
+  response?: DeliverTxResponse
 
-export const useTx = (chainName: string) => {
-  const { address, getSigningClient } =
-    useChain(chainName);
+  constructor({ error, response }: Pick<TxResult, 'error' | 'response'>) {
+    this.error = error;
+    this.response = response;
+  }
 
-  const tx = async (msgs: Msg[], options: TxOptions) => {
+  get errorMsg() {
+    return this.isOutOfGas
+      ? `Out of gas. gasWanted: ${this.response?.gasWanted} gasUsed: ${this.response?.gasUsed}`
+      : this.error?.message || 'Vote Failed';
+  }
+
+  get isSuccess() {
+    return this.response && isDeliverTxSuccess(this.response);
+  }
+
+  get isOutOfGas() {
+    return this.response && this.response.gasUsed > this.response.gasWanted;
+  }
+}
+
+export function useTx(chainName: string) {
+  const {
+    address,
+    getSigningClient,
+    // estimateFee // no estimateFee in interchain-kit
+  } = useChain(chainName);
+  const assetList = assetLists.find((asset) => asset.chainName === chainName);
+  const denom = assetList?.assets[0].base!
+  const denomUnit = assetList?.assets[0].denomUnits[0]
+  console.log('denom', denom)
+
+  async function tx(msgs: Msg[], options: TxOptions = {}) {
     if (!address) {
-      return toast.error('Wallet not connected', {
-        description: 'Please connect the wallet',
-      });
+      return new TxResult({ error: new TxError('Wallet not connected') });
     }
 
-    let signed: TxRaw;
-    let client: Awaited<ReturnType<typeof getSigningClient>>;
-
-    const assetList = assetLists.find((asset) => asset.chainName === chainName);
-    const denomUnit = assetList?.assets[0].denomUnits[0]
-
     try {
-      let fee = {
+      const txRaw = cosmos.tx.v1beta1.TxRaw;
+      const fee = {
         amount: [
           {
             denom: denomUnit?.denom!,
-            amount: (BigInt(10 ** (denomUnit?.exponent || 6)) / 10n).toString()
+            amount: (BigInt(10 ** (denomUnit?.exponent || 6)) / 100n).toString()
           }
         ],
-        gas: '800000'
+        gas: '200000'
       }
-      client = await getSigningClient();
+      const client = await getSigningClient();
       client.addEncoders(toEncoders(MsgTransfer))
       client.addConverters(toConverters(MsgTransfer))
-      signed = await client.sign(address, msgs, fee, '');
+      console.log('msgs', msgs)
+      const signed = await client.sign(address, msgs, fee, '');
+
+      if (!client) return new TxResult({ error: new TxError('Invalid stargate client') });
+      if (!signed) return new TxResult({ error: new TxError('Invalid transaction') });
+
+      const response = await client.broadcastTx(Uint8Array.from(txRaw.encode(signed).finish()), {});
+      // Types of property 'gasUsed' are incompatible.
+      //   Type 'bigint' is not assignable to type 'number'.
+      // @ts-ignore
+      return isDeliverTxSuccess(response) ? new TxResult({ response }) : new TxResult({ response, error: new TxError(response.rawLog) });
     } catch (e: any) {
-      console.error(e);
-
-      return toast.error(TxStatus.Failed, {
-        description: e?.message || 'An unexpected error has occured',
-      });
+      return new TxResult({ error: new TxError(e.message || 'Tx Error') });
     }
-
-    if (client && signed) {
-      const promise = client.broadcastTx(
-        Uint8Array.from(txRaw.encode(signed).finish()), {}
-      );
-
-      toast.promise(promise, {
-        loading: 'Waiting for transaction to be included in the block',
-        success: (data: any) => {
-          if (isDeliverTxSuccess(data)) {
-            if (options.onSuccess) options.onSuccess();
-            return options.toast?.title || TxStatus.Successful;
-          } else {
-            console.error(data);
-            return {
-              message: TxStatus.Failed,
-              toastType: 'error',
-            };
-          }
-        },
-        error: (error: Error) => {
-          if (error?.message) {
-            console.error(error?.message);
-          }
-          return TxStatus.Failed;
-        },
-      });
-    }
-  };
+  }
 
   return { tx };
-};
+}
