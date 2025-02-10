@@ -131,7 +131,7 @@ export const useChainUtils = (chainName: string) => {
       throw new Error('cannot find IBC info');
     }
 
-    const key = flipped ? 'chain1' : 'chain2';
+    const key = flipped ? 'chain2' : 'chain1';
     const sourcePort = ibcInfo.channels[0][key].portId;
     const sourceChannel = ibcInfo.channels[0][key].channelId;
 
