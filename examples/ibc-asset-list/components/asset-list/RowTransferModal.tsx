@@ -9,6 +9,7 @@ import { ibc } from 'osmo-query';
 import { chains } from '@chain-registry/v2'
 
 import { PriceHash, TransferInfo, Transfer } from './types';
+import { MsgTransfer } from 'interchainjs/ibc/applications/transfer/v1/tx';
 
 const { transfer } = ibc.applications.transfer.v1.MessageComposer.withTypeUrl;
 
@@ -99,57 +100,6 @@ const TransferModalBody = (
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [modalControl.isOpen]);
 
-  const handleClick = async () => {
-    if (!sourceAddress || !destAddress) return;
-    setIsLoading(true);
-
-    const transferAmount = new BigNumber(inputValue)
-      .shiftedBy(getExponentByDenom(symbolToDenom(transferToken.symbol)))
-      .toString();
-
-    const { sourcePort, sourceChannel } = getIbcInfo(
-      sourceChainName,
-      destChainName
-    );
-
-    const fee: StdFee = {
-      amount: [{
-        denom: transferToken.denom ?? '',
-        amount: '1000'
-      }],
-      gas: '250000',
-    };
-
-    const token = {
-      denom: transferToken.denom ?? '',
-      amount: transferAmount,
-    };
-
-    const stamp = Date.now();
-    const timeoutInNanos = (stamp + 1.2e6) * 1e6;
-
-    const msg = transfer({
-      sourcePort,
-      sourceChannel,
-      sender: sourceAddress,
-      receiver: destAddress,
-      token,
-      // @ts-ignore
-      timeoutHeight: undefined,
-      timeoutTimestamp: BigInt(timeoutInNanos),
-    });
-
-    await tx([msg], {
-      fee,
-      onSuccess: () => {
-        updateData();
-        modalControl.close();
-      },
-    });
-
-    setIsLoading(false);
-  };
-
   const sourceChain = useMemo(() => {
     return {
       name: sourceChainInfo.prettyName,
@@ -196,24 +146,45 @@ const TransferModalBody = (
     const stamp = Date.now();
     const timeoutInNanos = (stamp + 1.2e6) * 1e6;
 
-    const msg = transfer({
-      sourcePort,
-      sourceChannel,
-      sender: sourceAddress,
-      receiver: destAddress,
-      token,
-      // @ts-ignore
-      timeoutHeight: undefined,
-      timeoutTimestamp: BigInt(timeoutInNanos),
-    });
+    // const msg = transfer({
+    //   sourcePort,
+    //   sourceChannel,
+    //   sender: sourceAddress,
+    //   receiver: destAddress,
+    //   token,
+    //   // @ts-ignore
+    //   timeoutHeight: undefined,
+    //   timeoutTimestamp: BigInt(timeoutInNanos),
+    // });
 
-    await tx([msg], {
+    const msg = {
+      typeUrl: MsgTransfer.typeUrl,
+      value: MsgTransfer.fromPartial({
+        sourcePort,
+        sourceChannel,
+        token,
+        sender: sourceAddress,
+        receiver: destAddress,
+        // timeoutHeight: {
+        //   revisionNumber: BigInt(1),
+        //   revisionHeight: BigInt(175049581),
+        // },
+        timeoutTimestamp: BigInt(timeoutInNanos), // undefined, // BigInt(timeoutInNanos),
+        memo: '',
+        forwarding: undefined,
+      }),
+    }
+
+    console.log('handleSubmitTransfer msg', msg)
+
+    const res = await tx([msg], {
       fee,
       onSuccess: () => {
         updateData();
         modalControl.close();
       },
     });
+    console.log('handleSubmitTransfer res', res)
 
     setIsLoading(false);
   };
