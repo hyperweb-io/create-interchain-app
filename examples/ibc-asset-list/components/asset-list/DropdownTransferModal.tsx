@@ -119,7 +119,7 @@ const OverviewTransferWrapper = (
     if (!sourceAddress) connectSourceChain();
     if (!destAddress) connectDestChain();
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [destAddress, sourceAddress, modalControl]);
+  }, [destAddress, sourceAddress, modalControl.isOpen]);
 
   const closeModal = () => {
     modalControl.close();
