@@ -8,18 +8,31 @@ import { chainStore, useChainStore } from '@/contexts';
 
 export const ChainDropdown = () => {
   const { selectedChain } = useChainStore();
-  const { chain } = useChain(selectedChain);
-  const [input, setInput] = useState<string>(chain.prettyName ?? '');
-  const { data: starshipChains } = useStarshipChains();
-  const { getChainLogoUrl } = useWalletManager();
-
   const { isMobile } = useDetectBreakpoints();
+  const { chain } = useChain(selectedChain);
+  const { addChains, getChainLogoUrl, chains } = useWalletManager();
+
+  const [input, setInput] = useState<string>(chain?.prettyName ?? '');
+  const [isChainsAdded, setIsChainsAdded] = useState(false);
+
+  const { refetch } = useStarshipChains({
+    onSuccess: (data) => {
+      if (!data) return;
+      addChains(data.v2.chains, data.v2.assets);
+      setIsChainsAdded(true);
+    },
+  });
+
+  const onOpenChange = (isOpen: boolean) => {
+    if (isOpen && !isChainsAdded) refetch();
+  };
 
   return (
     <Combobox
       onInputChange={(input) => {
         setInput(input);
       }}
+      onOpenChange={onOpenChange}
       selectedKey={selectedChain}
       onSelectionChange={(key) => {
         const chainName = key as string | null;
@@ -48,7 +61,7 @@ export const ChainDropdown = () => {
         width: isMobile ? '130px' : '260px',
       }}
     >
-      {(starshipChains?.v2.chains ?? []).map((c) => (
+      {chains.map((c) => (
         <Combobox.Item key={c.chainName} textValue={c.prettyName}>
           <Stack
             direction="horizontal"

@@ -8,13 +8,12 @@ import { NavItems } from './NavItems';
 import { Button } from '@/components';
 import { useChainStore } from '@/contexts';
 import { shortenAddress } from '@/utils';
-import { useCopyToClipboard, useAddHyperwebChain } from '@/hooks';
+import { useCopyToClipboard } from '@/hooks';
 
 export const SidebarContent = ({ onClose }: { onClose: () => void }) => {
-  const { isHyperwebAdded } = useAddHyperwebChain();
   const poweredByLogoSrc = useColorModeValue(
     '/logos/hyperweb-logo.svg',
-    '/logos/hyperweb-logo-dark.svg'
+    '/logos/hyperweb-logo-dark.svg',
   );
 
   return (
@@ -27,7 +26,7 @@ export const SidebarContent = ({ onClose }: { onClose: () => void }) => {
     >
       <NavItems onItemClick={onClose} />
       <Box mt="$auto">
-        {isHyperwebAdded && <ConnectButton />}
+        <ConnectButton />
         <Box
           mt="10px"
           display="flex"
@@ -61,7 +60,7 @@ const ConnectButton = () => {
   const walletLogo =
     typeof walletInfo?.logo === 'string'
       ? walletInfo.logo
-      : walletInfo.logo.major || walletInfo.logo.minor;
+      : walletInfo?.logo?.major || walletInfo?.logo?.minor || '';
 
   return (
     <>

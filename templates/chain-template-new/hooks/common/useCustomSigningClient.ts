@@ -20,16 +20,17 @@ export const useCustomSigningClient = ({
   const { data: rpcEndpoint } = useRpcEndpoint(selectedChain);
 
   const chainId = chain.chainId || '';
-  const signerAmino = new AminoGenericOfflineSigner(
-    (window as any).keplr.getOfflineSignerOnlyAmino(chainId)
-  );
-  const signerDirect = new DirectGenericOfflineSigner(
-    (window as any).keplr.getOfflineSigner(chainId)
-  );
 
   return useQuery({
     queryKey: ['useCustomSigningClient', signerType, chainId],
     queryFn: async () => {
+      const signerAmino = new AminoGenericOfflineSigner(
+        (window as any).keplr.getOfflineSignerOnlyAmino(chainId),
+      );
+      const signerDirect = new DirectGenericOfflineSigner(
+        (window as any).keplr.getOfflineSigner(chainId),
+      );
+
       const client = await SigningClient.connectWithSigner(
         rpcEndpoint!,
         signerType === 'amino' ? signerAmino : signerDirect,
@@ -38,7 +39,7 @@ export const useCustomSigningClient = ({
             checkTx: true,
             deliverTx: true,
           },
-        }
+        },
       );
       return client;
     },

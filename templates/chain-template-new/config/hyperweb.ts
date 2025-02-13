@@ -1,1 +1,0 @@
-export const DEFAULT_HYPERWEB_TOKEN_PRICE = 1;

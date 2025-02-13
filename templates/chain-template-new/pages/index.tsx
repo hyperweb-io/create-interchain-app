@@ -4,15 +4,14 @@ import { useChain } from '@interchain-kit/react';
 
 import { Button } from '@/components';
 import { useChainStore } from '@/contexts';
-import { useDetectBreakpoints, useAddHyperwebChain } from '@/hooks';
+import { useDetectBreakpoints } from '@/hooks';
 
 export default function Home() {
   const { isMobile } = useDetectBreakpoints();
-  const { isHyperwebAdded } = useAddHyperwebChain();
 
   const chainsImageSrc = useColorModeValue(
     '/images/chains.png',
-    '/images/chains-dark.png'
+    '/images/chains-dark.png',
   );
 
   return (
@@ -23,7 +22,7 @@ export default function Home() {
         fontWeight="500"
         attributes={{ mt: '200px', mb: '20px' }}
       >
-        Create Hyperweb App
+        Create Interchain App
       </Text>
       <Text
         textAlign="center"
@@ -34,7 +33,7 @@ export default function Home() {
         Welcome to <HighlightText>Interchain Kit</HighlightText> +{' '}
         <HighlightText>Next.js</HighlightText>
       </Text>
-      {isHyperwebAdded && <ConnectButton />}
+      <ConnectButton />
       <Box
         display="flex"
         justifyContent="center"

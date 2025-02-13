@@ -18,7 +18,7 @@ export const useChainUtils = (chainName: string) => {
     starshipData?.v1 ?? {};
 
   const isStarshipChain = starshipChains.some(
-    (chain) => chain.chain_name === chainName
+    (chain) => chain.chain_name === chainName,
   );
 
   const filterAssets = (assetList: AssetList[]): Asset[] => {
@@ -67,7 +67,7 @@ export const useChainUtils = (chainName: string) => {
         asset.symbol === symbol &&
         (!chainName ||
           asset.traces?.[0].counterparty.chain_name.toLowerCase() ===
-            chainName.toLowerCase())
+            chainName.toLowerCase()),
     );
     const base = asset?.base;
     if (!base) {
@@ -111,8 +111,8 @@ export const useChainUtils = (chainName: string) => {
   const getPrettyChainName = (ibcDenom: CoinDenom) => {
     const chainName = getChainName(ibcDenom);
     const chain = chains.find((chain) => chain.chainName === chainName);
-    if (!chain) throw Error('chain not found');
-    return chain.prettyName;
+    if (!chain) console.warn(`Chain not found: ${chainName}`);
+    return chain?.prettyName || chainName;
   };
 
   const isNativeAsset = ({ denom }: PrettyAsset) => {
@@ -129,7 +129,7 @@ export const useChainUtils = (chainName: string) => {
   const getDenomBySymbolAndChain = (chainName: string, symbol: string) => {
     const assetList = assetLists.find((chain) => chain.chainName === chainName);
     const denom = assetList?.assets.find(
-      (asset) => asset.symbol === symbol
+      (asset) => asset.symbol === symbol,
     )?.base;
     if (!denom) throw Error('denom not found');
     return denom;
@@ -141,14 +141,14 @@ export const useChainUtils = (chainName: string) => {
     let ibcInfo = ibc.find(
       (i) =>
         i.chain_1.chain_name === fromChainName &&
-        i.chain_2.chain_name === toChainName
+        i.chain_2.chain_name === toChainName,
     );
 
     if (!ibcInfo) {
       ibcInfo = ibc.find(
         (i) =>
           i.chain_1.chain_name === toChainName &&
-          i.chain_2.chain_name === fromChainName
+          i.chain_2.chain_name === fromChainName,
       );
       flipped = true;
     }

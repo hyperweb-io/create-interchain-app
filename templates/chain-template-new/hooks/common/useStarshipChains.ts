@@ -20,7 +20,11 @@ export type StarshipChains = {
   };
 };
 
-export const useStarshipChains = () => {
+export const useStarshipChains = ({
+  onSuccess,
+}: {
+  onSuccess?: (data: StarshipChains) => void;
+} = {}) => {
   const { registry } = config as StarshipConfig;
   const baseUrl = `http://localhost:${registry.ports.rest}`;
 
@@ -33,8 +37,8 @@ export const useStarshipChains = () => {
 
         const assets = (await Promise.all(
           chains.map((chain) =>
-            fetcher<AssetList>(`${baseUrl}/chains/${chain.chain_id}/assets`)
-          )
+            fetcher<AssetList>(`${baseUrl}/chains/${chain.chain_id}/assets`),
+          ),
         ).then((assetLists) => assetLists.filter(Boolean))) as AssetList[];
 
         return chains.length > 0 && assets.length > 0
@@ -54,6 +58,7 @@ export const useStarshipChains = () => {
         return null;
       }
     },
+    onSuccess,
     staleTime: Infinity,
     cacheTime: Infinity,
     refetchOnMount: false,

@@ -2,7 +2,6 @@ import { AssetList, Chain } from '@chain-registry/v2-types';
 import { toBech32, fromBech32 } from '@cosmjs/encoding';
 import { Coin, logs, parseCoins } from '@cosmjs/stargate';
 import BigNumber from 'bignumber.js';
-import { jsd, DeliverTxResponse as DeliverJsdTxResponse } from 'hyperwebjs';
 import { AccessType } from '@interchainjs/react/cosmwasm/wasm/v1/types';
 import { CodeInfoResponse } from '@interchainjs/react/cosmwasm/wasm/v1/query';
 import { DeliverTxResponse } from '@interchainjs/react/types';
@@ -11,7 +10,7 @@ import { getExponentFromAsset } from './common';
 
 export const validateContractAddress = (
   address: string,
-  bech32Prefix: string
+  bech32Prefix: string,
 ) => {
   if (!bech32Prefix)
     return 'Cannot retrieve bech32 prefix of the current network.';
@@ -62,7 +61,7 @@ export const countJsonLines = (text: string) => text.split(/\n/).length;
 
 export const getExplorerLink = (
   chain: Chain,
-  txHash: string | undefined
+  txHash: string | undefined,
 ): string | null => {
   const txPageLink = chain.explorers?.[0]?.txPage;
   return txPageLink && txHash ? txPageLink.replace('${txHash}', txHash) : null;
@@ -77,7 +76,7 @@ export const bytesToKb = (bytes: number) => {
 export const findAttr = (
   events: logs.Log['events'],
   eventType: string,
-  attrKey: string
+  attrKey: string,
 ) => {
   const mimicLog: logs.Log = {
     msg_index: 0,
@@ -100,7 +99,7 @@ export type PrettyTxResult = {
 };
 
 export const prettyStoreCodeTxResult = (
-  txResponse: DeliverTxResponse
+  txResponse: DeliverTxResponse,
 ): PrettyTxResult => {
   const events = txResponse.events;
   const codeId = findAttr(events, 'store_code', 'code_id') ?? '0';
@@ -147,7 +146,7 @@ export const splitCamelCase = (text: string): string => {
 export const resolvePermission = (
   address: string,
   permission: AccessType,
-  permissionAddresses: string[] = []
+  permissionAddresses: string[] = [],
 ): boolean =>
   permission === AccessType.ACCESS_TYPE_EVERYBODY ||
   (address ? permissionAddresses.includes(address) : false);
@@ -193,14 +192,6 @@ export const toPascalCase = (str: string): string => {
     .join('');
 };
 
-export const getContractIndex = (txResult: DeliverJsdTxResponse) => {
-  const response = jsd.jsd.MsgInstantiateResponse.fromProtoMsg(
-    // @ts-ignore
-    txResult.msgResponses[0]
-  );
-  return response.index.toString();
-};
-
 export const readFileContent = (file: File): Promise<string> => {
   return new Promise((resolve, reject) => {
     const reader = new FileReader();
@@ -218,6 +209,6 @@ export const fromUint8Array = <T>(uint8Array: Uint8Array): T => {
 
 export const toUint8Array = (json: any): Uint8Array => {
   return new Uint8Array(
-    Array.from(JSON.stringify(json)).map((char) => char.charCodeAt(0))
+    Array.from(JSON.stringify(json)).map((char) => char.charCodeAt(0)),
   );
 };

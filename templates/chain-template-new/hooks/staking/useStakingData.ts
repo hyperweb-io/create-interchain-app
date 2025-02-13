@@ -104,7 +104,7 @@ export const useStakingData = (chainName: string) => {
       enabled: isDataQueryEnabled,
       select: ({ validators }) => {
         const sorted = validators.sort((a, b) =>
-          new BigNumber(b.tokens).minus(a.tokens).toNumber()
+          new BigNumber(b.tokens).minus(a.tokens).toNumber(),
         );
         return parseValidators(sorted);
       },
@@ -202,11 +202,11 @@ export const useStakingData = (chainName: string) => {
   ];
 
   const isInitialFetching = Object.values(allQueries).some(
-    ({ isLoading }) => isLoading
+    ({ isLoading }) => isLoading,
   );
 
   const isRefetching = Object.values(allQueries).some(
-    ({ isRefetching }) => isRefetching
+    ({ isRefetching }) => isRefetching,
   );
 
   const isLoading = isInitialFetching || isRefetching;
@@ -221,7 +221,7 @@ export const useStakingData = (chainName: string) => {
     if (isLoading) return;
 
     const queriesData = Object.fromEntries(
-      Object.entries(allQueries).map(([key, query]) => [key, query.data])
+      Object.entries(allQueries).map(([key, query]) => [key, query.data]),
     ) as QueriesData;
 
     const {
@@ -240,14 +240,14 @@ export const useStakingData = (chainName: string) => {
       allValidators,
       delegations,
       rewards?.byValidators,
-      chainMetadata
+      chainMetadata,
     );
 
     const extendedMyValidators = extendValidators(
       myValidators,
       delegations,
       rewards?.byValidators,
-      chainMetadata
+      chainMetadata,
     );
 
     const totalDelegated = calcTotalDelegation(delegations);

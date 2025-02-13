@@ -1,7 +1,6 @@
 import { Asset } from '@chain-registry/types';
 import { useQuery } from '@tanstack/react-query';
 import { useChainUtils } from './useChainUtils';
-import { DEFAULT_HYPERWEB_TOKEN_PRICE } from '@/config';
 
 type CoinGeckoId = string;
 type CoinGeckoUSD = { usd: number };
@@ -17,7 +16,7 @@ const getGeckoIds = (assets: Asset[]) => {
 
 const formatPrices = (
   prices: CoinGeckoUSDResponse,
-  assets: Asset[]
+  assets: Asset[],
 ): Record<string, number> => {
   return Object.entries(prices).reduce((priceHash, cur) => {
     const denom = assets.find((asset) => asset.coingecko_id === cur[0])!.base;
@@ -31,7 +30,7 @@ const handleError = (resp: Response) => {
 };
 
 const fetchPrices = async (
-  geckoIds: string[]
+  geckoIds: string[],
 ): Promise<CoinGeckoUSDResponse> => {
   const url = `https://api.coingecko.com/api/v3/simple/price?ids=${geckoIds.join()}&vs_currencies=usd`;
 
@@ -41,19 +40,14 @@ const fetchPrices = async (
 };
 
 export const useChainAssetsPrices = (chainName: string) => {
-  const { allAssets, isStarshipChain } = useChainUtils(chainName);
+  const { allAssets } = useChainUtils(chainName);
   const assetsWithGeckoIds = getAssetsWithGeckoIds(allAssets);
   const geckoIds = getGeckoIds(assetsWithGeckoIds);
 
   return useQuery({
     queryKey: ['useChainAssetsPrices', chainName],
     queryFn: () => fetchPrices(geckoIds),
-    select: (data) => ({
-      ...formatPrices(data, assetsWithGeckoIds),
-      ...(isStarshipChain
-        ? { [allAssets[0].base]: DEFAULT_HYPERWEB_TOKEN_PRICE }
-        : {}),
-    }),
+    select: (data) => formatPrices(data, assetsWithGeckoIds),
     staleTime: Infinity,
   });
 };

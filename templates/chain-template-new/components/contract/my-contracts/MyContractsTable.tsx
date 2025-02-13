@@ -3,9 +3,7 @@ import { useChain } from '@interchain-kit/react';
 import { Box, Icon, Spinner, Text, TextField } from '@interchain-ui/react';
 
 import {
-  JsdContractInfo,
   useDetectBreakpoints,
-  useIsHyperwebChain,
   useMyContracts,
   WasmContractInfo,
 } from '@/hooks';
@@ -34,27 +32,17 @@ export const MyContractsTable = ({
   const { selectedChain } = useChainStore();
   const { address } = useChain(selectedChain);
   const { data, isLoading } = useMyContracts();
-  const isHyperwebChain = useIsHyperwebChain();
 
   const { wasmContracts = [], jsdContracts = [] } = data || {};
 
   const filteredContracts = useMemo(() => {
     const trimmedSearchValue = searchValue.trim();
-    if (isHyperwebChain) {
-      return jsdContracts.filter(({ creator, index }) =>
-        [creator, index.toString()].some(
-          (value) =>
-            value &&
-            value.toLowerCase().includes(trimmedSearchValue.toLowerCase())
-        )
-      );
-    }
     return wasmContracts.filter(({ address, contractInfo }) =>
       [address, contractInfo?.label, contractInfo?.codeId.toString()].some(
         (value) =>
           value &&
-          value.toLowerCase().includes(trimmedSearchValue.toLowerCase())
-      )
+          value.toLowerCase().includes(trimmedSearchValue.toLowerCase()),
+      ),
     );
   }, [wasmContracts, jsdContracts, searchValue]);
 
@@ -107,33 +95,21 @@ export const MyContractsTable = ({
           <EmptyState text="Connect wallet to see your contracts." />
         ) : isLoading ? (
           <Spinner size="$6xl" color="$blackAlpha600" />
-        ) : (isHyperwebChain ? jsdContracts : wasmContracts).length === 0 ? (
+        ) : wasmContracts.length === 0 ? (
           <EmptyState text="No contracts found" />
         ) : filteredContracts.length === 0 ? (
           <EmptyState text="No matched contracts found" />
         ) : (
           <Box width="$full" alignSelf="start" overflowX="auto">
-            {isHyperwebChain ? (
-              <JsdContractsTable
-                contracts={filteredContracts as JsdContractInfo[]}
-                onQuery={(contractIndex) =>
-                  switchTab(contractIndex, TabLabel.Query)
-                }
-                onExecute={(contractIndex) =>
-                  switchTab(contractIndex, TabLabel.Execute)
-                }
-              />
-            ) : (
-              <WasmContractsTable
-                contracts={filteredContracts as WasmContractInfo[]}
-                onQuery={(contractAddress) =>
-                  switchTab(contractAddress, TabLabel.Query)
-                }
-                onExecute={(contractAddress) =>
-                  switchTab(contractAddress, TabLabel.Execute)
-                }
-              />
-            )}
+            <ContractsTable
+              contracts={filteredContracts as WasmContractInfo[]}
+              onQuery={(contractAddress) =>
+                switchTab(contractAddress, TabLabel.Query)
+              }
+              onExecute={(contractAddress) =>
+                switchTab(contractAddress, TabLabel.Execute)
+              }
+            />
           </Box>
         )}
       </Box>
@@ -141,7 +117,7 @@ export const MyContractsTable = ({
   );
 };
 
-const WasmContractsTable = ({
+const ContractsTable = ({
   contracts,
   onQuery,
   onExecute,
@@ -176,48 +152,6 @@ const WasmContractsTable = ({
                   Query
                 </Button>
                 <Button size="sm" onClick={() => onExecute(address)}>
-                  Execute
-                </Button>
-              </Box>
-            </Table.Cell>
-          </Table.Row>
-        ))}
-      </Table.Body>
-    </Table>
-  );
-};
-
-const JsdContractsTable = ({
-  contracts,
-  onQuery,
-  onExecute,
-}: {
-  contracts: JsdContractInfo[];
-  onQuery: (contractIndex: string) => void;
-  onExecute: (contractIndex: string) => void;
-}) => {
-  return (
-    <Table minWidth="520px">
-      <Table.Header>
-        <Table.Row height="$fit">
-          <Table.HeaderCell width="10%">Contract Index</Table.HeaderCell>
-          <Table.HeaderCell width="20%">Creator</Table.HeaderCell>
-          <Table.HeaderCell width="6%" />
-        </Table.Row>
-      </Table.Header>
-      <Table.Body>
-        {contracts.map(({ index, creator }) => (
-          <Table.Row key={index.toString()}>
-            <Table.Cell>{index.toString()}</Table.Cell>
-            <Table.Cell copyOnHover copyValue={creator}>
-              {shortenAddress(creator)}
-            </Table.Cell>
-            <Table.Cell>
-              <Box display="flex" justifyContent="end" gap="10px">
-                <Button size="sm" onClick={() => onQuery(index.toString())}>
-                  Query
-                </Button>
-                <Button size="sm" onClick={() => onExecute(index.toString())}>
                   Execute
                 </Button>
               </Box>

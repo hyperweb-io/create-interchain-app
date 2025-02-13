@@ -16,8 +16,8 @@ export const Sidebar = ({ isOpen, onClose }: SidebarProps) => {
   const { isDesktop } = useDetectBreakpoints();
 
   const brandLogoSrc = useColorModeValue(
-    '/logos/hyperweb-logo.svg',
-    '/logos/hyperweb-logo-dark.svg'
+    '/logos/brand-logo.svg',
+    '/logos/brand-logo-dark.svg',
   );
 
   const desktopSidebar = (
