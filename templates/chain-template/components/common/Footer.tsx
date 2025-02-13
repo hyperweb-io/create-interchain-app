@@ -57,7 +57,7 @@ const socialLinks = [
         <FaXTwitter size="16px" />
       </Box>
     ),
-    href: 'https://x.com/cosmology_tech',
+    href: 'https://x.com/Hyperweb_',
   },
   {
     icon: <Icon name="youtube" color="$blackAlpha600" />,

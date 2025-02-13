@@ -1,7 +1,6 @@
 import { Asset } from '@chain-registry/types';
 import { useQuery } from '@tanstack/react-query';
 import { useChainUtils } from './useChainUtils';
-import { handleError } from './useTopTokens';
 
 type CoinGeckoId = string;
 type CoinGeckoUSD = { usd: number };
@@ -17,7 +16,7 @@ const getGeckoIds = (assets: Asset[]) => {
 
 const formatPrices = (
   prices: CoinGeckoUSDResponse,
-  assets: Asset[]
+  assets: Asset[],
 ): Record<string, number> => {
   return Object.entries(prices).reduce((priceHash, cur) => {
     const denom = assets.find((asset) => asset.coingecko_id === cur[0])!.base;
@@ -25,8 +24,13 @@ const formatPrices = (
   }, {});
 };
 
+const handleError = (resp: Response) => {
+  if (!resp.ok) throw Error(resp.statusText);
+  return resp;
+};
+
 const fetchPrices = async (
-  geckoIds: string[]
+  geckoIds: string[],
 ): Promise<CoinGeckoUSDResponse> => {
   const url = `https://api.coingecko.com/api/v3/simple/price?ids=${geckoIds.join()}&vs_currencies=usd`;
 

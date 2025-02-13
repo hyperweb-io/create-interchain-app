@@ -20,11 +20,11 @@ const getGeckoIdsFromAssets = (assets: AssetList[]) => {
 
 const formatPrices = (
   prices: CoinGeckoUSDResponse,
-  assets: AssetList[]
+  assets: AssetList[],
 ): Prices => {
   return Object.entries(prices).reduce((priceHash, cur) => {
     const assetList = assets.find(
-      (asset) => asset.assets[0].coingecko_id === cur[0]
+      (asset) => asset.assets[0].coingecko_id === cur[0],
     )!;
     const denom = assetList.assets[0].base;
     return { ...priceHash, [denom]: cur[1].usd };
@@ -32,7 +32,7 @@ const formatPrices = (
 };
 
 const fetchPrices = async (
-  geckoIds: string[]
+  geckoIds: string[],
 ): Promise<CoinGeckoUSDResponse> => {
   const url = `https://api.coingecko.com/api/v3/simple/price?ids=${geckoIds.join()}&vs_currencies=usd`;
 

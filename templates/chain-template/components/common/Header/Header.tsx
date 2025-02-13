@@ -18,12 +18,12 @@ export const Header = ({ onOpenSidebar }: HeaderProps) => {
 
   const brandLogo = useColorModeValue(
     '/logos/brand-logo.svg',
-    '/logos/brand-logo-dark.svg'
+    '/logos/brand-logo-dark.svg',
   );
 
   const brandLogoSm = useColorModeValue(
     '/logos/brand-logo-sm.svg',
-    '/logos/brand-logo-sm-dark.svg'
+    '/logos/brand-logo-sm-dark.svg',
   );
 
   return (
@@ -40,7 +40,7 @@ export const Header = ({ onOpenSidebar }: HeaderProps) => {
             alt="your logo"
             width="0"
             height="0"
-            style={{ width: isMobile ? '40px' : '180px', height: 'auto' }}
+            style={{ width: isMobile ? '40px' : '160px', height: 'auto' }}
           />
         </Link>
       )}

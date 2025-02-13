@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react';
 import {
   Box,
   Button,
@@ -13,17 +14,18 @@ import {
 import {
   Proposal as IProposal,
   ProposalStatus,
-} from 'interchain-query/cosmos/gov/v1/gov';
+} from '@interchainjs/react/cosmos/gov/v1/gov';
+import Markdown from 'react-markdown';
+import { useChain } from '@interchain-kit/react';
+
+import { useVoting, Votes } from '@/hooks';
 import {
   exponentiate,
   formatDate,
-  getCoin,
-  getExponent,
+  getExponentFromAsset,
+  getNativeAsset,
   percent,
 } from '@/utils';
-import Markdown from 'react-markdown';
-import { useEffect, useState } from 'react';
-import { useVoting, Votes } from '@/hooks';
 
 // export declare enum VoteOption {
 //   /** VOTE_OPTION_UNSPECIFIED - VOTE_OPTION_UNSPECIFIED defines a no-op vote option. */
@@ -56,15 +58,16 @@ export function Proposal({
   proposal,
   chainName,
   bondedTokens,
-  onVoteSuccess = () => { },
+  onVoteSuccess = () => {},
 }: ProposalProps) {
   const vote = votes?.[proposal.id.toString()];
 
   const [showMore, setShowMore] = useState(false);
   const [voteType, setVoteType] = useState<GovernanceVoteType>();
 
-  const coin = getCoin(chainName);
-  const exponent = getExponent(chainName);
+  const { assetList } = useChain(chainName);
+  const coin = getNativeAsset(assetList);
+  const exponent = getExponentFromAsset(coin);
   const { isVoting, onVote } = useVoting({ chainName, proposal });
 
   const toggleShowMore = () => setShowMore((v) => !v);
@@ -92,9 +95,9 @@ export function Proposal({
 
   const total = proposal.finalTallyResult
     ? Object.values(proposal.finalTallyResult).reduce(
-      (sum, val) => sum + Number(val),
-      0
-    )
+        (sum, val) => sum + Number(val),
+        0
+      )
     : 0;
 
   const turnout = total / Number(bondedTokens);
@@ -248,8 +251,9 @@ export function Proposal({
                 px: '$2',
               }}
             >
-              {`Minimum of staked ${minStakedTokens} ${coin.symbol}(${quorum * 100
-                }%) need to vote
+              {`Minimum of staked ${minStakedTokens} ${coin.symbol}(${
+                quorum * 100
+              }%) need to vote
             for this proposal to pass.`}
             </Text>
           </Text>

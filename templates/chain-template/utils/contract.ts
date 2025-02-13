@@ -1,14 +1,16 @@
-import { Asset, AssetList, Chain } from '@chain-registry/types';
+import { AssetList, Chain } from '@chain-registry/v2-types';
 import { toBech32, fromBech32 } from '@cosmjs/encoding';
-import { DeliverTxResponse } from '@cosmjs/cosmwasm-stargate';
 import { Coin, logs, parseCoins } from '@cosmjs/stargate';
-import { CodeInfoResponse } from 'interchain-query/cosmwasm/wasm/v1/query';
-import { AccessType } from 'interchain-query/cosmwasm/wasm/v1/types';
 import BigNumber from 'bignumber.js';
+import { AccessType } from '@interchainjs/react/cosmwasm/wasm/v1/types';
+import { CodeInfoResponse } from '@interchainjs/react/cosmwasm/wasm/v1/query';
+import { DeliverTxResponse } from '@interchainjs/react/types';
+
+import { getExponentFromAsset } from './common';
 
 export const validateContractAddress = (
   address: string,
-  bech32Prefix: string
+  bech32Prefix: string,
 ) => {
   if (!bech32Prefix)
     return 'Cannot retrieve bech32 prefix of the current network.';
@@ -27,6 +29,12 @@ export const validateContractAddress = (
     return (e as Error).message;
   }
 
+  return null;
+};
+
+export const validateContractIndex = (index: string) => {
+  if (!index.length) return 'Contract index is required';
+  if (!isPositiveInt(index)) return 'Invalid contract index';
   return null;
 };
 
@@ -51,14 +59,12 @@ export const prettifyJson = (text: string) => {
 
 export const countJsonLines = (text: string) => text.split(/\n/).length;
 
-export const getExplorerLink = (chain: Chain, txHash: string) => {
-  const txPageLink = chain.explorers?.[0].tx_page ?? '';
-  return `${txPageLink.replace('${txHash}', txHash)}`;
-};
-
-export const getExponentFromAsset = (asset: Asset) => {
-  return asset.denom_units.find((unit) => unit.denom === asset.display)
-    ?.exponent;
+export const getExplorerLink = (
+  chain: Chain,
+  txHash: string | undefined,
+): string | null => {
+  const txPageLink = chain.explorers?.[0]?.txPage;
+  return txPageLink && txHash ? txPageLink.replace('${txHash}', txHash) : null;
 };
 
 export const bytesToKb = (bytes: number) => {
@@ -70,7 +76,7 @@ export const bytesToKb = (bytes: number) => {
 export const findAttr = (
   events: logs.Log['events'],
   eventType: string,
-  attrKey: string
+  attrKey: string,
 ) => {
   const mimicLog: logs.Log = {
     msg_index: 0,
@@ -93,7 +99,7 @@ export type PrettyTxResult = {
 };
 
 export const prettyStoreCodeTxResult = (
-  txResponse: DeliverTxResponse
+  txResponse: DeliverTxResponse,
 ): PrettyTxResult => {
   const events = txResponse.events;
   const codeId = findAttr(events, 'store_code', 'code_id') ?? '0';
@@ -140,7 +146,7 @@ export const splitCamelCase = (text: string): string => {
 export const resolvePermission = (
   address: string,
   permission: AccessType,
-  permissionAddresses: string[] = []
+  permissionAddresses: string[] = [],
 ): boolean =>
   permission === AccessType.ACCESS_TYPE_EVERYBODY ||
   (address ? permissionAddresses.includes(address) : false);
@@ -184,4 +190,25 @@ export const toPascalCase = (str: string): string => {
     .split('-')
     .map((s) => s.charAt(0).toUpperCase() + s.slice(1))
     .join('');
+};
+
+export const readFileContent = (file: File): Promise<string> => {
+  return new Promise((resolve, reject) => {
+    const reader = new FileReader();
+    reader.onload = (event) => {
+      resolve(event.target?.result as string);
+    };
+    reader.onerror = (error) => reject(error);
+    reader.readAsText(file);
+  });
+};
+
+export const fromUint8Array = <T>(uint8Array: Uint8Array): T => {
+  return JSON.parse(String.fromCharCode.apply(null, Array.from(uint8Array)));
+};
+
+export const toUint8Array = (json: any): Uint8Array => {
+  return new Uint8Array(
+    Array.from(JSON.stringify(json)).map((char) => char.charCodeAt(0)),
+  );
 };

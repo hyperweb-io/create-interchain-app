@@ -1,10 +1,15 @@
-import { chains } from 'chain-registry';
-import osmosis from 'chain-registry/mainnet/osmosis/chain';
+import {
+  chains as allChains,
+  assetLists as allAssetLists,
+} from '@chain-registry/v2';
 
-const chainNames = ['osmosistestnet', 'juno', 'stargaze', 'osmosis', 'cosmoshub'];
+const chainNames = ['osmosistestnet', 'juno', 'stargaze'];
 
-export const chainOptions = chainNames.map(
-  (chainName) => chains.find((chain) => chain.chain_name === chainName)!
+export const chains = chainNames.map(
+  (chainName) => allChains.find((chain) => chain.chainName === chainName)!,
 );
 
-export const osmosisChainName = osmosis.chain_name;
+export const assetLists = chainNames.map(
+  (chainName) =>
+    allAssetLists.find((assetList) => assetList.chainName === chainName)!,
+);
