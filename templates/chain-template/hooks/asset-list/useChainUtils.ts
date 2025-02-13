@@ -1,16 +1,25 @@
-import { useManager } from '@cosmos-kit/react';
 import { useMemo } from 'react';
+import { useWalletManager } from '@interchain-kit/react';
 import { Asset, AssetList } from '@chain-registry/types';
 import { asset_lists as ibcAssetLists } from '@chain-registry/assets';
 import { assets as chainAssets, ibc } from 'chain-registry';
-import { CoinDenom, CoinSymbol, Exponent, PriceHash } from '@/utils';
+import { Coin } from '@interchainjs/react/types';
 import BigNumber from 'bignumber.js';
-import { Coin } from '@cosmjs/amino';
+
 import { PrettyAsset } from '@/components';
-import { ChainName } from 'cosmos-kit';
+import { CoinDenom, CoinSymbol, Exponent, PriceHash } from '@/utils';
+
+import { useStarshipChains } from '../common';
 
 export const useChainUtils = (chainName: string) => {
-  const { getChainRecord } = useManager();
+  const { chains, assetLists } = useWalletManager();
+  const { data: starshipData } = useStarshipChains();
+  const { chains: starshipChains = [], assets: starshipAssets = [] } =
+    starshipData?.v1 ?? {};
+
+  const isStarshipChain = starshipChains.some(
+    (chain) => chain.chain_name === chainName,
+  );
 
   const filterAssets = (assetList: AssetList[]): Asset[] => {
     return (
@@ -22,7 +31,10 @@ export const useChainUtils = (chainName: string) => {
 
   const { nativeAssets, ibcAssets } = useMemo(() => {
     // @ts-ignore
-    const nativeAssets = filterAssets(chainAssets);
+    const nativeAssets = filterAssets([
+      ...chainAssets,
+      ...(isStarshipChain ? starshipAssets : []),
+    ]);
     // @ts-ignore
     const ibcAssets = filterAssets(ibcAssetLists);
 
@@ -55,7 +67,7 @@ export const useChainUtils = (chainName: string) => {
         asset.symbol === symbol &&
         (!chainName ||
           asset.traces?.[0].counterparty.chain_name.toLowerCase() ===
-            chainName.toLowerCase())
+            chainName.toLowerCase()),
     );
     const base = asset?.base;
     if (!base) {
@@ -98,30 +110,26 @@ export const useChainUtils = (chainName: string) => {
 
   const getPrettyChainName = (ibcDenom: CoinDenom) => {
     const chainName = getChainName(ibcDenom);
-    try {
-      const chainRecord = getChainRecord(chainName);
-      // @ts-ignore
-      return chainRecord.chain.pretty_name;
-    } catch (e) {
-      return 'CHAIN_INFO_NOT_FOUND';
-    }
+    const chain = chains.find((chain) => chain.chainName === chainName);
+    if (!chain) console.warn(`Chain not found: ${chainName}`);
+    return chain?.prettyName || chainName;
   };
 
   const isNativeAsset = ({ denom }: PrettyAsset) => {
     return !!nativeAssets.find((asset) => asset.base === denom);
   };
 
-  const getNativeDenom = (chainName: ChainName) => {
-    const chainRecord = getChainRecord(chainName);
-    const denom = chainRecord.assetList?.assets[0].base;
+  const getNativeDenom = (chainName: string) => {
+    const assetList = assetLists.find((chain) => chain.chainName === chainName);
+    const denom = assetList?.assets?.[0]?.base;
     if (!denom) throw Error('denom not found');
     return denom;
   };
 
-  const getDenomBySymbolAndChain = (chainName: ChainName, symbol: string) => {
-    const chainRecord = getChainRecord(chainName);
-    const denom = chainRecord.assetList?.assets.find(
-      (asset) => asset.symbol === symbol
+  const getDenomBySymbolAndChain = (chainName: string, symbol: string) => {
+    const assetList = assetLists.find((chain) => chain.chainName === chainName);
+    const denom = assetList?.assets.find(
+      (asset) => asset.symbol === symbol,
     )?.base;
     if (!denom) throw Error('denom not found');
     return denom;
@@ -133,14 +141,14 @@ export const useChainUtils = (chainName: string) => {
     let ibcInfo = ibc.find(
       (i) =>
         i.chain_1.chain_name === fromChainName &&
-        i.chain_2.chain_name === toChainName
+        i.chain_2.chain_name === toChainName,
     );
 
     if (!ibcInfo) {
       ibcInfo = ibc.find(
         (i) =>
           i.chain_1.chain_name === toChainName &&
-          i.chain_2.chain_name === fromChainName
+          i.chain_2.chain_name === fromChainName,
       );
       flipped = true;
     }
@@ -157,6 +165,7 @@ export const useChainUtils = (chainName: string) => {
   };
 
   return {
+    isStarshipChain,
     allAssets,
     nativeAssets,
     ibcAssets,

@@ -1,9 +1,3 @@
-import { getCoin } from '@/utils';
-import { ChainName } from 'cosmos-kit';
-import {
-  formatValidatorMetaInfo,
-  type ExtendedValidator as Validator,
-} from '@/utils';
 import {
   BasicModal,
   Box,
@@ -11,7 +5,14 @@ import {
   StakingDelegate,
   Text,
 } from '@interchain-ui/react';
+import { useChain } from '@interchain-kit/react';
+
 import { UseDisclosureReturn } from '@/hooks';
+import {
+  getNativeAsset,
+  formatValidatorMetaInfo,
+  type ExtendedValidator as Validator,
+} from '@/utils';
 
 export const ValidatorInfoModal = ({
   chainName,
@@ -20,7 +21,7 @@ export const ValidatorInfoModal = ({
   modalControl,
   selectedValidator,
 }: {
-  chainName: ChainName;
+  chainName: string;
   modalControl: UseDisclosureReturn;
   selectedValidator: Validator;
   handleClick: {
@@ -30,7 +31,8 @@ export const ValidatorInfoModal = ({
   };
   logoUrl: string;
 }) => {
-  const coin = getCoin(chainName);
+  const { assetList } = useChain(chainName);
+  const coin = getNativeAsset(assetList);
 
   const { isOpen, onClose } = modalControl;
   const { openDelegateModal, openSelectValidatorModal, openUndelegateModal } =

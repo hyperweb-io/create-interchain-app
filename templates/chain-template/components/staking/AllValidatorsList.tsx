@@ -1,6 +1,5 @@
 import React, { Dispatch, SetStateAction, useMemo } from 'react';
-import { getCoin } from '@/utils';
-import { shiftDigits, type ExtendedValidator as Validator } from '@/utils';
+import { useChain } from '@interchain-kit/react';
 import {
   Text,
   Button,
@@ -10,10 +9,16 @@ import {
   GridColumn,
 } from '@interchain-ui/react';
 
+import {
+  getNativeAsset,
+  shiftDigits,
+  type ExtendedValidator as Validator,
+} from '@/utils';
+
 const AllValidatorsList = ({
   validators,
   openModal,
-  chainName: string,
+  chainName,
   logos,
   setSelectedValidator,
 }: {
@@ -25,7 +30,8 @@ const AllValidatorsList = ({
     [key: string]: string;
   };
 }) => {
-  const coin = getCoin(string);
+  const { assetList } = useChain(chainName);
+  const coin = getNativeAsset(assetList);
 
   const columns = useMemo(() => {
     const _columns: GridColumn[] = [
@@ -100,7 +106,7 @@ const AllValidatorsList = ({
     }
 
     return _columns;
-  }, [string]);
+  }, [chainName]);
 
   return (
     <ValidatorList

@@ -1,3 +1,3 @@
-export * from './QueryTab';
-export * from './ExecuteTab';
-export * from './MyContractsTab';
+export * from './query';
+export * from './execute';
+export * from './my-contracts';

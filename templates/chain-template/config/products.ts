@@ -1,8 +1,4 @@
-export type ProductCategory =
-  | 'cosmwasm'
-  | 'cosmos-sdk'
-  | 'frontend'
-  | 'testing';
+export type ProductCategory = 'cosmos-sdk' | 'frontend' | 'testing';
 
 export type Product = {
   name: string;
@@ -23,7 +19,7 @@ export const products: Product[] = [
     name: 'InterchainJS',
     description: 'A single, universal signing interface for any network',
     link: 'https://hyperweb.io/stack/interchainjs',
-    category: 'frontend'
+    category: 'frontend',
   },
   {
     name: 'Telescope',
@@ -40,13 +36,6 @@ export const products: Product[] = [
     category: 'frontend',
   },
   {
-    name: 'TS Codegen',
-    description:
-      'The quickest and easiest way to convert CosmWasm Contracts into dev-friendly TypeScript classes.',
-    link: 'https://hyperweb.io/stack/ts-codegen',
-    category: 'cosmwasm',
-  },
-  {
     name: 'Chain Registry',
     description:
       'Get chain and asset list information from the npm package for the Official Cosmos chain registry.',
@@ -61,24 +50,10 @@ export const products: Product[] = [
     category: 'testing',
   },
   {
-    name: 'Create Interchain App',
-    description:
-      'One-Command Setup for Modern Cosmos dApps. Speed up your development and bootstrap new web3 dApps quickly.',
-    link: 'https://hyperweb.io/stack/create-interchain-app',
-    category: 'frontend',
-  },
-  {
-    name: 'CosmWasm Academy',
-    description:
-      'Master CosmWasm and build your secure, multi-chain dApp on any CosmWasm chain!',
-    link: 'https://hyperweb.io/learn/ts-codegen',
-    category: 'cosmwasm',
-  },
-  {
     name: 'Videos',
     description:
-      'How-to videos from the official Hyperweb website, with learning resources for building in Cosmos.',
-    link: 'https://hyperweb.io/learn',
+      'How-to videos from the official Cosmology website, with learning resources for building in Cosmos.',
+    link: 'https://cosmology.zone/learn',
     category: 'frontend',
   },
   {

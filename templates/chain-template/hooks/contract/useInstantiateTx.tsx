@@ -1,9 +1,10 @@
-import { Box } from '@interchain-ui/react';
-import { useChain } from '@cosmos-kit/react';
-import { Coin, StdFee } from '@cosmjs/amino';
-import { InstantiateResult } from '@cosmjs/cosmwasm-stargate';
+import { createInstantiateContract } from '@interchainjs/react/cosmwasm/wasm/v1/tx.rpc.func';
+import { Coin, DeliverTxResponse, StdFee } from '@interchainjs/react/types';
 
-import { useToast } from '../common';
+import { toUint8Array } from '@/utils';
+
+import { useHandleTx } from './useHandleTx';
+import { useCustomSigningClient } from '../common';
 
 interface InstantiateTxParams {
   address: string;
@@ -12,12 +13,13 @@ interface InstantiateTxParams {
   label: string;
   admin: string;
   funds: Coin[];
-  onTxSucceed?: (txInfo: InstantiateResult) => void;
+  onTxSucceed?: (txInfo: DeliverTxResponse) => void;
   onTxFailed?: () => void;
 }
 
 export const useInstantiateTx = (chainName: string) => {
-  const { getSigningCosmWasmClient } = useChain(chainName);
+  const { data: signingClient } = useCustomSigningClient();
+  const handleTx = useHandleTx(chainName);
 
   const instantiateTx = async ({
     address,
@@ -26,56 +28,33 @@ export const useInstantiateTx = (chainName: string) => {
     label,
     admin,
     funds,
-    onTxSucceed = () => {},
-    onTxFailed = () => {},
+    onTxSucceed,
+    onTxFailed,
   }: InstantiateTxParams) => {
-    const client = await getSigningCosmWasmClient();
-    const { toast } = useToast();
+    const fee: StdFee = { amount: [], gas: '300000' };
 
-    const toastId = toast({
-      title: 'Sending Transaction',
-      type: 'loading',
-      duration: 999999,
+    await handleTx<DeliverTxResponse>({
+      txFunction: async () => {
+        const instantiateContract = createInstantiateContract(signingClient);
+        const res = await instantiateContract(
+          address,
+          {
+            sender: address,
+            codeId: BigInt(codeId),
+            admin,
+            funds,
+            label,
+            msg: toUint8Array(initMsg),
+          },
+          fee,
+          '',
+        );
+        return res;
+      },
+      successMessage: 'Instantiate Success',
+      onTxSucceed,
+      onTxFailed,
     });
-
-    const fee: StdFee = {
-      amount: [],
-      gas: '300000',
-    };
-
-    try {
-      const result = await client.instantiate(
-        address,
-        codeId,
-        initMsg,
-        label,
-        fee,
-        {
-          admin,
-          funds,
-        }
-      );
-      onTxSucceed(result);
-      toast.close(toastId);
-      toast({
-        title: 'Instantiate Success',
-        type: 'success',
-      });
-    } catch (e: any) {
-      console.error(e);
-      onTxFailed();
-      toast.close(toastId);
-      toast({
-        title: 'Transaction Failed',
-        type: 'error',
-        description: (
-          <Box width="300px" wordBreak="break-all">
-            {e.message}
-          </Box>
-        ),
-        duration: 10000,
-      });
-    }
   };
 
   return { instantiateTx };

@@ -1,19 +1,17 @@
 import Image from 'next/image';
 import { Box, Text, useColorModeValue } from '@interchain-ui/react';
+import { useChain } from '@interchain-kit/react';
 
 import { Button } from '@/components';
 import { useChainStore } from '@/contexts';
-import { useConnectChain, useDetectBreakpoints } from '@/hooks';
+import { useDetectBreakpoints } from '@/hooks';
 
 export default function Home() {
   const { isMobile } = useDetectBreakpoints();
-  const { selectedChain } = useChainStore();
-  const { connect, isWalletConnected, openView } =
-    useConnectChain(selectedChain);
 
   const chainsImageSrc = useColorModeValue(
     '/images/chains.png',
-    '/images/chains-dark.png'
+    '/images/chains-dark.png',
   );
 
   return (
@@ -35,14 +33,7 @@ export default function Home() {
         Welcome to <HighlightText>Interchain Kit</HighlightText> +{' '}
         <HighlightText>Next.js</HighlightText>
       </Text>
-      <Button
-        variant="primary"
-        leftIcon="walletFilled"
-        mx="auto"
-        onClick={isWalletConnected ? openView : connect}
-      >
-        {isWalletConnected ? 'My Wallet' : 'Connect Wallet'}
-      </Button>
+      <ConnectButton />
       <Box
         display="flex"
         justifyContent="center"
@@ -66,8 +57,24 @@ export default function Home() {
 
 const HighlightText = ({ children }: { children: string }) => {
   return (
-    <Text as="span" color="$purple600">
+    <Text as="span" color="$purple600" fontSize="inherit">
       {children}
     </Text>
+  );
+};
+
+const ConnectButton = () => {
+  const { selectedChain } = useChainStore();
+  const { connect, address, openView } = useChain(selectedChain);
+
+  return (
+    <Button
+      variant="primary"
+      leftIcon="walletFilled"
+      mx="auto"
+      onClick={address ? openView : connect}
+    >
+      {address ? 'My Wallet' : 'Connect Wallet'}
+    </Button>
   );
 };

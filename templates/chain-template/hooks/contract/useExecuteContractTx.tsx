@@ -1,10 +1,10 @@
-import Link from 'next/link';
-import { Coin, StdFee } from '@cosmjs/amino';
-import { useChain } from '@cosmos-kit/react';
+import { createExecuteContract } from '@interchainjs/react/cosmwasm/wasm/v1/tx.rpc.func';
+import { Coin, StdFee } from '@interchainjs/react/types';
 
-import { useToast } from '../common';
-import { Box, Text, Icon } from '@interchain-ui/react';
-import { getExplorerLink } from '@/utils';
+import { toUint8Array } from '@/utils';
+
+import { useHandleTx } from './useHandleTx';
+import { useCustomSigningClient } from '../common';
 
 interface ExecuteTxParams {
   address: string;
@@ -17,7 +17,8 @@ interface ExecuteTxParams {
 }
 
 export const useExecuteContractTx = (chainName: string) => {
-  const { getSigningCosmWasmClient, chain } = useChain(chainName);
+  const { data: signingClient } = useCustomSigningClient();
+  const handleTx = useHandleTx(chainName);
 
   const executeTx = async ({
     address,
@@ -28,56 +29,25 @@ export const useExecuteContractTx = (chainName: string) => {
     onTxFailed = () => {},
     onTxSucceed = () => {},
   }: ExecuteTxParams) => {
-    const client = await getSigningCosmWasmClient();
-    const { toast } = useToast();
-
-    const toastId = toast({
-      title: 'Sending Transaction',
-      type: 'loading',
-      duration: 999999,
+    await handleTx({
+      txFunction: async () => {
+        const executeContract = createExecuteContract(signingClient);
+        const res = await executeContract(
+          address,
+          {
+            sender: address,
+            contract: contractAddress,
+            msg: toUint8Array(msg),
+            funds,
+          },
+          fee,
+          '',
+        );
+        return res;
+      },
+      onTxSucceed,
+      onTxFailed,
     });
-
-    try {
-      const result = await client.execute(
-        address,
-        contractAddress,
-        msg,
-        fee,
-        undefined,
-        funds
-      );
-      onTxSucceed();
-      toast.close(toastId);
-      toast({
-        title: 'Transaction Successful',
-        type: 'success',
-        description: (
-          <Link
-            href={getExplorerLink(chain, result.transactionHash)}
-            target="_blank"
-          >
-            <Box display="flex" gap="6px" alignItems="center" color="$text">
-              <Text fontSize="14px">View tx details</Text>
-              <Icon name="externalLinkLine" />
-            </Box>
-          </Link>
-        ),
-      });
-    } catch (e: any) {
-      console.error(e);
-      onTxFailed();
-      toast.close(toastId);
-      toast({
-        title: 'Transaction Failed',
-        type: 'error',
-        description: (
-          <Box width="300px" wordBreak="break-all">
-            {e.message}
-          </Box>
-        ),
-        duration: 10000,
-      });
-    }
   };
 
   return { executeTx };
