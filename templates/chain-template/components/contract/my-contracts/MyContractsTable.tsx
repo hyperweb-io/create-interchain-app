@@ -33,7 +33,7 @@ export const MyContractsTable = ({
   const { address } = useChain(selectedChain);
   const { data, isLoading } = useMyContracts();
 
-  const { wasmContracts = [], jsdContracts = [] } = data || {};
+  const { wasmContracts = [] } = data || {};
 
   const filteredContracts = useMemo(() => {
     const trimmedSearchValue = searchValue.trim();
@@ -44,7 +44,7 @@ export const MyContractsTable = ({
           value.toLowerCase().includes(trimmedSearchValue.toLowerCase()),
       ),
     );
-  }, [wasmContracts, jsdContracts, searchValue]);
+  }, [wasmContracts, searchValue]);
 
   const { isSmMobile } = useDetectBreakpoints();
 
