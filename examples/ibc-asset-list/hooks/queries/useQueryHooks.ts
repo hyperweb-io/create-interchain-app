@@ -1,5 +1,6 @@
 import { useChain } from '@interchain-kit/react';
-import { useRpcEndpoint, useRpcClient, createRpcQueryHooks } from 'osmo-query';
+import { createRpcQueryHooks, useRpcClient } from 'osmo-query';
+import { useRpcEndpoint } from 'interchain-react/react-query'
 
 export const useQueryHooks = (chainName: string, extraKey?: string) => {
   const { address, getRpcEndpoint } = useChain(chainName);
