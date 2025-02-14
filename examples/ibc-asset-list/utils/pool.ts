@@ -1,5 +1,5 @@
 import { Pool } from 'osmo-query/dist/codegen/osmosis/gamm/pool-models/balancer/balancerPool';
-import { Coin } from 'osmo-query/dist/codegen/cosmos/base/v1beta1/coin';
+import { Coin } from 'interchainjs/types';
 import {
   PriceHash,
   CoinValue,

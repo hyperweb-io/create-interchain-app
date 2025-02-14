@@ -7,11 +7,11 @@ import {
 import { useChainWallet } from '@interchain-kit/react';
 import { chains } from '@chain-registry/v2'
 import BigNumber from 'bignumber.js';
-import { ibc } from 'osmo-query';
 import { StdFee } from '@interchainjs/cosmos-types/types';
 import { KeplrWalletName } from '@/config';
 import { useDisclosure, useChainUtils, useTx, useBalance } from '@/hooks';
 import { truncDecimals } from '@/utils';
+import { MsgTransfer } from 'interchainjs/ibc/applications/transfer/v1/tx';
 
 import {
   PrettyAsset,
@@ -20,8 +20,6 @@ import {
   Transfer,
   Unpacked,
 } from './types';
-
-const { transfer } = ibc.applications.transfer.v1.MessageComposer.withTypeUrl;
 
 const ZERO_AMOUNT = '0';
 
@@ -156,16 +154,19 @@ const OverviewTransferWrapper = (
     const stamp = Date.now();
     const timeoutInNanos = (stamp + 1.2e6) * 1e6;
 
-    const msg = transfer({
-      sourcePort,
-      sourceChannel,
-      sender: sourceAddress,
-      receiver: destAddress,
-      token,
-      // @ts-ignore
-      timeoutHeight: undefined,
-      timeoutTimestamp: BigInt(timeoutInNanos),
-    });
+    const msg = {
+      typeUrl: MsgTransfer.typeUrl,
+      value: MsgTransfer.fromPartial({
+        sourcePort,
+        sourceChannel,
+        token,
+        sender: sourceAddress,
+        receiver: destAddress,
+        timeoutHeight: undefined,
+        timeoutTimestamp: BigInt(timeoutInNanos),
+        memo: '',
+      }),
+    }
 
     await tx([msg], {
       fee,

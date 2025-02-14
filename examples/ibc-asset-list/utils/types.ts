@@ -1,8 +1,8 @@
 import { DenomUnit } from '@chain-registry/v2-types';
-import { Duration } from 'osmo-query/dist/codegen/google/protobuf/duration';
+import { Duration } from '@interchainjs/cosmos-types/google/protobuf/duration';
 import { Gauge } from 'osmo-query/dist/codegen/osmosis/incentives/gauge';
 import { SuperfluidAsset } from 'osmo-query/dist/codegen/osmosis/superfluid/superfluid';
-import { Coin } from 'osmo-query/dist/codegen/cosmos/base/v1beta1/coin';
+import { Coin } from 'interchainjs/types';
 import { Pool } from 'osmo-query/dist/codegen/osmosis/gamm/pool-models/balancer/balancerPool';
 
 export type CoinDenom = DenomUnit['denom'];

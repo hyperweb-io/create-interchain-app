@@ -1059,8 +1059,8 @@ __metadata:
     "@interchain-kit/react": "npm:0.0.1-beta.62"
     "@interchain-ui/react": "npm:1.26.0"
     "@interchain-ui/react-no-ssr": "npm:^0.1.6"
-    "@interchainjs/cosmos": "npm:1.7.6"
-    "@interchainjs/cosmos-types": "npm:1.7.6"
+    "@interchainjs/cosmos": "npm:1.8.2"
+    "@interchainjs/cosmos-types": "npm:1.8.1"
     "@tanstack/react-query": "npm:4.32.0"
     "@tanstack/react-query-devtools": "npm:4.32.0"
     "@types/node": "npm:^20.14.6"
@@ -1074,6 +1074,7 @@ __metadata:
     fast-fuzzy: "npm:1.12.0"
     framer-motion: "npm:9.0.7"
     generate-lockfile: "npm:0.0.12"
+    interchain-react: "npm:1.7.3"
     match-sorter: "npm:^6.3.3"
     next: "npm:^13"
     osmo-query: "npm:16.5.1"
@@ -1245,16 +1246,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@interchainjs/auth@npm:1.7.6":
-  version: 1.7.6
-  resolution: "@interchainjs/auth@npm:1.7.6"
+"@interchainjs/auth@npm:^1.7.10":
+  version: 1.9.4
+  resolution: "@interchainjs/auth@npm:1.9.4"
   dependencies:
-    "@interchainjs/types": "npm:1.7.6"
-    "@interchainjs/utils": "npm:1.7.6"
+    "@interchainjs/types": "npm:1.9.4"
+    "@interchainjs/utils": "npm:1.9.4"
     "@noble/curves": "npm:^1.1.0"
     "@noble/hashes": "npm:^1.3.1"
+    "@scure/bip32": "npm:^1.0.10"
     ethers: "npm:^6.5.1"
-  checksum: 10c0/4944317698cf8453188030992dce91410871a7a27f2e2a2412d73bd26b80ce965991b3e33c936c199c933b3a952bbf9fec47c42bc89425c2f7668c2223595082
+  checksum: 10c0/a79ef47fd5a619607d03e972cd66636b1087a22dae97821d3210d95d79eca7ed2e7522da8de935d0dc2b9dc2f26e2aafecf50998d3b5961654c733657edd929c
   languageName: node
   linkType: hard
 
@@ -1268,13 +1270,23 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@interchainjs/cosmos-types@npm:1.7.6":
-  version: 1.7.6
-  resolution: "@interchainjs/cosmos-types@npm:1.7.6"
+"@interchainjs/cosmos-types@npm:1.8.1":
+  version: 1.8.1
+  resolution: "@interchainjs/cosmos-types@npm:1.8.1"
   dependencies:
-    "@interchainjs/types": "npm:1.7.6"
-    "@interchainjs/utils": "npm:1.7.6"
-  checksum: 10c0/ccd59ae2ec5fba6422d37894b1a8e2cada8f972adbf7236b373d5078f10627a43b3b19a1c22434b26b096c8379abd82be280f633d978da41defa7dc379bc8932
+    "@interchainjs/types": "npm:1.7.8"
+    "@interchainjs/utils": "npm:^1.7.9"
+  checksum: 10c0/7143a9cb5bca5247b278a8f4f5fb238e3fe37ff84df18fc14fc59fb8af10711768cb141e1fb97825c58f9628b143e9de4e3311a2a0b20d9e5e2a57a04a0ace31
+  languageName: node
+  linkType: hard
+
+"@interchainjs/cosmos-types@npm:^1.8.1":
+  version: 1.9.4
+  resolution: "@interchainjs/cosmos-types@npm:1.9.4"
+  dependencies:
+    "@interchainjs/types": "npm:1.9.4"
+    "@interchainjs/utils": "npm:1.9.4"
+  checksum: 10c0/0b28d2b7347d1e055f743e4f989bfe56ce86c25a377cf3b9acbd41147e7ba44b117c5e6bb5e1c68ad733ec8a0d18952948d390905090fbb26bb059dfd8fd00f5
   languageName: node
   linkType: hard
 
@@ -1295,20 +1307,20 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@interchainjs/cosmos@npm:1.7.6":
-  version: 1.7.6
-  resolution: "@interchainjs/cosmos@npm:1.7.6"
+"@interchainjs/cosmos@npm:1.8.2":
+  version: 1.8.2
+  resolution: "@interchainjs/cosmos@npm:1.8.2"
   dependencies:
     "@chain-registry/v2": "npm:^1.65.6"
     "@chain-registry/v2-types": "npm:^0.49.6"
-    "@interchainjs/auth": "npm:1.7.6"
-    "@interchainjs/cosmos-types": "npm:1.7.6"
-    "@interchainjs/types": "npm:1.7.6"
-    "@interchainjs/utils": "npm:1.7.6"
+    "@interchainjs/auth": "npm:^1.7.10"
+    "@interchainjs/cosmos-types": "npm:^1.8.1"
+    "@interchainjs/types": "npm:1.7.8"
+    "@interchainjs/utils": "npm:^1.7.9"
     "@noble/curves": "npm:^1.1.0"
     "@noble/hashes": "npm:^1.3.1"
     decimal.js: "npm:^10.4.3"
-  checksum: 10c0/e502cc4c953860c53625dccd953d851e1639b14da2e8de0f9061eb940ca511e59b444f613b22a118aaa25a8f480d3654657d10bd35d2b24bef86b7228b831aec
+  checksum: 10c0/661df4627a8752ef481302bc7535720359fd2732456f8ac0ab5da987435f13e4ec5dc57faae9c683beddac415b762a354c7f458bd64a69a8496e24f56bdbb29f
   languageName: node
   linkType: hard
 
@@ -1321,12 +1333,21 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@interchainjs/types@npm:1.7.6":
-  version: 1.7.6
-  resolution: "@interchainjs/types@npm:1.7.6"
+"@interchainjs/types@npm:1.7.8":
+  version: 1.7.8
+  resolution: "@interchainjs/types@npm:1.7.8"
   dependencies:
     decimal.js: "npm:^10.4.3"
-  checksum: 10c0/6206d61f8bf75199a6d0348b41fba866773ba376d04148a7fa5538a3419fbfeb6e4e741f1836e2dfa20b1693d0824c4a673ca2c086686993c6fc5191f4e19e61
+  checksum: 10c0/5c601ca672cdc37f57c8319ef42ed6415433286cba8075ca7e514d8057f9057299d8c8227e6110aa17e3be550e1a362bebb8845a57ef7b3dbfa6097deeeb7899
+  languageName: node
+  linkType: hard
+
+"@interchainjs/types@npm:1.9.4":
+  version: 1.9.4
+  resolution: "@interchainjs/types@npm:1.9.4"
+  dependencies:
+    decimal.js: "npm:^10.4.3"
+  checksum: 10c0/bd82ba9e74316a9012f866326aba5c3bb37521986861f0c08ccef5b34afc738f73a4d2e436bc90e0b447f3dfe05f1edfaa38e08eebaa202fa1a5629a93d209d8
   languageName: node
   linkType: hard
 
@@ -1340,13 +1361,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@interchainjs/utils@npm:1.7.6":
-  version: 1.7.6
-  resolution: "@interchainjs/utils@npm:1.7.6"
+"@interchainjs/utils@npm:1.9.4, @interchainjs/utils@npm:^1.7.9":
+  version: 1.9.4
+  resolution: "@interchainjs/utils@npm:1.9.4"
   dependencies:
-    "@interchainjs/types": "npm:1.7.6"
+    "@interchainjs/types": "npm:1.9.4"
     bech32: "npm:^2.0.0"
-  checksum: 10c0/6c8e2f8bd833c2c2c73cdaa248e6a21d7820f247d5a84b0d4cd95d9240cb4860de957ed67fae53519e0e474f5b142718ac795a91313155360f37ba22f98ab5d7
+    decimal.js: "npm:^10.4.3"
+  checksum: 10c0/93c530c292ad16a24683fe4765eae28e3631535dcf6d745174c9287acb162678ad25f8a8f21e379ab2b287c6ea4bd04ed4d38306346fe5c8d1be1200afa56410
   languageName: node
   linkType: hard
 
@@ -1736,7 +1758,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@noble/curves@npm:^1.1.0":
+"@noble/curves@npm:^1.1.0, @noble/curves@npm:~1.8.1":
   version: 1.8.1
   resolution: "@noble/curves@npm:1.8.1"
   dependencies:
@@ -1752,7 +1774,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@noble/hashes@npm:1.7.1, @noble/hashes@npm:^1.3.1":
+"@noble/hashes@npm:1.7.1, @noble/hashes@npm:^1.3.1, @noble/hashes@npm:~1.7.1":
   version: 1.7.1
   resolution: "@noble/hashes@npm:1.7.1"
   checksum: 10c0/2f8ec0338ccc92b576a0f5c16ab9c017a3a494062f1fbb569ae641c5e7eab32072f9081acaa96b5048c0898f972916c818ea63cbedda707886a4b5ffcfbf94e3
@@ -3548,6 +3570,24 @@ __metadata:
   version: 1.10.2
   resolution: "@rushstack/eslint-patch@npm:1.10.2"
   checksum: 10c0/3712b8994bfed0968d4c4f21ff10bf5f2abb47f47d65d4e616de4311d2f372f2528b03b1d4e0dcaa7392f8626ccdf114e753db4f790e92436fc5a4e52195d181
+  languageName: node
+  linkType: hard
+
+"@scure/base@npm:~1.2.2":
+  version: 1.2.4
+  resolution: "@scure/base@npm:1.2.4"
+  checksum: 10c0/469c8aee80d6d6973e1aac6184befa04568f1b4016e40c889025f4a721575db9c1ca0c2ead80613896cce929392740322a18da585a427f157157e797dc0a42a9
+  languageName: node
+  linkType: hard
+
+"@scure/bip32@npm:^1.0.10":
+  version: 1.6.2
+  resolution: "@scure/bip32@npm:1.6.2"
+  dependencies:
+    "@noble/curves": "npm:~1.8.1"
+    "@noble/hashes": "npm:~1.7.1"
+    "@scure/base": "npm:~1.2.2"
+  checksum: 10c0/a0abd62d1fe34b4d90b84feb25fa064ad452fd51be9fd7ea3dcd376059c0e8d08d4fe454099030f43fb91a1bee85cd955f093f221bbc522178919f779fbe565c
   languageName: node
   linkType: hard
 
@@ -6683,6 +6723,22 @@ __metadata:
   version: 2.0.4
   resolution: "inherits@npm:2.0.4"
   checksum: 10c0/4e531f648b29039fb7426fb94075e6545faa1eb9fe83c29f0b6d9e7263aceb4289d2d4557db0d428188eeb449cc7c5e77b0a0b2c4e248ff2a65933a0dee49ef2
+  languageName: node
+  linkType: hard
+
+"interchain-react@npm:1.7.3":
+  version: 1.7.3
+  resolution: "interchain-react@npm:1.7.3"
+  dependencies:
+    "@interchainjs/cosmos": "npm:1.6.3"
+    "@interchainjs/cosmos-types": "npm:1.6.3"
+    "@interchainjs/types": "npm:1.6.3"
+    "@interchainjs/utils": "npm:1.6.3"
+    "@noble/hashes": "npm:^1.3.1"
+    decimal.js: "npm:^10.4.3"
+  peerDependencies:
+    "@tanstack/react-query": 4.29.1
+  checksum: 10c0/3a5884b763df2524ccec647ed3afd2901cec19fe64f78d0e9f6a051aaf0d56855a7524b2bd37cab793bfe58a5a854181071babc75604b05554ab7a9af202c22d
   languageName: node
   linkType: hard
 
