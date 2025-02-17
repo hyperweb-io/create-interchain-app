@@ -1,4 +1,4 @@
-import { Pool } from 'osmo-query/dist/codegen/osmosis/gamm/pool-models/balancer/balancerPool';
+import { Pool } from '@/types/pool-models';
 import { Coin } from 'interchainjs/types';
 import {
   PriceHash,

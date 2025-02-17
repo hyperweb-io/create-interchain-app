@@ -1,9 +1,6 @@
 import { DenomUnit } from '@chain-registry/v2-types';
-import { Duration } from '@interchainjs/cosmos-types/google/protobuf/duration';
-import { Gauge } from 'osmo-query/dist/codegen/osmosis/incentives/gauge';
-import { SuperfluidAsset } from 'osmo-query/dist/codegen/osmosis/superfluid/superfluid';
 import { Coin } from 'interchainjs/types';
-import { Pool } from 'osmo-query/dist/codegen/osmosis/gamm/pool-models/balancer/balancerPool';
+import { Pool } from '@/types/pool-models';
 
 export type CoinDenom = DenomUnit['denom'];
 
@@ -53,19 +50,6 @@ export interface PoolPretty extends Pool {
   nickname: string;
   images: PoolTokenImage[] | null;
   poolAssetsPretty: PoolAssetPretty[];
-}
-
-export interface CalcPoolAprsParams {
-  activeGauges: Gauge[];
-  pool: Pool;
-  prices: PriceHash;
-  superfluidPools: SuperfluidAsset[];
-  aprSuperfluid: string | number;
-  lockupDurations: Duration[];
-  volume7d: string | number;
-  swapFee: string | number;
-  lockup?: string;
-  includeNonPerpetual?: boolean;
 }
 
 export interface Trade {
