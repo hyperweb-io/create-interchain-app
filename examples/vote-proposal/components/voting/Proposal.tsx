@@ -13,7 +13,7 @@ import {
 import {
   Proposal as IProposal,
   ProposalStatus,
-} from "interchain-query/cosmos/gov/v1/gov";
+} from "interchainjs/cosmos/gov/v1/gov";
 import {
   exponentiate,
   formatDate,

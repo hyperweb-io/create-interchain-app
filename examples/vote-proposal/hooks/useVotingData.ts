@@ -1,8 +1,8 @@
 import { useEffect, useMemo, useState } from 'react';
 import { useChain } from '@interchain-kit/react';
 import { useQueries } from '@tanstack/react-query';
-import { Proposal, ProposalStatus } from 'interchain-query/cosmos/gov/v1beta1/gov';
-import { Proposal as ProposalV1 } from 'interchain-query/cosmos/gov/v1/gov';
+import { ProposalStatus } from 'interchainjs/cosmos/gov/v1beta1/gov';
+import { Proposal as ProposalV1 } from 'interchainjs/cosmos/gov/v1/gov';
 import { useQueryHooks, useRpcQueryClient } from '.';
 import { getTitle, paginate, parseQuorum } from '@/utils';
 

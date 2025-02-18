@@ -1,9 +1,7 @@
 import { useChain } from '@interchain-kit/react';
-import {
-  useRpcEndpoint,
-  useRpcClient,
-  createRpcQueryHooks
-} from 'interchain-query';
+import { createRpcQueryHooks } from 'interchain-query';
+import { useRpcEndpoint, useRpcClient } from 'interchainjs/react-query'
+import { defaultContext } from '@tanstack/react-query';
 
 export const useQueryHooks = (chainName: string, extraKey?: string) => {
   const { getRpcEndpoint } = useChain(chainName);
@@ -11,6 +9,7 @@ export const useQueryHooks = (chainName: string, extraKey?: string) => {
   const rpcEndpointQuery = useRpcEndpoint({
     getter: getRpcEndpoint,
     options: {
+      context: defaultContext,
       staleTime: Infinity,
       queryKeyHashFn: (queryKey) => {
         const key = [...queryKey, chainName];
@@ -20,8 +19,11 @@ export const useQueryHooks = (chainName: string, extraKey?: string) => {
   });
 
   const rpcClientQuery = useRpcClient({
-    rpcEndpoint: rpcEndpointQuery.data || '',
+    clientResolver: {
+      rpcEndpoint: rpcEndpointQuery.data || '',
+    },
     options: {
+      context: defaultContext,
       enabled: Boolean(rpcEndpointQuery.data),
       staleTime: Infinity,
       queryKeyHashFn: (queryKey) => {

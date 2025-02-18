@@ -1,13 +1,11 @@
 import { useState } from 'react';
-import { cosmos } from 'interchain-query';
 import { toast } from '@interchain-ui/react';
 import { useChain } from '@interchain-kit/react';
 import { StdFee } from '@interchainjs/cosmos-types/types';
-import { Proposal } from "interchain-query/cosmos/gov/v1/gov";
+import { Proposal } from "interchainjs/cosmos/gov/v1/gov";
 import { useTx } from '@/hooks';
 import { getCoin } from '@/utils';
-
-const MessageComposer = cosmos.gov.v1beta1.MessageComposer;
+import { MessageComposer } from 'interchainjs/cosmos/gov/v1beta1/tx.registry'
 
 export type useVotingOptions = {
   chainName: string;
