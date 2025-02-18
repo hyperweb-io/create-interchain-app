@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { cosmos } from "interchain-query";
 import { StdFee } from "@interchainjs/cosmos-types/types";
 import { useChain } from "@interchain-kit/react";
 import BigNumber from "bignumber.js";
@@ -23,8 +22,9 @@ import {
 } from "@/utils";
 import { getCoin, getExponent } from "@/config";
 import { Prices, UseDisclosureReturn, useTx } from "@/hooks";
+import { MessageComposer } from 'interchainjs/cosmos/staking/v1beta1/tx.registry'
 
-const { delegate } = cosmos.staking.v1beta1.MessageComposer.fromPartial;
+const { delegate } = MessageComposer.fromPartial;
 
 export type MaxAmountAndFee = {
   maxAmount: number;

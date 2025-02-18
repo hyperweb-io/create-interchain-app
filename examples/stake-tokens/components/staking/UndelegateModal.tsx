@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import { cosmos } from 'interchain-query';
 import { useChain } from '@interchain-kit/react';
 import BigNumber from 'bignumber.js';
 import {
@@ -20,8 +19,9 @@ import {
   shiftDigits,
   type ExtendedValidator as Validator,
 } from '@/utils';
+import { MessageComposer } from 'interchainjs/cosmos/staking/v1beta1/tx.registry'
 
-const { undelegate } = cosmos.staking.v1beta1.MessageComposer.fromPartial;
+const { undelegate } = MessageComposer.fromPartial;
 
 export const UndelegateModal = ({
   updateData,

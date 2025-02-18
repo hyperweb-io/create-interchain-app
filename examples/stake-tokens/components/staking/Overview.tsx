@@ -5,7 +5,7 @@ import {
   StakingClaimHeader,
 } from '@interchain-ui/react';
 import { useChain } from '@interchain-kit/react';
-import { cosmos } from 'interchain-query';
+import { MessageComposer } from 'interchainjs/cosmos/distribution/v1beta1/tx.registry'
 
 import { getCoin } from '@/config';
 import { Prices, useTx } from '@/hooks';
@@ -16,8 +16,7 @@ import {
   type ParsedRewards as Rewards,
 } from '@/utils';
 
-const { withdrawDelegatorReward } =
-  cosmos.distribution.v1beta1.MessageComposer.fromPartial;
+const { withdrawDelegatorReward } = MessageComposer.fromPartial;
 
 const Overview = ({
   balance,

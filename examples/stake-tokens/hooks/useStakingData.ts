@@ -1,12 +1,10 @@
 import { useEffect, useMemo } from 'react';
 import { useChain } from '@interchain-kit/react';
 import BigNumber from 'bignumber.js';
-import {
-  cosmos,
-  useRpcClient,
-  useRpcEndpoint,
-  createRpcQueryHooks,
-} from 'interchain-query';
+import { createRpcQueryHooks } from 'interchain-query';
+import { bondStatusToJSON, BondStatus } from 'interchainjs/cosmos/staking/v1beta1/staking'
+import { useRpcClient, useRpcEndpoint } from 'interchainjs/react-query'
+import { defaultContext } from '@tanstack/react-query';
 
 import { usePrices } from './usePrices';
 import { getCoin, getExponent } from '@/config';
@@ -34,6 +32,7 @@ export const useStakingData = (chainName: string) => {
   const rpcEndpointQuery = useRpcEndpoint({
     getter: getRpcEndpoint,
     options: {
+      context: defaultContext,
       enabled: !!address,
       staleTime: Infinity,
       queryKeyHashFn: (queryKey) => {
@@ -43,8 +42,11 @@ export const useStakingData = (chainName: string) => {
   });
 
   const rpcClientQuery = useRpcClient({
-    rpcEndpoint: rpcEndpointQuery.data || '',
+    clientResolver: {
+      rpcEndpoint: rpcEndpointQuery.data,
+    },
     options: {
+      context: defaultContext,
       enabled: !!address && !!rpcEndpointQuery.data,
       staleTime: Infinity,
     },
@@ -91,8 +93,8 @@ export const useStakingData = (chainName: string) => {
 
   const validatorsQuery = cosmosQuery.staking.v1beta1.useValidators({
     request: {
-      status: cosmos.staking.v1beta1.bondStatusToJSON(
-        cosmos.staking.v1beta1.BondStatus.BOND_STATUS_BONDED
+      status: bondStatusToJSON(
+        BondStatus.BOND_STATUS_BONDED
       ),
       pagination: {
         key: new Uint8Array(),

@@ -1,16 +1,16 @@
-import { QueryDelegationTotalRewardsResponse } from 'interchain-query/cosmos/distribution/v1beta1/query';
+import { QueryDelegationTotalRewardsResponse } from 'interchainjs/cosmos/distribution/v1beta1/query';
 import {
   Pool,
   Validator,
-} from 'interchain-query/cosmos/staking/v1beta1/staking';
+} from 'interchainjs/cosmos/staking/v1beta1/staking';
 import { isGreaterThanZero, shiftDigits, toNumber } from '.';
 import { Coin } from '@interchainjs/cosmos-types/types';
 import {
   QueryDelegatorDelegationsResponse,
   QueryParamsResponse,
-} from 'interchain-query/cosmos/staking/v1beta1/query';
+} from 'interchainjs/cosmos/staking/v1beta1/query';
 import BigNumber from 'bignumber.js';
-import { QueryAnnualProvisionsResponse } from 'interchain-query/cosmos/mint/v1beta1/query';
+import { QueryAnnualProvisionsResponse } from 'interchainjs/cosmos/mint/v1beta1/query';
 import type { Asset } from '@chain-registry/v2-types';
 
 const DAY_TO_SECONDS = 24 * 60 * 60;
