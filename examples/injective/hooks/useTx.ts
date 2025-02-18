@@ -1,7 +1,7 @@
 import { useChain } from '@interchain-kit/react';
 import { defaultContext, useQuery } from '@tanstack/react-query';
 
-import { DEFAULT_SIGNING_CLIENT_QUERY_KEY } from '@interchainjs/react/react-query';
+import { DEFAULT_SIGNING_CLIENT_QUERY_KEY } from 'injective-react/react-query';
 import { WalletState } from '@interchain-kit/core';
 
 export enum TxStatus {
