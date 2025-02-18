@@ -1,4 +1,3 @@
-import { cosmos } from 'interchain-query';
 import { useChain } from '@interchain-kit/react';
 import { StdFee } from '@interchainjs/cosmos-types/types';
 import { isDeliverTxSuccess } from '@interchainjs/cosmos/utils/asserts'
@@ -7,8 +6,9 @@ import { assetLists } from '@chain-registry/v2';
 import { toEncoders, toConverters } from '@interchainjs/cosmos/utils'
 import { MsgDelegate, MsgUndelegate, MsgBeginRedelegate } from 'interchainjs/cosmos/staking/v1beta1/tx'
 import { MsgWithdrawDelegatorReward } from 'interchainjs/cosmos/distribution/v1beta1/tx'
+import { TxRaw } from '@interchainjs/cosmos-types/cosmos/tx/v1beta1/tx'
 
-const txRaw = cosmos.tx.v1beta1.TxRaw;
+const txRaw = TxRaw;
 
 interface Msg {
   typeUrl: string;

@@ -1,15 +1,14 @@
-import { cosmos } from 'osmo-query';
 import { StdFee } from '@interchainjs/cosmos-types/types';
 import { isDeliverTxSuccess } from '@interchainjs/cosmos/utils/asserts';
 import { toast, ToastShape } from '@interchain-ui/react';
 import { useChain } from '@interchain-kit/react';
-import { TxRaw } from 'osmo-query/dist/codegen/cosmos/tx/v1beta1/tx';
 import { assetLists } from '@chain-registry/v2';
 import {
   toConverters,
   toEncoders,
 } from '@interchainjs/cosmos/utils';
 import { MsgTransfer } from 'interchainjs/ibc/applications/transfer/v1/tx';
+import { TxRaw } from '@interchainjs/cosmos-types/cosmos/tx/v1beta1/tx'
 
 interface Msg {
   typeUrl: string;
@@ -28,7 +27,7 @@ export enum TxStatus {
   Broadcasting = 'Transaction Broadcasting',
 }
 
-const txRaw = cosmos.tx.v1beta1.TxRaw;
+const txRaw = TxRaw;
 
 export const useTx = (chainName: string) => {
   const { address, getSigningClient } =

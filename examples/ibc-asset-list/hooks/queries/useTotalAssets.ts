@@ -6,7 +6,7 @@ import { useEffect, useMemo } from 'react';
 import { useChainUtils } from '../useChainUtils';
 import { usePrices } from './usePrices';
 import { defaultChainName as osmoChainName } from '@/config';
-import { Pool } from 'osmo-query/dist/codegen/osmosis/gamm/pool-models/balancer/balancerPool';
+import { Pool } from '@/types/pool-models';
 import { convertGammTokenToDollarValue } from '@/utils';
 import { useQueryHooks } from './useQueryHooks';
 
