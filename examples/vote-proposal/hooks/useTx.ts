@@ -1,10 +1,10 @@
-import { cosmos } from 'interchain-query';
 import { useChain } from '@interchain-kit/react';
 import { assetLists } from '@chain-registry/v2'
 import { DeliverTxResponse, StdFee } from '@interchainjs/cosmos-types/types'
 import { isDeliverTxSuccess } from '@interchainjs/cosmos/utils/asserts'
 import { toEncoders, toConverters } from '@interchainjs/cosmos/utils'
 import { MsgVote } from 'interchainjs/cosmos/gov/v1beta1/tx'
+import { TxRaw } from '@interchainjs/cosmos-types/cosmos/tx/v1beta1/tx'
 
 export type Msg = {
   typeUrl: string;
@@ -63,7 +63,7 @@ export function useTx(chainName: string) {
     }
 
     try {
-      const txRaw = cosmos.tx.v1beta1.TxRaw;
+      const txRaw = TxRaw;
       const fee = {
         amount: [
           {
