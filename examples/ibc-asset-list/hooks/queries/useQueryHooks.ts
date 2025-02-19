@@ -21,7 +21,6 @@ export const useQueryHooks = (chainName: string, extraKey?: string) => {
   });
 
   const rpcClientQuery = useRpcClient({
-    // rpcEndpoint: rpcEndpointQuery.data || '',
     clientResolver: {
       rpcEndpoint: rpcEndpointQuery.data,
     },
@@ -35,12 +34,12 @@ export const useQueryHooks = (chainName: string, extraKey?: string) => {
     },
   });
 
-  const { cosmos: cosmosQuery, osmosis: osmosisQuery } = createRpcQueryHooks({
+  const { cosmos: cosmosQuery } = createRpcQueryHooks({
     rpc: rpcClientQuery.data,
   });
 
   const isReady = !!address && !!rpcClientQuery.data;
   const isFetching = rpcEndpointQuery.isFetching || rpcClientQuery.isFetching;
 
-  return { cosmosQuery, osmosisQuery, isReady, isFetching };
+  return { cosmosQuery, isReady, isFetching };
 };
