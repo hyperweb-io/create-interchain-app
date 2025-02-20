@@ -21,11 +21,11 @@ export default function SendMsg() {
   const chain = defaultChain;
   const txPage = chain?.explorers?.[0].txPage;
 
-  const { address } = useChain(defaultChainName);
+  const { address, status } = useChain(defaultChainName);
   const { data: signingClient, isLoading } = useSigningClient(
     defaultChainName,
     {
-      walletStatus: WalletState.Connected,
+      walletStatus: status,
     }
   );
 
@@ -68,6 +68,8 @@ export default function SendMsg() {
       amount: [{ denom, amount: '1' }],
     });
 
+    console.log(signingClient);
+
     send(
       {
         signerAddress: address,
@@ -82,6 +84,7 @@ export default function SendMsg() {
           setSending(false);
         },
         onError: (error) => {
+          console.log(error);
           setError(error?.message || 'Unknown error');
           setSending(false);
         },

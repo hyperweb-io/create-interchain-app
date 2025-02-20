@@ -10,6 +10,14 @@ export enum TxStatus {
   Broadcasting = 'Transaction Broadcasting',
 }
 
+/**
+ * Get the signing client for the chain
+ * This is a hook that returns the signing client for the chain
+ * @param chainName - The name of the chain
+ * @param options - The options for the signing client
+ * @param options.walletStatus - The current status of the wallet, only connected wallets are enabled
+ * @returns The signing client for the chain
+ */
 export const useSigningClient = (
   chainName: string,
   options: {
