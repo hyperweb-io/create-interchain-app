@@ -1,5 +1,4 @@
 import { useChain } from '@interchain-kit/react';
-import { createRpcQueryHooks } from 'osmo-query';
 import { useRpcClient } from 'interchain-react/react-query';
 import { useRpcEndpoint } from 'interchain-react/react-query'
 import { defaultContext } from '@tanstack/react-query';
@@ -34,12 +33,8 @@ export const useQueryHooks = (chainName: string, extraKey?: string) => {
     },
   });
 
-  const { cosmos: cosmosQuery } = createRpcQueryHooks({
-    rpc: rpcClientQuery.data,
-  });
-
   const isReady = !!address && !!rpcClientQuery.data;
   const isFetching = rpcEndpointQuery.isFetching || rpcClientQuery.isFetching;
 
-  return { cosmosQuery, isReady, isFetching };
+  return { isReady, isFetching };
 };

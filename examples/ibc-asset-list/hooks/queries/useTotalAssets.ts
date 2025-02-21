@@ -5,7 +5,9 @@ import BigNumber from 'bignumber.js';
 import { useEffect, useMemo } from 'react';
 import { useChainUtils } from '../useChainUtils';
 import { usePrices } from './usePrices';
-import { useQueryHooks } from './useQueryHooks';
+import { useGetAllBalances } from 'interchain-react/cosmos/bank/v1beta1/query.rpc.func'
+import { defaultContext } from '@tanstack/react-query';
+import { useGetDelegatorDelegations } from 'interchain-react/cosmos/staking/v1beta1/query.rpc.func';
 
 (BigInt.prototype as any).toJSON = function () {
   return this.toString();
@@ -20,31 +22,32 @@ export const getPagination = (limit: bigint) => ({
 });
 
 export const useTotalAssets = (chainName: string) => {
-  const { address } = useChain(chainName);
-
-  const { cosmosQuery, isReady, isFetching } =
-    useQueryHooks(chainName);
+  const { address, rpcEndpoint } = useChain(chainName);
 
   const allBalancesQuery: UseQueryResult<Coin[]> =
-    cosmosQuery.bank.v1beta1.useAllBalances({
+    useGetAllBalances({
+      clientResolver: rpcEndpoint,
       request: {
         address: address || '',
         pagination: getPagination(100n),
+        resolveDenom: false
       },
       options: {
-        enabled: isReady,
+        context: defaultContext,
+        enabled: !!rpcEndpoint,
         select: ({ balances }) => balances || [],
       },
     });
 
   const delegationsQuery: UseQueryResult<Coin[]> =
-    cosmosQuery.staking.v1beta1.useDelegatorDelegations({
+    useGetDelegatorDelegations({
       request: {
         delegatorAddr: address || '',
         pagination: getPagination(100n),
       },
       options: {
-        enabled: isReady,
+        context: defaultContext,
+        enabled: !!rpcEndpoint,
         select: ({ delegationResponses }) =>
           delegationResponses.map(({ balance }) => balance) || [],
       },
@@ -69,7 +72,7 @@ export const useTotalAssets = (chainName: string) => {
   const queries = Object.values(dataQueries);
   const isInitialFetching = queries.some(({ isFetching }) => isFetching);
   const isRefetching = queries.some(({ isRefetching }) => isRefetching);
-  const isLoading = isFetching || isInitialFetching || isRefetching;
+  const isLoading = delegationsQuery.isFetching || allBalancesQuery.isFetching || isInitialFetching || isRefetching;
 
   type AllQueries = typeof dataQueries;
 

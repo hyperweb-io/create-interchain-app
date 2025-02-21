@@ -2,12 +2,13 @@ import { Coin } from '@interchainjs/cosmos-types/types';
 import { useChain } from '@interchain-kit/react';
 import { UseQueryResult } from '@tanstack/react-query';
 import { useEffect } from 'react';
-import { useQueryHooks } from './useQueryHooks';
+import { useGetBalance } from 'interchain-react/cosmos/bank/v1beta1/query.rpc.func';
+import { defaultContext } from '@tanstack/react-query';
 
 export const useBalance = (chainName: string, enabled: boolean = true,
   displayDenom?: string
 ) => {
-  const { address, assetList } = useChain(chainName);
+  const { address, assetList, rpcEndpoint } = useChain(chainName);
   let denom = assetList?.assets[0].base!;
   for (const asset of assetList?.assets || []) {
     if (asset.display.toLowerCase() === displayDenom?.toLowerCase()) {
@@ -16,19 +17,16 @@ export const useBalance = (chainName: string, enabled: boolean = true,
     }
   }
 
-  const { cosmosQuery, isReady, isFetching } = useQueryHooks(
-    chainName,
-    'balance'
-  );
-
-  const balanceQuery: UseQueryResult<Coin> =
-    cosmosQuery.bank.v1beta1.useBalance({
+  const balanceQuery: UseQueryResult<Coin | undefined> =
+    useGetBalance({
+      clientResolver: rpcEndpoint,
       request: {
         denom,
         address: address || '',
       },
       options: {
-        enabled: isReady && enabled,
+        context: defaultContext,
+        enabled: !!rpcEndpoint && enabled,
         select: ({ balance }) => balance,
       },
     });
@@ -42,6 +40,6 @@ export const useBalance = (chainName: string, enabled: boolean = true,
 
   return {
     balance: balanceQuery.data,
-    isLoading: isFetching // || !!balanceQueries.find(item => item.isFetching),
+    isLoading: balanceQuery.isFetching // || !!balanceQueries.find(item => item.isFetching),
   };
 };
