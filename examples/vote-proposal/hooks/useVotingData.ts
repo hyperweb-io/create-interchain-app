@@ -3,8 +3,10 @@ import { useChain } from '@interchain-kit/react';
 import { useQueries } from '@tanstack/react-query';
 import { ProposalStatus } from 'interchainjs/cosmos/gov/v1beta1/gov';
 import { Proposal as ProposalV1 } from 'interchainjs/cosmos/gov/v1/gov';
-import { useQueryHooks, useRpcQueryClient } from '.';
+import { useQueryHooks } from '.';
 import { getTitle, paginate, parseQuorum } from '@/utils';
+import { useGetVote } from '@interchainjs/react/cosmos/gov/v1/query.rpc.react';
+import { defaultContext } from '@tanstack/react-query';
 
 (BigInt.prototype as any).toJSON = function () {
   return this.toString();
@@ -37,7 +39,6 @@ export function processProposals(proposals: ProposalV1[]) {
 export function useVotingData(chainName: string) {
   const [isLoading, setIsLoading] = useState(false);
   const { address } = useChain(chainName);
-  const { rpcQueryClient } = useRpcQueryClient(chainName);
   const { cosmos, isReady, isFetching } = useQueryHooks(chainName);
 
   // cosmos.gov.v1.useProposals
@@ -87,18 +88,27 @@ export function useVotingData(chainName: string) {
     },
   });
 
-  const votesQueries = useQueries({
-    queries: (votedProposalsQuery.data || []).map(({ id }) => ({
-      queryKey: ['voteQuery', id, address],
-      queryFn: () =>
-        rpcQueryClient?.cosmos.gov.v1.vote({
-          proposalId: id,
-          voter: address || '',
-        }),
-      enabled: Boolean(rpcQueryClient) && Boolean(address) && Boolean(votedProposalsQuery.data),
-      keepPreviousData: true,
-    })),
-  });
+  const votesQueries =
+    useQueries({
+      queries: (votedProposalsQuery.data || []).map(({ id }) => ({
+        queryKey: ['voteQuery', id, address],
+        queryFn: () => {
+          return useGetVote({
+            request: {
+              proposalId: id,
+              voter: address || '',
+            },
+            options: {
+              context: defaultContext,
+              enabled: Boolean(id) && Boolean(address),
+              keepPreviousData: true,
+            },
+          }).data
+        },
+        enabled: Boolean(id) && Boolean(address) && Boolean(votedProposalsQuery.data),
+        keepPreviousData: true,
+      })),
+    });
 
   const singleQueries = {
     quorum: quorumQuery,
