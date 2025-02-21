@@ -28,7 +28,7 @@ const queryClient = new QueryClient({
   },
 });
 
-function CreateCosmosApp({ Component, pageProps }: AppProps) {
+function CreateInterchainApp({ Component, pageProps }: AppProps) {
   const { themeClass } = useTheme();
 
   return (
@@ -60,4 +60,4 @@ function CreateCosmosApp({ Component, pageProps }: AppProps) {
   );
 }
 
-export default CreateCosmosApp;
+export default CreateInterchainApp;
