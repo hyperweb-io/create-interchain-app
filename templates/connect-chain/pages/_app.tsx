@@ -17,7 +17,7 @@ const chain = chains.find((chain) => chain.chainName === 'cosmoshub')!
 
 console.log('keplrWallet', keplrWallet)
 
-function CreateCosmosApp({ Component, pageProps }: AppProps) {
+function CreateInterchainApp({ Component, pageProps }: AppProps) {
   const { themeClass } = useTheme();
 
   return (
@@ -45,4 +45,4 @@ function CreateCosmosApp({ Component, pageProps }: AppProps) {
   );
 }
 
-export default CreateCosmosApp;
+export default CreateInterchainApp;

@@ -5,10 +5,11 @@ import { UseQueryResult } from '@tanstack/react-query';
 import BigNumber from 'bignumber.js';
 import { useEffect, useMemo } from 'react';
 import { useChainUtils } from '../useChainUtils';
-import { useQueryHooks } from './useQueryHooks';
 import { usePrices } from './usePrices';
 import { useTopTokens } from './useTopTokens';
 import { getPagination } from './useTotalAssets';
+import { useGetAllBalances } from 'interchain-react/cosmos/bank/v1beta1/query.rpc.func'
+import { defaultContext } from '@tanstack/react-query';
 
 (BigInt.prototype as any).toJSON = function () {
   return this.toString();
@@ -17,18 +18,19 @@ import { getPagination } from './useTotalAssets';
 const MAX_TOKENS_TO_SHOW = 50;
 
 export const useAssets = (chainName: string) => {
-  const { address } = useChain(chainName);
-
-  const { cosmosQuery, isReady, isFetching } = useQueryHooks(chainName);
+  const { address, rpcEndpoint } = useChain(chainName);
 
   const allBalancesQuery: UseQueryResult<Coin[]> =
-    cosmosQuery.bank.v1beta1.useAllBalances({
+    useGetAllBalances({
+      clientResolver: rpcEndpoint,
       request: {
         address: address || '',
         pagination: getPagination(100n),
+        resolveDenom: false
       },
       options: {
-        enabled: isReady,
+        context: defaultContext,
+        enabled: !!rpcEndpoint,
         select: ({ balances }) => balances || [],
       },
     });
@@ -53,7 +55,7 @@ export const useAssets = (chainName: string) => {
   const queries = Object.values(dataQueries);
   const isInitialFetching = queries.some(({ isLoading }) => isLoading);
   const isRefetching = queries.some(({ isRefetching }) => isRefetching);
-  const isLoading = isFetching || isInitialFetching || isRefetching;
+  const isLoading = allBalancesQuery.isFetching || isInitialFetching || isRefetching;
 
   type AllQueries = typeof dataQueries;
 

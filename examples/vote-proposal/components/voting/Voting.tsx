@@ -4,7 +4,7 @@ import {
   Proposal as IProposal,
   ProposalStatus,
   TallyResult,
-} from "interchain-query/cosmos/gov/v1/gov";
+} from "interchainjs/cosmos/gov/v1/gov";
 import {
   BasicModal,
   Box,
