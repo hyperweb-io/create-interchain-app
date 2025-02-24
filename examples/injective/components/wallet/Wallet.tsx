@@ -15,7 +15,8 @@ export function Wallet() {
     [WalletState.Connected]: <Button.Connected onClick={openView} />,
     [WalletState.Connecting]: <Button.Connecting />,
     [WalletState.Disconnected]: <Button.Disconnected onClick={openView} />,
-    [WalletState.Reject]: <Button.Rejected onClick={openView} />
+    [WalletState.Rejected]: <Button.Rejected onClick={openView} />,
+    [WalletState.NotExist]: <Button.Disconnected onClick={openView} />,
   }[status] || <Button.Connect onClick={openView} />;
 
   return (
@@ -53,8 +54,8 @@ export function Wallet() {
           {ConnectButton}
         </Box>
 
-        {message && [WalletState.Reject].includes(status)
-          ? <Warning text={`${wallet?.option?.prettyName}: ${message}`} />
+        {message && [WalletState.Rejected].includes(status)
+          ? <Warning text={`${wallet?.info?.name}: ${message}`} />
           : null}
       </Stack>
     </Box>

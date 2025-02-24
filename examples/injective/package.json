@@ -38,7 +38,7 @@
     "chain-registry": "^1.69.32",
     "decimal.js": "^10.4.3",
     "immer": "^10.0.2",
-    "injective-react": "1.9.12",
+    "injective-react": "../../../interchainjs/libs/injective-react/dist/injective-react-1.9.13.tgz",
     "mobx": "^6.13.5",
     "next": "^13",
     "react": "18.2.0",
@@ -46,7 +46,9 @@
     "react-icons": "4.6.0"
   },
   "devDependencies": {
+    "@next/bundle-analyzer": "^15.1.7",
     "@tanstack/react-query-devtools": "4.29.1",
+    "@types/long": "^4.0.2",
     "@types/node": "^20.14.6",
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
