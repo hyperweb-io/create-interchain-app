@@ -142,6 +142,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@chain-registry/v2-types@npm:^0.53.77":
+  version: 0.53.77
+  resolution: "@chain-registry/v2-types@npm:0.53.77"
+  checksum: 10c0/b7b0b7d3ca9436706c8143a8f6cd322f5e663675bae5d08e5da065a1d4f0bf0e9163b931dbf887e8a44567fe797e571f94f6b0d2dc0e6379819827d6a9345e8d
+  languageName: node
+  linkType: hard
+
 "@chain-registry/v2@npm:1.71.71":
   version: 1.71.71
   resolution: "@chain-registry/v2@npm:1.71.71"
@@ -157,6 +164,15 @@ __metadata:
   dependencies:
     "@chain-registry/v2-types": "npm:^0.53.52"
   checksum: 10c0/7e144302842197d15013d920d3c2c981753b56e544f7b89b00b53c4cd19aa29589d65aa249af267f74a44740a4d909cb9573c8ee90c0fde2c02dbfdbb030546c
+  languageName: node
+  linkType: hard
+
+"@chain-registry/v2@npm:^1.71.132":
+  version: 1.71.132
+  resolution: "@chain-registry/v2@npm:1.71.132"
+  dependencies:
+    "@chain-registry/v2-types": "npm:^0.53.77"
+  checksum: 10c0/1d5cd51546e36f211b1248e52c52345a073dd91233e58bbcce5e0ac7decf666f32782bfa9a335a89501be7832a523c964dcd36b84c0cedd36bbcf6fbe59b0dd9
   languageName: node
   linkType: hard
 
@@ -1073,6 +1089,7 @@ __metadata:
   dependencies:
     "@chain-registry/assets": "npm:^1.70.32"
     "@chain-registry/types": "npm:^0.50.13"
+    "@chain-registry/v2": "npm:^1.71.132"
     "@cosmjs/stargate": "npm:^0.32.3"
     "@emotion/react": "npm:11.10.6"
     "@emotion/styled": "npm:11.10.6"
