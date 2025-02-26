@@ -1,7 +1,7 @@
 import { Ref, computed, ref, watch } from 'vue'
 import { ExtensionWallet } from '@interchain-kit/core'
 import { useChain, useWalletManager } from '@interchain-kit/vue'
-import { SigningStargateClient } from '@cosmjs/stargate'
+import { SigningClient as SigningStargateClient } from '@interchainjs/cosmos/signing-client';
 
 export const useStargateClient = (chainName: Ref<string>) => {
   const { rpcEndpoint, chain } = useChain(chainName)

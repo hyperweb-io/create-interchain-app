@@ -11,8 +11,6 @@
   "dependencies": {
     "@chain-registry/v2": "^1.71.44",
     "@chain-registry/v2-types": "^0.53.20",
-    "@cosmjs/amino": "^0.32.4",
-    "@cosmjs/stargate": "^0.32.4",
     "@interchain-kit/core": "0.0.1-beta.39",
     "@interchain-kit/keplr-extension": "0.0.1-beta.39",
     "@interchain-kit/leap-extension": "0.0.1-beta.39",
@@ -23,7 +21,6 @@
     "@interchainjs/vue": "1.8.1",
     "@tanstack/vue-query": "5.62.7",
     "bignumber.js": "9.1.0",
-    "osmojs": "^16.15.0",
     "vue": "^3.5.13",
     "vue-router": "^4.5.0"
   },
@@ -33,6 +30,5 @@
     "typescript": "~5.6.2",
     "vite": "^6.0.0",
     "vue-tsc": "^2.1.10"
-  },
-  "packageManager": "yarn@4.1.0"
+  }
 }

@@ -160,8 +160,8 @@ const TransferModalBody = (
 
   const destChain = useMemo(() => {
     return {
-      symbol: destChainInfo.chainName.toUpperCase(),
-      name: destChainInfo.prettyName,
+      symbol: destChainInfo?.chainName.toUpperCase(),
+      name: destChainInfo?.prettyName,
       address: destAddress ?? '',
       imgSrc: chains.find(c => c.chainName === destChainName)?.logoURIs?.png
     };
