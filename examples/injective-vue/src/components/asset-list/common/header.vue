@@ -2,7 +2,7 @@
 import { Link, Text, Box, Container, Button, Icon } from '@interchain-ui/vue';
 import { dependencies } from '@/config/asset-list/features'
 const stacks = ['Interchain Kit', 'Vue'];
-const osmojs = dependencies[0];
+const interchainjs = dependencies[0];
 
 </script>
 
@@ -26,10 +26,10 @@ const osmojs = dependencies[0];
       <Text as="span" :fontSize="{ mobile: '$4xl', tablet: '$8xl', desktop: '$8xl' }" color="$primary500">
         {{ stacks.join(' + ') }}
         <!-- {{ ' + ' }}
-        <Link :href="osmojs.name" target="_blank" rel="noreferrer" :attributes="{
+        <Link :href="interchainjs.name" target="_blank" rel="noreferrer" :attributes="{
           fontSize: { mobile: '$4xl', tablet: '$8xl', desktop: '$8xl' },
         }">
-        {{ osmojs.name }}
+        {{ interchainjs.name }}
         </Link> -->
       </Text>
     </Text>

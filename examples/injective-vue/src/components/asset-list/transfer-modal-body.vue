@@ -7,17 +7,13 @@ import BigNumber from 'bignumber.js'
 import { useChainUtils } from '../../composables/common/useChainUtils';
 import { IProps } from './row-transfer-modal.vue';
 import AssetWithdrawTokens from './asset-withdraw-tokens.vue';
-import { coins, StdFee } from '@cosmjs/amino';
-import { ibc, cosmos } from 'osmojs';
+import { StdFee } from '@interchainjs/cosmos-types/types';
 import { useStargateClient } from '../../composables/common/useStargateClient';
-
-const {
-    transfer
-} = ibc.applications.transfer.v1.MessageComposer.withTypeUrl
+import { MsgTransfer } from 'interchainjs/ibc/applications/transfer/v1/tx';
 
 interface IBodyProps extends IProps {
   inputValue: string
-} 
+}
 
 const props = defineProps<IBodyProps>()
 const emits = defineEmits<{
@@ -53,8 +49,8 @@ const availableAmount = computed(() => {
   if (!isDeposit.value) return transferToken.value.available ?? 0
   console.log('transferInfo.token', props.transferInfo.token)
   return new BigNumber(
-      convRawToDispAmount(props.transferInfo.token.symbol, balance.value?.amount || '0')
-    ).toNumber();
+    convRawToDispAmount(props.transferInfo.token.symbol, balance.value?.amount || '0')
+  ).toNumber();
 })
 
 const dollarValue = computed(() => {
@@ -67,10 +63,10 @@ const dollarValue = computed(() => {
 const sourceChain = computed(() => {
   const logo_URIs = getChainLogo(sourceChainName.value)
   return {
-      name: sourceChainInfo.value.prettyName,
-      address: sourceAddress.value ?? '',
-      imgSrc:  logo_URIs?.png || logo_URIs?.svg || '',
-    };
+    name: sourceChainInfo.value.prettyName,
+    address: sourceAddress.value ?? '',
+    imgSrc: logo_URIs?.png || logo_URIs?.svg || '',
+  };
 })
 
 const destChain = computed(() => {
@@ -83,18 +79,21 @@ const destChain = computed(() => {
   };
 })
 
-const handleSubmitTransfer = async() => {
+const handleSubmitTransfer = async () => {
   if (!sourceAddress.value || !destAddress.value) return;
   const transferAmount = new BigNumber(props.inputValue)
     .shiftedBy(getExponentByDenom(symbolToDenom(transferToken.value.symbol)))
     .toString();
-    const { sourcePort, sourceChannel } = getIbcInfo(
+  const { sourcePort, sourceChannel } = getIbcInfo(
     sourceChainName.value,
     destChainName.value
   );
 
   const fee: StdFee = {
-    amount: coins('1000', transferToken.value.denom ?? ''),
+    amount: [{
+      denom: transferToken.value.denom ?? '',
+      amount: '1000'
+    }],
     gas: '250000',
   };
 
@@ -112,16 +111,19 @@ const handleSubmitTransfer = async() => {
 
   let res = await sourceStargazeClient.value.signAndBroadcast(
     sourceAddress.value,
-    [transfer({
-      sourcePort,
+    [{
+      typeUrl: MsgTransfer.typeUrl,
+      value: MsgTransfer.fromPartial({
+        sourcePort,
         sourceChannel,
+        token,
         sender: sourceAddress.value,
         receiver: destAddress.value,
-        token,
-        // @ts-ignore
         timeoutHeight: undefined,
         timeoutTimestamp: BigInt(timeoutInNanos),
-    })],
+        memo: '',
+      }),
+    }],
     fee
   )
   console.log('res>>', res)
@@ -132,13 +134,8 @@ const handleSubmitTransfer = async() => {
 </script>
 
 <template>
-  <AssetWithdrawTokens 
-    :fromImgSrc="sourceChain.imgSrc"
-    :fromAddress="sourceChain.address"
-    :toImgSrc="destChain.imgSrc"
-    :toAddress="destChain.address"
-    @onTransfer="handleSubmitTransfer"
-  />
+  <AssetWithdrawTokens :fromImgSrc="sourceChain.imgSrc" :fromAddress="sourceChain.address" :toImgSrc="destChain.imgSrc"
+    :toAddress="destChain.address" @onTransfer="handleSubmitTransfer" />
 </template>
 
 <style scoped></style>
