@@ -19,8 +19,6 @@ Set up a modern Cosmos app by running one command ⚛️
 - [Options](#options)
 - [Development](#development)
 
-https://user-images.githubusercontent.com/545047/192061992-f0e1106d-f4b2-4879-ab0a-896f22ee4f49.mp4
-
 
 ## Overview
 
@@ -62,7 +60,7 @@ Everything is preconfigured, ready-to-go, so you can focus on your code!
 
 - ⚡️ Connect easily to 20+ wallets via [Interchain Kit](https://github.com/hyperweb-io/interchain-kit) — including Ledger, Keplr, Cosmostation, Leap, Trust Wallet, OKX, XDEFI, Exodus, Wallet Connect and more!
 - ⚛️ Sign and broadcast with [InterchainJS](https://github.com/hyperweb-io/interchainjs)
-- 🎨 Build awesome UI with [Interchain UI](https://hyperweb.io/stack/interchain-ui) and [Explore Components](https://hyperweb.io/components)
+- 🎨 Build awesome UI with [Interchain UI](https://hyperweb.io/stack/interchain-ui)
 - 🛠 Render pages with [next.js](https://nextjs.org/) hybrid static & server rendering
 - 📝 Leverage [chain-registry](https://github.com/hyperweb-io/chain-registry) for Chain and Asset info for all IBC-connected chains
 
