@@ -1,6 +1,6 @@
-import { useEffect, useMemo, useState } from "react";
-import { Chain } from "@chain-registry/v2-types";
-import { matchSorter } from "match-sorter";
+import { useEffect, useMemo, useState } from 'react';
+import { Chain } from '@chain-registry/v2-types';
+import { matchSorter } from 'match-sorter';
 import {
   Avatar,
   Box,
@@ -10,7 +10,7 @@ import {
   Text,
   ThemeProvider,
   useTheme,
-} from "@interchain-ui/react";
+} from '@interchain-ui/react';
 
 export type ChainSelectProps = {
   chains: Chain[];
@@ -21,33 +21,36 @@ export type ChainSelectProps = {
 export function ChainSelect({
   chainName,
   chains = [],
-  onChange = () => { },
+  onChange = () => {},
 }: ChainSelectProps) {
   const { themeClass } = useTheme();
   const [value, setValue] = useState<string>();
-  const [input, setInput] = useState<string>("");
+  const [input, setInput] = useState<string>('');
 
   const cache = useMemo(
     () =>
       chains.reduce(
-        (cache, chain) => (cache[chain.chainName] = chain, cache),
-        {} as Record<string, Chain[][number]>,
+        (cache, chain) => ((cache[chain.chainName] = chain), cache),
+        {} as Record<string, Chain[][number]>
       ),
-    [chains],
+    [chains]
   );
 
-  const options = useMemo(() =>
-    matchSorter(
-      chains
-        .map((chain) => ({
-          logo: chain.logoURIs?.png || chain.logoURIs?.svg || "",
-          value: chain.chainName,
-          label: chain.prettyName,
-        }))
-        .filter((chain) => chain.value && chain.label),
-      input,
-      { keys: ["value", "label"] },
-    ), [chains, input]);
+  const options = useMemo(
+    () =>
+      matchSorter(
+        chains
+          .map((chain) => ({
+            logo: chain.logoURIs?.png || chain.logoURIs?.svg || '',
+            value: chain.chainName,
+            label: chain.prettyName,
+          }))
+          .filter((chain) => chain.value && chain.label),
+        input,
+        { keys: ['value', 'label'] }
+      ),
+    [chains, input]
+  );
 
   useEffect(() => {
     if (!chainName) setValue(undefined);
@@ -85,11 +88,12 @@ export function ChainSelect({
               setValue(name);
               if (cache[name]) {
                 onChange(cache[name].chainName);
+                setInput(cache[name].prettyName || '');
               }
             }
           }}
-          inputAddonStart={value && avatar
-            ? (
+          inputAddonStart={
+            value && avatar ? (
               <Avatar
                 name={value as string}
                 getInitials={(name) => name[0]}
@@ -97,11 +101,10 @@ export function ChainSelect({
                 src={avatar}
                 fallbackMode="bg"
                 attributes={{
-                  paddingX: "$4",
+                  paddingX: '$4',
                 }}
               />
-            )
-            : (
+            ) : (
               <Box
                 display="flex"
                 justifyContent="center"
@@ -110,19 +113,20 @@ export function ChainSelect({
               >
                 <Skeleton width="24px" height="24px" borderRadius="$full" />
               </Box>
-            )}
+            )
+          }
           styleProps={{
             width: {
-              mobile: "100%",
-              mdMobile: "350px",
+              mobile: '100%',
+              mdMobile: '350px',
             },
           }}
         >
           {options.map((option) => (
             <Combobox.Item key={option.value} textValue={option.label}>
               <ChainOption
-                logo={option.logo ?? ""}
-                label={option.label ?? ""}
+                logo={option.logo ?? ''}
+                label={option.label ?? ''}
               />
             </Combobox.Item>
           ))}
@@ -137,14 +141,14 @@ function ChainOption({ logo, label }: { logo: string; label: string }) {
     <Stack
       direction="horizontal"
       space="$4"
-      attributes={{ alignItems: "center" }}
+      attributes={{ alignItems: 'center' }}
     >
       <Avatar
         name={label}
         getInitials={(name) => name[0]}
         size="xs"
         src={logo}
-        fallbackMode="bg"
+        fallbackMode="initials"
       />
 
       <Text fontSize="$md" fontWeight="$normal" color="$text">

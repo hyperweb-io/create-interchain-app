@@ -21,7 +21,7 @@ export type ChainSelectProps = {
 export function ChainSelect({
   chainName,
   chains = [],
-  onChange = () => { },
+  onChange = () => {},
 }: ChainSelectProps) {
   const { themeClass } = useTheme();
   const [value, setValue] = useState<string>();
@@ -88,6 +88,7 @@ export function ChainSelect({
               setValue(name);
               if (cache[name]) {
                 onChange(cache[name].chainName);
+                setInput(cache[name].prettyName || '');
               }
             }
           }}
@@ -123,7 +124,10 @@ export function ChainSelect({
         >
           {options.map((option) => (
             <Combobox.Item key={option.value} textValue={option.label}>
-              <ChainOption logo={option.logo ?? ''} label={option.label ?? ''} />
+              <ChainOption
+                logo={option.logo ?? ''}
+                label={option.label ?? ''}
+              />
             </Combobox.Item>
           ))}
         </Combobox>
@@ -144,7 +148,7 @@ function ChainOption({ logo, label }: { logo: string; label: string }) {
         getInitials={(name) => name[0]}
         size="xs"
         src={logo}
-        fallbackMode="bg"
+        fallbackMode="initials"
       />
 
       <Text fontSize="$md" fontWeight="$normal" color="$text">
