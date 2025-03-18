@@ -30,6 +30,7 @@ import {
   DENOM_DISPLAY,
   DECIMAL,
 } from './utils/constants';
+import { SigningStargateClient } from '@cosmjs/stargate';
 
 function App() {
   const [address, setAddress] = useState('');
@@ -43,6 +44,9 @@ function App() {
     reset,
   } = useForm<TransferFormData>({
     resolver: zodResolver(transferFormSchema),
+    defaultValues: {
+      amount: "0.000001",
+    },
   });
 
   const { data: balance, refetch: refetchBalance } = useQuery({
@@ -59,16 +63,16 @@ function App() {
         const data = await response.json();
         // Log the response to see what we're getting
         console.log('Balance response:', data);
-        
+
         if (!data.balances) {
           return 0;
         }
-        
+
         const atomBalance = data.balances.find((b: any) => b.denom === DENOM);
         if (!atomBalance) {
           return 0;
         }
-        
+
         return Number(atomBalance.amount) / Math.pow(10, DECIMAL);
       } catch (error) {
         console.error('Error fetching balance:', error);
@@ -101,8 +105,13 @@ function App() {
         },
       };
 
-      const signer = await window.keplr.getOfflineSigner(CHAIN_ID);
-      const response = await signer.signAndBroadcast(msg);
+      const offlineSigner = window.keplr.getOfflineSigner(CHAIN_ID);
+      const client = await SigningStargateClient.connectWithSigner(RPC_ENDPOINT, offlineSigner);
+      const fee = {
+        amount: [{ denom: DENOM, amount: "5000" }], // adjust fee amount as needed
+        gas: "200000" // adjust gas limit as needed
+      };
+      const response = await client.signAndBroadcast(address, [msg], fee);
       return response.transactionHash;
     },
     onSuccess: (txHash) => {
@@ -197,7 +206,7 @@ function App() {
           <CardBody>
             <VStack spacing={4} align="stretch">
               <Heading size="md">Cosmos Wallet</Heading>
-              
+
               {!address ? (
                 <Button onClick={connectWallet}>Connect Keplr</Button>
               ) : (
@@ -214,7 +223,7 @@ function App() {
                       onClick={handleRefreshBalance}
                     />
                   </HStack>
-                  
+
                   <form onSubmit={handleSubmit(onSubmit)}>
                     <VStack spacing={4}>
                       <FormControl isInvalid={!!errors.recipient}>
