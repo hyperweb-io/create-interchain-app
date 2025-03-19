@@ -23,15 +23,16 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { useQuery, useMutation } from '@tanstack/react-query';
 import { transferFormSchema, type TransferFormData } from './utils/validation';
 import {
-  REST_ENDPOINT,
   DENOM,
   DENOM_DISPLAY,
   DECIMAL,
+  RPC_ENDPOINT,
 } from './utils/constants';
 import { chain as cosmoshubChain, assetList as cosmoshubAssetList } from '@chain-registry/v2/mainnet/cosmoshub'
 import { WalletManager } from '@interchain-kit/core'
 import { keplrWallet } from '@interchain-kit/keplr-extension'
 import { createSend } from "interchainjs/cosmos/bank/v1beta1/tx.rpc.func";
+import { createGetBalance } from "interchainjs/cosmos/bank/v1beta1/query.rpc.func";
 
 function App() {
   const [address, setAddress] = useState('');
@@ -56,7 +57,15 @@ function App() {
       const walletManager = await WalletManager.create(
         [cosmoshubChain],
         [cosmoshubAssetList],
-        [keplrWallet]
+        [keplrWallet],
+        {},
+        {
+          endpoints: {
+            cosmoshub: {
+              rpc: [RPC_ENDPOINT],
+            },
+          }
+        }
       )
       setWalletManager(walletManager)
     })()
@@ -67,23 +76,12 @@ function App() {
     queryFn: async () => {
       if (!address) return null;
       try {
-        const response = await fetch(
-          `${REST_ENDPOINT}/cosmos/bank/v1beta1/balances/${address}`
-        );
-        if (!response.ok) {
-          throw new Error('Failed to fetch balance');
-        }
-        const data = await response.json();
-        // Log the response to see what we're getting
-        console.log('Balance response:', data);
-        if (!data.balances) {
-          return 0;
-        }
-        const atomBalance = data.balances.find((b: any) => b.denom === DENOM);
-        if (!atomBalance) {
-          return 0;
-        }
-        return Number(atomBalance.amount) / Math.pow(10, DECIMAL);
+        const balanceQuery = createGetBalance(RPC_ENDPOINT);
+        const { balance: atomBalance } = await balanceQuery({
+          address,
+          denom: DENOM,
+        });
+        return Number(atomBalance?.amount || 0) / Math.pow(10, DECIMAL);
       } catch (error) {
         console.error('Error fetching balance:', error);
         toast({

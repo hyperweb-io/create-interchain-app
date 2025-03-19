@@ -4237,6 +4237,40 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@hyperweb/vite-react@workspace:examples/vite-react":
+  version: 0.0.0-use.local
+  resolution: "@hyperweb/vite-react@workspace:examples/vite-react"
+  dependencies:
+    "@chain-registry/v2": "npm:^1.71.71"
+    "@chakra-ui/icons": "npm:^2.1.1"
+    "@chakra-ui/react": "npm:^2.8.2"
+    "@emotion/react": "npm:^11.11.4"
+    "@emotion/styled": "npm:^11.11.0"
+    "@esbuild-plugins/node-globals-polyfill": "npm:^0.2.3"
+    "@eslint/js": "npm:^9.9.1"
+    "@hookform/resolvers": "npm:^3.3.4"
+    "@interchain-kit/core": "npm:0.2.206"
+    "@interchain-kit/keplr-extension": "npm:0.2.206"
+    "@tanstack/react-query": "npm:5.68.0"
+    "@types/react": "npm:^18.3.5"
+    "@types/react-dom": "npm:^18.3.0"
+    "@vitejs/plugin-react": "npm:^4.3.1"
+    buffer: "npm:^6.0.3"
+    eslint: "npm:^9.9.1"
+    eslint-plugin-react-hooks: "npm:^5.1.0-rc.0"
+    eslint-plugin-react-refresh: "npm:^0.4.11"
+    framer-motion: "npm:^11.0.8"
+    globals: "npm:^15.9.0"
+    react: "npm:^18.3.1"
+    react-dom: "npm:^18.3.1"
+    react-hook-form: "npm:^7.51.0"
+    typescript: "npm:^5.5.3"
+    typescript-eslint: "npm:^8.3.0"
+    vite: "npm:^5.4.2"
+    zod: "npm:^3.22.4"
+  languageName: unknown
+  linkType: soft
+
 "@hyperweb/vote-proposal@workspace:examples/vote-proposal":
   version: 0.0.0-use.local
   resolution: "@hyperweb/vote-proposal@workspace:examples/vote-proposal"
@@ -4375,7 +4409,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@interchain-kit/core@npm:0.2.205, @interchain-kit/core@npm:^0.2.1, @interchain-kit/core@npm:^0.2.205":
+"@interchain-kit/core@npm:0.2.205, @interchain-kit/core@npm:^0.2.1":
   version: 0.2.205
   resolution: "@interchain-kit/core@npm:0.2.205"
   dependencies:
@@ -4396,6 +4430,30 @@ __metadata:
     interchainjs: "npm:1.9.3"
     long: "npm:^5.2.3"
   checksum: 10c0/1f7b8b1c2ef94f7fb06d290f13c43770b3c31714641137f52efffef6b9533102e8d3db0625ad6b17fa10f16b800f45c457540c54e0f2f806167edf64bf7b4154
+  languageName: node
+  linkType: hard
+
+"@interchain-kit/core@npm:0.2.206":
+  version: 0.2.206
+  resolution: "@interchain-kit/core@npm:0.2.206"
+  dependencies:
+    "@chain-registry/v2": "npm:^1.71.71"
+    "@chain-registry/v2-keplr": "npm:^0.0.72"
+    "@chain-registry/v2-types": "npm:^0.53.40"
+    "@interchainjs/cosmos": "npm:1.9.16"
+    "@interchainjs/cosmos-types": "npm:1.9.16"
+    "@ledgerhq/hw-app-cosmos": "npm:^6.30.4"
+    "@ledgerhq/hw-transport": "npm:^6.31.4"
+    "@ledgerhq/hw-transport-webhid": "npm:^6.30.0"
+    "@ledgerhq/hw-transport-webusb": "npm:^6.29.4"
+    "@walletconnect/sign-client": "npm:^2.17.3"
+    "@walletconnect/types": "npm:^2.17.3"
+    axios: "npm:^1.7.9"
+    bowser: "npm:^2.11.0"
+    buffer: "npm:^6.0.3"
+    interchainjs: "npm:1.9.16"
+    long: "npm:^5.2.3"
+  checksum: 10c0/4dc297dd507b68eeb0c12ee10fab95c45f173519897027a6adb2c5ea8e5b3ab4f73d00623b12bb51ec901aad4162cd5e042c5924b45bf12a592dc0726608e823
   languageName: node
   linkType: hard
 
@@ -4453,13 +4511,23 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@interchain-kit/keplr-extension@npm:0.2.205, @interchain-kit/keplr-extension@npm:^0.2.1, @interchain-kit/keplr-extension@npm:^0.2.205":
+"@interchain-kit/keplr-extension@npm:0.2.205, @interchain-kit/keplr-extension@npm:^0.2.1":
   version: 0.2.205
   resolution: "@interchain-kit/keplr-extension@npm:0.2.205"
   dependencies:
     "@interchain-kit/core": "npm:0.2.205"
     "@keplr-wallet/provider-extension": "npm:^0.12.102"
   checksum: 10c0/bbb807502d5f6cc0f6200c58cbf9975667b9db4710e79d17a67743ac40f5508ad8e9bb168fb9155efbcaa4827c1de9706e12a5d8b5c88078c8dfbeae04def1f8
+  languageName: node
+  linkType: hard
+
+"@interchain-kit/keplr-extension@npm:0.2.206":
+  version: 0.2.206
+  resolution: "@interchain-kit/keplr-extension@npm:0.2.206"
+  dependencies:
+    "@interchain-kit/core": "npm:0.2.206"
+    "@keplr-wallet/provider-extension": "npm:^0.12.102"
+  checksum: 10c0/3ecf3dac4435699d2a0bf8d7162ef72dce335e44f9516cd39c73dff64f890cedbb28cdb5bd1882c300ecbcfb58426228ac5c5dd4204a3292b10cee3296ac49fc
   languageName: node
   linkType: hard
 
@@ -17399,6 +17467,22 @@ __metadata:
   languageName: node
   linkType: hard
 
+"interchainjs@npm:1.9.16":
+  version: 1.9.16
+  resolution: "interchainjs@npm:1.9.16"
+  dependencies:
+    "@interchainjs/cosmos": "npm:1.9.16"
+    "@interchainjs/cosmos-types": "npm:1.9.16"
+    "@interchainjs/encoding": "npm:1.9.16"
+    "@interchainjs/pubkey": "npm:1.9.16"
+    "@interchainjs/types": "npm:1.9.16"
+    "@interchainjs/utils": "npm:1.9.16"
+    "@noble/hashes": "npm:^1.3.1"
+    decimal.js: "npm:^10.4.3"
+  checksum: 10c0/33a719b17bbe64f8eaadeee3fe800ae509e99e329b46583655b2db315de3a0fd9392e4ff1f577dd58f3558eb79924bbdef344c24ed23fe33ab26f04713e5df26
+  languageName: node
+  linkType: hard
+
 "interchainjs@npm:1.9.3":
   version: 1.9.3
   resolution: "interchainjs@npm:1.9.3"
@@ -24972,41 +25056,6 @@ __metadata:
   checksum: 10c0/39332d008d2ab0700aa57f541bb199350daecdfb722ae1b262404b02944e11205368fcc696cc0ab8327b9f90bf7172014687ae3e5d9091978e9d174885ccff2d
   languageName: node
   linkType: hard
-
-"vite-react@workspace:examples/vite-react":
-  version: 0.0.0-use.local
-  resolution: "vite-react@workspace:examples/vite-react"
-  dependencies:
-    "@chain-registry/v2": "npm:^1.71.71"
-    "@chakra-ui/icons": "npm:^2.1.1"
-    "@chakra-ui/react": "npm:^2.8.2"
-    "@emotion/react": "npm:^11.11.4"
-    "@emotion/styled": "npm:^11.11.0"
-    "@esbuild-plugins/node-globals-polyfill": "npm:^0.2.3"
-    "@eslint/js": "npm:^9.9.1"
-    "@hookform/resolvers": "npm:^3.3.4"
-    "@interchain-kit/core": "npm:^0.2.205"
-    "@interchain-kit/keplr-extension": "npm:^0.2.205"
-    "@interchainjs/utils": "npm:1.9.16"
-    "@tanstack/react-query": "npm:5.68.0"
-    "@types/react": "npm:^18.3.5"
-    "@types/react-dom": "npm:^18.3.0"
-    "@vitejs/plugin-react": "npm:^4.3.1"
-    buffer: "npm:^6.0.3"
-    eslint: "npm:^9.9.1"
-    eslint-plugin-react-hooks: "npm:^5.1.0-rc.0"
-    eslint-plugin-react-refresh: "npm:^0.4.11"
-    framer-motion: "npm:^11.0.8"
-    globals: "npm:^15.9.0"
-    react: "npm:^18.3.1"
-    react-dom: "npm:^18.3.1"
-    react-hook-form: "npm:^7.51.0"
-    typescript: "npm:^5.5.3"
-    typescript-eslint: "npm:^8.3.0"
-    vite: "npm:^5.4.2"
-    zod: "npm:^3.22.4"
-  languageName: unknown
-  linkType: soft
 
 "vite@npm:^5.4.2":
   version: 5.4.14
