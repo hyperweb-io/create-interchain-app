@@ -23,18 +23,14 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { useQuery, useMutation } from '@tanstack/react-query';
 import { transferFormSchema, type TransferFormData } from './utils/validation';
 import {
-  CHAIN_ID,
-  RPC_ENDPOINT,
   REST_ENDPOINT,
   DENOM,
   DENOM_DISPLAY,
   DECIMAL,
 } from './utils/constants';
-import { SigningStargateClient } from '@cosmjs/stargate';
 import { chain as cosmoshubChain, assetList as cosmoshubAssetList } from '@chain-registry/v2/mainnet/cosmoshub'
 import { WalletManager } from '@interchain-kit/core'
 import { keplrWallet } from '@interchain-kit/keplr-extension'
-import { createGetBalance } from "interchainjs/cosmos/bank/v1beta1/query.rpc.func";
 import { createSend } from "interchainjs/cosmos/bank/v1beta1/tx.rpc.func";
 
 function App() {
@@ -71,13 +67,6 @@ function App() {
     queryFn: async () => {
       if (!address) return null;
       try {
-        // const balanceQuery = createGetBalance(RPC_ENDPOINT);
-        // const { balance: atomBalance } = await balanceQuery({
-        //   address,
-        //   denom: DENOM,
-        // });
-        // return Number(atomBalance?.amount || 0) / Math.pow(10, DECIMAL);
-
         const response = await fetch(
           `${REST_ENDPOINT}/cosmos/bank/v1beta1/balances/${address}`
         );
