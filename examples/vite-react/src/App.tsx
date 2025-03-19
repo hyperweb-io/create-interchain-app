@@ -34,6 +34,8 @@ import { SigningStargateClient } from '@cosmjs/stargate';
 import { chain as cosmoshubChain, assetList as cosmoshubAssetList } from '@chain-registry/v2/mainnet/cosmoshub'
 import { WalletManager } from '@interchain-kit/core'
 import { keplrWallet } from '@interchain-kit/keplr-extension'
+import { createGetBalance } from "interchainjs/cosmos/bank/v1beta1/query.rpc.func";
+import { createSend } from "interchainjs/cosmos/bank/v1beta1/tx.rpc.func";
 
 function App() {
   const [address, setAddress] = useState('');
@@ -69,6 +71,13 @@ function App() {
     queryFn: async () => {
       if (!address) return null;
       try {
+        // const balanceQuery = createGetBalance(RPC_ENDPOINT);
+        // const { balance: atomBalance } = await balanceQuery({
+        //   address,
+        //   denom: DENOM,
+        // });
+        // return Number(atomBalance?.amount || 0) / Math.pow(10, DECIMAL);
+
         const response = await fetch(
           `${REST_ENDPOINT}/cosmos/bank/v1beta1/balances/${address}`
         );
@@ -78,16 +87,13 @@ function App() {
         const data = await response.json();
         // Log the response to see what we're getting
         console.log('Balance response:', data);
-
         if (!data.balances) {
           return 0;
         }
-
         const atomBalance = data.balances.find((b: any) => b.denom === DENOM);
         if (!atomBalance) {
           return 0;
         }
-
         return Number(atomBalance.amount) / Math.pow(10, DECIMAL);
       } catch (error) {
         console.error('Error fetching balance:', error);
@@ -101,7 +107,7 @@ function App() {
         return null;
       }
     },
-    enabled: !!address,
+    enabled: !!address && !!walletManager,
     staleTime: 10000, // Consider data fresh for 10 seconds
     refetchInterval: 30000, // Refresh every 30 seconds
   });
@@ -109,25 +115,32 @@ function App() {
   const transferMutation = useMutation({
     mutationFn: async (data: TransferFormData) => {
       if (!window.keplr || !address) throw new Error('Keplr not connected');
-
       const amount = Math.floor(Number(data.amount) * Math.pow(10, DECIMAL));
-      const msg = {
-        typeUrl: '/cosmos.bank.v1beta1.MsgSend',
-        value: {
-          fromAddress: address,
-          toAddress: data.recipient,
-          amount: [{ denom: DENOM, amount: amount.toString() }],
-        },
-      };
-
-      const offlineSigner = window.keplr.getOfflineSigner(CHAIN_ID);
-      const client = await SigningStargateClient.connectWithSigner(RPC_ENDPOINT, offlineSigner);
       const fee = {
         amount: [{ denom: DENOM, amount: "5000" }], // adjust fee amount as needed
         gas: "200000" // adjust gas limit as needed
       };
-      const response = await client.signAndBroadcast(address, [msg], fee);
-      return response.transactionHash;
+
+      const message = {
+        fromAddress: address,
+        toAddress: data.recipient,
+        amount: [
+          {
+            denom: DENOM,
+            amount: amount.toString()
+          },
+        ],
+      }
+      const signingClient = await walletManager?.getSigningClient(keplrWallet.info?.name as string, cosmoshubChain.chainName)
+      const txSend = createSend(signingClient);
+      const res = await txSend(
+        address,
+        message,
+        fee,
+        ''
+      )
+      await new Promise(resolve => setTimeout(resolve, 6000));
+      return (res as any).hash
     },
     onSuccess: (txHash) => {
       toast({
@@ -136,19 +149,20 @@ function App() {
           <Link
             href={`https://www.mintscan.io/cosmos/txs/${txHash}`}
             isExternal
-            color="blue.500"
+            color="white"
           >
-            View transaction details
+            <u>View transaction details</u>
           </Link>
         ),
         status: 'success',
-        duration: 5000,
+        duration: null,
         isClosable: true,
       });
       reset();
       refetchBalance();
     },
     onError: (error: Error) => {
+      console.error('Error transferring funds:', error);
       toast({
         title: 'Transfer failed',
         description: error.message,
