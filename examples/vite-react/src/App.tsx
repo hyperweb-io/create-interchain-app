@@ -31,9 +31,13 @@ import {
   DECIMAL,
 } from './utils/constants';
 import { SigningStargateClient } from '@cosmjs/stargate';
+import { chain as cosmoshubChain, assetList as cosmoshubAssetList } from '@chain-registry/v2/mainnet/cosmoshub'
+import { WalletManager } from '@interchain-kit/core'
+import { keplrWallet } from '@interchain-kit/keplr-extension'
 
 function App() {
   const [address, setAddress] = useState('');
+  const [walletManager, setWalletManager] = useState<WalletManager | null>(null)
   const { colorMode, toggleColorMode } = useColorMode();
   const toast = useToast();
 
@@ -48,6 +52,17 @@ function App() {
       amount: "0.000001",
     },
   });
+
+  useEffect(() => {
+    (async () => {
+      const walletManager = await WalletManager.create(
+        [cosmoshubChain],
+        [cosmoshubAssetList],
+        [keplrWallet]
+      )
+      setWalletManager(walletManager)
+    })()
+  }, [])
 
   const { data: balance, refetch: refetchBalance } = useQuery({
     queryKey: ['balance', address],
@@ -149,11 +164,11 @@ function App() {
       if (!window.keplr) {
         throw new Error('Please install Keplr extension');
       }
-
-      await window.keplr.enable(CHAIN_ID);
-      const key = await window.keplr.getKey(CHAIN_ID);
-      setAddress(key.bech32Address);
+      await walletManager?.connect(keplrWallet.info?.name as string, cosmoshubChain.chainName)
+      const account = await walletManager?.getAccount(keplrWallet.info?.name as string, cosmoshubChain.chainName)
+      setAddress(account?.address as string)
     } catch (error) {
+      console.error('Error connecting wallet:', error);
       toast({
         title: 'Connection failed',
         description: (error as Error).message,
@@ -178,8 +193,11 @@ function App() {
   };
 
   useEffect(() => {
+    if (!walletManager) return
     connectWallet();
-  }, []);
+  }, [
+    walletManager
+  ]);
 
   const handleRefreshBalance = () => {
     refetchBalance();
