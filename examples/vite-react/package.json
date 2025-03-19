@@ -1,5 +1,5 @@
 {
-  "name": "vite-react",
+  "name": "@hyperweb/vite-react",
   "private": true,
   "version": "1.0.0",
   "scripts": {
