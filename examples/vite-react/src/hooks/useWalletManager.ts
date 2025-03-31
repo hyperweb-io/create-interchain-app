@@ -1,14 +1,13 @@
 import { useState, useEffect, useCallback } from 'react';
-import { useToast } from '@chakra-ui/react';
 import { WalletManager } from '@interchain-kit/core';
 import { keplrWallet } from '@interchain-kit/keplr-extension';
 import { chain as cosmoshubChain, assetList as cosmoshubAssetList } from '@chain-registry/v2/mainnet/cosmoshub';
 import { RPC_ENDPOINT } from '../utils/constants';
+import { toast } from '@interchain-ui/react';
 
 export const useWalletManager = () => {
   const [walletManager, setWalletManager] = useState<WalletManager | null>(null);
   const [address, setAddress] = useState<string>('');
-  const toast = useToast();
 
   useEffect(() => {
     (async () => {
@@ -27,15 +26,9 @@ export const useWalletManager = () => {
           }
         );
         setWalletManager(manager);
-      } catch (error) {
+      } catch (error: any) {
         console.error('Error initializing wallet manager:', error);
-        toast({
-          title: 'Wallet initialization failed',
-          description: (error as Error).message,
-          status: 'error',
-          duration: 5000,
-          isClosable: true,
-        });
+        toast.error(error.message)
       }
     })();
   }, [toast]);
@@ -51,15 +44,9 @@ export const useWalletManager = () => {
         cosmoshubChain.chainName
       );
       setAddress(account?.address as string);
-    } catch (error) {
+    } catch (error: any) {
       console.error('Error connecting wallet:', error);
-      toast({
-        title: 'Connection failed',
-        description: (error as Error).message,
-        status: 'error',
-        duration: 5000,
-        isClosable: true,
-      });
+      toast.error(error.message)
     }
   }, [walletManager, toast]);
 

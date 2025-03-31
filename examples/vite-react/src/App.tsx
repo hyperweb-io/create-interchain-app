@@ -1,16 +1,5 @@
 import { useEffect } from 'react';
-import {
-  Box,
-  Button,
-  Container,
-  VStack,
-  useColorMode,
-  IconButton,
-  Heading,
-  Card,
-  CardBody,
-} from '@chakra-ui/react';
-import { SunIcon, MoonIcon } from '@chakra-ui/icons';
+import { Button, Container, Stack, Text, Box } from '@interchain-ui/react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import WalletDetails from './components/WalletDetails';
@@ -21,7 +10,6 @@ import { useBalance } from './hooks/useBalance';
 import { useTransfer } from './hooks/useTransfer';
 
 function App() {
-  const { colorMode, toggleColorMode } = useColorMode();
   const { walletManager, address, connectWallet } = useWalletManager();
   const { balance, refetchBalance } = useBalance(address, walletManager);
   const transferMutation = useTransfer(address, walletManager, refetchBalance);
@@ -46,41 +34,43 @@ function App() {
   }, [walletManager, connectWallet]);
 
   return (
-    <Container maxW="container.sm" py={8}>
-      <VStack spacing={6} align="stretch">
-        <Box display="flex" justifyContent="flex-end">
-          <IconButton
-            aria-label="Toggle color mode"
-            icon={colorMode === 'light' ? <MoonIcon /> : <SunIcon />}
-            onClick={toggleColorMode}
-          />
+    <Container
+      maxWidth='$containerSm'
+      attributes={{ paddingTop: '$8' }}
+    >
+      <Stack
+        direction='vertical'
+        space='$6'
+        align="stretch"
+      >
+        <Box>
+          <Stack
+            direction='vertical'
+            space='$6'
+            align="stretch"
+          >
+            <Text as='h1' fontSize='$10xl'>Cosmos Wallet</Text>
+            {!address ? (
+              <Button onClick={connectWallet}>Connect Keplr</Button>
+            ) : (
+              <>
+                <WalletDetails
+                  address={address}
+                  balance={balance ?? '0'}
+                  onRefresh={refetchBalance}
+                />
+                <TransferForm
+                  register={register}
+                  errors={errors}
+                  handleSubmit={handleSubmit}
+                  onSubmit={onSubmit}
+                  isLoading={transferMutation.isMutating}
+                />
+              </>
+            )}
+          </Stack>
         </Box>
-        <Card>
-          <CardBody>
-            <VStack spacing={4} align="stretch">
-              <Heading size="md">Cosmos Wallet</Heading>
-              {!address ? (
-                <Button onClick={connectWallet}>Connect Keplr</Button>
-              ) : (
-                <>
-                  <WalletDetails
-                    address={address}
-                    balance={balance ?? '0'}
-                    onRefresh={refetchBalance}
-                  />
-                  <TransferForm
-                    register={register}
-                    errors={errors}
-                    handleSubmit={handleSubmit}
-                    onSubmit={onSubmit}
-                    isLoading={transferMutation.isMutating}
-                  />
-                </>
-              )}
-            </VStack>
-          </CardBody>
-        </Card>
-      </VStack>
+      </Stack>
     </Container>
   );
 }

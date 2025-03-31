@@ -1,5 +1,4 @@
-import { Box, Text, HStack, IconButton } from '@chakra-ui/react';
-import { RepeatIcon } from '@chakra-ui/icons';
+import { Box, Text, Stack, IconButton } from '@interchain-ui/react';
 import { DENOM_DISPLAY } from '../utils/constants';
 
 interface WalletDetailsProps {
@@ -12,17 +11,17 @@ const WalletDetails = ({ address, balance, onRefresh }: WalletDetailsProps) => {
   return (
     <Box>
       <Text>Address: {address}</Text>
-      <HStack>
+      <Stack>
         <Text>
           Balance: {balance ?? '0'} {DENOM_DISPLAY}
         </Text>
         <IconButton
           aria-label="Refresh balance"
-          icon={<RepeatIcon />}
           size="sm"
           onClick={onRefresh}
+          icon='copy'
         />
-      </HStack>
+      </Stack>
     </Box>
   );
 };

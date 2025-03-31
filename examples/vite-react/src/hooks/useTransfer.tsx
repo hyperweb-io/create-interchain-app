@@ -1,13 +1,11 @@
 import { useMutation } from '@tanstack/react-query';
-import { useToast, Link } from '@chakra-ui/react';
+import { Link, toast, Text } from '@interchain-ui/react';
 import { createSend } from 'interchainjs/cosmos/bank/v1beta1/tx.rpc.func';
 import { DENOM, DECIMAL } from '../utils/constants';
 import { keplrWallet } from '@interchain-kit/keplr-extension';
-import { chain as cosmoshubChain } from '@chain-registry/v2/mainnet/cosmoshub';
+import { chain } from '@chain-registry/v2/mainnet/cosmoshub';
 
 export const useTransfer = (address: string, walletManager: any, refetchBalance: () => void) => {
-  const toast = useToast();
-
   const transferMutation = useMutation({
     mutationFn: async (data: { recipient: string; amount: string }) => {
       if (!window.keplr || !address) throw new Error('Keplr not connected');
@@ -30,41 +28,31 @@ export const useTransfer = (address: string, walletManager: any, refetchBalance:
 
       const signingClient = await walletManager?.getSigningClient(
         keplrWallet.info?.name as string,
-        cosmoshubChain.chainName
+        chain.chainName
       );
       const txSend = createSend(signingClient);
       const res = await txSend(address, message, fee, '');
-      // 等待链上确认
       await new Promise((resolve) => setTimeout(resolve, 6000));
       return (res as any).hash;
     },
     onSuccess: (txHash) => {
-      toast({
-        title: 'Transfer successful',
-        description: (
-          <Link
-            href={`https://www.mintscan.io/cosmos/txs/${txHash}`}
-            isExternal
-            color="white"
-          >
-            <u>View transaction details</u>
-          </Link>
-        ),
-        status: 'success',
-        duration: null,
-        isClosable: true,
-      });
+      toast.success(
+        <Link
+          href={`https://www.mintscan.io/cosmos/txs/${txHash}`}
+          target='_blank'
+        >
+          <u>View transaction details</u>
+        </Link>
+      )
       refetchBalance();
     },
     onError: (error: Error) => {
       console.error('Error transferring funds:', error);
-      toast({
-        title: 'Transfer failed',
-        description: error.message,
-        status: 'error',
-        duration: 5000,
-        isClosable: true,
-      });
+      toast.error(
+        <Text>
+          {error.message}
+        </Text>
+      )
     },
   });
 
