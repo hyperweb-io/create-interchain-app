@@ -1,19 +1,22 @@
+import './styles/globals.css';
+import '@interchain-ui/react/styles';
+import { ThemeProvider, Toaster } from '@interchain-ui/react';
+
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
-import { ChakraProvider, ColorModeScript } from '@chakra-ui/react'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import App from './App.tsx'
-import theme from './theme'
+
 
 const queryClient = new QueryClient()
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <QueryClientProvider client={queryClient}>
-      <ChakraProvider theme={theme}>
-        <ColorModeScript initialColorMode={theme.config.initialColorMode} />
+    <ThemeProvider>
+      <QueryClientProvider client={queryClient}>
         <App />
-      </ChakraProvider>
-    </QueryClientProvider>
+      </QueryClientProvider>
+      <Toaster position={'top-right'} closeButton={true} />
+    </ThemeProvider>
   </StrictMode>,
 )

@@ -4251,6 +4251,7 @@ __metadata:
     "@hookform/resolvers": "npm:^3.3.4"
     "@interchain-kit/core": "npm:0.2.206"
     "@interchain-kit/keplr-extension": "npm:0.2.206"
+    "@interchain-ui/react": "npm:1.26.1"
     "@tanstack/react-query": "npm:5.68.0"
     "@types/react": "npm:^18.3.5"
     "@types/react-dom": "npm:^18.3.0"
