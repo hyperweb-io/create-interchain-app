@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { Box, Icon, IconName, Stack, Text } from '@interchain-ui/react';
-import { RiHome7Line, RiStackLine } from 'react-icons/ri';
+import { RiHome7Line, RiStackLine, RiQuillPenLine } from 'react-icons/ri';
 import { MdOutlineWaterDrop, MdOutlineHowToVote } from 'react-icons/md';
 import { LuFileJson } from 'react-icons/lu';
 
@@ -21,6 +21,7 @@ export const ROUTES = {
   FAUCET: '/faucet',
   CONTRACT: '/contract',
   DOCS: '/docs',
+  SIGN_MESSAGE: '/sign-message',
 } as const;
 
 const navItems: NavItem[] = [
@@ -53,6 +54,11 @@ const navItems: NavItem[] = [
     icon: <LuFileJson size="20px" />,
     label: 'Contract',
     href: ROUTES.CONTRACT,
+  },
+  {
+    icon: <RiQuillPenLine size="20px" />,
+    label: 'Sign Message',
+    href: ROUTES.SIGN_MESSAGE,
   },
   {
     icon: 'document',
