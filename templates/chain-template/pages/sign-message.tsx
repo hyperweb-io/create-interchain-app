@@ -1,13 +1,13 @@
 import { useState, ChangeEvent } from 'react';
-import { Container, Button, Stack, Text, TextField, useColorModeValue } from '@interchain-ui/react';
-import { ReactNoSSR } from '@interchain-ui/react-no-ssr';
+import { Container, Button, Stack, Text, TextField } from '@interchain-ui/react';
 import { useChain } from '@interchain-kit/react';
-import { Layout } from '@/components';
 import { useChainStore } from '@/contexts';
 
 export default function SignMessage() {
   const [message, setMessage] = useState('');
   const [signature, setSignature] = useState('');
+  const [isValid, setIsValid] = useState<boolean | null>(null);
+  const [verifying, setVerifying] = useState(false);
   const { selectedChain } = useChainStore();
   const { address, wallet, chain } = useChain(selectedChain);
 
@@ -18,7 +18,8 @@ export default function SignMessage() {
     }
 
     try {
-      console.log('wallet', wallet)
+      setSignature('');
+      setIsValid(null);
       const result = await wallet.signArbitrary(chain.chainId, address, message);
       setSignature(result.signature);
     } catch (error) {
@@ -27,12 +28,46 @@ export default function SignMessage() {
     }
   };
 
+  const handleVerify = async () => {
+    if (!signature || !address || !chain.chainId) return;
+
+    try {
+      setVerifying(true);
+      const account = await wallet?.getAccount(chain.chainId);
+      if (!account?.pubkey) {
+        throw new Error('Failed to get public key');
+      }
+
+      const response = await fetch('/api/verify-signature', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          message,
+          signature,
+          publicKey: Buffer.from(account.pubkey).toString('base64'),
+          signer: address
+        }),
+      });
+
+      const data = await response.json();
+      setIsValid(data.success);
+    } catch (error) {
+      console.error('Error verifying signature:', error);
+      alert('Failed to verify signature');
+    } finally {
+      setVerifying(false);
+    }
+  };
+
   const handleMessageChange = (e: ChangeEvent<HTMLInputElement>) => {
     setMessage(e.target.value);
+    setSignature('');
+    setIsValid(null);
   };
 
   return (
-    // @ts-ignore
     <>
       <Container
         maxWidth="600px"
@@ -41,7 +76,7 @@ export default function SignMessage() {
           paddingY: '$14',
         }}
       >
-        <Stack direction="vertical" space="$24">
+        <Stack direction="vertical" space="$12">
           <Text as="h1" fontSize="$xl" fontWeight="$semibold">
             Sign Arbitrary Message
           </Text>
@@ -80,6 +115,25 @@ export default function SignMessage() {
                   {signature}
                 </Text>
               </Container>
+
+              <Button
+                intent="primary"
+                onClick={handleVerify}
+                disabled={verifying}
+                isLoading={verifying}
+              >
+                Verify Signature
+              </Button>
+
+              {isValid !== null && (
+                <Text
+                  fontSize="$md"
+                  color={isValid ? '$green500' : '$red500'}
+                  fontWeight="$medium"
+                >
+                  Signature is {isValid ? 'valid' : 'invalid'}
+                </Text>
+              )}
             </Stack>
           )}
         </Stack>
