@@ -2,6 +2,7 @@ import { useState, ChangeEvent } from 'react';
 import { Container, Button, Stack, Text, TextField } from '@interchain-ui/react';
 import { useChain } from '@interchain-kit/react';
 import { useChainStore } from '@/contexts';
+import { useToast } from '@/hooks';
 
 export default function SignMessage() {
   const [message, setMessage] = useState('');
@@ -10,10 +11,15 @@ export default function SignMessage() {
   const [verifying, setVerifying] = useState(false);
   const { selectedChain } = useChainStore();
   const { address, wallet, chain } = useChain(selectedChain);
+  const { toast } = useToast();
 
   const handleSign = async () => {
     if (!wallet || !address || !chain.chainId) {
-      alert('Please connect your wallet first');
+      toast({
+        title: 'Error',
+        description: 'Please connect your wallet first',
+        type: 'error'
+      });
       return;
     }
 
@@ -24,7 +30,11 @@ export default function SignMessage() {
       setSignature(result.signature);
     } catch (error) {
       console.error('Error signing message:', error);
-      alert('Failed to sign message: ' + (error instanceof Error ? error.message : String(error)));
+      toast({
+        title: 'Error',
+        description: 'Failed to sign message: ' + (error instanceof Error ? error.message : String(error)),
+        type: 'error'
+      });
     }
   };
 
@@ -55,7 +65,11 @@ export default function SignMessage() {
       setIsValid(data.success);
     } catch (error) {
       console.error('Error verifying signature:', error);
-      alert('Failed to verify signature');
+      toast({
+        title: 'Error',
+        description: 'Failed to verify signature',
+        type: 'error'
+      });
     } finally {
       setVerifying(false);
     }
