@@ -9,17 +9,17 @@ export default function SignMessage() {
   const [message, setMessage] = useState('');
   const [signature, setSignature] = useState('');
   const { selectedChain } = useChainStore();
-  const { address, wallet } = useChain(selectedChain);
+  const { address, wallet, chain } = useChain(selectedChain);
 
   const handleSign = async () => {
-    if (!wallet || !address) {
+    if (!wallet || !address || !chain.chainId) {
       alert('Please connect your wallet first');
       return;
     }
 
     try {
       console.log('wallet', wallet)
-      const result = await wallet.signArbitrary(address, message);
+      const result = await wallet.signArbitrary(chain.chainId, address, message);
       setSignature(result.signature);
     } catch (error) {
       console.error('Error signing message:', error);
