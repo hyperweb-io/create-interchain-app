@@ -1,5 +1,5 @@
 import { useState, ChangeEvent } from 'react';
-import { Container, Button, Stack, Text, TextField } from '@interchain-ui/react';
+import { Container, Button, Stack, Text, TextField, useTheme } from '@interchain-ui/react';
 import { useChain } from '@interchain-kit/react';
 import { useChainStore } from '@/contexts';
 import { useToast } from '@/hooks';
@@ -12,6 +12,7 @@ export default function SignMessage() {
   const { selectedChain } = useChainStore();
   const { address, wallet, chain } = useChain(selectedChain);
   const { toast } = useToast();
+  const { theme } = useTheme();
 
   const handleSign = async () => {
     if (!wallet || !address || !chain.chainId) {
@@ -121,7 +122,7 @@ export default function SignMessage() {
               <Container
                 attributes={{
                   p: '$16',
-                  backgroundColor: '$gray100',
+                  backgroundColor: theme === 'light' ? '$gray100' : '$gray900',
                   borderRadius: '$md'
                 }}
               >
