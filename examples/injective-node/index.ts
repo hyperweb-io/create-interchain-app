@@ -144,12 +144,15 @@ import { useChain } from 'starshipjs';
 import { defaultSignerOptions } from '@interchainjs/injective/defaults';
 import { DirectSigner } from '@interchainjs/cosmos/signers/direct';
 
-import { getBalance } from "injectivejs/cosmos/bank/v1beta1/query.rpc.func";
+import { getBalance } from 'injectivejs/cosmos/bank/v1beta1/query.rpc.func';
+import { send } from 'injectivejs/cosmos/bank/v1beta1/tx.rpc.func';
 
+import { Secp256k1Auth } from '@interchainjs/auth/secp256k1';
 import { EthSecp256k1Auth } from '@interchainjs/auth/ethSecp256k1';
 import { HDPath } from '@interchainjs/types';
 
 import { sleep } from '@interchainjs/utils';
+import { MsgSend } from 'injectivejs/cosmos/bank/v1beta1/tx';
 
 const main = async () => {
   // initialize starship
@@ -162,33 +165,109 @@ const main = async () => {
 
   const denom = (await getCoin()).base;
 
-  const injRpcEndpoint = await getRpcEndpoint();
+  const rpcEndpoint = await getRpcEndpoint();
 
-  const mnemonic = generateMnemonic();
+  const injMnemonic = generateMnemonic();
+  const cosmosMnemonic = generateMnemonic();
 
   // Initialize auth and signer
-  const [auth] = EthSecp256k1Auth.fromMnemonic(mnemonic, [
+  const [injAuth] = EthSecp256k1Auth.fromMnemonic(injMnemonic, [
     HDPath.eth().toString(),
   ]);
-  const directSigner = new DirectSigner(
-    auth,
+  const [cosmosAuth] = Secp256k1Auth.fromMnemonic(cosmosMnemonic, [
+    HDPath.cosmos().toString(),
+  ]);
+  const injDirectSigner = new DirectSigner(
+    injAuth,
     [],
-    injRpcEndpoint,
-    defaultSignerOptions.Cosmos
+    rpcEndpoint,
+    defaultSignerOptions.Cosmos,
+    {
+      checkTx: true,
+      deliverTx: true,
+    }
   );
-  const address = await directSigner.getAddress();
 
-  await creditFromFaucet(address);
+  const cosmosDirectSigner = new DirectSigner(
+    cosmosAuth,
+    [],
+    rpcEndpoint,
+    undefined,
+    { checkTx: true, deliverTx: true }
+  );
+
+  const injAddress = await injDirectSigner.getAddress();
+  const cosmosAddress = await cosmosDirectSigner.getAddress();
+  await creditFromFaucet(injAddress);
+  await creditFromFaucet(cosmosAddress);
 
   await sleep(5000);
 
-  const { balance } = await getBalance(injRpcEndpoint, {
-    address: address,
+  const { balance: injBalance } = await getBalance(rpcEndpoint, {
+    address: injAddress,
     denom,
   });
 
-  console.log(`starship's initialized and ${address} has been credited with ${balance!.amount} ${denom}`);
+  const { balance: cosmosBalance } = await getBalance(rpcEndpoint, {
+    address: cosmosAddress,
+    denom,
+  });
 
+  console.log(
+    `starship's initialized and ${injAddress} has been credited with ${
+      injBalance!.amount
+    } ${denom}`
+  );
+
+  console.log(
+    `starship's initialized and ${cosmosAddress} has been credited with ${
+      cosmosBalance!.amount
+    } ${denom}`
+  );
+
+  const fee = {
+    amount: [
+      {
+        denom,
+        amount: '100000',
+      },
+    ],
+    gas: '550000',
+  };
+
+  const token = {
+    amount: '10000000',
+    denom,
+  };
+
+  const memo = 'send tokens test INJ';
+
+  // from inj to cosmos
+  const tx = await send(
+    injDirectSigner,
+    injAddress,
+    MsgSend.fromPartial({
+      fromAddress: injAddress,
+      toAddress: cosmosAddress,
+      amount: [token],
+    }),
+    fee,
+    memo
+  );
+
+  if (tx.code !== 0) {
+    console.error(tx);
+    throw new Error('tx failed');
+  }
+
+  const { balance: cosmosBalanceAfter } = await getBalance(rpcEndpoint, {
+    address: cosmosAddress,
+    denom,
+  });
+
+  console.log(
+    `cosmos balance after sending tokens: ${cosmosBalanceAfter!.amount} ${denom}`
+  );
 };
 
 // Call the main function

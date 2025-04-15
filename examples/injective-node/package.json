@@ -11,12 +11,12 @@
     "starship:clean": "yarn starship stop"
   },
   "dependencies": {
-    "@interchainjs/injective": "1.11.0",
-    "@interchainjs/auth": "1.11.0",
-    "@interchainjs/cosmos": "1.11.0",
-    "@interchainjs/types": "1.11.0",
-    "@interchainjs/utils": "1.11.0",
-    "injectivejs": "1.11.0"
+    "@interchainjs/injective": "1.11.2",
+    "@interchainjs/auth": "1.11.2",
+    "@interchainjs/cosmos": "1.11.2",
+    "@interchainjs/types": "1.11.2",
+    "@interchainjs/utils": "1.11.2",
+    "injectivejs": "1.11.2"
   },
   "devDependencies": {
     "tsx": "^4.19.3",

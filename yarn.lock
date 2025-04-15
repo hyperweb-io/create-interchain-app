@@ -3523,6 +3523,16 @@
     "@interchainjs/math" "1.11.0"
     "@interchainjs/utils" "1.11.0"
 
+"@interchainjs/amino@1.11.2":
+  version "1.11.2"
+  resolved "https://registry.npmjs.org/@interchainjs/amino/-/amino-1.11.2.tgz#54cd63f5a5f90cc6dc5fe9d07d78d6069cd5184a"
+  integrity sha512-x9pmEQ5IuWWQMvRrL+k+4UvFWGd3ARrr2jwUC6z93vU4zT/8l7LX1hBTN2SYDhRVGxjpg+prPESipjRhp6khvw==
+  dependencies:
+    "@interchainjs/crypto" "1.11.2"
+    "@interchainjs/encoding" "1.11.2"
+    "@interchainjs/math" "1.11.2"
+    "@interchainjs/utils" "1.11.2"
+
 "@interchainjs/amino@1.9.12":
   version "1.9.12"
   resolved "https://registry.npmjs.org/@interchainjs/amino/-/amino-1.9.12.tgz#2a21b6f4438122ff7b7faf77452d2d516a50aa85"
@@ -3573,6 +3583,18 @@
   dependencies:
     "@interchainjs/types" "1.11.0"
     "@interchainjs/utils" "1.11.0"
+    "@noble/curves" "^1.1.0"
+    "@noble/hashes" "^1.3.1"
+    "@scure/bip32" "^1.0.10"
+    ethers "^6.5.1"
+
+"@interchainjs/auth@1.11.2":
+  version "1.11.2"
+  resolved "https://registry.npmjs.org/@interchainjs/auth/-/auth-1.11.2.tgz#2599385ff0ed0e4ba215a665ea3b4ce003c7fabf"
+  integrity sha512-WlCQtM74t3+oFlv6+u+jwdpZkAqhIll0P++PNUrAEPpfV110qcgfPRHbDTGpQ9+ia7J11Toc6G3IHfAk88MX/A==
+  dependencies:
+    "@interchainjs/types" "1.11.2"
+    "@interchainjs/utils" "1.11.2"
     "@noble/curves" "^1.1.0"
     "@noble/hashes" "^1.3.1"
     "@scure/bip32" "^1.0.10"
@@ -3644,6 +3666,14 @@
   dependencies:
     "@interchainjs/types" "1.11.0"
     "@interchainjs/utils" "1.11.0"
+
+"@interchainjs/cosmos-types@1.11.2":
+  version "1.11.2"
+  resolved "https://registry.npmjs.org/@interchainjs/cosmos-types/-/cosmos-types-1.11.2.tgz#8d1b792e32599bde6af31c8d5b8b3751970a798b"
+  integrity sha512-zJZznd68VZdUgFs9XqRZqFZXPyHfnXp4CrJzK6p503gaQ1efBQNewjx6X29jwT5/Wi9c8d7CmiRpW6Z5PkPIeg==
+  dependencies:
+    "@interchainjs/types" "1.11.2"
+    "@interchainjs/utils" "1.11.2"
 
 "@interchainjs/cosmos-types@1.6.3":
   version "1.6.3"
@@ -3725,6 +3755,21 @@
     "@interchainjs/cosmos-types" "1.11.0"
     "@interchainjs/types" "1.11.0"
     "@interchainjs/utils" "1.11.0"
+    "@noble/curves" "^1.1.0"
+    "@noble/hashes" "^1.3.1"
+    decimal.js "^10.4.3"
+
+"@interchainjs/cosmos@1.11.2":
+  version "1.11.2"
+  resolved "https://registry.npmjs.org/@interchainjs/cosmos/-/cosmos-1.11.2.tgz#a91cae3bca56463f2efdeeacccf7ec23dcbed9e8"
+  integrity sha512-B4rhZqiK2Fz5scJyj08Bn8fJgbLOmwZsd06yPZOKCCHH6c2CsBVqh6AsH3VBlN6ZZqbHPOAmDGyXS6VT6cKiuA==
+  dependencies:
+    "@chain-registry/v2" "^1.65.6"
+    "@chain-registry/v2-types" "0.53.68"
+    "@interchainjs/auth" "1.11.2"
+    "@interchainjs/cosmos-types" "1.11.2"
+    "@interchainjs/types" "1.11.2"
+    "@interchainjs/utils" "1.11.2"
     "@noble/curves" "^1.1.0"
     "@noble/hashes" "^1.3.1"
     decimal.js "^10.4.3"
@@ -3815,6 +3860,19 @@
     elliptic "^6.5.4"
     libsodium-wrappers-sumo "^0.7.11"
 
+"@interchainjs/crypto@1.11.2":
+  version "1.11.2"
+  resolved "https://registry.npmjs.org/@interchainjs/crypto/-/crypto-1.11.2.tgz#14f36ef5a5e9a0a25fe56674afbf348bedbb6597"
+  integrity sha512-QOV9ZBZFkbjlJKG3HpGfu0IyADiWjL/Dwng6VlKvIuukt7MQc4gHRT0Is9NADy1VLLsuzLf7RfV9tgH7PjU9Bw==
+  dependencies:
+    "@interchainjs/encoding" "1.11.2"
+    "@interchainjs/math" "1.11.2"
+    "@interchainjs/utils" "1.11.2"
+    "@noble/hashes" "^1"
+    bn.js "^5.2.0"
+    elliptic "^6.5.4"
+    libsodium-wrappers-sumo "^0.7.11"
+
 "@interchainjs/crypto@1.9.12":
   version "1.9.12"
   resolved "https://registry.npmjs.org/@interchainjs/crypto/-/crypto-1.9.12.tgz#bf95d4b0dd1900ed41b1d7927760026d0cb5312b"
@@ -3861,6 +3919,16 @@
     bech32 "^1.1.4"
     readonly-date "^1.0.0"
 
+"@interchainjs/encoding@1.11.2":
+  version "1.11.2"
+  resolved "https://registry.npmjs.org/@interchainjs/encoding/-/encoding-1.11.2.tgz#e46f6ae36c9ba6f7ae00888a533cebbf3464e8d6"
+  integrity sha512-gqyozRvbdmQyTj6bFetrWT8/lecbxtOF0kJcs8clR79V7Rw7nL6oxbbyYnLmJmly8EnLNsxKsw/LAqCx6HwR/w==
+  dependencies:
+    "@interchainjs/math" "1.11.2"
+    base64-js "^1.3.0"
+    bech32 "^1.1.4"
+    readonly-date "^1.0.0"
+
 "@interchainjs/encoding@1.9.12":
   version "1.9.12"
   resolved "https://registry.npmjs.org/@interchainjs/encoding/-/encoding-1.9.12.tgz#fbfc3422c2b20e7c717d0e18a0963a5905c532a7"
@@ -3897,6 +3965,22 @@
     ethers "^6.13.4"
     rlp "^3.0.0"
 
+"@interchainjs/ethereum@1.11.2":
+  version "1.11.2"
+  resolved "https://registry.npmjs.org/@interchainjs/ethereum/-/ethereum-1.11.2.tgz#ab386ca7f60a6839cbf832a960e60f60c903602c"
+  integrity sha512-VIvIOlX8EHD43boh1ksthOEVVf5H039Rzg4sYv00pSsHXzRpgRHHWsVPWJhnwUu0WffW8YyjNdbYceha0ycbQg==
+  dependencies:
+    "@ethersproject/bignumber" "^5.7.0"
+    "@ethersproject/bytes" "^5.7.0"
+    "@ethersproject/hash" "^5.7.0"
+    "@ethersproject/transactions" "^5.7.0"
+    "@interchainjs/types" "1.11.2"
+    "@interchainjs/utils" "1.11.2"
+    "@noble/hashes" "^1.3.1"
+    ethereum-cryptography "^3.1.0"
+    ethers "^6.13.4"
+    rlp "^3.0.0"
+
 "@interchainjs/injective@1.11.0":
   version "1.11.0"
   resolved "https://registry.npmjs.org/@interchainjs/injective/-/injective-1.11.0.tgz#50fe77bfb9b036f5a39278e1597c0de9d885fae7"
@@ -3913,6 +3997,22 @@
     decimal.js "^10.4.3"
     interchainjs "1.11.0"
 
+"@interchainjs/injective@1.11.2":
+  version "1.11.2"
+  resolved "https://registry.npmjs.org/@interchainjs/injective/-/injective-1.11.2.tgz#bc41ced3ceff3e1fdf0a9129543035460428b919"
+  integrity sha512-zOGmEZBE+C8GC0yXSqAka1xdKtbU3Yn6RgHXN4Hxv4b08Re8GtGISR58LjVnkESF+wn3wDQhdWfBLBQLXwKgAQ==
+  dependencies:
+    "@ethersproject/transactions" "^5.7.0"
+    "@interchainjs/auth" "1.11.2"
+    "@interchainjs/cosmos" "1.11.2"
+    "@interchainjs/cosmos-types" "1.11.2"
+    "@interchainjs/ethereum" "1.11.2"
+    "@interchainjs/types" "1.11.2"
+    "@interchainjs/utils" "1.11.2"
+    "@noble/hashes" "^1.3.1"
+    decimal.js "^10.4.3"
+    interchainjs "1.11.2"
+
 "@interchainjs/math@1.10.1":
   version "1.10.1"
   resolved "https://registry.npmjs.org/@interchainjs/math/-/math-1.10.1.tgz#8b18195a180dbcea6291bdb6e87ffe8ef8bc1e67"
@@ -3924,6 +4024,13 @@
   version "1.11.0"
   resolved "https://registry.npmjs.org/@interchainjs/math/-/math-1.11.0.tgz#633f74a5b08e02f30b8fbab0922484cbf028f29d"
   integrity sha512-kOG85E2s7rqRbW+yVj8Kd/bZMkb4JzlXwM4PTHCCX8W/R0IxsiT33EBf1/iC4ccUADELfW7c67n/g6wziT7g5w==
+  dependencies:
+    bn.js "^5.2.0"
+
+"@interchainjs/math@1.11.2":
+  version "1.11.2"
+  resolved "https://registry.npmjs.org/@interchainjs/math/-/math-1.11.2.tgz#5a0436d8b8d94e051f2d428c324006bbf4aec0d0"
+  integrity sha512-H0FTfHXOYVBLvPvudOfcXyvTOGfDuAjjY3bS1YBzUnUINs4yAHxHyFUhtbCYwZN+4pIvE+LdPfyIjOHAuM2D1w==
   dependencies:
     bn.js "^5.2.0"
 
@@ -3962,6 +4069,17 @@
     "@interchainjs/encoding" "1.11.0"
     "@interchainjs/math" "1.11.0"
     "@interchainjs/types" "1.11.0"
+
+"@interchainjs/pubkey@1.11.2":
+  version "1.11.2"
+  resolved "https://registry.npmjs.org/@interchainjs/pubkey/-/pubkey-1.11.2.tgz#dccafe2b9d40a34dac22a2f21154e0fd45065076"
+  integrity sha512-/sJuBQ+5boKPZ1DYWq/vCbpE0luzo8L4pWx6QawjvySwyXk0bncArB5NGmVETGebrKGA5cxWfFdaHdrRiUBjEA==
+  dependencies:
+    "@interchainjs/amino" "1.11.2"
+    "@interchainjs/cosmos-types" "1.11.2"
+    "@interchainjs/encoding" "1.11.2"
+    "@interchainjs/math" "1.11.2"
+    "@interchainjs/types" "1.11.2"
 
 "@interchainjs/pubkey@1.9.12":
   version "1.9.12"
@@ -4020,6 +4138,13 @@
   dependencies:
     decimal.js "^10.4.3"
 
+"@interchainjs/types@1.11.2":
+  version "1.11.2"
+  resolved "https://registry.npmjs.org/@interchainjs/types/-/types-1.11.2.tgz#9e4927a460ae2cf3353a38eb4483469e4051b5c1"
+  integrity sha512-IwaLG06QbHQxf0jig9orS12kC0dt4hHQ+RhxLs2dLBpF7MAmTkps+HzQx/SpDZ72qLQLcumQDt0qgBtbYdGZnA==
+  dependencies:
+    decimal.js "^10.4.3"
+
 "@interchainjs/types@1.6.3":
   version "1.6.3"
   resolved "https://registry.npmjs.org/@interchainjs/types/-/types-1.6.3.tgz#12765da49521f1512a1223687d2b0e9a33eeec8f"
@@ -4064,6 +4189,15 @@
   integrity sha512-g4+k3Q4zx1Sr30+kw9MtFefTFGEkWRqy74jv1c8baETav+BzPKbgNHtoyqE2ZmP0sapptgRpEPN77VeveXjMAg==
   dependencies:
     "@interchainjs/types" "1.11.0"
+    bech32 "^2.0.0"
+    decimal.js "^10.4.3"
+
+"@interchainjs/utils@1.11.2":
+  version "1.11.2"
+  resolved "https://registry.npmjs.org/@interchainjs/utils/-/utils-1.11.2.tgz#88865195a15ea416bc1af1bd16f3c8fb148ade7a"
+  integrity sha512-dwsWUdsMbwX1XZAwgkHFa1QaPyFye/y7GL4+WmdHCi0moDyKGEHf22aKlwONFiujokjZcguuTN1KtpzztFww6A==
+  dependencies:
+    "@interchainjs/types" "1.11.2"
     bech32 "^2.0.0"
     decimal.js "^10.4.3"
 
@@ -12906,17 +13040,17 @@ injective-react@1.9.12:
     "@noble/hashes" "^1.3.1"
     decimal.js "^10.4.3"
 
-injectivejs@1.11.0:
-  version "1.11.0"
-  resolved "https://registry.npmjs.org/injectivejs/-/injectivejs-1.11.0.tgz#b19564bbe3c109d6f6fb416636b42a2efae5fa45"
-  integrity sha512-QM5Cs1QlUM3oUutIB8ss0QIQ8dI8PCJgvdHvVNMCMCxw1G0iI4As8ln0fOMmJGLqmMO7EoczMqVN1KqaUfr6fA==
+injectivejs@1.11.2:
+  version "1.11.2"
+  resolved "https://registry.npmjs.org/injectivejs/-/injectivejs-1.11.2.tgz#bcdb354e43c1f213acebe7b4762b0745d45a014e"
+  integrity sha512-W5mNXiNmkS0sLGmYEwJgRqU6vKqHU9oIbEQbGpHhBMeEbgjbJO3bugDA8TpKMKI3Ch4zIlvgZPEVV4ovxZjOOQ==
   dependencies:
-    "@interchainjs/cosmos" "1.11.0"
-    "@interchainjs/cosmos-types" "1.11.0"
-    "@interchainjs/encoding" "1.11.0"
-    "@interchainjs/pubkey" "1.11.0"
-    "@interchainjs/types" "1.11.0"
-    "@interchainjs/utils" "1.11.0"
+    "@interchainjs/cosmos" "1.11.2"
+    "@interchainjs/cosmos-types" "1.11.2"
+    "@interchainjs/encoding" "1.11.2"
+    "@interchainjs/pubkey" "1.11.2"
+    "@interchainjs/types" "1.11.2"
+    "@interchainjs/utils" "1.11.2"
     "@noble/hashes" "^1.3.1"
     decimal.js "^10.4.3"
 
@@ -13074,6 +13208,20 @@ interchainjs@1.11.0:
     "@interchainjs/pubkey" "1.11.0"
     "@interchainjs/types" "1.11.0"
     "@interchainjs/utils" "1.11.0"
+    "@noble/hashes" "^1.3.1"
+    decimal.js "^10.4.3"
+
+interchainjs@1.11.2:
+  version "1.11.2"
+  resolved "https://registry.npmjs.org/interchainjs/-/interchainjs-1.11.2.tgz#b59d4fc72acb2867d4d20c47971d2ad979b2eb59"
+  integrity sha512-v1r52JMRnoh5HqDaJpMZtHbbDroxrRQIjWUX7t0GYehPlTYla3l9r85w3Xgx4tEk1IlLRbhWlLNd6rkh+51T+w==
+  dependencies:
+    "@interchainjs/cosmos" "1.11.2"
+    "@interchainjs/cosmos-types" "1.11.2"
+    "@interchainjs/encoding" "1.11.2"
+    "@interchainjs/pubkey" "1.11.2"
+    "@interchainjs/types" "1.11.2"
+    "@interchainjs/utils" "1.11.2"
     "@noble/hashes" "^1.3.1"
     decimal.js "^10.4.3"
 
