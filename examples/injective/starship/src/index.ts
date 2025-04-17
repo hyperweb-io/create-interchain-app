@@ -17,7 +17,7 @@ import { MsgSend } from 'injectivejs/cosmos/bank/v1beta1/tx';
 
 const main = async () => {
   // initialize starship
-  const configFile = path.join(__dirname, 'starship', 'configs', 'config.yaml');
+  const configFile = path.join(__dirname, '..', 'configs', 'config.yaml');
   ConfigContext.setConfigFile(configFile);
   ConfigContext.setRegistry(await useRegistry(configFile));
 
