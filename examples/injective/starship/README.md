@@ -1,4 +1,4 @@
-# injective-node
+# injective starship example
 
 ## Get Started
 
