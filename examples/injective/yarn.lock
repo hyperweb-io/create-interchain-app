@@ -2578,6 +2578,7 @@ __metadata:
     generate-lockfile: "npm:0.0.12"
     immer: "npm:^10.0.2"
     injective-react: "npm:1.9.12"
+    injectivejs: "npm:1.11.2"
     mobx: "npm:^6.13.5"
     next: "npm:^13"
     react: "npm:18.2.0"
@@ -9159,6 +9160,22 @@ __metadata:
   peerDependencies:
     "@tanstack/react-query": 4.29.1
   checksum: 10c0/01305c091efec4cd64697872b5a4a774d8e0652f7c6359caf727cdd07d99a1760c18d40cbbfd0586be53bfabc6bbd79407b54ac7a914265fabe2da6425b701d0
+  languageName: node
+  linkType: hard
+
+"injectivejs@npm:1.11.2":
+  version: 1.11.2
+  resolution: "injectivejs@npm:1.11.2"
+  dependencies:
+    "@interchainjs/cosmos": "npm:1.11.2"
+    "@interchainjs/cosmos-types": "npm:1.11.2"
+    "@interchainjs/encoding": "npm:1.11.2"
+    "@interchainjs/pubkey": "npm:1.11.2"
+    "@interchainjs/types": "npm:1.11.2"
+    "@interchainjs/utils": "npm:1.11.2"
+    "@noble/hashes": "npm:^1.3.1"
+    decimal.js: "npm:^10.4.3"
+  checksum: 10c0/01292df87e7af2f455fe085d09d09018e0815d198566a81ebddca43d8980a7c6a2be0826ebe04d9e7bb53887a3df5c685923fb2e6b9300ed58e57920f9a14fb3
   languageName: node
   linkType: hard
 

@@ -2,18 +2,22 @@ import path from 'path';
 import { ConfigContext, generateMnemonic, useRegistry } from 'starshipjs';
 import { useChain } from 'starshipjs';
 
+// the defaultSignerOptions.Cosmos makes a general DirectSigner become a injective signer
 import { defaultSignerOptions } from '@interchainjs/injective/defaults';
 import { DirectSigner } from '@interchainjs/cosmos/signers/direct';
 
+// the cosmos part of these functions is the same with the ones in interchainjs
+// meaning these functions can be also imported from interchainjs
+// and feel free to use those injective specific functions from injectivejs/injective
 import { getBalance } from 'injectivejs/cosmos/bank/v1beta1/query.rpc.func';
 import { send } from 'injectivejs/cosmos/bank/v1beta1/tx.rpc.func';
+import { MsgSend } from 'injectivejs/cosmos/bank/v1beta1/tx';
 
 import { Secp256k1Auth } from '@interchainjs/auth/secp256k1';
 import { EthSecp256k1Auth } from '@interchainjs/auth/ethSecp256k1';
 import { HDPath } from '@interchainjs/types';
 
 import { sleep } from '@interchainjs/utils';
-import { MsgSend } from 'injectivejs/cosmos/bank/v1beta1/tx';
 
 const main = async () => {
   // initialize starship
