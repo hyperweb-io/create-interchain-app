@@ -12,7 +12,26 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
 
-## Interchain JavaScript Stack 
+## Starship Example Getting Started
+
+Starship enables users to start a virtual env to simulate the queries and txs without cost, here's the steps running the demo:
+
+1. setup starship prerequisites as the link:
+[starship prerequisites](https://docs.hyperweb.io/starship#prerequisites)
+2. start the docker(to run k8s).
+3. run:
+
+```bash
+# install all dependencies
+yarn
+# run the starship virtual env
+# wait for some minutes until it gets started.
+yarn starship:all
+# run the demo typescript script
+yarn starship:demo
+```
+
+## Interchain JavaScript Stack
 
 A unified toolkit for building applications and smart contracts in the Interchain ecosystem ⚛️
 
