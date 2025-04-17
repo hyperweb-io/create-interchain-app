@@ -9,7 +9,11 @@
     "lint": "next lint",
     "locks:remove": "rm -f yarn.lock",
     "locks:create": "generate-lockfile --lockfile ../../yarn.lock --package package.json --write yarn.lock --force",
-    "locks": "npm run locks:remove && npm run locks:create"
+    "locks": "npm run locks:remove && npm run locks:create",
+    "starship": "starship --config ./starship/configs/config.yaml",
+    "starship:demo": "tsx starship/src/index.ts",
+    "starship:all": "yarn starship start",
+    "starship:clean": "yarn starship stop"
   },
   "resolutions": {
     "react": "18.2.0",
@@ -24,15 +28,18 @@
     "@cosmology/telescope": "^1.10.3",
     "@emotion/react": "11.10.6",
     "@emotion/styled": "11.10.6",
-    "@interchain-kit/core": "0.2.204",
-    "@interchain-kit/keplr-extension": "0.2.204",
-    "@interchain-kit/leap-extension": "0.2.204",
-    "@interchain-kit/react": "0.2.204",
+    "@interchain-kit/core": "0.2.222",
+    "@interchain-kit/keplr-extension": "0.2.222",
+    "@interchain-kit/leap-extension": "0.2.222",
+    "@interchain-kit/react": "0.2.222",
     "@interchain-ui/react": "^1.23.29",
     "@interchain-ui/react-no-ssr": "^0.1.6",
-    "@interchainjs/cosmos": "1.9.12",
-    "@interchainjs/cosmos-types": "1.9.12",
-    "@interchainjs/injective": "1.9.12",
+    "@interchainjs/auth": "1.11.2",
+    "@interchainjs/cosmos": "1.11.2",
+    "@interchainjs/cosmos-types": "1.11.2",
+    "@interchainjs/injective": "1.11.2",
+    "@interchainjs/types": "1.11.2",
+    "@interchainjs/utils": "1.11.2",
     "@tanstack/react-query": "4.29.1",
     "bignumber.js": "9.1.1",
     "chain-registry": "^1.69.32",
@@ -46,6 +53,7 @@
     "react-icons": "4.6.0"
   },
   "devDependencies": {
+    "@starship-ci/cli": "^2.9.0",
     "@tanstack/react-query-devtools": "4.29.1",
     "@types/node": "^20.14.6",
     "@types/react": "^18.3.3",
@@ -53,6 +61,8 @@
     "eslint": "8.28.0",
     "eslint-config-next": "13.0.5",
     "generate-lockfile": "0.0.12",
+    "starshipjs": "^2.4.0",
+    "tsx": "^4.19.3",
     "typescript": "^5.1.6"
   },
   "packageManager": "yarn@4.3.0"
