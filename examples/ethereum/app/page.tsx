@@ -2,8 +2,13 @@
 
 import { Box, Button, TextField, NumberField, FieldLabel, Callout } from "@interchain-ui/react"
 import React, { useState, useEffect } from "react"
-import { ethers } from "ethers"
 import { Wallet, ArrowRight, RefreshCw, AlertCircle } from "lucide-react"
+import { SignerFromBrowser } from "@interchainjs/ethereum/signers/SignerFromBrowser"
+import { IEthereumProvider } from "@keplr-wallet/types";
+import { MetaMaskInpageProvider } from "@metamask/providers";
+import BigNumber from "bignumber.js";
+
+type EthereumProvider = MetaMaskInpageProvider | IEthereumProvider | undefined
 
 // Alias Card components
 const Card = Box
@@ -21,6 +26,13 @@ export default function WalletPage() {
   const [recipient, setRecipient] = useState("")
   const [amount, setAmount] = useState<number>(0)
   const [error, setError] = useState("")
+  const [ethereum, setEthereum] = useState<EthereumProvider>()
+
+  useEffect(() => {
+    if (typeof window !== "undefined" && typeof window.ethereum !== "undefined") {
+      setEthereum(window.ethereum as EthereumProvider)
+    }
+  }, [])
 
   // Check if MetaMask is installed
   const checkIfWalletIsInstalled = () => {
@@ -63,9 +75,9 @@ export default function WalletPage() {
   // Get balance
   const getBalance = async (address: string) => {
     try {
-      const provider = new ethers.BrowserProvider(window.ethereum)
-      const balance = await provider.getBalance(address)
-      setBalance(ethers.formatEther(balance))
+      const wallet = new SignerFromBrowser(ethereum!)
+      const balance = await wallet.getBalance()
+      setBalance(new BigNumber(balance.toString()).div(10 ** 18).toString())
     } catch (err: any) {
       console.error("Failed to get balance:", err)
       setError(err.message || "Failed to get balance")
@@ -89,21 +101,20 @@ export default function WalletPage() {
         throw new Error("Please enter recipient address and amount")
       }
 
-      if (!ethers.isAddress(recipient)) {
+      if (!/^0x[a-fA-F0-9]{40}$/.test(recipient)) {
         throw new Error("Invalid Ethereum address")
       }
 
-      const provider = new ethers.BrowserProvider(window.ethereum)
-      const signer = await provider.getSigner()
+      const signer = new SignerFromBrowser(ethereum!)
 
       // Create transaction
       const tx = {
         to: recipient,
-        value: ethers.parseEther(amount.toString()),
+        value: BigInt(new BigNumber(amount).shiftedBy(18).integerValue(BigNumber.ROUND_DOWN).toString())
       }
 
       // Send transaction
-      const transaction = await signer.sendTransaction(tx)
+      const transaction = await signer.send(tx)
 
       // Wait for confirmation
       await transaction.wait()
@@ -147,7 +158,7 @@ export default function WalletPage() {
     <main className="container mx-auto py-10 px-4">
       <h1 className="text-3xl font-bold text-center mb-8">Ethereum Wallet</h1>
 
-      <div className={`grid gap-6 ${isConnected ? "md:grid-cols-2" : ""}`}>
+      <Box className={`grid gap-6 ${isConnected ? "md:grid-cols-2" : ""}`}>
         <Card className='border border-1 p-5 rounded-md'>
           <CardHeader className='mb-4'>
             <CardTitle className='font-bold text-2xl'>Wallet Connection</CardTitle>
@@ -160,26 +171,26 @@ export default function WalletPage() {
                 <Wallet className="ml-2 h-4 w-4" />
               </Button>
             ) : (
-              <div className="space-y-4">
-                <div className="flex flex-col space-y-1">
+              <Box className="space-y-4">
+                <Box className="flex flex-col space-y-1">
                   <FieldLabel htmlFor="account" label='Wallet Address'>Wallet Address</FieldLabel>
-                  <div id="account" className="p-2 border rounded-md bg-muted font-mono text-sm break-all">{account}</div>
-                </div>
+                  <Box id="account" className="p-2 border rounded-md bg-muted font-mono text-sm break-all">{account}</Box>
+                </Box>
 
-                <div className="flex flex-col space-y-1">
-                  <div className="flex justify-between items-center">
+                <Box className="flex flex-col space-y-1">
+                  <Box className="flex justify-between items-center">
                     <FieldLabel htmlFor="balance" label="ETH Balance">ETH Balance</FieldLabel>
                     <Button onClick={refreshBalance} disabled={isLoading} size="sm">
                       <RefreshCw className="h-4 w-4" />
                     </Button>
-                  </div>
-                  <div id="balance" className="p-2 border rounded-md bg-muted font-mono text-xl">{balance} ETH</div>
-                </div>
+                  </Box>
+                  <Box id="balance" className="p-2 border rounded-md bg-muted font-mono text-xl">{balance} ETH</Box>
+                </Box>
 
                 <Button onClick={disconnectWallet} className="w-full">
                   Disconnect Wallet
                 </Button>
-              </div>
+              </Box>
             )}
           </CardContent>
         </Card>
@@ -191,8 +202,8 @@ export default function WalletPage() {
               <CardDescription className='text-gray-500'>Transfer ETH to another address</CardDescription>
             </CardHeader>
             <CardContent>
-              <div className="space-y-4">
-                <div className="space-y-2">
+              <Box className="space-y-4">
+                <Box className="space-y-2">
                   <FieldLabel htmlFor="recipient" label="Recipient Address">Recipient Address</FieldLabel>
                   <TextField
                     id="recipient"
@@ -201,9 +212,9 @@ export default function WalletPage() {
                     onChange={(e: React.ChangeEvent<HTMLInputElement>) => setRecipient(e.target.value)}
                     disabled={isLoading}
                   />
-                </div>
+                </Box>
 
-                <div className="space-y-2">
+                <Box className="space-y-2">
                   <FieldLabel htmlFor="amount" label='Amount (ETH)'>Amount (ETH)</FieldLabel>
                   <NumberField
                     id="amount"
@@ -212,8 +223,8 @@ export default function WalletPage() {
                     onChange={(value: number) => setAmount(value)}
                     isDisabled={isLoading}
                   />
-                </div>
-              </div>
+                </Box>
+              </Box>
             </CardContent>
             <CardFooter className="mt-4">
               <Button className="w-full" onClick={sendTransaction} disabled={isLoading || !recipient || amount <= 0}>
@@ -223,7 +234,7 @@ export default function WalletPage() {
             </CardFooter>
           </Card>
         )}
-      </div>
+      </Box>
 
       {error && (
         <Callout title="Error" className="mt-6" intent="error">
