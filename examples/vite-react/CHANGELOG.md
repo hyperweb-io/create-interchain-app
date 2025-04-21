@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.2](https://github.com/hyperweb-io/create-interchain-app/compare/@hyperweb/vite-react@1.0.1...@hyperweb/vite-react@1.0.2) (2025-04-21)
+
+**Note:** Version bump only for package @hyperweb/vite-react
+
+
+
+
+
 ## 1.0.1 (2025-04-21)
 
 

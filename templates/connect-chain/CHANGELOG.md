@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.4](https://github.com/hyperweb-io/create-interchain-app/compare/@hyperweb/connect-chain@1.1.3...@hyperweb/connect-chain@1.1.4) (2025-04-21)
+
+**Note:** Version bump only for package @hyperweb/connect-chain
+
+
+
+
+
 ## [1.1.3](https://github.com/hyperweb-io/create-interchain-app/compare/@hyperweb/connect-chain@1.1.2...@hyperweb/connect-chain@1.1.3) (2025-04-21)
 
 **Note:** Version bump only for package @hyperweb/connect-chain
