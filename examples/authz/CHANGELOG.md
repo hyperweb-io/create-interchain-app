@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.4.5](https://github.com/hyperweb-io/create-interchain-app/compare/@hyperweb/authz@2.4.4...@hyperweb/authz@2.4.5) (2025-04-21)
+
+**Note:** Version bump only for package @hyperweb/authz
+
+
+
+
+
 ## [2.4.4](https://github.com/hyperweb-io/create-interchain-app/compare/@hyperweb/authz@1.1.4...@hyperweb/authz@2.4.4) (2025-04-21)
 
 **Note:** Version bump only for package @hyperweb/authz
