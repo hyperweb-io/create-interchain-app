@@ -148,10 +148,10 @@ export default function WalletPage() {
       <h1 className="text-3xl font-bold text-center mb-8">Ethereum Wallet</h1>
 
       <div className={`grid gap-6 ${isConnected ? "md:grid-cols-2" : ""}`}>
-        <Card>
-          <CardHeader>
-            <CardTitle>Wallet Connection</CardTitle>
-            <CardDescription>Connect your Ethereum wallet to view balance</CardDescription>
+        <Card className='border border-1 p-5 rounded-md'>
+          <CardHeader className='mb-4'>
+            <CardTitle className='font-bold text-2xl'>Wallet Connection</CardTitle>
+            <CardDescription className='text-gray-500'>Connect your Ethereum wallet to view balance</CardDescription>
           </CardHeader>
           <CardContent>
             {!isConnected ? (
@@ -162,14 +162,14 @@ export default function WalletPage() {
             ) : (
               <div className="space-y-4">
                 <div className="flex flex-col space-y-1">
-                  <FieldLabel htmlFor="account">Wallet Address</FieldLabel>
+                  <FieldLabel htmlFor="account" label='Wallet Address'>Wallet Address</FieldLabel>
                   <div id="account" className="p-2 border rounded-md bg-muted font-mono text-sm break-all">{account}</div>
                 </div>
 
                 <div className="flex flex-col space-y-1">
                   <div className="flex justify-between items-center">
-                    <FieldLabel htmlFor="balance">ETH Balance</FieldLabel>
-                    <Button onClick={refreshBalance} disabled={isLoading}>
+                    <FieldLabel htmlFor="balance" label="ETH Balance">ETH Balance</FieldLabel>
+                    <Button onClick={refreshBalance} disabled={isLoading} size="sm">
                       <RefreshCw className="h-4 w-4" />
                     </Button>
                   </div>
@@ -185,15 +185,15 @@ export default function WalletPage() {
         </Card>
 
         {isConnected && (
-          <Card>
-            <CardHeader>
-              <CardTitle>Send Ethereum</CardTitle>
-              <CardDescription>Transfer ETH to another address</CardDescription>
+          <Card className='border border-1 p-5 rounded-md'>
+            <CardHeader className='mb-4'>
+              <CardTitle className='font-bold text-2xl'>Send Ethereum</CardTitle>
+              <CardDescription className='text-gray-500'>Transfer ETH to another address</CardDescription>
             </CardHeader>
             <CardContent>
               <div className="space-y-4">
                 <div className="space-y-2">
-                  <FieldLabel htmlFor="recipient">Recipient Address</FieldLabel>
+                  <FieldLabel htmlFor="recipient" label="Recipient Address">Recipient Address</FieldLabel>
                   <TextField
                     id="recipient"
                     placeholder="0x..."
@@ -204,7 +204,7 @@ export default function WalletPage() {
                 </div>
 
                 <div className="space-y-2">
-                  <FieldLabel htmlFor="amount">Amount (ETH)</FieldLabel>
+                  <FieldLabel htmlFor="amount" label='Amount (ETH)'>Amount (ETH)</FieldLabel>
                   <NumberField
                     id="amount"
                     placeholder="0.01"
@@ -215,7 +215,7 @@ export default function WalletPage() {
                 </div>
               </div>
             </CardContent>
-            <CardFooter>
+            <CardFooter className="mt-4">
               <Button className="w-full" onClick={sendTransaction} disabled={isLoading || !recipient || amount <= 0}>
                 {isLoading ? "Processing..." : "Send Transaction"}
                 <ArrowRight className="ml-2 h-4 w-4" />
