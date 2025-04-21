@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.3](https://github.com/hyperweb-io/create-interchain-app/compare/@hyperweb/chain-template@1.1.2...@hyperweb/chain-template@1.1.3) (2025-04-21)
+
+
+### Bug Fixes
+
+* remove unused code ([8bf64bd](https://github.com/hyperweb-io/create-interchain-app/commit/8bf64bdfa7fb900599dd7751e0d43829bbb087e7))
+
+
+
+
+
 ## 1.1.2 (2025-01-27)
 
 

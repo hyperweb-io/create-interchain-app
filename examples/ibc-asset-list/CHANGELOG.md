@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.4](https://github.com/hyperweb-io/create-interchain-app/compare/@hyperweb/ibc-asset-list@1.1.3...@hyperweb/ibc-asset-list@1.1.4) (2025-04-21)
+
+
+### Bug Fixes
+
+* read properties from undefined ([c54cc82](https://github.com/hyperweb-io/create-interchain-app/commit/c54cc82ab866fdace1d0bee75fc6c7f3f885647c))
+
+
+
+
+
 ## [1.1.3](https://github.com/hyperweb-io/create-interchain-app/compare/@hyperweb/ibc-asset-list@1.1.2...@hyperweb/ibc-asset-list@1.1.3) (2025-01-27)
 
 **Note:** Version bump only for package @hyperweb/ibc-asset-list

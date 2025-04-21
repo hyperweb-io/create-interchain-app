@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.3](https://github.com/hyperweb-io/create-interchain-app/compare/@hyperweb/connect-multi-chain@1.1.2...@hyperweb/connect-multi-chain@1.1.3) (2025-04-21)
+
+
+### Bug Fixes
+
+* improve chain dropdown UX ([3bc792b](https://github.com/hyperweb-io/create-interchain-app/commit/3bc792b5b951a5945b3e03b7ffe2c6961d7ea615))
+
+
+
+
+
 ## 1.1.2 (2025-01-27)
 
 
