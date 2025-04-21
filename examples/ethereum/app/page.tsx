@@ -1,14 +1,17 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { Box, Button, TextField, NumberField, FieldLabel, Callout } from "@interchain-ui/react"
+import React, { useState, useEffect } from "react"
 import { ethers } from "ethers"
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
 import { Wallet, ArrowRight, RefreshCw, AlertCircle } from "lucide-react"
-import { Alert, AlertDescription } from "@/components/ui/alert"
-import { useToast } from "@/hooks/use-toast"
+
+// Alias Card components
+const Card = Box
+const CardHeader = Box
+const CardContent = Box
+const CardFooter = Box
+const CardTitle = Box
+const CardDescription = Box
 
 export default function WalletPage() {
   const [account, setAccount] = useState<string>("")
@@ -16,9 +19,8 @@ export default function WalletPage() {
   const [isConnected, setIsConnected] = useState(false)
   const [isLoading, setIsLoading] = useState(false)
   const [recipient, setRecipient] = useState("")
-  const [amount, setAmount] = useState("")
+  const [amount, setAmount] = useState<number>(0)
   const [error, setError] = useState("")
-  const { toast } = useToast()
 
   // Check if MetaMask is installed
   const checkIfWalletIsInstalled = () => {
@@ -42,35 +44,20 @@ export default function WalletPage() {
         setAccount(accounts[0])
         setIsConnected(true)
         await getBalance(accounts[0])
-
-        toast({
-          title: "Wallet Connected",
-          description: `Address: ${accounts[0].substring(0, 6)}...${accounts[0].substring(38)}`,
-        })
       }
     } catch (err: any) {
       setError(err.message || "Failed to connect wallet")
-      toast({
-        title: "Connection Failed",
-        description: err.message || "Failed to connect wallet",
-        variant: "destructive",
-      })
     } finally {
       setIsLoading(false)
     }
   }
 
-  // Add a disconnectWallet function after the connectWallet function
+  // Disconnect wallet
   const disconnectWallet = () => {
     setAccount("")
     setBalance("0")
     setIsConnected(false)
     setError("")
-
-    toast({
-      title: "Wallet Disconnected",
-      description: "Your wallet has been disconnected successfully",
-    })
   }
 
   // Get balance
@@ -89,10 +76,6 @@ export default function WalletPage() {
   const refreshBalance = async () => {
     if (account) {
       await getBalance(account)
-      toast({
-        title: "Balance Updated",
-        description: `Current balance: ${balance} ETH`,
-      })
     }
   }
 
@@ -102,7 +85,7 @@ export default function WalletPage() {
     setError("")
 
     try {
-      if (!recipient || !amount) {
+      if (!recipient || amount <= 0) {
         throw new Error("Please enter recipient address and amount")
       }
 
@@ -116,38 +99,23 @@ export default function WalletPage() {
       // Create transaction
       const tx = {
         to: recipient,
-        value: ethers.parseEther(amount),
+        value: ethers.parseEther(amount.toString()),
       }
 
       // Send transaction
       const transaction = await signer.sendTransaction(tx)
 
-      toast({
-        title: "Transaction Sent",
-        description: `Transaction hash: ${transaction.hash.substring(0, 10)}...`,
-      })
-
       // Wait for confirmation
       await transaction.wait()
-
-      toast({
-        title: "Transaction Confirmed",
-        description: "Transfer completed successfully",
-      })
 
       // Update balance
       await getBalance(account)
 
       // Clear form
       setRecipient("")
-      setAmount("")
+      setAmount(0)
     } catch (err: any) {
       setError(err.message || "Transaction failed")
-      toast({
-        title: "Transaction Failed",
-        description: err.message || "Transaction failed",
-        variant: "destructive",
-      })
     } finally {
       setIsLoading(false)
     }
@@ -170,7 +138,7 @@ export default function WalletPage() {
 
     return () => {
       if (checkIfWalletIsInstalled()) {
-        window.ethereum.removeListener("accountsChanged", () => {})
+        window.ethereum.removeListener("accountsChanged", () => { })
       }
     }
   }, [])
@@ -194,21 +162,21 @@ export default function WalletPage() {
             ) : (
               <div className="space-y-4">
                 <div className="flex flex-col space-y-1">
-                  <Label>Wallet Address</Label>
-                  <div className="p-2 border rounded-md bg-muted font-mono text-sm break-all">{account}</div>
+                  <FieldLabel htmlFor="account">Wallet Address</FieldLabel>
+                  <div id="account" className="p-2 border rounded-md bg-muted font-mono text-sm break-all">{account}</div>
                 </div>
 
                 <div className="flex flex-col space-y-1">
                   <div className="flex justify-between items-center">
-                    <Label>ETH Balance</Label>
-                    <Button variant="ghost" size="sm" onClick={refreshBalance} disabled={isLoading}>
+                    <FieldLabel htmlFor="balance">ETH Balance</FieldLabel>
+                    <Button onClick={refreshBalance} disabled={isLoading}>
                       <RefreshCw className="h-4 w-4" />
                     </Button>
                   </div>
-                  <div className="p-2 border rounded-md bg-muted font-mono text-xl">{balance} ETH</div>
+                  <div id="balance" className="p-2 border rounded-md bg-muted font-mono text-xl">{balance} ETH</div>
                 </div>
 
-                <Button variant="destructive" onClick={disconnectWallet} className="w-full">
+                <Button onClick={disconnectWallet} className="w-full">
                   Disconnect Wallet
                 </Button>
               </div>
@@ -225,33 +193,30 @@ export default function WalletPage() {
             <CardContent>
               <div className="space-y-4">
                 <div className="space-y-2">
-                  <Label htmlFor="recipient">Recipient Address</Label>
-                  <Input
+                  <FieldLabel htmlFor="recipient">Recipient Address</FieldLabel>
+                  <TextField
                     id="recipient"
                     placeholder="0x..."
                     value={recipient}
-                    onChange={(e) => setRecipient(e.target.value)}
+                    onChange={(e: React.ChangeEvent<HTMLInputElement>) => setRecipient(e.target.value)}
                     disabled={isLoading}
                   />
                 </div>
 
                 <div className="space-y-2">
-                  <Label htmlFor="amount">Amount (ETH)</Label>
-                  <Input
+                  <FieldLabel htmlFor="amount">Amount (ETH)</FieldLabel>
+                  <NumberField
                     id="amount"
-                    type="number"
-                    step="0.0001"
-                    min="0"
                     placeholder="0.01"
                     value={amount}
-                    onChange={(e) => setAmount(e.target.value)}
-                    disabled={isLoading}
+                    onChange={(value: number) => setAmount(value)}
+                    isDisabled={isLoading}
                   />
                 </div>
               </div>
             </CardContent>
             <CardFooter>
-              <Button className="w-full" onClick={sendTransaction} disabled={isLoading || !recipient || !amount}>
+              <Button className="w-full" onClick={sendTransaction} disabled={isLoading || !recipient || amount <= 0}>
                 {isLoading ? "Processing..." : "Send Transaction"}
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
@@ -261,10 +226,10 @@ export default function WalletPage() {
       </div>
 
       {error && (
-        <Alert variant="destructive" className="mt-6">
-          <AlertCircle className="h-4 w-4" />
-          <AlertDescription>{error}</AlertDescription>
-        </Alert>
+        <Callout title="Error" className="mt-6" intent="error">
+          <Box as="span" className="h-4 w-4 inline-block mr-2"><AlertCircle /></Box>
+          {error}
+        </Callout>
       )}
     </main>
   )

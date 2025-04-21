@@ -1,8 +1,10 @@
 import type { Metadata } from 'next'
-import './globals.css'
+import "@interchain-ui/react/styles";
+// import '../styles/globals.css'
+import Provider from './provider'
 
 export const metadata: Metadata = {
-  title: 'Ethereum - InterchainJS Demo',
+  title: 'Ethereum Demo - InterchainJS',
   description: 'Created with InterchainJS, Interchain-Kit',
 }
 
@@ -13,7 +15,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        <Provider>
+          {children}
+        </Provider>
+      </body>
     </html>
   )
 }
