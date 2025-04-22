@@ -1904,6 +1904,17 @@
     case "1.6.3"
     dotty "0.1.2"
 
+"@cosmology/ast@^1.10.1":
+  version "1.10.1"
+  resolved "https://registry.npmjs.org/@cosmology/ast/-/ast-1.10.1.tgz#265756583228ae1c5dc3090fb2424f6856c0461f"
+  integrity sha512-N20RIRa9Xm71cno/OFH8ZAVkfbNR/1WYkkIJQoK9EUZNPCpJk0wZGZiT+uLYa0Qt6eKzEwiamua6sh9BPE1T+A==
+  dependencies:
+    "@babel/types" "7.23.6"
+    "@cosmology/types" "^1.12.0"
+    "@cosmology/utils" "^1.10.0"
+    case "1.6.3"
+    dotty "0.1.2"
+
 "@cosmology/lcd@^0.12.0":
   version "0.12.0"
   resolved "https://registry.npmjs.org/@cosmology/lcd/-/lcd-0.12.0.tgz#a6594fc00a8c84c7341e90840627e62a7e63fd1b"
@@ -1916,6 +1927,20 @@
   version "1.10.0"
   resolved "https://registry.npmjs.org/@cosmology/proto-parser/-/proto-parser-1.10.0.tgz#06a72f9ab8fa215243b42f8d2144e04c5d690dee"
   integrity sha512-aclYnl22ZZB5O9LI7dpGq+f38/NW2/Y73LBhSBKNkEfgOksbzIZGDT4K3sdAqo4Mu+QSUN3b/JAzfCFKETBRYg==
+  dependencies:
+    "@cosmology/protobufjs" "7.3.2"
+    "@cosmology/types" "^1.12.0"
+    "@cosmology/utils" "^1.10.0"
+    dotty "0.1.2"
+    fast-json-patch "3.1.1"
+    glob "8.0.3"
+    minimatch "5.1.0"
+    mkdirp "3.0.0"
+
+"@cosmology/proto-parser@^1.10.1":
+  version "1.10.1"
+  resolved "https://registry.npmjs.org/@cosmology/proto-parser/-/proto-parser-1.10.1.tgz#d3f1e9d30acc1e4da5bc7bf9a974d3cacc4d02b5"
+  integrity sha512-PeWu6B/bZ6LgYbPdJPUZPU2w4BAr8i/KKNfCdAySDhAqvu+YdD/780Y/xhlx7qB7u6Kij043jf1POYQbHm2ktA==
   dependencies:
     "@cosmology/protobufjs" "7.3.2"
     "@cosmology/types" "^1.12.0"
@@ -1986,6 +2011,36 @@
     "@babel/types" "7.23.6"
     "@cosmology/ast" "^1.10.0"
     "@cosmology/proto-parser" "^1.10.0"
+    "@cosmology/types" "^1.12.0"
+    "@cosmology/utils" "^1.10.0"
+    "@cosmwasm/ts-codegen" "0.35.7"
+    "@types/parse-package-name" "0.1.0"
+    case "1.6.3"
+    dargs "7.0.0"
+    deepmerge "4.3.1"
+    dotty "0.1.2"
+    fuzzy "0.1.3"
+    glob "8.0.3"
+    inquirerer "0.1.3"
+    long "^5.2.1"
+    minimatch "5.1.0"
+    minimist "1.2.8"
+    mkdirp "3.0.0"
+    parse-package-name "1.0.0"
+    rimraf "5.0.0"
+    yaml "^2.3.4"
+
+"@cosmology/telescope@^1.12.4":
+  version "1.12.7"
+  resolved "https://registry.npmjs.org/@cosmology/telescope/-/telescope-1.12.7.tgz#09076d1c6510e44a905f3bc300f7a0143cbed77d"
+  integrity sha512-e+Lvg0d1DpRRReTZebs+7+3TzS7gKw02/G28GktLn0MorxNs3fFhq6ZVNvCqv3ZyshYn5IFxfaWzjTVJ1l4gGA==
+  dependencies:
+    "@babel/generator" "^7.23.6"
+    "@babel/parser" "^7.23.6"
+    "@babel/traverse" "7.23.6"
+    "@babel/types" "7.23.6"
+    "@cosmology/ast" "^1.10.1"
+    "@cosmology/proto-parser" "^1.10.1"
     "@cosmology/types" "^1.12.0"
     "@cosmology/utils" "^1.10.0"
     "@cosmwasm/ts-codegen" "0.35.7"
@@ -10042,6 +10097,19 @@ copy-to-clipboard@^3.3.3:
   dependencies:
     toggle-selection "^1.0.6"
 
+copyfiles@2.4.1:
+  version "2.4.1"
+  resolved "https://registry.npmjs.org/copyfiles/-/copyfiles-2.4.1.tgz#d2dcff60aaad1015f09d0b66e7f0f1c5cd3c5da5"
+  integrity sha512-fereAvAvxDrQDOXybk3Qu3dPbOoKoysFMWtkY3mv5BsL8//OSZVL5DCLYqgRfY5cWirgRzlC+WSrxp6Bo3eNZg==
+  dependencies:
+    glob "^7.0.5"
+    minimatch "^3.0.3"
+    mkdirp "^1.0.4"
+    noms "0.0.0"
+    through2 "^2.0.1"
+    untildify "^4.0.0"
+    yargs "^16.1.0"
+
 core-js-compat@^3.21.0, core-js-compat@^3.22.1, core-js-compat@^3.25.1:
   version "3.41.0"
   resolved "https://registry.npmjs.org/core-js-compat/-/core-js-compat-3.41.0.tgz#4cdfce95f39a8f27759b667cf693d96e5dda3d17"
@@ -12018,7 +12086,7 @@ glob@^10.0.0:
     package-json-from-dist "^1.0.0"
     path-scurry "^1.11.1"
 
-glob@^7.0.0, glob@^7.1.1, glob@^7.1.3, glob@^7.1.4, glob@^7.1.6, glob@^7.2.0:
+glob@^7.0.0, glob@^7.0.5, glob@^7.1.1, glob@^7.1.3, glob@^7.1.4, glob@^7.1.6, glob@^7.2.0:
   version "7.2.3"
   resolved "https://registry.npmjs.org/glob/-/glob-7.2.3.tgz#b8df0fb802bbfa8e89bd1d938b4e16578ed44f2b"
   integrity sha512-nFR0zLpU2YCaRxwoCJvL6UvCH2JFyFVIvwTLsIf21AuHlMskA1hhTdk+LlYJtOlYt9v6dvszD2BGRqBL+iQK9Q==
@@ -12421,7 +12489,7 @@ inflight@^1.0.4:
     once "^1.3.0"
     wrappy "1"
 
-inherits@2, inherits@^2.0.1, inherits@^2.0.3, inherits@^2.0.4, inherits@~2.0.3:
+inherits@2, inherits@^2.0.1, inherits@^2.0.3, inherits@^2.0.4, inherits@~2.0.1, inherits@~2.0.3:
   version "2.0.4"
   resolved "https://registry.npmjs.org/inherits/-/inherits-2.0.4.tgz#0fa2c64f932917c3433a0ded55363aae37416b7c"
   integrity sha512-k/vGaX4/Yla3WzyMCvTQOXYeIHvqOKtnqBduzTHpzpQZzAskKMhZ2K+EnBiSM9zGSoIFeMpXKxa4dYeZIQqewQ==
@@ -12460,6 +12528,20 @@ injective-react@1.9.12:
     "@interchainjs/pubkey" "1.9.12"
     "@interchainjs/types" "1.9.12"
     "@interchainjs/utils" "1.9.12"
+    "@noble/hashes" "^1.3.1"
+    decimal.js "^10.4.3"
+
+injectivejs@1.11.2:
+  version "1.11.2"
+  resolved "https://registry.npmjs.org/injectivejs/-/injectivejs-1.11.2.tgz#bcdb354e43c1f213acebe7b4762b0745d45a014e"
+  integrity sha512-W5mNXiNmkS0sLGmYEwJgRqU6vKqHU9oIbEQbGpHhBMeEbgjbJO3bugDA8TpKMKI3Ch4zIlvgZPEVV4ovxZjOOQ==
+  dependencies:
+    "@interchainjs/cosmos" "1.11.2"
+    "@interchainjs/cosmos-types" "1.11.2"
+    "@interchainjs/encoding" "1.11.2"
+    "@interchainjs/pubkey" "1.11.2"
+    "@interchainjs/types" "1.11.2"
+    "@interchainjs/utils" "1.11.2"
     "@noble/hashes" "^1.3.1"
     decimal.js "^10.4.3"
 
@@ -12980,6 +13062,11 @@ is-what@^4.1.8:
   version "4.1.16"
   resolved "https://registry.npmjs.org/is-what/-/is-what-4.1.16.tgz#1ad860a19da8b4895ad5495da3182ce2acdd7a6f"
   integrity sha512-ZhMwEosbFJkA0YhFnNDgTM4ZxDRsS6HqTo7qsZM08fehyRYIYa0yHu5R6mgo1n/8MgaPBXiPimPD77baVFYg+A==
+
+isarray@0.0.1:
+  version "0.0.1"
+  resolved "https://registry.npmjs.org/isarray/-/isarray-0.0.1.tgz#8a18acfca9a8f4177e09abfc6038939b05d1eedf"
+  integrity sha512-D2S+3GLxWH+uhrNEcoh/fnmYeP8E8/zHl644d/jdA0g2uyXvy3sb0qxotE+ne0LtccHknQzWwZEzhak7oJ0COQ==
 
 isarray@^2.0.5:
   version "2.0.5"
@@ -14539,7 +14626,7 @@ minimatch@9.0.3:
   dependencies:
     brace-expansion "^2.0.1"
 
-minimatch@^3.0.4, minimatch@^3.0.5, minimatch@^3.1.1, minimatch@^3.1.2:
+minimatch@^3.0.3, minimatch@^3.0.4, minimatch@^3.0.5, minimatch@^3.1.1, minimatch@^3.1.2:
   version "3.1.2"
   resolved "https://registry.npmjs.org/minimatch/-/minimatch-3.1.2.tgz#19cd194bfd3e428f049a70817c038d89ab4be35b"
   integrity sha512-J7p63hRiAjw1NDEww1W7i37+ByIrOWO5XQQAzZ3VOcL0PNybwpfmV/N05zFAzwQ9USyEcX6t3UO+K5aqBQOIHw==
@@ -14902,6 +14989,14 @@ node-releases@^2.0.19:
   version "2.0.19"
   resolved "https://registry.npmjs.org/node-releases/-/node-releases-2.0.19.tgz#9e445a52950951ec4d177d843af370b411caf314"
   integrity sha512-xxOWJsBKtzAq7DY0J+DTzuz58K8e7sJbdgwkbMWQe8UYB6ekmsQ45q0M/tJDsGaZmbC+l7n57UV8Hl5tHxO9uw==
+
+noms@0.0.0:
+  version "0.0.0"
+  resolved "https://registry.npmjs.org/noms/-/noms-0.0.0.tgz#da8ebd9f3af9d6760919b27d9cdc8092a7332859"
+  integrity sha512-lNDU9VJaOPxUmXcLb+HQFeUgQQPtMI24Gt6hgfuMHRJgMRHMF/qZ4HJD3GDru4sSw9IQl2jPjAYnQrdIeLbwow==
+  dependencies:
+    inherits "^2.0.1"
+    readable-stream "~1.0.31"
 
 nopt@^4.0.1:
   version "4.0.3"
@@ -16149,6 +16244,16 @@ readable-stream@^2.0.6, readable-stream@~2.3.6:
     string_decoder "~1.1.1"
     util-deprecate "~1.0.1"
 
+readable-stream@~1.0.31:
+  version "1.0.34"
+  resolved "https://registry.npmjs.org/readable-stream/-/readable-stream-1.0.34.tgz#125820e34bc842d2f2aaafafe4c2916ee32c157c"
+  integrity sha512-ok1qVCJuRkNmvebYikljxJA/UEsKwLl2nI1OmaqAu4/UE+h0wKCHok4XkL/gvi39OacXvw59RJUOFUkDib2rHg==
+  dependencies:
+    core-util-is "~1.0.0"
+    inherits "~2.0.1"
+    isarray "0.0.1"
+    string_decoder "~0.10.x"
+
 readdir-scoped-modules@^1.0.0:
   version "1.1.0"
   resolved "https://registry.npmjs.org/readdir-scoped-modules/-/readdir-scoped-modules-1.1.0.tgz#8d45407b4f870a0dcaebc0e28670d18e74514309"
@@ -17080,6 +17185,11 @@ string_decoder@^1.1.1:
   dependencies:
     safe-buffer "~5.2.0"
 
+string_decoder@~0.10.x:
+  version "0.10.31"
+  resolved "https://registry.npmjs.org/string_decoder/-/string_decoder-0.10.31.tgz#62e203bc41766c6c28c9fc84301dab1c5310fa94"
+  integrity sha512-ev2QzSzWPYmy9GuqfIVildA4OdcGLeFZQrq5ys6RtiuF+RQQiZWr8TZNyAcuVXyQRYfEO+MsoB/1BuQVhOJuoQ==
+
 string_decoder@~1.1.1:
   version "1.1.1"
   resolved "https://registry.npmjs.org/string_decoder/-/string_decoder-1.1.1.tgz#9cf1611ba62685d7030ae9e4ba34149c3af03fc8"
@@ -17351,7 +17461,7 @@ thread-stream@^0.15.1:
   dependencies:
     real-require "^0.1.0"
 
-through2@^2.0.0:
+through2@^2.0.0, through2@^2.0.1:
   version "2.0.5"
   resolved "https://registry.npmjs.org/through2/-/through2-2.0.5.tgz#01c1e39eb31d07cb7d03a96a70823260b23132cd"
   integrity sha512-/mrRod8xqpA+IHSLyGCQ2s8SPHiCDEeQJSep1jqLYeEUClOFG2Qsh+4FU6G9VeqpZnGW/Su8LQGc4YKni5rYSQ==
@@ -17906,6 +18016,11 @@ unstorage@^1.9.0:
     ofetch "^1.4.1"
     ufo "^1.5.4"
 
+untildify@^4.0.0:
+  version "4.0.0"
+  resolved "https://registry.npmjs.org/untildify/-/untildify-4.0.0.tgz#2bc947b953652487e4600949fb091e3ae8cd919b"
+  integrity sha512-KK8xQ1mkzZeg9inewmFVDNkg3l5LUhoq9kN6iWYB/CC9YMG8HA+c1Q8HwDe6dEX7kErrEVNVBO3fWsVq5iDgtw==
+
 upath@^2.0.1:
   version "2.0.1"
   resolved "https://registry.npmjs.org/upath/-/upath-2.0.1.tgz#50c73dea68d6f6b990f51d279ce6081665d61a8b"
@@ -18452,7 +18567,7 @@ yargs-parser@^21.1.1:
   resolved "https://registry.npmjs.org/yargs-parser/-/yargs-parser-21.1.1.tgz"
   integrity sha512-tVpsJW7DdjecAiFpbIB1e3qxIQsE6NoPc5/eTdrbbIC4h0LVsWhnoa3g+m2HclBIujHzsxZ4VJVA+GUuc2/LBw==
 
-yargs@^16.2.0:
+yargs@^16.1.0, yargs@^16.2.0:
   version "16.2.0"
   resolved "https://registry.npmjs.org/yargs/-/yargs-16.2.0.tgz#1c82bf0f6b6a66eafce7ef30e376f49a12477f66"
   integrity sha512-D1mvvtDG0L5ft/jGWkLpG1+m0eQxOfaBvTNELraWj22wSVUMWxZUvYgJYcKh6jGGIkJFhH4IZPQhR4TKpc8mBw==

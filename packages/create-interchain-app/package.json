@@ -19,9 +19,11 @@
     "dist"
   ],
   "scripts": {
+    "build:clean": "rimraf dist/**",
+    "build:copy": "copyfiles -f ../../LICENSE-MIT ../../LICENSE-Apache README.md package.json dist",
     "build:dist": "yarn tsc -p tsconfig.json --outDir dist --module commonjs || true",
     "build:chmod": "chmod +x ./dist/create-interchain-app.js",
-    "build": "npm run build:dist && npm run build:chmod",
+    "build": "npm run build:clean && npm run build:dist && npm run build:copy && npm run build:chmod",
     "prepare": "npm run build",
     "dev": "node ./dist/create-interchain-app",
     "lint": "eslint .",
