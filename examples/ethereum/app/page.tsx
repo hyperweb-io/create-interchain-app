@@ -7,6 +7,7 @@ import { SignerFromBrowser } from "@interchainjs/ethereum/signers/SignerFromBrow
 import { IEthereumProvider } from "@keplr-wallet/types";
 import { MetaMaskInpageProvider } from "@metamask/providers";
 import BigNumber from "bignumber.js";
+import { useChain } from '@interchain-kit/react'
 
 type EthereumProvider = MetaMaskInpageProvider | IEthereumProvider | undefined
 
@@ -28,9 +29,14 @@ export default function WalletPage() {
   const [error, setError] = useState("")
   const [ethereum, setEthereum] = useState<EthereumProvider>()
 
+  const { wallet } = useChain('ethereum')
+
   useEffect(() => {
     if (typeof window !== "undefined" && typeof window.ethereum !== "undefined") {
-      setEthereum(window.ethereum as EthereumProvider)
+      setEthereum(
+        window.ethereum as EthereumProvider
+        // wallet.getProvider('0x1') as EthereumProvider
+      )
     }
   }, [])
 

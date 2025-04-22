@@ -5,10 +5,13 @@ import "@interchain-ui/react/styles";
 import { ThemeProvider } from "@interchain-ui/react";
 import { ChainProvider } from "@interchain-kit/react";
 import { BaseWallet } from "@interchain-kit/core";
-import { metaMaskExtension } from '@interchain-kit/metamask-extension'
+import { metaMaskWallet } from '@interchain-kit/metamask-extension'
+import { assetList, chain } from '@chain-registry/v2/mainnet/ethereum'
+import { keplrWallet } from '@interchain-kit/keplr-extension'
 
-const _wallets: BaseWallet[] = [
-  // metaMaskExtension
+const _wallets = [
+  // metaMaskWallet,
+  // keplrWallet
 ];
 
 export default function Provider({
@@ -18,14 +21,15 @@ export default function Provider({
 }>) {
   return (
     <ThemeProvider>
-      {/* <ChainProvider
-        chains={[]}
+      <ChainProvider
+        chains={[chain]}
+        // @ts-ignore
         wallets={_wallets}
-        assetLists={[]}
+        assetLists={[assetList]}
         signerOptions={{}}
-      > */}
-      {children}
-      {/* </ChainProvider> */}
+      >
+        {children}
+      </ChainProvider>
     </ThemeProvider>
   )
 }

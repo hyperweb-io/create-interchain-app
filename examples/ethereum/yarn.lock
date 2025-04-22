@@ -70,12 +70,28 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@chain-registry/v2-types@npm:^0.53.116":
+  version: 0.53.116
+  resolution: "@chain-registry/v2-types@npm:0.53.116"
+  checksum: 10c0/dc11c6f527c7417be7ab56615da5bb7534a4eff8bd456eaa478deda150d9e893031ebc9646fe9629cc4172f5e5d5b571dc0f038d37b284869e33ad33a8a86b3c
+  languageName: node
+  linkType: hard
+
 "@chain-registry/v2@npm:^1.65.6, @chain-registry/v2@npm:^1.71.71":
   version: 1.71.187
   resolution: "@chain-registry/v2@npm:1.71.187"
   dependencies:
     "@chain-registry/v2-types": "npm:^0.53.115"
   checksum: 10c0/63c77833dd91a41a5be6f417effc1e97bc16265a3ae72a33ec912906facc1496ee69dc6dca10cc54d0dce8aa24cbdd435f9767a7b5041f0b968118cf8ce09541
+  languageName: node
+  linkType: hard
+
+"@chain-registry/v2@npm:^1.71.188":
+  version: 1.71.188
+  resolution: "@chain-registry/v2@npm:1.71.188"
+  dependencies:
+    "@chain-registry/v2-types": "npm:^0.53.116"
+  checksum: 10c0/dcbf455353872f891d715ae019a3ef6058c806697e0238982c4b704aa48bbedfee6f4e973b99833c975e953626ff7867c386d31307ec303de09ef43656aa17c5
   languageName: node
   linkType: hard
 
@@ -456,10 +472,12 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@hyperweb/ethereum@workspace:."
   dependencies:
+    "@chain-registry/v2": "npm:^1.71.188"
     "@hookform/resolvers": "npm:^3.9.1"
-    "@interchain-kit/core": "npm:^0.3.3"
-    "@interchain-kit/metamask-extension": "npm:^0.3.3"
-    "@interchain-kit/react": "npm:^0.3.3"
+    "@interchain-kit/core": "npm:0.3.5"
+    "@interchain-kit/keplr-extension": "npm:^0.3.3"
+    "@interchain-kit/metamask-extension": "npm:0.3.5"
+    "@interchain-kit/react": "npm:0.3.5"
     "@interchain-ui/react": "npm:1.26.1"
     "@interchainjs/ethereum": "npm:^1.11.4"
     "@keplr-wallet/types": "npm:^0.12.221"
@@ -473,7 +491,6 @@ __metadata:
     cmdk: "npm:1.0.4"
     date-fns: "npm:4.1.0"
     embla-carousel-react: "npm:8.5.1"
-    ethers: "npm:latest"
     input-otp: "npm:1.4.1"
     lucide-react: "npm:^0.454.0"
     next: "npm:15.2.4"
@@ -670,7 +687,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@interchain-kit/core@npm:0.3.3, @interchain-kit/core@npm:^0.3.3":
+"@interchain-kit/core@npm:0.3.3":
   version: 0.3.3
   resolution: "@interchain-kit/core@npm:0.3.3"
   dependencies:
@@ -691,6 +708,30 @@ __metadata:
     interchainjs: "npm:1.11.2"
     long: "npm:^5.2.3"
   checksum: 10c0/460a1dd4c18053e609e4748d5aa2bc8d6a1cfc76a20169babcf76251c409d60e2fc6247259eebbb3a529d062a73a01c75571509b3097979542f6ad070b8e65ec
+  languageName: node
+  linkType: hard
+
+"@interchain-kit/core@npm:0.3.5":
+  version: 0.3.5
+  resolution: "@interchain-kit/core@npm:0.3.5"
+  dependencies:
+    "@chain-registry/v2": "npm:^1.71.71"
+    "@chain-registry/v2-keplr": "npm:^0.0.72"
+    "@chain-registry/v2-types": "npm:^0.53.40"
+    "@interchainjs/cosmos": "npm:1.11.2"
+    "@interchainjs/cosmos-types": "npm:1.11.2"
+    "@ledgerhq/hw-app-cosmos": "npm:^6.30.4"
+    "@ledgerhq/hw-transport": "npm:^6.31.4"
+    "@ledgerhq/hw-transport-webhid": "npm:^6.30.0"
+    "@ledgerhq/hw-transport-webusb": "npm:^6.29.4"
+    "@walletconnect/sign-client": "npm:^2.19.1"
+    "@walletconnect/types": "npm:^2.19.1"
+    "@walletconnect/universal-provider": "npm:^2.19.1"
+    bowser: "npm:^2.11.0"
+    buffer: "npm:^6.0.3"
+    interchainjs: "npm:1.11.2"
+    long: "npm:^5.2.3"
+  checksum: 10c0/a4501006c0d11d9581dcdd3568b02f613893b1f92612fc749b5b0ee2a3a169e80ee072045f654244f18bca6b50c842edf2c8cb7e3f6158427cbc3176fb165ef5
   languageName: node
   linkType: hard
 
@@ -718,21 +759,31 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@interchain-kit/metamask-extension@npm:^0.3.3":
+"@interchain-kit/keplr-extension@npm:^0.3.3":
   version: 0.3.3
-  resolution: "@interchain-kit/metamask-extension@npm:0.3.3"
+  resolution: "@interchain-kit/keplr-extension@npm:0.3.3"
   dependencies:
-    "@interchain-kit/core": "npm:^0.0.1-beta.39"
-  checksum: 10c0/56779104982626bd36ffc06e74ac941c6f8a3efb2f7622c1edf87c08ee504ef06cda6b6f87491847dd7bc6001e3310a175b0274a968a1d3b4b8f857451f8429b
+    "@interchain-kit/core": "npm:0.3.3"
+    "@keplr-wallet/provider-extension": "npm:^0.12.102"
+  checksum: 10c0/2740bd515a5f41e969b860b7d6a04fd5316eba22895830bf8a2b554fd8a7a011ac2e4da95848155b76c62bed6adc5e9ed9e00dcf2f51e8bb257d58557656544d
   languageName: node
   linkType: hard
 
-"@interchain-kit/react@npm:^0.3.3":
-  version: 0.3.3
-  resolution: "@interchain-kit/react@npm:0.3.3"
+"@interchain-kit/metamask-extension@npm:0.3.5":
+  version: 0.3.5
+  resolution: "@interchain-kit/metamask-extension@npm:0.3.5"
+  dependencies:
+    "@interchain-kit/core": "npm:^0.0.1-beta.39"
+  checksum: 10c0/2d4ae2b96e4ccb621c78900bdfe745a37ce4d17af38a8a76044edcb6c9dcb9504d7e2b0bd7e0734f822afaf43e67b699cd1967be402d89751a04c3aca1275bec
+  languageName: node
+  linkType: hard
+
+"@interchain-kit/react@npm:0.3.5":
+  version: 0.3.5
+  resolution: "@interchain-kit/react@npm:0.3.5"
   dependencies:
     "@chain-registry/v2-types": "npm:^0.53.40"
-    "@interchain-kit/core": "npm:0.3.3"
+    "@interchain-kit/core": "npm:0.3.5"
     "@interchain-ui/react": "npm:1.26.1"
     "@interchainjs/cosmos": "npm:1.11.2"
     "@interchainjs/cosmos-types": "npm:1.11.2"
@@ -745,7 +796,7 @@ __metadata:
     "@types/react-dom": ^19.0.0
     react: ^19.0.0
     react-dom: ^19.0.0
-  checksum: 10c0/6f813d781b4238ffe552b4a6ab9bb5ae464e26375836b1854e94c8f7ea5812d267ec485f44f5d08aee8833a34abe5db7def6ebc01d2ee41c4272443b921e2178
+  checksum: 10c0/a1771e78170e67adad415cba6ace4ca035339bedd9815acd8322c078c6d929f557ced08bba7632dbb2f571ffc146afc0337e5f635ddebdc269e9ab25a923b2c2
   languageName: node
   linkType: hard
 
@@ -1171,10 +1222,34 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@keplr-wallet/provider-extension@npm:^0.12.102":
+  version: 0.12.221
+  resolution: "@keplr-wallet/provider-extension@npm:0.12.221"
+  dependencies:
+    "@keplr-wallet/types": "npm:0.12.221"
+    deepmerge: "npm:^4.2.2"
+    long: "npm:^4.0.0"
+  peerDependencies:
+    starknet: ^6
+  checksum: 10c0/8644560b093addea6931e0f1dca1f8ae9041ca23fbbbc5678d8c59f42ccebc3f404e99244f5f215bc643d3bff138318b7ad22abb1d89588e022ef6a1ed663167
+  languageName: node
+  linkType: hard
+
 "@keplr-wallet/simple-fetch@npm:0.12.28":
   version: 0.12.28
   resolution: "@keplr-wallet/simple-fetch@npm:0.12.28"
   checksum: 10c0/a5f7b9df3555f1d6b1fb0c72560302a62f6482ce7417c4218724e97827cad3ec8c71ea0dea2929571a9db9236d55ece7df15326944c5e1e64df0d55eab871882
+  languageName: node
+  linkType: hard
+
+"@keplr-wallet/types@npm:0.12.221, @keplr-wallet/types@npm:^0.12.221":
+  version: 0.12.221
+  resolution: "@keplr-wallet/types@npm:0.12.221"
+  dependencies:
+    long: "npm:^4.0.0"
+  peerDependencies:
+    starknet: ^6
+  checksum: 10c0/6383b8e19d1c2c25f0e28ec300fc0ab87c9a39c01be4291b5b483e3d4d4f1a13c1e598f68084a3283c6271b110bc6d07c318dc72dd7a39b73e3ee66a98cfdc46
   languageName: node
   linkType: hard
 
@@ -1184,17 +1259,6 @@ __metadata:
   dependencies:
     long: "npm:^4.0.0"
   checksum: 10c0/a541088e55ee0a57ac0e5a9c56e8b788d6325f438fcb4f0a478ba4ce76e336660774d8373a2c3dc6b53e4c6d7b5d91be3128102f340728c71a25448d35245980
-  languageName: node
-  linkType: hard
-
-"@keplr-wallet/types@npm:^0.12.221":
-  version: 0.12.221
-  resolution: "@keplr-wallet/types@npm:0.12.221"
-  dependencies:
-    long: "npm:^4.0.0"
-  peerDependencies:
-    starknet: ^6
-  checksum: 10c0/6383b8e19d1c2c25f0e28ec300fc0ab87c9a39c01be4291b5b483e3d4d4f1a13c1e598f68084a3283c6271b110bc6d07c318dc72dd7a39b73e3ee66a98cfdc46
   languageName: node
   linkType: hard
 
@@ -5184,21 +5248,6 @@ __metadata:
     tslib: "npm:2.7.0"
     ws: "npm:8.17.1"
   checksum: 10c0/e757b2995e1298396d120e9cb92a07c4308e93ea28eedb577d4e7a43b0b1cdf4be2460a6722294e42c1da9a9b1dddd9f2c885c9e6120fa845ccdd1b706e0ec04
-  languageName: node
-  linkType: hard
-
-"ethers@npm:latest":
-  version: 6.13.5
-  resolution: "ethers@npm:6.13.5"
-  dependencies:
-    "@adraffy/ens-normalize": "npm:1.10.1"
-    "@noble/curves": "npm:1.2.0"
-    "@noble/hashes": "npm:1.3.2"
-    "@types/node": "npm:22.7.5"
-    aes-js: "npm:4.0.0-beta.5"
-    tslib: "npm:2.7.0"
-    ws: "npm:8.17.1"
-  checksum: 10c0/64bc7b8907de199392b8a88c15c9a085892919cff7efa2e5326abc7fe5c426001726c51d91e10c74e5fc5e2547188297ce4127f6e52ea42a97ade0b2ae474677
   languageName: node
   linkType: hard
 
