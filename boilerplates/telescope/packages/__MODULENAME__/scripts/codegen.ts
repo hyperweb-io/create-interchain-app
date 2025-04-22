@@ -5,7 +5,7 @@ import { rimrafSync as rimraf } from 'rimraf';
 
 import { AMINO_MAP } from './aminos';
 
-const protoDirs: string[] = [join(__dirname, '/../proto')];
+const protoDirs: string[] = [join(__dirname, '/../protos')];
 const outPath: string = join(__dirname, '../src');
 rimraf(outPath);
 
