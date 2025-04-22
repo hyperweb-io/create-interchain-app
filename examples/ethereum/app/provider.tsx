@@ -10,7 +10,7 @@ import { assetList, chain } from '@chain-registry/v2/mainnet/ethereum'
 import { keplrWallet } from '@interchain-kit/keplr-extension'
 
 const _wallets = [
-  // metaMaskWallet,
+  metaMaskWallet,
   // keplrWallet
 ];
 

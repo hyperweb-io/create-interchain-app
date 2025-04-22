@@ -4,12 +4,12 @@ import { Box, Button, TextField, NumberField, FieldLabel, Callout } from "@inter
 import React, { useState, useEffect } from "react"
 import { Wallet, ArrowRight, RefreshCw, AlertCircle } from "lucide-react"
 import { SignerFromBrowser } from "@interchainjs/ethereum/signers/SignerFromBrowser"
-import { IEthereumProvider } from "@keplr-wallet/types";
+// import { IEthereumProvider } from "@keplr-wallet/types";
 import { MetaMaskInpageProvider } from "@metamask/providers";
 import BigNumber from "bignumber.js";
 import { useChain } from '@interchain-kit/react'
 
-type EthereumProvider = MetaMaskInpageProvider | IEthereumProvider | undefined
+type EthereumProvider = MetaMaskInpageProvider
 
 // Alias Card components
 const Card = Box
@@ -32,13 +32,14 @@ export default function WalletPage() {
   const { wallet } = useChain('ethereum')
 
   useEffect(() => {
+    if (!wallet) return
     if (typeof window !== "undefined" && typeof window.ethereum !== "undefined") {
       setEthereum(
-        window.ethereum as EthereumProvider
-        // wallet.getProvider('0x1') as EthereumProvider
+        // window.ethereum as EthereumProvider
+        wallet.getProvider('0x1') as unknown as EthereumProvider
       )
     }
-  }, [])
+  }, [wallet])
 
   // Check if MetaMask is installed
   const checkIfWalletIsInstalled = () => {
