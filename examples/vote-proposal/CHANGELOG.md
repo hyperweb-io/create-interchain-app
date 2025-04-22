@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.4.6](https://github.com/hyperweb-io/create-interchain-app/compare/@hyperweb/vote-proposal@2.4.5...@hyperweb/vote-proposal@2.4.6) (2025-04-22)
+
+**Note:** Version bump only for package @hyperweb/vote-proposal
+
+
+
+
+
 ## [2.4.5](https://github.com/hyperweb-io/create-interchain-app/compare/@hyperweb/vote-proposal@2.4.4...@hyperweb/vote-proposal@2.4.5) (2025-04-21)
 
 **Note:** Version bump only for package @hyperweb/vote-proposal
