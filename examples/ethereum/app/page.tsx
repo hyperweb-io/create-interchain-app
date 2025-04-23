@@ -4,7 +4,6 @@ import { Box, Button, TextField, NumberField, FieldLabel, Callout } from "@inter
 import React, { useState, useEffect } from "react"
 import { Wallet, ArrowRight, RefreshCw, AlertCircle } from "lucide-react"
 import { SignerFromBrowser } from "@interchainjs/ethereum/signers/SignerFromBrowser"
-// import { IEthereumProvider } from "@keplr-wallet/types";
 import { MetaMaskInpageProvider } from "@metamask/providers";
 import BigNumber from "bignumber.js";
 import { useChain } from '@interchain-kit/react'
@@ -21,72 +20,53 @@ const CardTitle = Box
 const CardDescription = Box
 
 export default function WalletPage() {
-  const [account, setAccount] = useState<string>("")
   const [balance, setBalance] = useState<string>("0")
-  const [isConnected, setIsConnected] = useState(false)
   const [isLoading, setIsLoading] = useState(false)
   const [recipient, setRecipient] = useState("")
   const [amount, setAmount] = useState<number>(0)
   const [error, setError] = useState("")
   const [ethereum, setEthereum] = useState<EthereumProvider>()
 
-  const { wallet, status } = useChain('ethereum')
+  const { wallet, status, connect, address: account, disconnect } = useChain('ethereum')
 
   useEffect(() => {
     console.log('status from useChain:', status)
     if (status === WalletState.Connected) {
       const setEthProviderFromWallet = async () => {
+        await new Promise(resolve => setTimeout(resolve, 500))
         const ethProviderFromWallet = await wallet.getProvider('1') as EthereumProvider
         console.log("Ethereum provider:", ethProviderFromWallet)
         setEthereum(ethProviderFromWallet)
       }
       setEthProviderFromWallet()
     }
+    setIsLoading(status === WalletState.Connecting)
   }, [status])
-
-  // Check if MetaMask is installed
-  const checkIfWalletIsInstalled = () => {
-    return typeof window !== "undefined" && typeof window.ethereum !== "undefined"
-  }
 
   // Connect wallet
   const connectWallet = async () => {
-    setIsLoading(true)
-    setError("")
-
-    try {
-      if (!checkIfWalletIsInstalled()) {
-        throw new Error("Please install MetaMask wallet")
-      }
-
-      // Request account access
-      const accounts = await ethereum!.request({ method: "eth_requestAccounts" }) as any
-
-      if (accounts.length > 0) {
-        setAccount(accounts[0])
-        setIsConnected(true)
-        await getBalance(accounts[0])
-      }
-    } catch (err: any) {
-      setError(err.message || "Failed to connect wallet")
-    } finally {
-      setIsLoading(false)
-    }
+    connect()
   }
 
   // Disconnect wallet
   const disconnectWallet = () => {
-    setAccount("")
+    disconnect()
     setBalance("0")
-    setIsConnected(false)
     setError("")
   }
 
   // Get balance
-  const getBalance = async (address: string) => {
+  const getBalance = async () => {
+    if (!ethereum) return
     try {
-      const wallet = new SignerFromBrowser(ethereum!)
+      console.log('ethereum in getBalance:', ethereum)
+      const wallet = new SignerFromBrowser(
+        ethereum!
+        // window.ethereum as EthereumProvider
+      )
+      console.log('wallet in getBalance:', wallet)
       const balance = await wallet.getBalance()
+      console.log('balance in getBalance:', balance)
       setBalance(new BigNumber(balance.toString()).div(10 ** 18).toString())
     } catch (err: any) {
       console.error("Failed to get balance:", err)
@@ -96,8 +76,9 @@ export default function WalletPage() {
 
   // Refresh balance
   const refreshBalance = async () => {
+    console.log('account in refreshBalance:', account)
     if (account) {
-      await getBalance(account)
+      await getBalance()
     }
   }
 
@@ -130,7 +111,7 @@ export default function WalletPage() {
       await transaction.wait()
 
       // Update balance
-      await getBalance(account)
+      await getBalance()
 
       // Clear form
       setRecipient("")
@@ -144,39 +125,25 @@ export default function WalletPage() {
 
   // Listen for account changes
   useEffect(() => {
-    if (!ethereum) return
-    if (checkIfWalletIsInstalled()) {
-      ethereum.on("accountsChanged", (accounts: string[]) => {
-        if (accounts.length > 0) {
-          setAccount(accounts[0])
-          getBalance(accounts[0])
-        } else {
-          setAccount("")
-          setBalance("0")
-          setIsConnected(false)
-        }
-      })
+    if (account) {
+      getBalance()
+      return
     }
-
-    return () => {
-      if (checkIfWalletIsInstalled()) {
-        ethereum.removeListener("accountsChanged", () => { })
-      }
-    }
-  }, [ethereum])
+    setBalance("0")
+  }, [account, ethereum])
 
   return (
     <main className="container mx-auto py-10 px-4">
       <h1 className="text-3xl font-bold text-center mb-8">Ethereum Wallet</h1>
 
-      <Box className={`grid gap-6 ${isConnected ? "md:grid-cols-2" : ""}`}>
+      <Box className={`grid gap-6 ${status === WalletState.Connected ? "md:grid-cols-2" : ""}`}>
         <Card className='border border-1 p-5 rounded-md'>
           <CardHeader className='mb-4'>
             <CardTitle className='font-bold text-2xl'>Wallet Connection</CardTitle>
             <CardDescription className='text-gray-500'>Connect your Ethereum wallet to view balance</CardDescription>
           </CardHeader>
           <CardContent>
-            {!isConnected ? (
+            {status !== WalletState.Connected ? (
               <Button onClick={connectWallet} disabled={isLoading} className="w-full">
                 {isLoading ? "Connecting..." : "Connect Wallet"}
                 <Wallet className="ml-2 h-4 w-4" />
@@ -206,7 +173,7 @@ export default function WalletPage() {
           </CardContent>
         </Card>
 
-        {isConnected && (
+        {status === WalletState.Connected && (
           <Card className='border border-1 p-5 rounded-md'>
             <CardHeader className='mb-4'>
               <CardTitle className='font-bold text-2xl'>Send Ethereum</CardTitle>
