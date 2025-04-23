@@ -8,6 +8,7 @@ import { SignerFromBrowser } from "@interchainjs/ethereum/signers/SignerFromBrow
 import { MetaMaskInpageProvider } from "@metamask/providers";
 import BigNumber from "bignumber.js";
 import { useChain } from '@interchain-kit/react'
+import { WalletState } from "@interchain-kit/core"
 
 type EthereumProvider = MetaMaskInpageProvider
 
@@ -29,20 +30,19 @@ export default function WalletPage() {
   const [error, setError] = useState("")
   const [ethereum, setEthereum] = useState<EthereumProvider>()
 
-  const { wallet } = useChain('ethereum')
+  const { wallet, status } = useChain('ethereum')
 
   useEffect(() => {
-    console.log('wallet from useChain:', wallet)
-    if (!wallet) return
-    (async () => {
-      const ethereum = await wallet.getProvider('0x1') as unknown as EthereumProvider
-      console.log("Ethereum provider:", ethereum)
-      setEthereum(
-        // window.ethereum as EthereumProvider
-        ethereum
-      )
-    })()
-  }, [wallet])
+    console.log('status from useChain:', status)
+    if (status === WalletState.Connected) {
+      const setEthProviderFromWallet = async () => {
+        const ethProviderFromWallet = await wallet.getProvider('1') as EthereumProvider
+        console.log("Ethereum provider:", ethProviderFromWallet)
+        setEthereum(ethProviderFromWallet)
+      }
+      setEthProviderFromWallet()
+    }
+  }, [status])
 
   // Check if MetaMask is installed
   const checkIfWalletIsInstalled = () => {
@@ -60,7 +60,7 @@ export default function WalletPage() {
       }
 
       // Request account access
-      const accounts = await window.ethereum.request({ method: "eth_requestAccounts" })
+      const accounts = await ethereum!.request({ method: "eth_requestAccounts" }) as any
 
       if (accounts.length > 0) {
         setAccount(accounts[0])
@@ -144,8 +144,9 @@ export default function WalletPage() {
 
   // Listen for account changes
   useEffect(() => {
+    if (!ethereum) return
     if (checkIfWalletIsInstalled()) {
-      window.ethereum.on("accountsChanged", (accounts: string[]) => {
+      ethereum.on("accountsChanged", (accounts: string[]) => {
         if (accounts.length > 0) {
           setAccount(accounts[0])
           getBalance(accounts[0])
@@ -159,10 +160,10 @@ export default function WalletPage() {
 
     return () => {
       if (checkIfWalletIsInstalled()) {
-        window.ethereum.removeListener("accountsChanged", () => { })
+        ethereum.removeListener("accountsChanged", () => { })
       }
     }
-  }, [])
+  }, [ethereum])
 
   return (
     <main className="container mx-auto py-10 px-4">
