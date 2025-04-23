@@ -11,10 +11,10 @@
   "dependencies": {
     "@chain-registry/v2": "^1.71.188",
     "@hookform/resolvers": "^3.9.1",
-    "@interchain-kit/core": "0.3.6",
+    "@interchain-kit/core": "0.3.8",
     "@interchain-kit/keplr-extension": "^0.3.3",
-    "@interchain-kit/metamask-extension": "0.3.6",
-    "@interchain-kit/react": "0.3.6",
+    "@interchain-kit/metamask-extension": "0.3.8",
+    "@interchain-kit/react": "0.3.8",
     "@interchain-ui/react": "1.26.1",
     "@interchainjs/ethereum": "^1.11.4",
     "@keplr-wallet/types": "^0.12.221",
