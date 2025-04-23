@@ -17,7 +17,7 @@ export default function Provider({
   children: React.ReactNode
 }>) {
   return (
-    <ThemeProvider>
+    <ThemeProvider themeMode='light'>
       <ChainProvider
         chains={[chain]}
         // @ts-ignore
