@@ -32,13 +32,16 @@ export default function WalletPage() {
   const { wallet } = useChain('ethereum')
 
   useEffect(() => {
+    console.log('wallet from useChain:', wallet)
     if (!wallet) return
-    if (typeof window !== "undefined" && typeof window.ethereum !== "undefined") {
+    (async () => {
+      const ethereum = await wallet.getProvider('0x1') as unknown as EthereumProvider
+      console.log("Ethereum provider:", ethereum)
       setEthereum(
         // window.ethereum as EthereumProvider
-        wallet.getProvider('0x1') as unknown as EthereumProvider
+        ethereum
       )
-    }
+    })()
   }, [wallet])
 
   // Check if MetaMask is installed
