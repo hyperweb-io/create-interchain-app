@@ -3,6 +3,7 @@ import { Container, Button, Stack, Text, useTheme } from '@interchain-ui/react';
 import { useChain } from '@interchain-kit/react';
 import { useChainStore } from '@/contexts';
 import { useToast } from '@/hooks';
+import { CosmosWallet, ExtensionWallet } from '@interchain-kit/core';
 
 export default function SignMessage() {
   const [message, setMessage] = useState('');
@@ -51,11 +52,17 @@ export default function SignMessage() {
       return;
     }
 
+    if (!(wallet instanceof ExtensionWallet)) {
+      return
+    }
+
     try {
       setSigningIn(true);
 
+      const cosmosWallet = wallet.getWalletByChainType('cosmos') as CosmosWallet;
+
       // Sign the message
-      const result = await wallet.signArbitrary(chain.chainId, address, message);
+      const result = await cosmosWallet.signArbitrary(chain.chainId, address, message);
 
       // Get the public key
       const account = await wallet?.getAccount(chain.chainId);
