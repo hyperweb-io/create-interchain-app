@@ -549,10 +549,10 @@ __metadata:
     "@chain-registry/assets": "npm:1.63.5"
     "@chain-registry/types": "npm:0.44.3"
     "@cosmjs/stargate": "npm:0.31.1"
-    "@interchain-kit/core": "npm:0.3.11"
-    "@interchain-kit/keplr-extension": "npm:0.3.11"
-    "@interchain-kit/leap-extension": "npm:0.3.11"
-    "@interchain-kit/react": "npm:0.3.11"
+    "@interchain-kit/core": "npm:0.3.14"
+    "@interchain-kit/keplr-extension": "npm:0.3.14"
+    "@interchain-kit/leap-extension": "npm:0.3.14"
+    "@interchain-kit/react": "npm:0.3.14"
     "@interchain-ui/react": "npm:1.23.31"
     "@interchain-ui/react-no-ssr": "npm:0.1.2"
     "@interchainjs/cosmos": "npm:^1.11.2"
@@ -572,7 +572,7 @@ __metadata:
     eslint: "npm:8.28.0"
     eslint-config-next: "npm:13.0.5"
     generate-lockfile: "npm:0.0.12"
-    interchain-kit: "npm:0.3.11"
+    interchain-kit: "npm:0.3.14"
     next: "npm:^13"
     node-gzip: "npm:^1.1.2"
     react: "npm:18.2.0"
@@ -588,9 +588,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@interchain-kit/core@npm:0.3.11":
-  version: 0.3.11
-  resolution: "@interchain-kit/core@npm:0.3.11"
+"@interchain-kit/core@npm:0.3.14":
+  version: 0.3.14
+  resolution: "@interchain-kit/core@npm:0.3.14"
   dependencies:
     "@chain-registry/v2": "npm:^1.71.71"
     "@chain-registry/v2-keplr": "npm:^0.0.72"
@@ -608,35 +608,35 @@ __metadata:
     buffer: "npm:^6.0.3"
     interchainjs: "npm:1.11.5"
     long: "npm:^5.2.3"
-  checksum: 10c0/6018f383b1a364f1896b20b7f0c47d19a962d4c11cd790122cc6bc68b02bda2327bfa02b862e963c5cbfd86c129587b44fe10679c6521ad7595387de549cb7d7
+  checksum: 10c0/75e7fbbd516d378868e3573947a25279b149bb41047b8751836fd19036ce3c17b5fdcccf15ced1fde2751bf369ee9f96cfc9050cc1b876b3f7826b8dd51a8213
   languageName: node
   linkType: hard
 
-"@interchain-kit/keplr-extension@npm:0.3.11":
-  version: 0.3.11
-  resolution: "@interchain-kit/keplr-extension@npm:0.3.11"
+"@interchain-kit/keplr-extension@npm:0.3.14":
+  version: 0.3.14
+  resolution: "@interchain-kit/keplr-extension@npm:0.3.14"
   dependencies:
-    "@interchain-kit/core": "npm:0.3.11"
+    "@interchain-kit/core": "npm:0.3.14"
     "@keplr-wallet/provider-extension": "npm:^0.12.102"
-  checksum: 10c0/ee718420b7c8360232f18f2d85e3b1ddd9da2941bbe7cade0515a8b03370e59db9f06a6b738f59293f98267d71e3e5c51939bc9a657021fbe421f64419d03427
+  checksum: 10c0/2b338e8e438696ed1d2a234c9b71fbf9a709de155d2205ec2e14a54e324df721572d28862f1176c2a853c3b84d0ec5b4134121f533473148a78d13080f9cb8ec
   languageName: node
   linkType: hard
 
-"@interchain-kit/leap-extension@npm:0.3.11":
-  version: 0.3.11
-  resolution: "@interchain-kit/leap-extension@npm:0.3.11"
+"@interchain-kit/leap-extension@npm:0.3.14":
+  version: 0.3.14
+  resolution: "@interchain-kit/leap-extension@npm:0.3.14"
   dependencies:
-    "@interchain-kit/core": "npm:0.3.11"
-  checksum: 10c0/35460b20f3f7a6d4311fe4ee5b69915134528e2e23cd72e16b27fb6351a6f873900dc52a4529707fd8d3924a38e68cb9334eced4ae18aa768502eec553e94e2f
+    "@interchain-kit/core": "npm:0.3.14"
+  checksum: 10c0/8748365bd6ad89488e83ac5861207e9776441cfdc13e6e47dcccf9ef1761d85128ecfaba53fd960758012db7f2064f9d176671e1b97bce550c88da15c3a8793a
   languageName: node
   linkType: hard
 
-"@interchain-kit/react@npm:0.3.11":
-  version: 0.3.11
-  resolution: "@interchain-kit/react@npm:0.3.11"
+"@interchain-kit/react@npm:0.3.14":
+  version: 0.3.14
+  resolution: "@interchain-kit/react@npm:0.3.14"
   dependencies:
     "@chain-registry/v2-types": "npm:^0.53.40"
-    "@interchain-kit/core": "npm:0.3.11"
+    "@interchain-kit/core": "npm:0.3.14"
     "@interchain-ui/react": "npm:1.26.1"
     "@interchainjs/cosmos": "npm:1.11.5"
     "@interchainjs/cosmos-types": "npm:1.11.5"
@@ -649,7 +649,7 @@ __metadata:
     "@types/react-dom": ^19.0.0
     react: ^19.0.0
     react-dom: ^19.0.0
-  checksum: 10c0/174c4305051176348b63417023311fa6408242e5887320bc8c215f4e9f010c1998e915f7120f8f7a1f0ff1f231d02a9f5931218397a8a75c17284fa633dfe4d2
+  checksum: 10c0/63d8a96fd5ca949219343662004fa1b70483535ab2d56d41308eb82bbcd5962e024a7d2ed90c46d03056908bf47adafe9ab4bd8ad45580b770f4959f22accaf8
   languageName: node
   linkType: hard
 
@@ -6382,10 +6382,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"interchain-kit@npm:0.3.11":
-  version: 0.3.11
-  resolution: "interchain-kit@npm:0.3.11"
-  checksum: 10c0/daad6b1eed8169d5adedcad2cf7be9eb778c3ed91ef66be1a9a7aa1edc2e31102b8c017d2c3a918c6ada898ac0fdd416083963456a30dd5580db87e5647cbeb5
+"interchain-kit@npm:0.3.14":
+  version: 0.3.14
+  resolution: "interchain-kit@npm:0.3.14"
+  checksum: 10c0/2de0715e8a78d91ba8521d6d45a8e51b726b3708ff41c6924a7a796e30cf538893fe7aea88b9e75e9f2f696de97bc64e1046c40e9f44804ed497a1a05e3d303f
   languageName: node
   linkType: hard
 
