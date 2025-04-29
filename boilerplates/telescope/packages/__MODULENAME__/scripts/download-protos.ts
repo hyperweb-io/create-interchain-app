@@ -5,7 +5,6 @@ const config = {
   repos: [
     { owner: "cosmos", repo: "cosmos-sdk", branch: "release/v0.50.x" },
     { owner: "cosmos", repo: "ibc-go" },
-    { owner: "injectivelabs", repo: "sdk-go" }
   ],
   protoDirMapping: {
     "gogo/protobuf/master": ".",
@@ -17,9 +16,7 @@ const config = {
   tempRepoDir: "git-modules",
   targets: [
     "cosmos/**/*.proto",
-    "cosmwasm/**/*.proto",
     "ibc/**/*.proto",
-    "injective/types/v1beta1/account.proto"
   ]
 };
 
