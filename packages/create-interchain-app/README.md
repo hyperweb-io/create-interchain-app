@@ -249,6 +249,8 @@ When you need to remove/generate locks for all nested packages, simply run `yarn
 yarn locks
 ```
 
+Windows developers: when build packages/create-interchain-app change rootDir to '.' in tsconfig.json for local build
+
 ## Related
 
 Checkout these related projects:
