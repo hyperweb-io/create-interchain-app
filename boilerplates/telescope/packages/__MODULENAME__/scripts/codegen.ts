@@ -76,25 +76,10 @@ export const options: TelescopeInput = {
         ...AMINO_MAP
       },
     },
-    lcdClients: {
-      enabled: false
-    },
     rpcClients: {
       type: 'tendermint',
       enabled: true
     },
-
-    reactQuery: {
-      enabled: false
-    },
-
-    mobx: {
-      enabled: false
-    },
-
-    pinia: {
-      enabled: false
-    }
   }
 };
 

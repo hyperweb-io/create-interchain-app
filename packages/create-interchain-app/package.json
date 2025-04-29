@@ -19,11 +19,12 @@
     "dist"
   ],
   "scripts": {
-    "build:clean": "rimraf dist/**",
+    "build:clean": "rimraf dist",
     "build:copy": "copyfiles -f ../../LICENSE-MIT ../../LICENSE-Apache README.md package.json dist",
-    "build:dist": "yarn tsc -p tsconfig.json --outDir dist --module commonjs || true",
+    "build:dist": "yarn tsc -p tsconfig.json --outDir dist --module commonjs",
     "build:chmod": "chmod +x ./dist/create-interchain-app.js",
     "build": "npm run build:clean && npm run build:dist && npm run build:copy && npm run build:chmod",
+    "build:win": "npm run build:clean && npm run build:dist && npm run build:copy",
     "prepare": "npm run build",
     "dev": "node ./dist/create-interchain-app",
     "lint": "eslint .",
@@ -61,7 +62,9 @@
     "jest-in-case": "^1.0.2",
     "prettier": "^2.1.2",
     "ts-jest": "^29.0.3",
-    "typescript": "^5.1.6"
+    "typescript": "^5.1.6",
+    "copyfiles": "^2.4.1",
+    "rimraf": "^6.0.1"
   },
   "dependencies": {
     "@cosmology/telescope": "^1.12.4",
