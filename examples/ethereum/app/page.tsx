@@ -8,6 +8,7 @@ import { MetaMaskInpageProvider } from "@metamask/providers";
 import BigNumber from "bignumber.js";
 import { useChain } from '@interchain-kit/react'
 import { WalletState } from "@interchain-kit/core"
+import { HOLESKY_TESTNET } from "./provider"
 
 type EthereumProvider = MetaMaskInpageProvider
 
@@ -34,7 +35,7 @@ export default function WalletPage() {
     if (status === WalletState.Connected) {
       const setEthProviderFromWallet = async () => {
         await new Promise(resolve => setTimeout(resolve, 500))
-        const ethProviderFromWallet = await wallet.getProvider('1') as EthereumProvider
+        const ethProviderFromWallet = await wallet.getProvider(HOLESKY_TESTNET.chainId) as EthereumProvider
         console.log("Ethereum provider:", ethProviderFromWallet)
         setEthereum(ethProviderFromWallet)
       }
