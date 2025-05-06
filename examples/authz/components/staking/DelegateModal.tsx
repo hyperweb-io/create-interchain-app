@@ -23,13 +23,7 @@ import {
 } from '@/utils';
 import { getCoin, getExponent } from '@/configs';
 import { useAuthzContext } from '@/context';
-import {
-  Prices,
-  useAuthzTx,
-  UseDisclosureReturn,
-  useSigningClient,
-  useToast,
-} from '@/hooks';
+import { Prices, useAuthzTx, UseDisclosureReturn, useToast } from '@/hooks';
 import { MsgDelegate } from '@interchainjs/react/cosmos/staking/v1beta1/tx';
 import { StakeAuthorization } from '@interchainjs/react/cosmos/staking/v1beta1/authz';
 import { useExec } from '@interchainjs/react/cosmos/authz/v1beta1/tx.rpc.react';
@@ -136,7 +130,7 @@ export const DelegateModal = ({
       amount: [
         {
           denom: coin.base,
-          amount: '2500',
+          amount: '75000',
         },
       ],
       gas: '1000000',

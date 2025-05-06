@@ -20,7 +20,7 @@ import {
   PrettyPermission,
 } from '@/utils';
 import { useAuthzContext } from '@/context';
-import { useAuthzTx, useGrants, useSigningClient } from '@/hooks';
+import { useAuthzTx, useGrants } from '@/hooks';
 import { getCoin, permissionNameToRouteMap } from '@/configs';
 
 import styles from '@/styles/custom.module.css';
@@ -86,7 +86,7 @@ export const GrantCard = ({
       amount: [
         {
           denom: token.base,
-          amount: '2500',
+          amount: '75000',
         },
       ],
       gas: '1000000',

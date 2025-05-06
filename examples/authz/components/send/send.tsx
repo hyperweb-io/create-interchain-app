@@ -6,7 +6,7 @@ import { useChain } from '@interchain-kit/react';
 import { Box, Button, Spinner, Text, TokenInput } from '@interchain-ui/react';
 import BigNumber from 'bignumber.js';
 
-import { useAuthzTx, useSendData, useSigningClient, useToast } from '@/hooks';
+import { useAuthzTx, useSendData, useToast } from '@/hooks';
 import {
   getCoin,
   getExponent,
@@ -82,7 +82,7 @@ export const SendSection = ({ chainName }: SendSectionProps) => {
       amount: [
         {
           denom: coin.base,
-          amount: '2500',
+          amount: '75000',
         },
       ],
       gas: '1000000',

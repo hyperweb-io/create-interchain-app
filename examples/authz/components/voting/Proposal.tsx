@@ -166,7 +166,7 @@ export function Proposal({
       amount: [
         {
           denom: coin.base,
-          amount: '2500',
+          amount: '75000',
         },
       ],
       gas: '1000000',
