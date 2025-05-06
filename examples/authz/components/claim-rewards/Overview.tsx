@@ -9,7 +9,7 @@ import {
 } from '@interchain-ui/react';
 
 import { getCoin } from '@/configs';
-import { Prices, useAuthzTx, useSigningClient } from '@/hooks';
+import { Prices, useAuthzTx } from '@/hooks';
 import {
   sum,
   calcDollarValue,
@@ -68,7 +68,7 @@ const Overview = ({
       amount: [
         {
           denom: token.base,
-          amount: '2500',
+          amount: '75000',
         },
       ],
       gas: '1000000',

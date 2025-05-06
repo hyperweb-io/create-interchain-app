@@ -4,7 +4,7 @@
 import { useState } from 'react';
 import { BasicModal, Box, Button } from '@interchain-ui/react';
 
-import { useAuthzTx, useGrants, useSigningClient } from '@/hooks';
+import { useAuthzTx, useGrants } from '@/hooks';
 import { getTokenByChainName, PrettyGrant, PrettyPermission } from '@/utils';
 import { PermissionDetailCard } from './PermissionDetailCard';
 import { useRevoke } from '@interchainjs/react/cosmos/authz/v1beta1/tx.rpc.react';
@@ -52,7 +52,7 @@ export const GrantDetailsModal = ({
       amount: [
         {
           denom: token.base,
-          amount: '2500',
+          amount: '75000',
         },
       ],
       gas: '1000000',

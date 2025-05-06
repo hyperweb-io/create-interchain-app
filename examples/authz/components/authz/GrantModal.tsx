@@ -28,7 +28,7 @@ import {
   permissions,
 } from '@/configs';
 import { AuthorizationType } from '@interchainjs/react/cosmos/staking/v1beta1/authz';
-import { GrantMsg, useAuthzTx, useGrants, useSigningClient } from '@/hooks';
+import { GrantMsg, useAuthzTx, useGrants } from '@/hooks';
 import { getTokenByChainName, shiftDigits } from '@/utils';
 import { CustomizationField } from './CustomizationField';
 import { AddressInput } from '@/components';
@@ -140,7 +140,7 @@ export const GrantModal = ({ isOpen, onClose, chainName }: GrantModalProps) => {
       amount: [
         {
           denom: token.base,
-          amount: '2500',
+          amount: '75000',
         },
       ],
       gas: '1000000',
@@ -154,7 +154,8 @@ export const GrantModal = ({ isOpen, onClose, chainName }: GrantModalProps) => {
         memo: 'granting permission',
       },
       {
-        onSuccess: () => {
+        onSuccess: (data) => {
+          console.log('data', data);
           refetch();
           onModalClose();
         },

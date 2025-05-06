@@ -11,7 +11,7 @@ import { useChain } from '@interchain-kit/react';
 import { useWithdrawDelegatorReward } from '@interchainjs/react/cosmos/distribution/v1beta1/tx.rpc.react';
 
 import { getCoin } from '@/configs';
-import { Prices, useSigningClient, useTx } from '@/hooks';
+import { Prices, useTx } from '@/hooks';
 import {
   sum,
   calcDollarValue,
@@ -63,7 +63,7 @@ const Overview = ({
       amount: [
         {
           denom: coin.base,
-          amount: '2500',
+          amount: '75000',
         },
       ],
       gas: '1000000',

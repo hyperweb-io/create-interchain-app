@@ -13,30 +13,27 @@ import { useAuthzContext } from '@/context';
 import { Layout, Wallet, AuthzSection } from '@/components';
 import { useChain } from '@interchain-kit/react';
 import { defaultChainName } from '@/configs';
-import { useSigningClient } from '@/hooks';
 export default function Home() {
   const [selectedChain, setSelectedChain] = useState<string>();
   const { setChainName } = useAuthzContext();
   const queryClient = useQueryClient();
 
-  const { rpcEndpoint, status } = useChain(selectedChain ?? defaultChainName);
-
-  const { data: client, isSuccess: isSigningClientSuccess } = useSigningClient(
-    selectedChain ?? defaultChainName,
-    {
-      walletStatus: status,
-    }
-  );
+  const {
+    rpcEndpoint,
+    status,
+    signingClient: client,
+    isSigningClientLoading,
+  } = useChain(selectedChain ?? defaultChainName);
 
   useEffect(() => {
-    if (isSigningClientSuccess) {
+    if (!isSigningClientLoading) {
       queryClient.setQueryData([DEFAULT_SIGNING_CLIENT_QUERY_KEY], client);
     }
 
-    if (isSigningClientSuccess && rpcEndpoint) {
+    if (rpcEndpoint) {
       queryClient.setQueryData([DEFAULT_RPC_CLIENT_QUERY_KEY], rpcEndpoint);
     }
-  }, [isSigningClientSuccess, rpcEndpoint, client, queryClient]);
+  }, [isSigningClientLoading, rpcEndpoint, client, queryClient]);
 
   return (
     <Layout>
