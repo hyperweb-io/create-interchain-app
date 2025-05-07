@@ -8,6 +8,7 @@ import { MetaMaskInpageProvider } from "@metamask/providers";
 import BigNumber from "bignumber.js";
 import { useChain } from '@interchain-kit/react'
 import { WalletState } from "@interchain-kit/core"
+import { BSC_TESTNET, HOLESKY_TESTNET, SEPOLIA_TESTNET } from "./provider"
 
 type EthereumProvider = MetaMaskInpageProvider
 
@@ -27,14 +28,14 @@ export default function WalletPage() {
   const [error, setError] = useState("")
   const [ethereum, setEthereum] = useState<EthereumProvider>()
 
-  const { wallet, status, connect, address: account, disconnect } = useChain('ethereum')
+  const { wallet, status, connect, address: account, disconnect } = useChain(SEPOLIA_TESTNET.chainName) // chain name must be same as getProvider chain id
 
   useEffect(() => {
     console.log('status from useChain:', status)
     if (status === WalletState.Connected) {
       const setEthProviderFromWallet = async () => {
         await new Promise(resolve => setTimeout(resolve, 500))
-        const ethProviderFromWallet = await wallet.getProvider('1') as EthereumProvider
+        const ethProviderFromWallet = await wallet.getProvider(SEPOLIA_TESTNET.chainId) as EthereumProvider
         console.log("Ethereum provider:", ethProviderFromWallet)
         setEthereum(ethProviderFromWallet)
       }
@@ -156,8 +157,15 @@ export default function WalletPage() {
                 </Box>
 
                 <Box className="flex flex-col space-y-1">
-                  <Box className="flex justify-between items-center">
-                    <FieldLabel htmlFor="balance" label="ETH Balance">ETH Balance</FieldLabel>
+                  <Box className="flex items-center">
+                    <Box className="flex-1">
+                      <FieldLabel htmlFor="balance" label="ETH Balance">ETH Balance</FieldLabel>
+                    </Box>
+                    <Button size="sm" className="mr-2">
+                      <a href="https://cloud.google.com/application/web3/faucet/ethereum/sepolia"
+                        target="_blank"
+                      >Faucet</a>
+                    </Button>
                     <Button onClick={refreshBalance} disabled={isLoading} size="sm">
                       <RefreshCw className="h-4 w-4" />
                     </Button>
