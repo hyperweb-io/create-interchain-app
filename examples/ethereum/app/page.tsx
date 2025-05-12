@@ -4,13 +4,13 @@ import { Box, Button, TextField, NumberField, FieldLabel, Callout } from "@inter
 import React, { useState, useEffect } from "react"
 import { Wallet, ArrowRight, RefreshCw, AlertCircle } from "lucide-react"
 import { SignerFromBrowser } from "@interchainjs/ethereum/signers/SignerFromBrowser"
+import { parseEther, formatEther } from "@interchainjs/ethereum/utils/denominations"
 import { MetaMaskInpageProvider } from "@metamask/providers";
-import BigNumber from "bignumber.js";
 import { useChain } from '@interchain-kit/react'
 import { WalletState } from "@interchain-kit/core"
 import { BSC_TESTNET, HOLESKY_TESTNET, SEPOLIA_TESTNET } from "./provider"
 
-const CHAIN_INFO = BSC_TESTNET
+const CHAIN_INFO = SEPOLIA_TESTNET
 
 type EthereumProvider = MetaMaskInpageProvider
 
@@ -70,7 +70,7 @@ export default function WalletPage() {
       console.log('wallet in getBalance:', wallet)
       const balance = await wallet.getBalance()
       console.log('balance in getBalance:', balance)
-      setBalance(new BigNumber(balance.toString()).div(10 ** 18).toString())
+      setBalance(formatEther(balance))
     } catch (err: any) {
       console.error("Failed to get balance:", err)
       setError(err.message || "Failed to get balance")
@@ -104,7 +104,7 @@ export default function WalletPage() {
       // Create transaction
       const tx = {
         to: recipient,
-        value: BigInt(new BigNumber(amount).shiftedBy(18).integerValue(BigNumber.ROUND_DOWN).toString())
+        value: parseEther(amount)
       }
 
       // Send transaction
