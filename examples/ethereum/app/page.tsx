@@ -10,6 +10,8 @@ import { useChain } from '@interchain-kit/react'
 import { WalletState } from "@interchain-kit/core"
 import { BSC_TESTNET, HOLESKY_TESTNET, SEPOLIA_TESTNET } from "./provider"
 
+const CHAIN_INFO = BSC_TESTNET
+
 type EthereumProvider = MetaMaskInpageProvider
 
 // Alias Card components
@@ -28,14 +30,14 @@ export default function WalletPage() {
   const [error, setError] = useState("")
   const [ethereum, setEthereum] = useState<EthereumProvider>()
 
-  const { wallet, status, connect, address: account, disconnect } = useChain(SEPOLIA_TESTNET.chainName) // chain name must be same as getProvider chain id
+  const { wallet, status, connect, address: account, disconnect } = useChain(CHAIN_INFO.chainName) // chain name must be same as getProvider chain id
 
   useEffect(() => {
     console.log('status from useChain:', status)
     if (status === WalletState.Connected) {
       const setEthProviderFromWallet = async () => {
         await new Promise(resolve => setTimeout(resolve, 500))
-        const ethProviderFromWallet = await wallet.getProvider(SEPOLIA_TESTNET.chainId) as EthereumProvider
+        const ethProviderFromWallet = await wallet.getProvider(CHAIN_INFO.chainId) as EthereumProvider
         console.log("Ethereum provider:", ethProviderFromWallet)
         setEthereum(ethProviderFromWallet)
       }
