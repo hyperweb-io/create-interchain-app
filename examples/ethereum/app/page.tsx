@@ -28,6 +28,7 @@ export default function WalletPage() {
   const [recipient, setRecipient] = useState("")
   const [amount, setAmount] = useState<number>(0)
   const [error, setError] = useState("")
+  const [txLink, setTxLink] = useState("") // ← add success link state
   const [ethereum, setEthereum] = useState<EthereumProvider>()
 
   const { wallet, status, connect, address: account, disconnect } = useChain(CHAIN_INFO.chainName) // chain name must be same as getProvider chain id
@@ -89,6 +90,7 @@ export default function WalletPage() {
   const sendTransaction = async () => {
     setIsLoading(true)
     setError("")
+    setTxLink("") // ← clear old link
 
     try {
       if (!recipient || amount <= 0) {
@@ -100,18 +102,12 @@ export default function WalletPage() {
       }
 
       const signer = new SignerFromBrowser(ethereum!)
-
-      // Create transaction
-      const tx = {
-        to: recipient,
-        value: parseEther(amount)
-      }
-
-      // Send transaction
+      const tx = { to: recipient, value: parseEther(amount) }
       const transaction = await signer.send(tx)
 
       // Wait for confirmation
       await transaction.wait()
+      setTxLink(`${CHAIN_INFO.blockExplorerUrls[0]}/tx/${transaction.txHash}`) // ← set explorer link
 
       // Update balance
       await getBalance()
@@ -228,6 +224,20 @@ export default function WalletPage() {
         <Callout title="Error" className="mt-6" intent="error">
           <Box as="span" className="h-4 w-4 inline-block mr-2"><AlertCircle /></Box>
           {error}
+        </Callout>
+      )}
+
+      {txLink && (  // ← success message
+        <Callout title="Success" className="mt-6" intent="success">
+          Transaction sent.{" "}
+          <a
+            href={txLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="underline"
+          >
+            View on Explorer
+          </a>
         </Callout>
       )}
     </main>
