@@ -85,12 +85,12 @@ export default function Provider({
         ]}
         // @ts-ignore
         wallets={_wallets}
-        assetLists={[{
-          ...assetList,
-          ...sepoliaAssetList,
-          ...holeskyAssetList,
-          ...bscAssetList
-        }]}
+        assetLists={[
+          assetList,
+          sepoliaAssetList,
+          holeskyAssetList,
+          bscAssetList
+        ]}
         signerOptions={{}}
       >
         {children}
