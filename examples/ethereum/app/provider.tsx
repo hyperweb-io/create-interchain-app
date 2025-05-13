@@ -6,7 +6,7 @@ import { ThemeProvider } from "@interchain-ui/react";
 import { ChainProvider } from "@interchain-kit/react";
 import { metaMaskWallet } from '@interchain-kit/metamask-extension'
 import { assetList, chain } from '@chain-registry/v2/mainnet/ethereum'
-import { createChainFromEthereumChainInfo } from '@/lib/eth-test-net';
+import { createAssetListFromEthereumChainInfo, createChainFromEthereumChainInfo } from '@/lib/eth-test-net';
 
 for (const asset of assetList.assets) {
   if (asset.symbol === 'ETH') {
@@ -33,6 +33,7 @@ export const SEPOLIA_TESTNET = {
   blockExplorerUrls: ["https://sepolia.etherscan.io"],
 }
 const sepoliaChain = createChainFromEthereumChainInfo(SEPOLIA_TESTNET)
+const sepoliaAssetList = createAssetListFromEthereumChainInfo(SEPOLIA_TESTNET)
 
 // reference: https://github.com/hyperweb-io/interchain-kit/blob/main/examples/react/src/main.tsx#L86
 export const HOLESKY_TESTNET = {
@@ -48,6 +49,7 @@ export const HOLESKY_TESTNET = {
 };
 
 const holeskyChain = createChainFromEthereumChainInfo(HOLESKY_TESTNET)
+const holeskyAssetList = createAssetListFromEthereumChainInfo(HOLESKY_TESTNET)
 
 export const BSC_TESTNET = {
   chainId: "97",
@@ -62,49 +64,8 @@ export const BSC_TESTNET = {
 };
 
 const bscChain = createChainFromEthereumChainInfo(BSC_TESTNET)
+const bscAssetList = createAssetListFromEthereumChainInfo(BSC_TESTNET)
 
-const assets = [
-  {
-    "description": "",
-    "extendedDescription": "",
-    "denomUnits": [
-      {
-        "denom": "wei",
-        "exponent": 0
-      },
-      {
-        "denom": "gwei",
-        "exponent": 9
-      },
-      {
-        "denom": "eth",
-        "exponent": 18,
-        "aliases": [
-          "ether"
-        ]
-      }
-    ],
-    "typeAsset": "evm-base",
-    "base": "wei",
-    "name": "Holesky ETH",
-    "display": "eth",
-    "symbol": "ETH",
-    "logoURIs": {
-      "png": "https://raw.githubusercontent.com/cosmos/chain-registry/master/_non-cosmos/ethereum/images/eth-white.png",
-      "svg": "https://raw.githubusercontent.com/cosmos/chain-registry/master/_non-cosmos/ethereum/images/eth-white.svg"
-    },
-    "coingeckoId": "ethereum",
-    "images": [
-      {
-        "png": "https://raw.githubusercontent.com/cosmos/chain-registry/master/_non-cosmos/ethereum/images/eth-white.png",
-        "svg": "https://raw.githubusercontent.com/cosmos/chain-registry/master/_non-cosmos/ethereum/images/eth-white.svg",
-        "theme": {
-          "primaryColorHex": "#303030"
-        }
-      }
-    ]
-  }
-]
 
 export default function Provider({
   children,
@@ -126,7 +87,9 @@ export default function Provider({
         wallets={_wallets}
         assetLists={[{
           ...assetList,
-          // assets: [...assetList.assets, ...assets]
+          ...sepoliaAssetList,
+          ...holeskyAssetList,
+          ...bscAssetList
         }]}
         signerOptions={{}}
       >

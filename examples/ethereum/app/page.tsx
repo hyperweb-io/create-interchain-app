@@ -10,7 +10,7 @@ import { useChain } from '@interchain-kit/react'
 import { WalletState } from "@interchain-kit/core"
 import { BSC_TESTNET, HOLESKY_TESTNET, SEPOLIA_TESTNET } from "./provider"
 
-const CHAIN_INFO = BSC_TESTNET
+const CHAIN_INFO = SEPOLIA_TESTNET
 
 type EthereumProvider = MetaMaskInpageProvider
 
