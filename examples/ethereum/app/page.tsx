@@ -4,11 +4,13 @@ import { Box, Button, TextField, NumberField, FieldLabel, Callout } from "@inter
 import React, { useState, useEffect } from "react"
 import { Wallet, ArrowRight, RefreshCw, AlertCircle } from "lucide-react"
 import { SignerFromBrowser } from "@interchainjs/ethereum/signers/SignerFromBrowser"
+import { parseEther, formatEther } from "@interchainjs/ethereum/utils/denominations"
 import { MetaMaskInpageProvider } from "@metamask/providers";
-import BigNumber from "bignumber.js";
 import { useChain } from '@interchain-kit/react'
 import { WalletState } from "@interchain-kit/core"
 import { BSC_TESTNET, HOLESKY_TESTNET, SEPOLIA_TESTNET } from "./provider"
+
+const CHAIN_INFO = SEPOLIA_TESTNET
 
 type EthereumProvider = MetaMaskInpageProvider
 
@@ -26,16 +28,17 @@ export default function WalletPage() {
   const [recipient, setRecipient] = useState("")
   const [amount, setAmount] = useState<number>(0)
   const [error, setError] = useState("")
+  const [txLink, setTxLink] = useState("") // ← add success link state
   const [ethereum, setEthereum] = useState<EthereumProvider>()
 
-  const { wallet, status, connect, address: account, disconnect } = useChain(SEPOLIA_TESTNET.chainName) // chain name must be same as getProvider chain id
+  const { wallet, status, connect, address: account, disconnect } = useChain(CHAIN_INFO.chainName) // chain name must be same as getProvider chain id
 
   useEffect(() => {
     console.log('status from useChain:', status)
     if (status === WalletState.Connected) {
       const setEthProviderFromWallet = async () => {
         await new Promise(resolve => setTimeout(resolve, 500))
-        const ethProviderFromWallet = await wallet.getProvider(SEPOLIA_TESTNET.chainId) as EthereumProvider
+        const ethProviderFromWallet = await wallet.getProvider(CHAIN_INFO.chainId) as EthereumProvider
         console.log("Ethereum provider:", ethProviderFromWallet)
         setEthereum(ethProviderFromWallet)
       }
@@ -68,7 +71,7 @@ export default function WalletPage() {
       console.log('wallet in getBalance:', wallet)
       const balance = await wallet.getBalance()
       console.log('balance in getBalance:', balance)
-      setBalance(new BigNumber(balance.toString()).div(10 ** 18).toString())
+      setBalance(formatEther(balance))
     } catch (err: any) {
       console.error("Failed to get balance:", err)
       setError(err.message || "Failed to get balance")
@@ -87,6 +90,7 @@ export default function WalletPage() {
   const sendTransaction = async () => {
     setIsLoading(true)
     setError("")
+    setTxLink("") // ← clear old link
 
     try {
       if (!recipient || amount <= 0) {
@@ -98,18 +102,12 @@ export default function WalletPage() {
       }
 
       const signer = new SignerFromBrowser(ethereum!)
-
-      // Create transaction
-      const tx = {
-        to: recipient,
-        value: BigInt(new BigNumber(amount).shiftedBy(18).integerValue(BigNumber.ROUND_DOWN).toString())
-      }
-
-      // Send transaction
+      const tx = { to: recipient, value: parseEther(amount) }
       const transaction = await signer.send(tx)
 
       // Wait for confirmation
       await transaction.wait()
+      setTxLink(`${CHAIN_INFO.blockExplorerUrls[0]}/tx/${transaction.txHash}`) // ← set explorer link
 
       // Update balance
       await getBalance()
@@ -226,6 +224,20 @@ export default function WalletPage() {
         <Callout title="Error" className="mt-6" intent="error">
           <Box as="span" className="h-4 w-4 inline-block mr-2"><AlertCircle /></Box>
           {error}
+        </Callout>
+      )}
+
+      {txLink && (  // ← success message
+        <Callout title="Success" className="mt-6" intent="success">
+          Transaction sent.{" "}
+          <a
+            href={txLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="underline"
+          >
+            View on Explorer
+          </a>
         </Callout>
       )}
     </main>
