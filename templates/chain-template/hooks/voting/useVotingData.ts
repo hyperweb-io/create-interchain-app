@@ -2,7 +2,7 @@ import { useEffect, useMemo, useState } from 'react';
 import { useChain } from '@interchain-kit/react';
 import { defaultContext, useQueries } from '@tanstack/react-query';
 import { ProposalStatus } from '@interchainjs/react/cosmos/gov/v1beta1/gov';
-import { createGetVote } from '@interchainjs/react/cosmos/gov/v1beta1/query.rpc.func';
+import { getVote } from '@interchainjs/react/cosmos/gov/v1beta1/query.rpc.func';
 import { Proposal as ProposalV1 } from '@interchainjs/react/cosmos/gov/v1/gov';
 import { chains } from 'chain-registry';
 import {
@@ -50,7 +50,6 @@ export function useVotingData(chainName: string) {
   const { address } = useChain(chainName);
   const { data: rpcEndpoint, isFetching } = useRpcEndpoint(chainName);
 
-  const getVote = createGetVote(rpcEndpoint);
   const chain = chains.find((c) => c.chain_name === chainName);
   const isReady = !!address && !!rpcEndpoint;
 
@@ -112,7 +111,7 @@ export function useVotingData(chainName: string) {
     queries: (votedProposalsQuery.data || []).map(({ id }) => ({
       queryKey: ['voteQuery', id, address],
       queryFn: () =>
-        getVote({
+        getVote(rpcEndpoint?.toString() || '',{
           proposalId: id,
           voter: address || '',
         }),
