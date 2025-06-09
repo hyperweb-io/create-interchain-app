@@ -53,16 +53,16 @@ export default function SignMessage() {
     }
 
     if (!(wallet instanceof ExtensionWallet)) {
+      console.log('wallet', wallet, chain.chainType);
       return
     }
 
     try {
       setSigningIn(true);
-
-      const cosmosWallet = wallet.getWalletByChainType('cosmos') as CosmosWallet;
+      const cosmosWallet = wallet.getWalletOfType(CosmosWallet)
 
       // Sign the message
-      const result = await cosmosWallet.signArbitrary(chain.chainId, address, message);
+      const result = await cosmosWallet!.signArbitrary(chain.chainId, address, message);
 
       // Get the public key
       const account = await wallet?.getAccount(chain.chainId);
