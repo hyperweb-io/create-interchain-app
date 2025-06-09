@@ -38,6 +38,7 @@
     "chain-registry": "1.62.3",
     "dayjs": "1.11.11",
     "interchain-kit": "0.3.36",
+    "keccak256": "^1.0.6",
     "next": "^13",
     "node-gzip": "^1.1.2",
     "react": "18.2.0",
@@ -46,6 +47,7 @@
     "react-dropzone": "^14.2.3",
     "react-icons": "5.2.1",
     "react-markdown": "9.0.1",
+    "secp256k1": "^5.0.1",
     "zustand": "4.5.2"
   },
   "devDependencies": {
