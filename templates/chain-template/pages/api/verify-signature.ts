@@ -108,46 +108,82 @@ export default function handler(
 function verifyEthereumSignature(message: string, signature: string, expectedAddress: string): boolean {
   try {
     const secp256k1 = require('secp256k1');
-    const { keccak256 } = require('keccak');
+    const keccak = require('keccak');
 
-    // Ethereum personal sign message format
-    const prefix = '\x19Ethereum Signed Message:\n';
-    const prefixedMessage = prefix + message.length + message;
-    
-    // Hash the prefixed message
-    const messageHash = keccak256(Buffer.from(prefixedMessage, 'utf8'));
-    
-    // Remove 0x prefix if present and convert to buffer
-    const sigHex = signature.startsWith('0x') ? signature.slice(2) : signature;
-    const sigBuffer = Buffer.from(sigHex, 'hex');
-    
-    if (sigBuffer.length !== 65) {
-      throw new Error('Invalid signature length');
+    console.log('Verifying Ethereum signature:');
+    console.log('Message:', JSON.stringify(message));
+    console.log('Signature:', signature);
+    console.log('Expected address:', expectedAddress);
+
+    // Try different message formats that MetaMask might use
+    const messageFormats = [
+      message, // Original message
+      message.replace(/\\n/g, '\n'), // Replace escaped newlines
+      Buffer.from(message, 'utf8').toString(), // Ensure UTF-8 encoding
+    ];
+
+    for (let i = 0; i < messageFormats.length; i++) {
+      const testMessage = messageFormats[i];
+      console.log(`\nTrying message format ${i + 1}:`, JSON.stringify(testMessage));
+      
+      // Ethereum personal sign message format
+      const prefix = '\x19Ethereum Signed Message:\n';
+      const messageBuffer = Buffer.from(testMessage, 'utf8');
+      const prefixedMessage = prefix + messageBuffer.length + testMessage;
+      
+      console.log('Prefixed message:', JSON.stringify(prefixedMessage));
+      console.log('Message buffer length:', messageBuffer.length);
+      
+      // Hash the prefixed message
+      const messageHash = keccak('keccak256').update(Buffer.from(prefixedMessage, 'utf8')).digest();
+      console.log('Message hash:', messageHash.toString('hex'));
+      
+      // Remove 0x prefix if present and convert to buffer
+      const sigHex = signature.startsWith('0x') ? signature.slice(2) : signature;
+      const sigBuffer = Buffer.from(sigHex, 'hex');
+      
+      if (sigBuffer.length !== 65) {
+        continue;
+      }
+      
+      // Extract r, s, v from signature
+      const r = sigBuffer.slice(0, 32);
+      const s = sigBuffer.slice(32, 64);
+      let v = sigBuffer[64];
+      
+      console.log('Original v:', v);
+      
+      // Try both recovery IDs
+      for (const recoveryId of [0, 1]) {
+        try {
+          console.log(`Trying recovery ID: ${recoveryId}`);
+          
+          // Combine r and s for secp256k1
+          const signature65 = new Uint8Array([...r, ...s]);
+          
+          // Recover public key
+          const publicKey = secp256k1.ecdsaRecover(signature65, recoveryId, new Uint8Array(messageHash));
+          
+          // Convert public key to address
+          const publicKeyBuffer = Buffer.from(publicKey.slice(1));
+          const publicKeyHash = keccak('keccak256').update(publicKeyBuffer).digest();
+          const address = '0x' + publicKeyHash.slice(-20).toString('hex');
+          
+          console.log(`Recovered address: ${address}`);
+          
+          // Compare with expected address (case insensitive)
+          if (address.toLowerCase() === expectedAddress.toLowerCase()) {
+            console.log('✅ Signature verification successful!');
+            return true;
+          }
+        } catch (e) {
+          console.log(`❌ Failed with recovery ID ${recoveryId}:`, e);
+        }
+      }
     }
     
-    // Extract r, s, v from signature
-    const r = sigBuffer.slice(0, 32);
-    const s = sigBuffer.slice(32, 64);
-    let v = sigBuffer[64];
-    
-    // Handle recovery id
-    if (v < 27) {
-      v += 27;
-    }
-    const recoveryId = v - 27;
-    
-    // Combine r and s for secp256k1
-    const signature65 = new Uint8Array([...r, ...s]);
-    
-    // Recover public key
-    const publicKey = secp256k1.ecdsaRecover(signature65, recoveryId, new Uint8Array(messageHash));
-    
-    // Convert public key to address
-    const publicKeyHash = keccak256(publicKey.slice(1)); // Remove the 0x04 prefix
-    const address = '0x' + publicKeyHash.slice(-20).toString('hex');
-    
-    // Compare with expected address (case insensitive)
-    return address.toLowerCase() === expectedAddress.toLowerCase();
+    console.log('❌ All message formats and recovery IDs failed');
+    return false;
     
   } catch (error) {
     console.error('Error verifying Ethereum signature:', error);

@@ -62,6 +62,7 @@ export default function SignMessage() {
       setSigningIn(true);
       let result: { signature: string };
       let publicKey: string;
+      let messageToSign = message;
 
       if (chain.chainType === 'eip155') {
         // Handle Ethereum chains
@@ -70,8 +71,14 @@ export default function SignMessage() {
           throw new Error('Ethereum wallet not found');
         }
 
-        // Sign the message using personal_sign
-        const signature = await ethereumWallet.signMessage(message);
+        // The message is already plain text, no need to decode
+        console.log('Message to sign:', messageToSign);
+
+        // Sign the message using personal_sign (MetaMask accepts string directly)
+        const signature = await ethereumWallet.ethereum.request({
+          method: 'personal_sign',
+          params: [messageToSign, address]
+        });
         result = { signature };
 
         // For Ethereum, we'll derive the public key from the signature during verification
@@ -102,7 +109,7 @@ export default function SignMessage() {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          message,
+          message: messageToSign,
           signature: result.signature,
           publicKey,
           signer: address,
