@@ -27,7 +27,7 @@
     "@interchain-kit/leap-extension": "0.3.36",
     "@interchain-kit/metamask-extension": "0.3.36",
     "@interchain-kit/react": "0.3.36",
-    "@interchain-ui/react": "1.23.31",
+    "@interchain-ui/react": "^1.26.3",
     "@interchain-ui/react-no-ssr": "0.1.2",
     "@interchainjs/cosmos": "1.11.2",
     "@interchainjs/react": "1.11.2",

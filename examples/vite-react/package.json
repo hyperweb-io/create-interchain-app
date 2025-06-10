@@ -15,7 +15,7 @@
     "@hookform/resolvers": "^3.3.4",
     "@interchain-kit/core": "0.2.222",
     "@interchain-kit/keplr-extension": "0.2.222",
-    "@interchain-ui/react": "1.26.1",
+    "@interchain-ui/react": "^1.26.3",
     "@tanstack/react-query": "5.68.0",
     "buffer": "^6.0.3",
     "framer-motion": "^11.0.8",

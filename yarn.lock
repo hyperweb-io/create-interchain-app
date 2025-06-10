@@ -1453,17 +1453,10 @@
   resolved "https://registry.npmjs.org/@chain-registry/v2-types/-/v2-types-0.53.111.tgz#de01b1ff884fe5eebbbacd58739f7e3c398611f7"
   integrity sha512-7N7nw4qvFziHfZGGZ51fKxjARGJy22Uac+BBQ3S9kV8WSAnaMJkbFaURld/dEpp+etfJwcj+EJ0rDcRtxHPWhQ==
 
-"@chain-registry/v2-types@^0.53.116", "@chain-registry/v2-types@^0.53.146":
-  version "0.53.146"
-  resolved "https://registry.npmjs.org/@chain-registry/v2-types/-/v2-types-0.53.146.tgz#b8865f588d8fc19c30f76eacbf0593e73821c88e"
-  integrity sha512-GnqdNnEJ+ZTAc/0S9fQbwL5GpIvF3LZ/P3o6qh6EyITSiRA1Y55FXs59eSddltpPX5EgyWDwNpJjY+Q5uYlAkA==
-
-"@chain-registry/v2@1.71.188":
-  version "1.71.188"
-  resolved "https://registry.npmjs.org/@chain-registry/v2/-/v2-1.71.188.tgz#e568b347d43d42036b30b84cbc5319f6249f1892"
-  integrity sha512-eotS/Qe/cVYKVDPwuJcKdLKXmTtxfFnPznz3pe5q67VCUbPod34iUbXtRzxey9QND0yD+ptRKYluqmDSgG6d3A==
-  dependencies:
-    "@chain-registry/v2-types" "^0.53.116"
+"@chain-registry/v2-types@^0.53.145":
+  version "0.53.145"
+  resolved "https://registry.npmjs.org/@chain-registry/v2-types/-/v2-types-0.53.145.tgz#5b4f2c388badd2248396971550cb74a06b83b943"
+  integrity sha512-A7QewemMmgfrBsFF7TEefuUtsY4S+lOVNGv74HNzHNlat2BZeUaAVWP29iQORg4zZnqnXxnjaWnkIEh/MB/pbw==
 
 "@chain-registry/v2@1.71.71":
   version "1.71.71"
@@ -1479,12 +1472,12 @@
   dependencies:
     "@chain-registry/v2-types" "^0.53.111"
 
-"@chain-registry/v2@^1.71.229":
-  version "1.71.237"
-  resolved "https://registry.npmjs.org/@chain-registry/v2/-/v2-1.71.237.tgz#2ff01b4b667c82f1edad5b17a22108156acba941"
-  integrity sha512-c10uXxFz1+51VR0szeB1phn482O03uJiSQ+mZXpeq7IBtU2Hst6Vj1Ttjbx+nlxekhoSGG1jZ0JQ1ewXWYQ6IA==
+"@chain-registry/v2@^1.71.188":
+  version "1.71.236"
+  resolved "https://registry.npmjs.org/@chain-registry/v2/-/v2-1.71.236.tgz#3a0946fc87c44bce7597b432544b04a4efb04972"
+  integrity sha512-3T0mPIYU7YWqRNKfo6CxqtSVH1uauPk4AKads4HBvKoy3bBm9RrfWO/THUtfKNf6rAIYeHXhrDJqIbmNqm+VWA==
   dependencies:
-    "@chain-registry/v2-types" "^0.53.146"
+    "@chain-registry/v2-types" "^0.53.145"
 
 "@colors/colors@1.6.0":
   version "1.6.0"
@@ -2873,7 +2866,7 @@
     "@ethersproject/properties" "^5.8.0"
     "@ethersproject/strings" "^5.8.0"
 
-"@floating-ui/core@^1.6.0", "@floating-ui/core@^1.6.2", "@floating-ui/core@^1.6.4", "@floating-ui/core@^1.6.7":
+"@floating-ui/core@^1.6.0", "@floating-ui/core@^1.6.7":
   version "1.6.9"
   resolved "https://registry.npmjs.org/@floating-ui/core/-/core-1.6.9.tgz#64d1da251433019dafa091de9b2886ff35ec14e6"
   integrity sha512-uMXCuQ3BItDUbAMhIXw7UPXRfAlOAvZzdK9BWpE60MCn+Svt3aLn9jsPTi/WNGlRUu2uI0v5S7JiIUsbsvh3fw==
@@ -2888,7 +2881,7 @@
     "@floating-ui/core" "^1.6.0"
     "@floating-ui/utils" "^0.2.8"
 
-"@floating-ui/dom@^1.0.0", "@floating-ui/dom@^1.6.10", "@floating-ui/dom@^1.6.5", "@floating-ui/dom@^1.6.7":
+"@floating-ui/dom@^1.0.0", "@floating-ui/dom@^1.6.10":
   version "1.6.13"
   resolved "https://registry.npmjs.org/@floating-ui/dom/-/dom-1.6.13.tgz#a8a938532aea27a95121ec16e667a7cbe8c59e34"
   integrity sha512-umqzocjDgNRGTuO7Q8CU32dkHkECqI8ZdMZ5Swb6QAM0t5rnlrN3lGo1hdpscRd3WS8T6DKYK4ephgIH9iRh3w==
@@ -2896,14 +2889,14 @@
     "@floating-ui/core" "^1.6.0"
     "@floating-ui/utils" "^0.2.9"
 
-"@floating-ui/react-dom@^2.1.0", "@floating-ui/react-dom@^2.1.1", "@floating-ui/react-dom@^2.1.2":
+"@floating-ui/react-dom@^2.1.1", "@floating-ui/react-dom@^2.1.2":
   version "2.1.2"
   resolved "https://registry.npmjs.org/@floating-ui/react-dom/-/react-dom-2.1.2.tgz#a1349bbf6a0e5cb5ded55d023766f20a4d439a31"
   integrity sha512-06okr5cgPzMNBy+Ycse2A6udMi4bqwW/zgBF/rwjcNqWkyr82Mcg8b0vjX8OJpZFy/FKjJmw6wV7t44kK6kW7A==
   dependencies:
     "@floating-ui/dom" "^1.0.0"
 
-"@floating-ui/react@^0.26.17", "@floating-ui/react@^0.26.19", "@floating-ui/react@^0.26.23":
+"@floating-ui/react@^0.26.23":
   version "0.26.28"
   resolved "https://registry.npmjs.org/@floating-ui/react/-/react-0.26.28.tgz#93f44ebaeb02409312e9df9507e83aab4a8c0dc7"
   integrity sha512-yORQuuAtVpiRjpMhdc0wJj06b9JFjrYF4qp96j++v2NBpbi6SEGF7donUJ3TMieerQ6qVkAv1tgr7L4r5roTqw==
@@ -2912,7 +2905,7 @@
     "@floating-ui/utils" "^0.2.8"
     tabbable "^6.0.0"
 
-"@floating-ui/utils@^0.2.2", "@floating-ui/utils@^0.2.4", "@floating-ui/utils@^0.2.7", "@floating-ui/utils@^0.2.8", "@floating-ui/utils@^0.2.9":
+"@floating-ui/utils@^0.2.7", "@floating-ui/utils@^0.2.8", "@floating-ui/utils@^0.2.9":
   version "0.2.9"
   resolved "https://registry.npmjs.org/@floating-ui/utils/-/utils-0.2.9.tgz#50dea3616bc8191fb8e112283b49eaff03e78429"
   integrity sha512-MDWhGtE+eHw5JW7lq4qhc5yRLS11ERl1c7Z6Xd0a58DozHES6EnNNwUWbMiG4J9Cgj053Bhk8zvlhFYKVhULwg==
@@ -3171,6 +3164,28 @@
     interchainjs "1.10.1"
     long "^5.2.3"
 
+"@interchain-kit/core@0.3.14":
+  version "0.3.14"
+  resolved "https://registry.npmjs.org/@interchain-kit/core/-/core-0.3.14.tgz#8134967d2b9d34e8f1f5da157343fd7ae945b901"
+  integrity sha512-iSRTaaKi79wVqHdyAxqVkGRhSaJa24YWmqYQBLPQOW+39Oe5ilNBeEdxM45r6prau+b2Q/Y7jJphmEPKYCx6Eg==
+  dependencies:
+    "@chain-registry/v2" "^1.71.71"
+    "@chain-registry/v2-keplr" "^0.0.72"
+    "@chain-registry/v2-types" "^0.53.40"
+    "@interchainjs/cosmos" "1.11.5"
+    "@interchainjs/cosmos-types" "1.11.5"
+    "@ledgerhq/hw-app-cosmos" "^6.30.4"
+    "@ledgerhq/hw-transport" "^6.31.4"
+    "@ledgerhq/hw-transport-webhid" "^6.30.0"
+    "@ledgerhq/hw-transport-webusb" "^6.29.4"
+    "@walletconnect/sign-client" "^2.19.1"
+    "@walletconnect/types" "^2.19.1"
+    "@walletconnect/universal-provider" "^2.19.1"
+    bowser "^2.11.0"
+    buffer "^6.0.3"
+    interchainjs "1.11.5"
+    long "^5.2.3"
+
 "@interchain-kit/core@0.3.17":
   version "0.3.17"
   resolved "https://registry.npmjs.org/@interchain-kit/core/-/core-0.3.17.tgz#01fccf27ff3f561ebf0ce7df3bdede261c5f341d"
@@ -3193,7 +3208,30 @@
     interchainjs "1.11.5"
     long "^5.2.3"
 
-"@interchain-kit/core@0.3.36":
+"@interchain-kit/core@0.3.23":
+  version "0.3.23"
+  resolved "https://registry.npmjs.org/@interchain-kit/core/-/core-0.3.23.tgz#f80b65fa1a2eaed4f5ccd1b6f25e7b4f8c084dbc"
+  integrity sha512-X6+ptNUQrFq2a3YLKTvXccH4FMphItTVpc0N28EZUVqh55qijteYX2tB5jNgvh147kZq1hGV/M1bFvAJ6Zvf0Q==
+  dependencies:
+    "@chain-registry/v2" "^1.71.71"
+    "@chain-registry/v2-keplr" "^0.0.72"
+    "@chain-registry/v2-types" "^0.53.40"
+    "@interchainjs/cosmos" "1.11.9"
+    "@interchainjs/cosmos-types" "1.11.9"
+    "@interchainjs/types" "1.11.9"
+    "@ledgerhq/hw-app-cosmos" "^6.30.4"
+    "@ledgerhq/hw-transport" "^6.31.4"
+    "@ledgerhq/hw-transport-webhid" "^6.30.0"
+    "@ledgerhq/hw-transport-webusb" "^6.29.4"
+    "@walletconnect/sign-client" "^2.19.1"
+    "@walletconnect/types" "^2.19.1"
+    "@walletconnect/universal-provider" "^2.19.1"
+    bowser "^2.11.0"
+    buffer "^6.0.3"
+    interchainjs "1.11.9"
+    long "^5.2.3"
+
+"@interchain-kit/core@^0.3.23":
   version "0.3.36"
   resolved "https://registry.npmjs.org/@interchain-kit/core/-/core-0.3.36.tgz#1600d2a2518645ae19a0056f4dc1744768f82345"
   integrity sha512-htqJkkuIS4pedRIM6U0bD+Cg5MSF9tzyB1maN39lVuZrVM2NJ4O6iDr0lIAS/C2LHib8n0JFATrGtbJ7hjq2mQ==
@@ -3225,6 +3263,14 @@
     "@interchain-kit/core" "0.2.222"
     "@keplr-wallet/provider-extension" "^0.12.102"
 
+"@interchain-kit/keplr-extension@0.3.14":
+  version "0.3.14"
+  resolved "https://registry.npmjs.org/@interchain-kit/keplr-extension/-/keplr-extension-0.3.14.tgz#74c70bbeb2b39d32f8b1990884dd6a4373984654"
+  integrity sha512-13+iTxP9cC7xdl2aRi//4EZxbztDxSx0NCuwgCvSAETv52qBx0e0lcK8+bdX1gR6rmyQ6WC/OD6zTgeV9Rp84w==
+  dependencies:
+    "@interchain-kit/core" "0.3.14"
+    "@keplr-wallet/provider-extension" "^0.12.102"
+
 "@interchain-kit/keplr-extension@0.3.17":
   version "0.3.17"
   resolved "https://registry.npmjs.org/@interchain-kit/keplr-extension/-/keplr-extension-0.3.17.tgz#313044fc740c69ebee5883116035ed499ddce893"
@@ -3233,12 +3279,12 @@
     "@interchain-kit/core" "0.3.17"
     "@keplr-wallet/provider-extension" "^0.12.102"
 
-"@interchain-kit/keplr-extension@0.3.36":
-  version "0.3.36"
-  resolved "https://registry.npmjs.org/@interchain-kit/keplr-extension/-/keplr-extension-0.3.36.tgz#b8554269027c9057ceb98486352e81f7f33510c8"
-  integrity sha512-lNHDcEGY36Mz3Tqzzu7KJ2SDyyrCfCaJluvoki13vAMYX/BuzQ07izwNbkUStaZpBeUCoGt0yhv8XVy764G9ew==
+"@interchain-kit/keplr-extension@0.3.23":
+  version "0.3.23"
+  resolved "https://registry.npmjs.org/@interchain-kit/keplr-extension/-/keplr-extension-0.3.23.tgz#6868b3344e79a51d2dab1ac08d50ad18e641ff4c"
+  integrity sha512-mIbNJUCP3riC3R0CfdJOIeAdJVfBSYwOdj44E/nNxtMyP84FyDJe/fKEaL22oRe6DXTxSZXSEdefi0wNHOFZdg==
   dependencies:
-    "@interchain-kit/core" "0.3.36"
+    "@interchain-kit/core" "^0.3.23"
     "@keplr-wallet/provider-extension" "^0.12.102"
 
 "@interchain-kit/leap-extension@0.2.222":
@@ -3248,6 +3294,13 @@
   dependencies:
     "@interchain-kit/core" "0.2.222"
 
+"@interchain-kit/leap-extension@0.3.14":
+  version "0.3.14"
+  resolved "https://registry.npmjs.org/@interchain-kit/leap-extension/-/leap-extension-0.3.14.tgz#75695ed498ad6c3bca77d6cecc823d96ef34bac4"
+  integrity sha512-wKJmMz48GSd7Sb2G1OtPTzrax5U+oxqGkOP6Sgrtui/d9IeF69nEfuuokfS3RzHgzxnBIkEcP0EH8A7Bi/Mo4w==
+  dependencies:
+    "@interchain-kit/core" "0.3.14"
+
 "@interchain-kit/leap-extension@0.3.17":
   version "0.3.17"
   resolved "https://registry.npmjs.org/@interchain-kit/leap-extension/-/leap-extension-0.3.17.tgz#e396be6147b1566cb8429c762cd255713cf6e02a"
@@ -3255,19 +3308,12 @@
   dependencies:
     "@interchain-kit/core" "0.3.17"
 
-"@interchain-kit/leap-extension@0.3.36":
-  version "0.3.36"
-  resolved "https://registry.npmjs.org/@interchain-kit/leap-extension/-/leap-extension-0.3.36.tgz#6fb1a93979d028585eced13f47a3631530f89029"
-  integrity sha512-3/DdWC2aNRe01CQw9+kMjFAuuArZIqAdsISKfcGWO6ACDoLJEUbJT4hHldAyyG/oh44XZQ3sGBV2oNiR6zH24g==
+"@interchain-kit/metamask-extension@0.3.23":
+  version "0.3.23"
+  resolved "https://registry.npmjs.org/@interchain-kit/metamask-extension/-/metamask-extension-0.3.23.tgz#68da0d8db2c8fdd65ca05be3f6b54fa691d7174d"
+  integrity sha512-HWrGASQr/ynOhjDL4rwo4AYGPHMYild0C1EmywdO3cilm/W3TQ8ovdFUZ7ITEy4FRfGFcsYrW4F/o48LbMQ48A==
   dependencies:
-    "@interchain-kit/core" "0.3.36"
-
-"@interchain-kit/metamask-extension@0.3.36":
-  version "0.3.36"
-  resolved "https://registry.npmjs.org/@interchain-kit/metamask-extension/-/metamask-extension-0.3.36.tgz#fb0493b2e2d0fdb2db115a701747f20118e79488"
-  integrity sha512-BCWwS3NbLByFllV6E4U1RUEjZHQKkQEDGIRoKP1xhe7m1uWj853uS7P696DTZPXpOjr+w1T0/PkEtF5JZcKqCg==
-  dependencies:
-    "@interchain-kit/core" "0.3.36"
+    "@interchain-kit/core" "^0.3.23"
 
 "@interchain-kit/react@0.2.222":
   version "0.2.222"
@@ -3288,6 +3334,21 @@
     react-dom "^18.3.1"
     zustand "^5.0.3"
 
+"@interchain-kit/react@0.3.14":
+  version "0.3.14"
+  resolved "https://registry.npmjs.org/@interchain-kit/react/-/react-0.3.14.tgz#cf9e749ee50e141246173774967b0415fa395e16"
+  integrity sha512-e23FtrENDrVEznNJr4X5kxlRd2qBjqeNI3z0K7nxxC0EGPz8aMFSSI2jPPeIYr46C7pLd3AuTJt2gCpV5uKn+A==
+  dependencies:
+    "@chain-registry/v2-types" "^0.53.40"
+    "@interchain-kit/core" "0.3.14"
+    "@interchain-ui/react" "1.26.1"
+    "@interchainjs/cosmos" "1.11.5"
+    "@interchainjs/cosmos-types" "1.11.5"
+    "@react-icons/all-files" "^4.1.0"
+    "@walletconnect/types" "^2.17.3"
+    interchainjs "1.11.5"
+    zustand "^5.0.3"
+
 "@interchain-kit/react@0.3.17":
   version "0.3.17"
   resolved "https://registry.npmjs.org/@interchain-kit/react/-/react-0.3.17.tgz#7e4cd6838c49f534e57c5c04fc4e315d5eddebd1"
@@ -3303,20 +3364,20 @@
     interchainjs "1.11.5"
     zustand "^5.0.3"
 
-"@interchain-kit/react@0.3.36":
-  version "0.3.36"
-  resolved "https://registry.npmjs.org/@interchain-kit/react/-/react-0.3.36.tgz#9809d753e9829b007c84d6dbcc37df2f09c043d1"
-  integrity sha512-zWprcsyGChFm3TAxNEkBpRAw2CDsBM8cC404meJXgEzCUnOoN7banAW2lbRwX9X6O1f4TOq810o4GR+ujAGHUg==
+"@interchain-kit/react@0.3.23":
+  version "0.3.23"
+  resolved "https://registry.npmjs.org/@interchain-kit/react/-/react-0.3.23.tgz#db07271c48b69d721ed788175824c364a60182f7"
+  integrity sha512-jf+MgIBBVApx0qVgvuby9BujkzoeycRrzEZ6cu1KXbYleXDRlOmObqCxfwCEgGlQi1EGqJHujDmC/Yd3ZdgvlA==
   dependencies:
     "@chain-registry/v2-types" "^0.53.40"
-    "@interchain-kit/core" "0.3.36"
+    "@interchain-kit/core" "^0.3.23"
     "@interchain-ui/react" "1.26.1"
-    "@interchainjs/cosmos" "1.11.11"
-    "@interchainjs/cosmos-types" "1.11.11"
-    "@interchainjs/types" "1.11.11"
+    "@interchainjs/cosmos" "1.11.9"
+    "@interchainjs/cosmos-types" "1.11.9"
+    "@interchainjs/types" "1.11.9"
     "@react-icons/all-files" "^4.1.0"
     "@walletconnect/types" "^2.17.3"
-    interchainjs "1.11.11"
+    interchainjs "1.11.9"
     zustand "^5.0.3"
 
 "@interchain-kit/vue@0.2.222":
@@ -3342,97 +3403,6 @@
   version "0.1.13"
   resolved "https://registry.npmjs.org/@interchain-ui/react-no-ssr/-/react-no-ssr-0.1.13.tgz#4060fd681f70ba21ba81429519faff6cadc73c68"
   integrity sha512-02LEqdww9NncmtFIqLVD6mlDfsbSCULM3rM2vxthi2BkErv0BAaL8b1yGGA8axEXP0dBfNZhGs/5ujLR7Iy1EQ==
-
-"@interchain-ui/react@1.23.22":
-  version "1.23.22"
-  resolved "https://registry.npmjs.org/@interchain-ui/react/-/react-1.23.22.tgz#aa4677576d803b813342cd385f51657587394b2c"
-  integrity sha512-r+YCxccra33XOm95gBBLL7VHktmhMIMcD967z276L6oioZTkinMeWkGZPz4Zaw6FWk5jH0FmyzbnlfOyf8Bimw==
-  dependencies:
-    "@floating-ui/core" "^1.6.2"
-    "@floating-ui/dom" "^1.6.5"
-    "@floating-ui/react" "^0.26.17"
-    "@floating-ui/react-dom" "^2.1.0"
-    "@floating-ui/utils" "^0.2.2"
-    "@formkit/auto-animate" "^0.8.2"
-    "@react-aria/listbox" "^3.12.1"
-    "@react-aria/overlays" "^3.22.1"
-    "@react-aria/utils" "^3.24.1"
-    "@vanilla-extract/css" "^1.15.3"
-    "@vanilla-extract/dynamic" "^2.1.1"
-    "@vanilla-extract/recipes" "^0.5.3"
-    animejs "^3.2.2"
-    bignumber.js "^9.1.2"
-    client-only "^0.0.1"
-    clsx "^2.1.1"
-    copy-to-clipboard "^3.3.3"
-    immer "^10.1.1"
-    lodash "^4.17.21"
-    rainbow-sprinkles "^0.17.2"
-    react-aria "^3.33.1"
-    react-stately "^3.31.1"
-    zustand "^4.5.2"
-
-"@interchain-ui/react@1.23.31":
-  version "1.23.31"
-  resolved "https://registry.npmjs.org/@interchain-ui/react/-/react-1.23.31.tgz#13a94a0af64f5ce359eb266dbb773e641773e2b2"
-  integrity sha512-7vyp0PaWr0VJzcC26D71Fr9OgOQLG5amV8zSV0XQSmBg3fRIwDSs4Mtn5ThASA2/2yWY3kqtZsNYNIMCQ8xjYg==
-  dependencies:
-    "@floating-ui/core" "^1.6.4"
-    "@floating-ui/dom" "^1.6.7"
-    "@floating-ui/react" "^0.26.19"
-    "@floating-ui/react-dom" "^2.1.1"
-    "@floating-ui/utils" "^0.2.4"
-    "@formkit/auto-animate" "^0.8.2"
-    "@react-aria/listbox" "^3.12.1"
-    "@react-aria/overlays" "^3.22.1"
-    "@react-aria/utils" "^3.24.1"
-    "@tanstack/react-virtual" "^3.8.3"
-    "@vanilla-extract/css" "^1.15.3"
-    "@vanilla-extract/dynamic" "^2.1.1"
-    "@vanilla-extract/recipes" "^0.5.3"
-    animejs "^3.2.2"
-    bignumber.js "^9.1.2"
-    client-only "^0.0.1"
-    clsx "^2.1.1"
-    copy-to-clipboard "^3.3.3"
-    immer "^10.1.1"
-    lodash "^4.17.21"
-    rainbow-sprinkles "^0.17.2"
-    react-aria "^3.33.1"
-    react-stately "^3.31.1"
-    zustand "^4.5.4"
-
-"@interchain-ui/react@1.26.0":
-  version "1.26.0"
-  resolved "https://registry.npmjs.org/@interchain-ui/react/-/react-1.26.0.tgz#0638fef766d00b3a88bea2776dadcbdb4decb54b"
-  integrity sha512-QDkWNQTOmWL88TSi7W5TCg2OnJSzn+vaPVbEDqSS/yKk6SiGx028nV8WjeibtYpmrXcTUMbxP0g6slM9M7K6EA==
-  dependencies:
-    "@floating-ui/core" "^1.6.7"
-    "@floating-ui/dom" "^1.6.10"
-    "@floating-ui/react" "^0.26.23"
-    "@floating-ui/react-dom" "^2.1.1"
-    "@floating-ui/utils" "^0.2.7"
-    "@formkit/auto-animate" "^0.8.2"
-    "@react-aria/listbox" "^3.13.3"
-    "@react-aria/overlays" "^3.23.2"
-    "@react-aria/utils" "^3.25.2"
-    "@tanstack/react-virtual" "^3.10.5"
-    "@vanilla-extract/css" "^1.15.5"
-    "@vanilla-extract/css-utils" "^0.1.4"
-    "@vanilla-extract/dynamic" "^2.1.2"
-    "@vanilla-extract/private" "^1.0.6"
-    "@vanilla-extract/recipes" "^0.5.5"
-    animejs "^3.2.2"
-    bignumber.js "^9.1.2"
-    client-only "^0.0.1"
-    clsx "^2.1.1"
-    copy-to-clipboard "^3.3.3"
-    immer "^10.1.1"
-    lodash "^4.17.21"
-    rainbow-sprinkles "^0.17.3"
-    react-aria "^3.34.3"
-    react-stately "^3.32.2"
-    zustand "^4.5.5"
 
 "@interchain-ui/react@1.26.1":
   version "1.26.1"
@@ -3466,7 +3436,7 @@
     react-stately "^3.32.2"
     zustand "^4.5.5"
 
-"@interchain-ui/react@^1.23.29":
+"@interchain-ui/react@^1.26.3":
   version "1.26.3"
   resolved "https://registry.npmjs.org/@interchain-ui/react/-/react-1.26.3.tgz#71c18d95a43eb57b2b3b2ecc256a24e4edc73cd9"
   integrity sha512-kvGOZaSDJLNxtxieiyPMHOzxBGkpHR/BCpg/UEMDl2l7nLoPrygB/Oux1QEv/cwkw8GvepOBM7pzfJf8xk1IbQ==
@@ -3562,6 +3532,16 @@
     "@interchainjs/math" "1.11.5"
     "@interchainjs/utils" "1.11.5"
 
+"@interchainjs/amino@1.11.9":
+  version "1.11.9"
+  resolved "https://registry.npmjs.org/@interchainjs/amino/-/amino-1.11.9.tgz#358361ebbab91d587b5a94e8a60394c95a4f4078"
+  integrity sha512-LF8yNG7foctfEvWoI/mMU634kt6aGIPKuU22S4rwNrxSIf01tV0Bnve+Dg9yqwyf4LTeyQxf1mMzwN2/emLnsA==
+  dependencies:
+    "@interchainjs/crypto" "1.11.9"
+    "@interchainjs/encoding" "1.11.9"
+    "@interchainjs/math" "1.11.9"
+    "@interchainjs/utils" "1.11.9"
+
 "@interchainjs/amino@1.9.12":
   version "1.9.12"
   resolved "https://registry.npmjs.org/@interchainjs/amino/-/amino-1.9.12.tgz#2a21b6f4438122ff7b7faf77452d2d516a50aa85"
@@ -3626,6 +3606,18 @@
   dependencies:
     "@interchainjs/types" "1.11.5"
     "@interchainjs/utils" "1.11.5"
+    "@noble/curves" "^1.1.0"
+    "@noble/hashes" "^1.3.1"
+    "@scure/bip32" "^1.0.10"
+    ethers "^6.5.1"
+
+"@interchainjs/auth@1.11.9":
+  version "1.11.9"
+  resolved "https://registry.npmjs.org/@interchainjs/auth/-/auth-1.11.9.tgz#6f42cd8ac7d75b4829fd30bf8d0314f60b7a0347"
+  integrity sha512-jCTqzDXUrn/npFmJ1X04Ad6FqC5gEYbNzL/TUidNQSPNDkELu6DE9XM/J3DCGWpgBLiUEaz0P2nquTs+QneKCw==
+  dependencies:
+    "@interchainjs/types" "1.11.9"
+    "@interchainjs/utils" "1.11.9"
     "@noble/curves" "^1.1.0"
     "@noble/hashes" "^1.3.1"
     "@scure/bip32" "^1.0.10"
@@ -3702,6 +3694,14 @@
     "@interchainjs/types" "1.11.5"
     "@interchainjs/utils" "1.11.5"
 
+"@interchainjs/cosmos-types@1.11.9":
+  version "1.11.9"
+  resolved "https://registry.npmjs.org/@interchainjs/cosmos-types/-/cosmos-types-1.11.9.tgz#19ae5f3bf86946382a59aa9343d76fb35cc091a0"
+  integrity sha512-ckIHLjXZSaV8ckv1+rx5Znh1Oza+w4XM+TVqDiR4/S30Lx+3RqdyOKexqlI+YRArkd5E58lRFG2ZgLXNzBYIow==
+  dependencies:
+    "@interchainjs/types" "1.11.9"
+    "@interchainjs/utils" "1.11.9"
+
 "@interchainjs/cosmos-types@1.6.3":
   version "1.6.3"
   resolved "https://registry.npmjs.org/@interchainjs/cosmos-types/-/cosmos-types-1.6.3.tgz#97e0653efde8c4b674755a1fd89b01359e82e676"
@@ -3761,7 +3761,7 @@
     "@noble/hashes" "^1.3.1"
     decimal.js "^10.4.3"
 
-"@interchainjs/cosmos@1.11.2":
+"@interchainjs/cosmos@1.11.2", "@interchainjs/cosmos@^1.11.2":
   version "1.11.2"
   resolved "https://registry.npmjs.org/@interchainjs/cosmos/-/cosmos-1.11.2.tgz#a91cae3bca56463f2efdeeacccf7ec23dcbed9e8"
   integrity sha512-B4rhZqiK2Fz5scJyj08Bn8fJgbLOmwZsd06yPZOKCCHH6c2CsBVqh6AsH3VBlN6ZZqbHPOAmDGyXS6VT6cKiuA==
@@ -3785,6 +3785,19 @@
     "@interchainjs/cosmos-types" "1.11.5"
     "@interchainjs/types" "1.11.5"
     "@interchainjs/utils" "1.11.5"
+    "@noble/curves" "^1.1.0"
+    "@noble/hashes" "^1.3.1"
+    decimal.js "^10.4.3"
+
+"@interchainjs/cosmos@1.11.9":
+  version "1.11.9"
+  resolved "https://registry.npmjs.org/@interchainjs/cosmos/-/cosmos-1.11.9.tgz#12ae62e5c3405e57b1bd441f35eb08036f59d6ec"
+  integrity sha512-7qmv1wMp2ptDh1x/X5rszIgHYTLy7IHOzUPYEAGZShBLohb11sc0ZmmSnBBIEPTWwvDkm72pRNu7Lba7JRWO4Q==
+  dependencies:
+    "@interchainjs/auth" "1.11.9"
+    "@interchainjs/cosmos-types" "1.11.9"
+    "@interchainjs/types" "1.11.9"
+    "@interchainjs/utils" "1.11.9"
     "@noble/curves" "^1.1.0"
     "@noble/hashes" "^1.3.1"
     decimal.js "^10.4.3"
@@ -3886,6 +3899,19 @@
     elliptic "^6.5.4"
     libsodium-wrappers-sumo "^0.7.11"
 
+"@interchainjs/crypto@1.11.9":
+  version "1.11.9"
+  resolved "https://registry.npmjs.org/@interchainjs/crypto/-/crypto-1.11.9.tgz#2d59e0aae5c9523bc11d2764cff7b983373c4b68"
+  integrity sha512-xq01OS2MaHZLUS3rB38nRCKQGpmhuPMQOgZ/A6N4+JAT2kKzc24H0t22RZo59ElG4/E/G81pE3kv3KH9J1yuqA==
+  dependencies:
+    "@interchainjs/encoding" "1.11.9"
+    "@interchainjs/math" "1.11.9"
+    "@interchainjs/utils" "1.11.9"
+    "@noble/hashes" "^1"
+    bn.js "^5.2.0"
+    elliptic "^6.5.4"
+    libsodium-wrappers-sumo "^0.7.11"
+
 "@interchainjs/crypto@1.9.12":
   version "1.9.12"
   resolved "https://registry.npmjs.org/@interchainjs/crypto/-/crypto-1.9.12.tgz#bf95d4b0dd1900ed41b1d7927760026d0cb5312b"
@@ -3935,6 +3961,16 @@
   integrity sha512-J91/Qrq2TylTqPvK4k05pY06PF5CRA42I/DOnVSSBsOGy3UTd0Ru7JQBEhlyEMrgVeriVzCuMG3/ZBPfhKLg5A==
   dependencies:
     "@interchainjs/math" "1.11.5"
+    base64-js "^1.3.0"
+    bech32 "^1.1.4"
+    readonly-date "^1.0.0"
+
+"@interchainjs/encoding@1.11.9":
+  version "1.11.9"
+  resolved "https://registry.npmjs.org/@interchainjs/encoding/-/encoding-1.11.9.tgz#2cad3a34580a4cc31748c778be4d84b6e0309c89"
+  integrity sha512-4MuMqC1Tu3vCxSqJgrcQg1AiyUEcwq4iOlHnao7G9exKWC7VIyUo62yN0WssUTvWtEwHYxRbOpIPtsqhdCkznA==
+  dependencies:
+    "@interchainjs/math" "1.11.9"
     base64-js "^1.3.0"
     bech32 "^1.1.4"
     readonly-date "^1.0.0"
@@ -4025,6 +4061,13 @@
   dependencies:
     bn.js "^5.2.0"
 
+"@interchainjs/math@1.11.9":
+  version "1.11.9"
+  resolved "https://registry.npmjs.org/@interchainjs/math/-/math-1.11.9.tgz#a9c5556886c89b8a7af12b33d6363a086cf2796b"
+  integrity sha512-wsbBRSeYbsinNlIaWRzqunQypFgaheV/UNbn/H+0qhajj8lDGeTvQtRFURd6rgWF6FznUbs5b07w+nJ7CDSOwA==
+  dependencies:
+    bn.js "^5.2.0"
+
 "@interchainjs/math@1.9.12":
   version "1.9.12"
   resolved "https://registry.npmjs.org/@interchainjs/math/-/math-1.9.12.tgz#b21513b0e3b571ad71910b74361c1b3f6a1c8ade"
@@ -4075,6 +4118,17 @@
     "@interchainjs/encoding" "1.11.5"
     "@interchainjs/math" "1.11.5"
     "@interchainjs/types" "1.11.5"
+
+"@interchainjs/pubkey@1.11.9":
+  version "1.11.9"
+  resolved "https://registry.npmjs.org/@interchainjs/pubkey/-/pubkey-1.11.9.tgz#1b17d474276d28834bc8aa149671d7d23816f036"
+  integrity sha512-IqNC/1xK64rkH4CBJQLG9VT677qOhjyEoU9fpLzuQlI1Xr6rS97el/6VgIJ/XT7EU6+qnUXevw6j8lsHRUoXEA==
+  dependencies:
+    "@interchainjs/amino" "1.11.9"
+    "@interchainjs/cosmos-types" "1.11.9"
+    "@interchainjs/encoding" "1.11.9"
+    "@interchainjs/math" "1.11.9"
+    "@interchainjs/types" "1.11.9"
 
 "@interchainjs/pubkey@1.9.12":
   version "1.9.12"
@@ -6571,7 +6625,7 @@
     "@react-types/shared" "^3.29.0"
     "@swc/helpers" "^0.5.0"
 
-"@react-aria/listbox@^3.12.1", "@react-aria/listbox@^3.13.3", "@react-aria/listbox@^3.14.3":
+"@react-aria/listbox@^3.13.3", "@react-aria/listbox@^3.14.3":
   version "3.14.3"
   resolved "https://registry.npmjs.org/@react-aria/listbox/-/listbox-3.14.3.tgz#d8a223b8830fd8cbc762a0fb237da0bfc0a502a2"
   integrity sha512-wzelam1KENUvKjsTq8gfrOW2/iab8SyIaSXfFvGmWW82XlDTlW+oQeA39tvOZktMVGspr+xp8FySY09rtz6UXw==
@@ -6640,7 +6694,7 @@
     "@react-types/shared" "^3.29.0"
     "@swc/helpers" "^0.5.0"
 
-"@react-aria/overlays@^3.22.1", "@react-aria/overlays@^3.23.2", "@react-aria/overlays@^3.27.0":
+"@react-aria/overlays@^3.23.2", "@react-aria/overlays@^3.27.0":
   version "3.27.0"
   resolved "https://registry.npmjs.org/@react-aria/overlays/-/overlays-3.27.0.tgz#08788d80ff5fce428ca2d9856d08602f0c1eeb2a"
   integrity sha512-2vZVgL7FrloN5Rh8sAhadGADJbuWg69DdSJB3fd2/h5VvcEhnIfNPu9Ma5XmdkApDoTboIEsKZ4QLYwRl98w6w==
@@ -6914,7 +6968,7 @@
     "@react-types/shared" "^3.29.0"
     "@swc/helpers" "^0.5.0"
 
-"@react-aria/utils@^3.24.1", "@react-aria/utils@^3.25.2", "@react-aria/utils@^3.28.2":
+"@react-aria/utils@^3.25.2", "@react-aria/utils@^3.28.2":
   version "3.28.2"
   resolved "https://registry.npmjs.org/@react-aria/utils/-/utils-3.28.2.tgz#f698bc54b2cb506c2f81d1ce92543ae39aae3968"
   integrity sha512-J8CcLbvnQgiBn54eeEvQQbIOfBF3A1QizxMw9P4cl9MkeR03ug7RnjTIdJY/n2p7t59kLeAB3tqiczhcj+Oi5w==
@@ -7742,7 +7796,7 @@
   dependencies:
     "@tanstack/query-core" "5.68.0"
 
-"@tanstack/react-virtual@^3.10.5", "@tanstack/react-virtual@^3.8.3":
+"@tanstack/react-virtual@^3.10.5":
   version "3.13.6"
   resolved "https://registry.npmjs.org/@tanstack/react-virtual/-/react-virtual-3.13.6.tgz#30243c8c3166673caf66bfbf5352e1b314a3a4cd"
   integrity sha512-WT7nWs8ximoQ0CDx/ngoFP7HbQF9Q2wQe4nh2NB+u2486eX3nZRE40P9g6ccCVq7ZfTSH5gFOuCoVH5DLNS/aA==
@@ -8445,7 +8499,7 @@
   resolved "https://registry.npmjs.org/@vanilla-extract/css-utils/-/css-utils-0.1.4.tgz#ea9c919109ce642f6ebdb0d11145187003d49758"
   integrity sha512-3WRxMGa/VQaL32jZqRUpnnoVFSws5iPIUpQr+XlT4jXhtMeKYcA20rFK2k2Amkg04sqrO84A8hNMeABWZQesEg==
 
-"@vanilla-extract/css@^1.15.3", "@vanilla-extract/css@^1.15.5":
+"@vanilla-extract/css@^1.15.5":
   version "1.17.1"
   resolved "https://registry.npmjs.org/@vanilla-extract/css/-/css-1.17.1.tgz#5e91d6bfbc5848a264bddcaf31d601f6f67e5cc1"
   integrity sha512-tOHQXHm10FrJeXKFeWE09JfDGN/tvV6mbjwoNB9k03u930Vg021vTnbrCwVLkECj9Zvh/SHLBHJ4r2flGqfovw==
@@ -8463,7 +8517,7 @@
     modern-ahocorasick "^1.0.0"
     picocolors "^1.0.0"
 
-"@vanilla-extract/dynamic@^2.1.1", "@vanilla-extract/dynamic@^2.1.2":
+"@vanilla-extract/dynamic@^2.1.2":
   version "2.1.2"
   resolved "https://registry.npmjs.org/@vanilla-extract/dynamic/-/dynamic-2.1.2.tgz#b1d1c1e0e392934c5a3bbb53f99069a7721311ac"
   integrity sha512-9BGMciD8rO1hdSPIAh1ntsG4LPD3IYKhywR7VOmmz9OO4Lx1hlwkSg3E6X07ujFx7YuBfx0GDQnApG9ESHvB2A==
@@ -8475,7 +8529,7 @@
   resolved "https://registry.npmjs.org/@vanilla-extract/private/-/private-1.0.6.tgz#f10bbf3189f7b827d0bd7f804a6219dd03ddbdd4"
   integrity sha512-ytsG/JLweEjw7DBuZ/0JCN4WAQgM9erfSTdS1NQY778hFQSZ6cfCDEZZ0sgVm4k54uNz6ImKB33AYvSR//fjxw==
 
-"@vanilla-extract/recipes@^0.5.3", "@vanilla-extract/recipes@^0.5.5":
+"@vanilla-extract/recipes@^0.5.5":
   version "0.5.5"
   resolved "https://registry.npmjs.org/@vanilla-extract/recipes/-/recipes-0.5.5.tgz#da34e247be2c3d70e01ecfeb53310daadc608b74"
   integrity sha512-VadU7+IFUwLNLMgks29AHav/K5h7DOEfTU91RItn5vwdPfzduodNg317YbgWCcpm7FSXkuR3B3X8ZOi95UOozA==
@@ -13794,15 +13848,15 @@ interchain-kit@0.2.222:
   resolved "https://registry.npmjs.org/interchain-kit/-/interchain-kit-0.2.222.tgz#509ff263289ecbb855276bd984678bfca31415f9"
   integrity sha512-3lGfWVO4/rmcza2gtMY2TP7h2iG3dPyyBMvd5iTR7E8aI8We+IPGuWWpG7bu6mY+yex8v56rVjWfVCIZe3GQJA==
 
+interchain-kit@0.3.14:
+  version "0.3.14"
+  resolved "https://registry.npmjs.org/interchain-kit/-/interchain-kit-0.3.14.tgz#276301eb18430de6b360a81df4ca3c7a6f89733d"
+  integrity sha512-YKD2Y+75CLblvHQV3LaTUYnrFPNu6ulIsSPcgUriyfFWFuC9jWSP4YNqVECVHiFWtan8hS5x7gJhbP8kgQwoTw==
+
 interchain-kit@0.3.17:
   version "0.3.17"
   resolved "https://registry.npmjs.org/interchain-kit/-/interchain-kit-0.3.17.tgz#6800eb4732b0dde211fedc2c3644c81d1d60dc78"
   integrity sha512-mpE2uMoeyo7dkryQq3mlnGk4x74y9a1kDFQS3pdELOP17dM+nh1x45QiPhYn3nFtQlsUCUAeH3LHF8YXVhAGCg==
-
-interchain-kit@0.3.36:
-  version "0.3.36"
-  resolved "https://registry.npmjs.org/interchain-kit/-/interchain-kit-0.3.36.tgz#e10aa2297e692ef75749727820d389e58c9916e9"
-  integrity sha512-eDmkQHb2mp0pDpQ6nT3rTPpZtzOagia7s1n9JQJ8o+4nQq9o/XOXhLDA2GOWQKZtYJPALBznPzh4LuMUm7g5Dg==
 
 interchain-react@1.7.3:
   version "1.7.3"
@@ -13881,6 +13935,20 @@ interchainjs@1.11.5:
     "@interchainjs/pubkey" "1.11.5"
     "@interchainjs/types" "1.11.5"
     "@interchainjs/utils" "1.11.5"
+    "@noble/hashes" "^1.3.1"
+    decimal.js "^10.4.3"
+
+interchainjs@1.11.9:
+  version "1.11.9"
+  resolved "https://registry.npmjs.org/interchainjs/-/interchainjs-1.11.9.tgz#df5af88dbdecdbed1bd9410ccb0b6049a84c4fbd"
+  integrity sha512-QniZ6owRIQi7ZV3ZVGYZsWJP4dJX/HLq24v9jVREzfD/vUSruY34rSXU1Tv1VcjiyyKgeW4picneg56p4X4sGw==
+  dependencies:
+    "@interchainjs/cosmos" "1.11.9"
+    "@interchainjs/cosmos-types" "1.11.9"
+    "@interchainjs/encoding" "1.11.9"
+    "@interchainjs/pubkey" "1.11.9"
+    "@interchainjs/types" "1.11.9"
+    "@interchainjs/utils" "1.11.9"
     "@noble/hashes" "^1.3.1"
     decimal.js "^10.4.3"
 
@@ -17289,7 +17357,7 @@ radix3@^1.1.2:
   resolved "https://registry.npmjs.org/radix3/-/radix3-1.1.2.tgz#fd27d2af3896c6bf4bcdfab6427c69c2afc69ec0"
   integrity sha512-b484I/7b8rDEdSDKckSSBA8knMpcdsXudlE/LNL639wFoHKwLbEkQFZHWEYwDC0wa0FKUcCY+GAF73Z7wxNVFA==
 
-rainbow-sprinkles@^0.17.2, rainbow-sprinkles@^0.17.3:
+rainbow-sprinkles@^0.17.3:
   version "0.17.3"
   resolved "https://registry.npmjs.org/rainbow-sprinkles/-/rainbow-sprinkles-0.17.3.tgz#0b4a712a6b06247728e2ae6ac8d4805fdc530e3b"
   integrity sha512-tu00bbDozceDz/ajL8YzDn5L0mf0uVHR93v2tfGKKbemKeuPk8R4mXUokleKsA24vzrPiw26iMK53HdRy6HLag==
@@ -17305,7 +17373,7 @@ react-ace@11.0.1:
     lodash.isequal "^4.5.0"
     prop-types "^15.8.1"
 
-react-aria@^3.33.1, react-aria@^3.34.3:
+react-aria@^3.34.3:
   version "3.39.0"
   resolved "https://registry.npmjs.org/react-aria/-/react-aria-3.39.0.tgz#68e01a25365f403cfbc870b7ec29093d8722f0ba"
   integrity sha512-zXCjR01WnfW4uW0f294uWrvdfwEMHgDFSwMwMBwRafAvmsQea87X5VTAfDmQOAbPa+iQFcngIyH0Pn5CfXNrjw==
@@ -17495,7 +17563,7 @@ react-smooth@^4.0.0:
     prop-types "^15.8.1"
     react-transition-group "^4.4.5"
 
-react-stately@^3.31.1, react-stately@^3.32.2:
+react-stately@^3.32.2:
   version "3.37.0"
   resolved "https://registry.npmjs.org/react-stately/-/react-stately-3.37.0.tgz#9bd09ecd1c7b11461ec60e17a7c670c17a64962e"
   integrity sha512-fm2LRM3XN5lJD48+WQKWvESx54kAIHw0JztCRHMsFmTDgYWX/VASuXKON7LECv227stSEadrxGa8LhPkcelljw==
@@ -20262,7 +20330,7 @@ zustand@4.5.2:
   dependencies:
     use-sync-external-store "1.2.0"
 
-zustand@^4.5.2, zustand@^4.5.4, zustand@^4.5.5:
+zustand@^4.5.5:
   version "4.5.6"
   resolved "https://registry.npmjs.org/zustand/-/zustand-4.5.6.tgz#6857d52af44874a79fb3408c9473f78367255c96"
   integrity sha512-ibr/n1hBzLLj5Y+yUcU7dYw8p6WnIVzdJbnX+1YpaScvZVF2ziugqHs+LAmHw4lWO9c/zRj+K1ncgWDQuthEdQ==

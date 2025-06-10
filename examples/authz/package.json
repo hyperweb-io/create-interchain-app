@@ -47,7 +47,7 @@
     "@interchain-kit/keplr-extension": "0.3.17",
     "@interchain-kit/leap-extension": "0.3.17",
     "@interchain-kit/react": "0.3.17",
-    "@interchain-ui/react": "1.23.22",
+    "@interchain-ui/react": "^1.26.3",
     "@interchain-ui/react-no-ssr": "^0.1.6",
     "@interchainjs/cosmos": "1.11.2",
     "@interchainjs/react": "1.11.2",
