@@ -7,7 +7,8 @@ import { AllValidators } from './AllValidators';
 import { useStakingData, useValidatorLogos } from '@/hooks';
 
 export const StakingSection = ({ chainName }: { chainName: string }) => {
-  const { address } = useChain(chainName);
+  const { address, chain } = useChain(chainName);
+  console.log('chain', chain, chain.chainType);
   const { data, isLoading, refetch } = useStakingData(chainName);
   const { data: logos, isLoading: isFetchingLogos } = useValidatorLogos(
     chainName,
@@ -16,7 +17,18 @@ export const StakingSection = ({ chainName }: { chainName: string }) => {
 
   return (
     <Box my="$16" maxWidth="$containerMd" mx="auto">
-      {!address ? (
+      {chain && chain.chainType !== 'cosmos' ? (
+        <Box
+          height="$28"
+          display="flex"
+          justifyContent="center"
+          alignItems="center"
+        >
+          <Text fontWeight="$semibold" fontSize="$xl" textAlign="center">
+            Staking functionality is not available for {chain.chainType} chains
+          </Text>
+        </Box>
+      ) : !address ? (
         <Box
           height="$28"
           display="flex"

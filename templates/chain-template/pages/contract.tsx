@@ -1,9 +1,11 @@
 import { useState, useCallback, useEffect, useRef } from 'react';
-import { Box, Tabs } from '@interchain-ui/react';
+import { Box, Tabs, Text } from '@interchain-ui/react';
 import { useRouter } from 'next/router';
+import { useChain } from '@interchain-kit/react';
 
 import { ExecuteTab, MyContractsTab, QueryTab } from '@/components';
 import { splitCamelCase, toKebabCase, toPascalCase } from '@/utils';
+import { useChainStore } from '@/contexts';
 import styles from '@/styles/comp.module.css';
 
 export enum TabLabel {
@@ -14,6 +16,8 @@ export enum TabLabel {
 
 export default function Contract() {
   const router = useRouter();
+  const { selectedChain } = useChainStore();
+  const { chain } = useChain(selectedChain);
   const [activeTab, setActiveTab] = useState<TabLabel>(TabLabel.MyContracts);
   const [queryAddress, setQueryAddress] = useState('');
   const [executeAddress, setExecuteAddress] = useState('');
@@ -64,8 +68,8 @@ export default function Contract() {
         tabId === TabLabel.Query
           ? queryAddress
           : tabId === TabLabel.Execute
-          ? executeAddress
-          : undefined
+            ? executeAddress
+            : undefined
       );
     },
     [updateUrl, queryAddress, executeAddress]
@@ -89,6 +93,21 @@ export default function Contract() {
     },
     [activeTab, updateUrl]
   );
+
+  if (chain && chain.chainType !== 'cosmos') {
+    return (
+      <Box
+        display="flex"
+        justifyContent="center"
+        alignItems="center"
+        minHeight="400px"
+      >
+        <Text fontWeight="$semibold" fontSize="$xl" textAlign="center">
+          Contract functionality is not available for {chain.chainType} chains
+        </Text>
+      </Box>
+    );
+  }
 
   return (
     <>

@@ -3,7 +3,7 @@
 import './globals.css'
 import "@interchain-ui/react/styles";
 import { ThemeProvider } from "@interchain-ui/react";
-import { ChainProvider } from "@interchain-kit/react";
+import { ChainProvider, InterchainWalletModal } from "@interchain-kit/react";
 import { metaMaskWallet } from '@interchain-kit/metamask-extension'
 import { assetList, chain } from '@chain-registry/v2/mainnet/ethereum'
 import { createAssetListFromEthereumChainInfo, createChainFromEthereumChainInfo } from '@/lib/eth-test-net';
@@ -77,13 +77,13 @@ export default function Provider({
   return (
     <ThemeProvider themeMode='light'>
       <ChainProvider
+        walletModal={() => <InterchainWalletModal />}
         chains={[
           chain, // chainid = 0x1
           holeskyChain,
           bscChain,
           sepoliaChain
         ]}
-        // @ts-ignore
         wallets={_wallets}
         assetLists={[
           assetList,

@@ -3,7 +3,7 @@ import { Container, Button, Stack, Text, useTheme } from '@interchain-ui/react';
 import { useChain } from '@interchain-kit/react';
 import { useChainStore } from '@/contexts';
 import { useToast } from '@/hooks';
-import { CosmosWallet, ExtensionWallet } from '@interchain-kit/core';
+import { CosmosWallet, ExtensionWallet, EthereumWallet } from '@interchain-kit/core';
 
 export default function SignMessage() {
   const [message, setMessage] = useState('');
@@ -11,6 +11,7 @@ export default function SignMessage() {
   const [signingIn, setSigningIn] = useState(false);
   const { selectedChain } = useChainStore();
   const { address, wallet, chain } = useChain(selectedChain);
+  console.log('chainType', chain.chainType); // cosmos or eip155
   const { toast } = useToast();
   const { theme } = useTheme();
 
@@ -53,21 +54,52 @@ export default function SignMessage() {
     }
 
     if (!(wallet instanceof ExtensionWallet)) {
-      return
+      console.log('wallet', wallet, chain.chainType);
+      // return
     }
 
     try {
       setSigningIn(true);
+      let result: { signature: string };
+      let publicKey: string;
+      let messageToSign = message;
 
-      const cosmosWallet = wallet.getWalletByChainType('cosmos') as CosmosWallet;
+      if (chain.chainType === 'eip155') {
+        // Handle Ethereum chains
+        const ethereumWallet = wallet.getWalletOfType(EthereumWallet);
+        if (!ethereumWallet) {
+          throw new Error('Ethereum wallet not found');
+        }
 
-      // Sign the message
-      const result = await cosmosWallet.signArbitrary(chain.chainId, address, message);
+        // The message is already plain text, no need to decode
+        console.log('Message to sign:', messageToSign);
 
-      // Get the public key
-      const account = await wallet?.getAccount(chain.chainId);
-      if (!account?.pubkey) {
-        throw new Error('Failed to get public key');
+        // Sign the message using personal_sign (MetaMask accepts string directly)
+        const signature = await ethereumWallet.ethereum.request({
+          method: 'personal_sign',
+          params: [messageToSign, address]
+        });
+        result = { signature };
+
+        // For Ethereum, we'll derive the public key from the signature during verification
+        // So we pass the address as publicKey for now
+        publicKey = address;
+      } else {
+        // Handle Cosmos chains
+        const cosmosWallet = wallet.getWalletOfType(CosmosWallet);
+        if (!cosmosWallet) {
+          throw new Error('Cosmos wallet not found');
+        }
+
+        // Sign the message
+        result = await cosmosWallet.signArbitrary(chain.chainId, address, message);
+
+        // Get the public key
+        const account = await wallet?.getAccount(chain.chainId);
+        if (!account?.pubkey) {
+          throw new Error('Failed to get public key');
+        }
+        publicKey = Buffer.from(account.pubkey).toString('base64');
       }
 
       // Submit to API directly
@@ -77,10 +109,11 @@ export default function SignMessage() {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          message,
+          message: messageToSign,
           signature: result.signature,
-          publicKey: Buffer.from(account.pubkey).toString('base64'),
-          signer: address
+          publicKey,
+          signer: address,
+          chainType: chain.chainType
         }),
       });
 
