@@ -15,7 +15,7 @@
     "@interchain-kit/keplr-extension": "0.3.23",
     "@interchain-kit/metamask-extension": "0.3.23",
     "@interchain-kit/react": "0.3.23",
-    "@interchain-ui/react": "1.26.1",
+    "@interchain-ui/react": "^1.26.3",
     "@interchainjs/ethereum": "1.11.9",
     "@keplr-wallet/types": "^0.12.221",
     "@metamask/providers": "^22.0.0",
