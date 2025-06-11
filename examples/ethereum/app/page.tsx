@@ -133,7 +133,7 @@ export default function WalletPage() {
 
   return (
     <main className="container mx-auto py-10 px-4">
-      <h1 className="text-3xl font-bold text-center mb-8">Ethereum Wallet</h1>
+      <h1 className="text-3xl font-bold text-center mb-8">Ethereum Demo</h1>
 
       <Box className={`grid gap-6 ${status === WalletState.Connected ? "md:grid-cols-2" : ""}`}>
         <Card className='border border-1 p-5 rounded-md'>
