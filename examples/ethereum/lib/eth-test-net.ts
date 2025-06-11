@@ -1,6 +1,6 @@
 
-import { AssetList, Chain } from "@chain-registry/v2-types";
-import ethereumChain from '@chain-registry/v2/mainnet/ethereum/chain'
+import { AssetList, Chain } from "@chain-registry/types";
+import ethereumChain from 'chain-registry/mainnet/ethereum/chain'
 
 type EthereumChainConfig = {
   chainId: string; // Chain ID in hexadecimal format

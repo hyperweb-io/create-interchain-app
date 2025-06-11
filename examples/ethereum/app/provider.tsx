@@ -5,7 +5,7 @@ import "@interchain-ui/react/styles";
 import { ThemeProvider } from "@interchain-ui/react";
 import { ChainProvider, InterchainWalletModal } from "@interchain-kit/react";
 import { metaMaskWallet } from '@interchain-kit/metamask-extension'
-import { assetList, chain } from '@chain-registry/v2/mainnet/ethereum'
+import { assetList, chain } from 'chain-registry/mainnet/ethereum'
 import { createAssetListFromEthereumChainInfo, createChainFromEthereumChainInfo } from '@/lib/eth-test-net';
 
 for (const asset of assetList.assets) {
