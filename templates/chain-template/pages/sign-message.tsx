@@ -120,7 +120,7 @@ export default function SignMessage() {
       const data = await response.json();
 
       if (!response.ok) {
-        throw new Error(data.error || 'Login failed');
+        throw new Error(data.message || 'Login failed');
       }
 
       if (!data.success && data.message?.includes('expired')) {
