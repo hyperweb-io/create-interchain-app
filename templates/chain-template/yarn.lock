@@ -412,7 +412,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@floating-ui/core@npm:^1.6.4, @floating-ui/core@npm:^1.6.7":
+"@floating-ui/core@npm:^1.6.7":
   version: 1.6.9
   resolution: "@floating-ui/core@npm:1.6.9"
   dependencies:
@@ -431,7 +431,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@floating-ui/dom@npm:^1.6.10, @floating-ui/dom@npm:^1.6.7":
+"@floating-ui/dom@npm:^1.6.10":
   version: 1.6.13
   resolution: "@floating-ui/dom@npm:1.6.13"
   dependencies:
@@ -465,7 +465,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@floating-ui/react@npm:^0.26.19, @floating-ui/react@npm:^0.26.23":
+"@floating-ui/react@npm:^0.26.23":
   version: 0.26.28
   resolution: "@floating-ui/react@npm:0.26.28"
   dependencies:
@@ -486,17 +486,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@floating-ui/utils@npm:^0.2.4, @floating-ui/utils@npm:^0.2.8, @floating-ui/utils@npm:^0.2.9":
-  version: 0.2.9
-  resolution: "@floating-ui/utils@npm:0.2.9"
-  checksum: 10c0/48bbed10f91cb7863a796cc0d0e917c78d11aeb89f98d03fc38d79e7eb792224a79f538ed8a2d5d5584511d4ca6354ef35f1712659fd569868e342df4398ad6f
-  languageName: node
-  linkType: hard
-
 "@floating-ui/utils@npm:^0.2.7":
   version: 0.2.7
   resolution: "@floating-ui/utils@npm:0.2.7"
   checksum: 10c0/0559ea5df2dc82219bad26e3509e9d2b70f6987e552dc8ddf7d7f5923cfeb7c44bf884567125b1f9cdb122a4c7e6e7ddbc666740bc30b0e4091ccbca63c6fb1c
+  languageName: node
+  linkType: hard
+
+"@floating-ui/utils@npm:^0.2.8, @floating-ui/utils@npm:^0.2.9":
+  version: 0.2.9
+  resolution: "@floating-ui/utils@npm:0.2.9"
+  checksum: 10c0/48bbed10f91cb7863a796cc0d0e917c78d11aeb89f98d03fc38d79e7eb792224a79f538ed8a2d5d5584511d4ca6354ef35f1712659fd569868e342df4398ad6f
   languageName: node
   linkType: hard
 
@@ -594,7 +594,7 @@ __metadata:
     "@interchain-kit/leap-extension": "npm:0.3.36"
     "@interchain-kit/metamask-extension": "npm:0.3.36"
     "@interchain-kit/react": "npm:0.3.36"
-    "@interchain-ui/react": "npm:1.23.31"
+    "@interchain-ui/react": "npm:^1.26.3"
     "@interchain-ui/react-no-ssr": "npm:0.1.2"
     "@interchainjs/cosmos": "npm:1.11.2"
     "@interchainjs/react": "npm:1.11.2"
@@ -718,41 +718,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@interchain-ui/react@npm:1.23.31":
-  version: 1.23.31
-  resolution: "@interchain-ui/react@npm:1.23.31"
-  dependencies:
-    "@floating-ui/core": "npm:^1.6.4"
-    "@floating-ui/dom": "npm:^1.6.7"
-    "@floating-ui/react": "npm:^0.26.19"
-    "@floating-ui/react-dom": "npm:^2.1.1"
-    "@floating-ui/utils": "npm:^0.2.4"
-    "@formkit/auto-animate": "npm:^0.8.2"
-    "@react-aria/listbox": "npm:^3.12.1"
-    "@react-aria/overlays": "npm:^3.22.1"
-    "@react-aria/utils": "npm:^3.24.1"
-    "@tanstack/react-virtual": "npm:^3.8.3"
-    "@vanilla-extract/css": "npm:^1.15.3"
-    "@vanilla-extract/dynamic": "npm:^2.1.1"
-    "@vanilla-extract/recipes": "npm:^0.5.3"
-    animejs: "npm:^3.2.2"
-    bignumber.js: "npm:^9.1.2"
-    client-only: "npm:^0.0.1"
-    clsx: "npm:^2.1.1"
-    copy-to-clipboard: "npm:^3.3.3"
-    immer: "npm:^10.1.1"
-    lodash: "npm:^4.17.21"
-    rainbow-sprinkles: "npm:^0.17.2"
-    react-aria: "npm:^3.33.1"
-    react-stately: "npm:^3.31.1"
-    zustand: "npm:^4.5.4"
-  peerDependencies:
-    react: ^16.14.0 || ^17.0.0 || ^18.0.0
-    react-dom: ^16.14.0 || ^17.0.0 || ^18.0.0
-  checksum: 10c0/b8ec3c81035651de08958aeb1497e423e02643f2b1e3fc1fc80b09396f017b2769e94de3b1f6cb44ef9852d8fa8ac890d82e86c23291a029961332000cccc2de
-  languageName: node
-  linkType: hard
-
 "@interchain-ui/react@npm:1.26.1":
   version: 1.26.1
   resolution: "@interchain-ui/react@npm:1.26.1"
@@ -787,6 +752,43 @@ __metadata:
     react: ^16.14.0 || ^17.0.0 || ^18.0.0
     react-dom: ^16.14.0 || ^17.0.0 || ^18.0.0
   checksum: 10c0/6d81a248ff777dce9ca7202af9ff1fd12e262e97fe4281f0e7afcb957d072dc9fc145c06b0eaf14cf27c2d28e023a0b4efcee6d9da565d5d29f72d43e29cf85b
+  languageName: node
+  linkType: hard
+
+"@interchain-ui/react@npm:^1.26.3":
+  version: 1.26.3
+  resolution: "@interchain-ui/react@npm:1.26.3"
+  dependencies:
+    "@floating-ui/core": "npm:^1.6.7"
+    "@floating-ui/dom": "npm:^1.6.10"
+    "@floating-ui/react": "npm:^0.26.23"
+    "@floating-ui/react-dom": "npm:^2.1.1"
+    "@floating-ui/utils": "npm:^0.2.7"
+    "@formkit/auto-animate": "npm:^0.8.2"
+    "@react-aria/listbox": "npm:^3.13.3"
+    "@react-aria/overlays": "npm:^3.23.2"
+    "@react-aria/utils": "npm:^3.25.2"
+    "@tanstack/react-virtual": "npm:^3.10.5"
+    "@vanilla-extract/css": "npm:^1.15.5"
+    "@vanilla-extract/css-utils": "npm:^0.1.4"
+    "@vanilla-extract/dynamic": "npm:^2.1.2"
+    "@vanilla-extract/private": "npm:^1.0.6"
+    "@vanilla-extract/recipes": "npm:^0.5.5"
+    animejs: "npm:^3.2.2"
+    bignumber.js: "npm:^9.1.2"
+    client-only: "npm:^0.0.1"
+    clsx: "npm:^2.1.1"
+    copy-to-clipboard: "npm:^3.3.3"
+    immer: "npm:^10.1.1"
+    lodash: "npm:^4.17.21"
+    rainbow-sprinkles: "npm:^0.17.3"
+    react-aria: "npm:^3.34.3"
+    react-stately: "npm:^3.32.2"
+    zustand: "npm:^4.5.5"
+  peerDependencies:
+    react: ^18.0.0 || ^19.0.0
+    react-dom: ^18.0.0 || ^19.0.0
+  checksum: 10c0/ddaa102086db5457a435d7c17ed27f2dcb78f5c7a399a553ef3b52abbd765cbbc49d274d288a93661d49d2914ea6f2f9ef8f8078a09e9149c11e6ebb0c1892e2
   languageName: node
   linkType: hard
 
@@ -2161,7 +2163,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@react-aria/listbox@npm:^3.12.1, @react-aria/listbox@npm:^3.13.3, @react-aria/listbox@npm:^3.14.0":
+"@react-aria/listbox@npm:^3.13.3, @react-aria/listbox@npm:^3.14.0":
   version: 3.14.0
   resolution: "@react-aria/listbox@npm:3.14.0"
   dependencies:
@@ -2251,7 +2253,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@react-aria/overlays@npm:^3.22.1, @react-aria/overlays@npm:^3.23.2, @react-aria/overlays@npm:^3.25.0":
+"@react-aria/overlays@npm:^3.23.2, @react-aria/overlays@npm:^3.25.0":
   version: 3.25.0
   resolution: "@react-aria/overlays@npm:3.25.0"
   dependencies:
@@ -2588,7 +2590,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@react-aria/utils@npm:^3.24.1, @react-aria/utils@npm:^3.25.2, @react-aria/utils@npm:^3.27.0":
+"@react-aria/utils@npm:^3.25.2, @react-aria/utils@npm:^3.27.0":
   version: 3.27.0
   resolution: "@react-aria/utils@npm:3.27.0"
   dependencies:
@@ -3482,29 +3484,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@tanstack/react-virtual@npm:^3.8.3":
-  version: 3.13.0
-  resolution: "@tanstack/react-virtual@npm:3.13.0"
-  dependencies:
-    "@tanstack/virtual-core": "npm:3.13.0"
-  peerDependencies:
-    react: ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
-    react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
-  checksum: 10c0/89eaf76294be3cfe294304859db2b0f7364a9bf8934849e42cb8ef08435dfb28f5504d57b08b30426a811f127f8f6320ec6c14aa7fcd304bde4fbfeaef04bc36
-  languageName: node
-  linkType: hard
-
 "@tanstack/virtual-core@npm:3.12.1":
   version: 3.12.1
   resolution: "@tanstack/virtual-core@npm:3.12.1"
   checksum: 10c0/0c5be339110d2ef2b1e08a9d64559a68ac8223389f98cdfc0da94f12eb8d91b5752c345b9ec190138bfe6aeca19db7bd78397fd0660dacdb58bc7073282012ae
-  languageName: node
-  linkType: hard
-
-"@tanstack/virtual-core@npm:3.13.0":
-  version: 3.13.0
-  resolution: "@tanstack/virtual-core@npm:3.13.0"
-  checksum: 10c0/88ff5fbd59b449e2ec2cafa9cac1ea6f449d84a593fb869ad9e8a467813e9060d4065517c5657c2de765c165453bb336751641cf670cb27143d51791bbfedc3a
   languageName: node
   linkType: hard
 
@@ -3753,7 +3736,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@vanilla-extract/css@npm:^1.15.3, @vanilla-extract/css@npm:^1.15.5":
+"@vanilla-extract/css@npm:^1.15.5":
   version: 1.17.1
   resolution: "@vanilla-extract/css@npm:1.17.1"
   dependencies:
@@ -3773,7 +3756,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@vanilla-extract/dynamic@npm:^2.1.1, @vanilla-extract/dynamic@npm:^2.1.2":
+"@vanilla-extract/dynamic@npm:^2.1.2":
   version: 2.1.2
   resolution: "@vanilla-extract/dynamic@npm:2.1.2"
   dependencies:
@@ -3789,7 +3772,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@vanilla-extract/recipes@npm:^0.5.3, @vanilla-extract/recipes@npm:^0.5.5":
+"@vanilla-extract/recipes@npm:^0.5.5":
   version: 0.5.5
   resolution: "@vanilla-extract/recipes@npm:0.5.5"
   peerDependencies:
@@ -8723,7 +8706,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"rainbow-sprinkles@npm:^0.17.2, rainbow-sprinkles@npm:^0.17.3":
+"rainbow-sprinkles@npm:^0.17.3":
   version: 0.17.3
   resolution: "rainbow-sprinkles@npm:0.17.3"
   peerDependencies:
@@ -8749,7 +8732,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-aria@npm:^3.33.1, react-aria@npm:^3.34.3":
+"react-aria@npm:^3.34.3":
   version: 3.37.0
   resolution: "react-aria@npm:3.37.0"
   dependencies:
@@ -8861,7 +8844,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-stately@npm:^3.31.1, react-stately@npm:^3.32.2":
+"react-stately@npm:^3.32.2":
   version: 3.35.0
   resolution: "react-stately@npm:3.35.0"
   dependencies:
@@ -10481,7 +10464,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"zustand@npm:^4.5.4, zustand@npm:^4.5.5":
+"zustand@npm:^4.5.5":
   version: 4.5.6
   resolution: "zustand@npm:4.5.6"
   dependencies:

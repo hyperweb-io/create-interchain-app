@@ -10,6 +10,7 @@ export const ChainDropdown = () => {
   const { selectedChain } = useChainStore();
   const { isMobile } = useDetectBreakpoints();
   const { chain } = useChain(selectedChain);
+  console.log('chain', chain);
   const { addChains, getChainLogoUrl, chains } = useWalletManager();
 
   const [input, setInput] = useState<string>(chain?.prettyName ?? '');
