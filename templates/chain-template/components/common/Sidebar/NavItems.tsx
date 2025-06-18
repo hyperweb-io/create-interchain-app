@@ -1,9 +1,15 @@
 import Link from 'next/link';
 import { useRouter } from 'next/router';
+import dynamic from 'next/dynamic';
 import { Box, Icon, IconName, Stack, Text } from '@interchain-ui/react';
-import { RiHome7Line, RiStackLine, RiQuillPenLine } from 'react-icons/ri';
-import { MdOutlineWaterDrop, MdOutlineHowToVote } from 'react-icons/md';
-import { LuFileJson } from 'react-icons/lu';
+
+// Dynamically import icons with no SSR
+const RiHome7Line = dynamic(() => import('react-icons/ri').then(mod => mod.RiHome7Line), { ssr: false });
+const RiStackLine = dynamic(() => import('react-icons/ri').then(mod => mod.RiStackLine), { ssr: false });
+const RiQuillPenLine = dynamic(() => import('react-icons/ri').then(mod => mod.RiQuillPenLine), { ssr: false });
+const MdOutlineWaterDrop = dynamic(() => import('react-icons/md').then(mod => mod.MdOutlineWaterDrop), { ssr: false });
+const MdOutlineHowToVote = dynamic(() => import('react-icons/md').then(mod => mod.MdOutlineHowToVote), { ssr: false });
+const LuFileJson = dynamic(() => import('react-icons/lu').then(mod => mod.LuFileJson), { ssr: false });
 
 type NavIcon = IconName | JSX.Element;
 

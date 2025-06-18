@@ -11,7 +11,6 @@ export default function SignMessage() {
   const [signingIn, setSigningIn] = useState(false);
   const { selectedChain } = useChainStore();
   const { address, wallet, chain } = useChain(selectedChain);
-  console.log('chainType', chain.chainType); // cosmos or eip155
   const { toast } = useToast();
   const { theme } = useTheme();
 
@@ -54,8 +53,7 @@ export default function SignMessage() {
     }
 
     if (!(wallet instanceof ExtensionWallet)) {
-      console.log('wallet', wallet, chain.chainType);
-      // return
+      // Handle non-extension wallets if needed
     }
 
     try {
@@ -71,19 +69,24 @@ export default function SignMessage() {
           throw new Error('Ethereum wallet not found');
         }
 
-        // The message is already plain text, no need to decode
-        console.log('Message to sign:', messageToSign);
+        // Get MetaMask's current address directly
+        const accounts = await ethereumWallet.ethereum.request({ method: 'eth_accounts' });
+
+        // Verify the account we're using for signing matches the frontend
+        if (accounts[0].toLowerCase() !== address.toLowerCase()) {
+          throw new Error('Address mismatch between frontend and MetaMask');
+        }
 
         // Sign the message using personal_sign (MetaMask accepts string directly)
         const signature = await ethereumWallet.ethereum.request({
           method: 'personal_sign',
-          params: [messageToSign, address]
+          params: [messageToSign, accounts[0]]
         });
         result = { signature };
 
         // For Ethereum, we'll derive the public key from the signature during verification
-        // So we pass the address as publicKey for now
-        publicKey = address;
+        // So we pass the actual MetaMask address as publicKey
+        publicKey = accounts[0];
       } else {
         // Handle Cosmos chains
         const cosmosWallet = wallet.getWalletOfType(CosmosWallet);
@@ -112,7 +115,7 @@ export default function SignMessage() {
           message: messageToSign,
           signature: result.signature,
           publicKey,
-          signer: address,
+          signer: chain.chainType === 'eip155' ? publicKey : address, // Use actual MetaMask address for Ethereum
           chainType: chain.chainType
         }),
       });
@@ -120,7 +123,7 @@ export default function SignMessage() {
       const data = await response.json();
 
       if (!response.ok) {
-        throw new Error(data.error || 'Login failed');
+        throw new Error(data.message || 'Login failed');
       }
 
       if (!data.success && data.message?.includes('expired')) {

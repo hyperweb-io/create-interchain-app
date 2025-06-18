@@ -4,7 +4,9 @@ import {
   assetLists as allAssetLists,
 } from '@chain-registry/v2'
 
-const chainNames = ['osmosistestnet', 'juno', 'stargaze'];
+const chainNames = ['osmosistestnet', 'juno', 'stargaze', 
+  // 'ethereum'
+];
 
 export const SEPOLIA_TESTNET = {
   chainId: "11155111", // 11155111(0xaa36a7)

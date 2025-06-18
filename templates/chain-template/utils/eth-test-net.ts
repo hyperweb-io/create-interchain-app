@@ -17,6 +17,7 @@ type EthereumChainConfig = {
 export const createChainFromEthereumChainInfo = (etherChainInfo: EthereumChainConfig): Chain => {
   const newChain = {
     ...{...ethereumChain},
+    prettyName: etherChainInfo.chainName,
     chainId: etherChainInfo.chainId,
     chainName: etherChainInfo.chainName,
     apis: {
