@@ -73,17 +73,65 @@ export default function SignMessage() {
 
         // The message is already plain text, no need to decode
         console.log('Message to sign:', messageToSign);
+        console.log('Message to sign (JSON):', JSON.stringify(messageToSign));
+        console.log('Message length:', messageToSign.length);
+        console.log('Message bytes:', Array.from(Buffer.from(messageToSign, 'utf8')).map(b => b.toString(16).padStart(2, '0')).join(' '));
+
+        // CRITICAL DEBUG: Check the actual addresses
+        console.log('Frontend address from useChain:', address);
+        console.log('Selected chain:', selectedChain);
+        console.log('Chain type:', chain.chainType);
+
+        // Get MetaMask's current address directly
+        const accounts = await ethereumWallet.ethereum.request({ method: 'eth_accounts' });
+        console.log('MetaMask accounts:', accounts);
+        console.log('MetaMask current account:', accounts[0]);
+
+        // Get chain ID
+        const chainId = await ethereumWallet.ethereum.request({ method: 'eth_chainId' });
+        console.log('Current chain ID:', chainId, '(decimal:', parseInt(chainId, 16), ')');
+
+        // ADDITIONAL DEBUG: Let's get more MetaMask information
+        console.log('\n=== DETAILED METAMASK DEBUG ===');
+
+        // Check if MetaMask has multiple accounts
+        if (accounts.length > 1) {
+          console.log('⚠️ Multiple accounts detected:', accounts);
+          console.log('Using account index 0:', accounts[0]);
+        }
+
+        // Get the selected account explicitly
+        const selectedAccount = await ethereumWallet.ethereum.request({
+          method: 'eth_requestAccounts'
+        });
+        console.log('Selected account from eth_requestAccounts:', selectedAccount);
+
+        // Verify the account we're using for signing
+        console.log('Account being used for signing:', accounts[0]);
+        console.log('Frontend useChain address:', address);
+        console.log('Do they match?', accounts[0].toLowerCase() === address.toLowerCase());
+
+        // Double check we're on the right network
+        const networkVersion = await ethereumWallet.ethereum.request({ method: 'net_version' });
+        console.log('Network version:', networkVersion);
+
+        if (accounts[0].toLowerCase() !== address.toLowerCase()) {
+          console.log('🚨 ADDRESS MISMATCH DETECTED!');
+          console.log('Frontend thinks address is:', address);
+          console.log('MetaMask actual address is:', accounts[0]);
+          throw new Error('Address mismatch between frontend and MetaMask');
+        }
 
         // Sign the message using personal_sign (MetaMask accepts string directly)
         const signature = await ethereumWallet.ethereum.request({
           method: 'personal_sign',
-          params: [messageToSign, address]
+          params: [messageToSign, accounts[0]] // Use MetaMask's actual current account
         });
         result = { signature };
 
         // For Ethereum, we'll derive the public key from the signature during verification
-        // So we pass the address as publicKey for now
-        publicKey = address;
+        // So we pass the actual MetaMask address as publicKey
+        publicKey = accounts[0];
       } else {
         // Handle Cosmos chains
         const cosmosWallet = wallet.getWalletOfType(CosmosWallet);
@@ -112,7 +160,7 @@ export default function SignMessage() {
           message: messageToSign,
           signature: result.signature,
           publicKey,
-          signer: address,
+          signer: chain.chainType === 'eip155' ? publicKey : address, // Use actual MetaMask address for Ethereum
           chainType: chain.chainType
         }),
       });

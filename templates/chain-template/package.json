@@ -35,6 +35,7 @@
     "@tanstack/react-query": "4.32.0",
     "ace-builds": "1.35.0",
     "bignumber.js": "9.1.2",
+    "bitcoinjs-lib": "^6.1.7",
     "chain-registry": "1.62.3",
     "dayjs": "1.11.11",
     "interchain-kit": "0.3.41",
