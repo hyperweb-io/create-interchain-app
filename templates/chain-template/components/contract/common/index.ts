@@ -4,4 +4,6 @@ export * from './JsonInput';
 export * from './ComboboxField';
 export * from './ContractAddressField';
 export * from './AttachFundsRadio';
+export * from './SelectAssetContent';
+export * from './SelectAssetItem';
 export * from './BackButton';

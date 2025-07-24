@@ -1,9 +1,10 @@
-import { createExecuteContract } from '@interchainjs/react/cosmwasm/wasm/v1/tx.rpc.func';
+import { useChain } from '@interchain-kit/react';
+import { useExecuteContract } from '@interchainjs/react/cosmwasm/wasm/v1/tx.rpc.react';
+import { MsgExecuteContract } from '@interchainjs/react/cosmwasm/wasm/v1/tx';
 import { Coin, StdFee } from '@interchainjs/react/types';
+import { defaultContext } from '@tanstack/react-query';
 
 import { toUint8Array } from '@/utils';
-
-import { useHandleTx } from './useHandleTx';
 import { useCustomSigningClient } from '../common';
 
 interface ExecuteTxParams {
@@ -17,8 +18,14 @@ interface ExecuteTxParams {
 }
 
 export const useExecuteContractTx = (chainName: string) => {
+  const { address } = useChain(chainName);
   const { data: signingClient } = useCustomSigningClient();
-  const handleTx = useHandleTx(chainName);
+  const { mutate: executeContract, isLoading } = useExecuteContract({
+    clientResolver: signingClient,
+    options: {
+      context: defaultContext,
+    },
+  });
 
   const executeTx = async ({
     address,
@@ -26,29 +33,37 @@ export const useExecuteContractTx = (chainName: string) => {
     fee,
     funds,
     msg,
-    onTxFailed = () => {},
-    onTxSucceed = () => {},
+    onTxFailed = () => { },
+    onTxSucceed = () => { },
   }: ExecuteTxParams) => {
-    await handleTx({
-      txFunction: async () => {
-        const executeContract = createExecuteContract(signingClient);
-        const res = await executeContract(
-          address,
-          {
-            sender: address,
-            contract: contractAddress,
-            msg: toUint8Array(msg),
-            funds,
-          },
-          fee,
-          '',
-        );
-        return res;
-      },
-      onTxSucceed,
-      onTxFailed,
+    const message = MsgExecuteContract.fromPartial({
+      sender: address,
+      contract: contractAddress,
+      msg: toUint8Array(msg),
+      funds,
     });
+
+    executeContract(
+      {
+        signerAddress: address,
+        message,
+        fee,
+        memo: 'Execute Contract',
+      },
+      {
+        onSuccess: (res) => {
+          if (res.code !== 0) {
+            throw new Error(res.rawLog || 'Failed to execute contract');
+          }
+          onTxSucceed();
+        },
+        onError: (error) => {
+          console.error('Failed to execute contract:', error);
+          onTxFailed();
+        },
+      }
+    );
   };
 
-  return { executeTx };
+  return { executeTx, isLoading };
 };
