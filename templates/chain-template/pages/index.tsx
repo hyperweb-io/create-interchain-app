@@ -5,6 +5,7 @@ import { useChain } from '@interchain-kit/react';
 import { Button } from '@/components';
 import { useChainStore } from '@/contexts';
 import { useDetectBreakpoints } from '@/hooks';
+import { BalanceTestStandalone } from '@/components/balance-test-standalone';
 
 export default function Home() {
   const { isMobile } = useDetectBreakpoints();
@@ -34,6 +35,9 @@ export default function Home() {
         <HighlightText>Next.js</HighlightText>
       </Text>
       <ConnectButton />
+      {/* Standalone Balance Test Component */}
+      <BalanceTestStandalone />
+      
       <Box
         display="flex"
         justifyContent="center"
