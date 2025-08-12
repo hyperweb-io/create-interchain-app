@@ -490,7 +490,7 @@
     postcss-import "^16.1.1"
     zustand "^5.0.3"
 
-"@interchain-ui/react@^1.26.3":
+"@interchain-ui/react@1.26.3", "@interchain-ui/react@^1.26.3":
   version "1.26.3"
   resolved "https://registry.npmjs.org/@interchain-ui/react/-/react-1.26.3.tgz#71c18d95a43eb57b2b3b2ecc256a24e4edc73cd9"
   integrity sha512-kvGOZaSDJLNxtxieiyPMHOzxBGkpHR/BCpg/UEMDl2l7nLoPrygB/Oux1QEv/cwkw8GvepOBM7pzfJf8xk1IbQ==

@@ -12,6 +12,7 @@
     "@chain-registry/v2": "^1.71.237",
     "@interchain-kit/phantom-extension": "0.3.43",
     "@interchain-kit/react": "0.3.43",
+    "@interchain-ui/react": "1.26.3",
     "@interchainjs/solana": "1.13.1-beta.2",
     "chain-registry": "2.0.31",
     "next": "15.3.5",
