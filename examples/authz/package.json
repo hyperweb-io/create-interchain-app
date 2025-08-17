@@ -4,11 +4,11 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "yarn build:tsc && next build",
-    "build:tsc": "yarn tsc -p tsconfig.json --outDir main --module commonjs",
+    "build": "pnpm run build:tsc && next build",
+    "build:tsc": "tsc -p tsconfig.json --outDir main --module commonjs",
     "clean": "rimraf ./types && rimraf ./src/codegen",
-    "locks:remove": "rm -f yarn.lock",
-    "locks:create": "generate-lockfile --lockfile ../../yarn.lock --package package.json --write yarn.lock --force",
+    "locks:remove": "rm -f pnpm-lock.yaml",
+    "locks:create": "generate-lockfile --lockfile ../../pnpm-lock.yaml --package package.json --write pnpm-lock.yaml --force",
     "locks": "npm run locks:remove && npm run locks:create",
     "codegen": "node scripts/codegen.js"
   },
@@ -27,7 +27,7 @@
       "types/"
     ]
   },
-  "resolutions": {
+  "overrides": {
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "@types/react": "18.0.25",
@@ -86,5 +86,5 @@
     "ts-jest": "^29.1.0",
     "typescript": "^5.1.6"
   },
-  "packageManager": "yarn@4.3.0"
+  "packageManager": "pnpm@9.7.0"
 }

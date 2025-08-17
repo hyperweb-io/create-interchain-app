@@ -263,8 +263,8 @@ const stargateClient = await SigningStargateClient.connectWithSigner(rpcEndpoint
 When first cloning the repo:
 
 ```
-yarn
-yarn build
+pnpm install
+pnpm build
 ```
 
 ### Codegen
@@ -272,7 +272,7 @@ yarn build
 Look inside of `scripts/codegen.ts` and configure the settings for bundling your SDK and contracts into `__PACKAGE_IDENTIFIER__`:
 
 ```
-yarn codegen
+pnpm codegen
 ```
 
 ### Publishing
@@ -293,7 +293,7 @@ If you absolutely need to publish manually using npm, ensure to do it this way, 
 
 ```
 cd ./packages/<your-telescope-module>
-yarn build
+pnpm build
 cd dist
 npm publish
 ```

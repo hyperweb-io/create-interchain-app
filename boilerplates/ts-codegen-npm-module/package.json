@@ -16,8 +16,8 @@
     "!CHANGELOG.md"
   ],
   "scripts": {
-    "build:cjs": "yarn tsc -p tsconfig.json --outDir dist --module commonjs || true",
-    "build:mjs": "yarn tsc -p tsconfig.json --outDir mjs --module es2022 --declaration false || true",
+    "build:cjs": "tsc -p tsconfig.json --outDir dist --module commonjs || true",
+    "build:mjs": "tsc -p tsconfig.json --outDir mjs --module es2022 --declaration false || true",
     "clean:mjs": "rimraf mjs",
     "clean:dist": "rimraf dist",
     "clean": "npm run clean:mjs && npm run clean:dist",

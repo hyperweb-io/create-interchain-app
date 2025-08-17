@@ -19,12 +19,17 @@ jobs:
         with:
           node-version: '20.x'
 
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 9
+
       - name: Install Dependencies
-        run: yarn install
+        run: pnpm install
 
       - name: Build Project
-        run: yarn build
+        run: pnpm build
 
       - name: Run Parser Tests
-        run: yarn workspace modulename test
+        run: pnpm --filter modulename test
         working-directory: packages/modulefolder

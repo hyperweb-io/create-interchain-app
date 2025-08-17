@@ -5,7 +5,7 @@ This is an Interchain App project bootstrapped with [`create-interchain-app`](ht
 First, install the packages and run the development server:
 
 ```bash
-yarn && yarn dev
+pnpm install && pnpm dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
@@ -23,12 +23,12 @@ Starship enables users to start a virtual env to simulate the queries and txs wi
 
 ```bash
 # install all dependencies
-yarn
+pnpm install
 # run the starship virtual env
 # wait for some minutes until it gets started.
-yarn starship:all
+pnpm starship:all
 # run the demo typescript script
-yarn starship:demo
+pnpm starship:demo
 ```
 
 ## Interchain JavaScript Stack

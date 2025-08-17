@@ -7,15 +7,15 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "locks:remove": "rm -f yarn.lock",
-    "locks:create": "generate-lockfile --lockfile ../../yarn.lock --package package.json --write yarn.lock --force",
+    "locks:remove": "rm -f pnpm-lock.yaml",
+    "locks:create": "generate-lockfile --lockfile ../../pnpm-lock.yaml --package package.json --write pnpm-lock.yaml --force",
     "locks": "npm run locks:remove && npm run locks:create",
     "starship": "starship --config ./starship/configs/config.yaml",
     "starship:demo": "tsx starship/src/index.ts",
-    "starship:all": "yarn starship start",
-    "starship:clean": "yarn starship stop"
+    "starship:all": "pnpm run starship start",
+    "starship:clean": "pnpm run starship stop"
   },
-  "resolutions": {
+  "overrides": {
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "@types/react": "18.0.25",
@@ -66,5 +66,5 @@
     "tsx": "^4.19.3",
     "typescript": "^5.1.6"
   },
-  "packageManager": "yarn@4.3.0"
+  "packageManager": "pnpm@9.7.0"
 }

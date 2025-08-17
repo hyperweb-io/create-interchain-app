@@ -8,14 +8,11 @@
   "scripts": {
     "build": "lerna run prepare --parallel",
     "buidl": "lerna run buidl --parallel",
-    "bootstrap": "lerna bootstrap --use-workspaces",
+    "bootstrap": "pnpm -w install",
     "lint": "lerna run lint",
     "format": "lerna run format",
     "test": "lerna run test --stream",
-    "locks:update": "./scripts/update-locks.sh",
-    "locks": "lerna run locks --stream",
-    "locks:remove": "lerna run locks:remove --stream",
-    "update": "yarn upgrade-interactive --latest",
+    "update": "pnpm -w up -i -L",
     "clear:node_modules": "find . -name 'node_modules' -type d -prune -print | xargs rm -rf"
   },
   "devDependencies": {
@@ -33,14 +30,9 @@
     "prettier": "2.8.0",
     "copyfiles": "2.4.1"
   },
-  "workspaces": [
-    "packages/*",
-    "examples/*",
-    "templates/*"
-  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/hyperweb-io/create-interchain-app"
   },
-  "packageManager": "yarn@1.22.22+sha1.ac34549e6aa8e7ead463a7407e1c7390f61a6610"
+  "packageManager": "pnpm@9.7.0"
 }

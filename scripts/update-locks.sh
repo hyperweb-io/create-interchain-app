@@ -1,15 +1,16 @@
 #!/bin/bash
 
-yarn workspaces list --json | while read -r line; do
+# Iterate over workspaces using pnpm
+pnpm -w ls --json | jq -c '.[]' | while read -r line; do
   # Extract location and name
-  location=$(echo "$line" | sed -E 's/.*"location":"([^"]+)".*/\1/')
-  name=$(echo "$line" | sed -E 's/.*"name":"([^"]+)".*/\1/')
+  location=$(echo "$line" | jq -r '.path' | sed 's#^\./##')
+  name=$(echo "$line" | jq -r '.name')
 
   # Check if location starts with "examples/" or "templates/"
   if [[ "$location" == examples/* ]] || [[ "$location" == templates/* ]]; then
     echo "Updating lockfile for $name in $location"
     if [ -d "$location" ]; then
-      (cd "$location" && yarn install --mode update-lockfile)
+      (cd "$location" && pnpm install)
     else
       echo "Directory does not exist: $location"
     fi

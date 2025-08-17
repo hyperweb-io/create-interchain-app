@@ -7,12 +7,12 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "locks:remove": "rm -f yarn.lock",
-    "locks:create": "generate-lockfile --lockfile ../../yarn.lock --package package.json --write yarn.lock --force",
+    "locks:remove": "rm -f pnpm-lock.yaml",
+    "locks:create": "generate-lockfile --lockfile ../../pnpm-lock.yaml --package package.json --write pnpm-lock.yaml --force",
     "locks": "npm run locks:remove && npm run locks:create",
     "starship": "starship --config starship/configs/config.yaml"
   },
-  "resolutions": {
+  "overrides": {
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "@types/react": "18.0.25",
