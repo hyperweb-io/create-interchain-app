@@ -12,8 +12,8 @@
     "locks": "npm run locks:remove && npm run locks:create"
   },
   "overrides": {
-    "react": "18.2.0",
-    "react-dom": "18.2.0",
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
     "@types/react": "18.0.25",
     "@types/react-dom": "18.0.9"
   },
@@ -31,14 +31,14 @@
     "framer-motion": "9.0.7",
     "interchain-kit": "0.2.222",
     "next": "^13",
-    "react": "18.2.0",
-    "react-dom": "18.2.0",
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
     "react-icons": "4.6.0"
   },
   "devDependencies": {
     "@types/node": "18.19.37",
-    "@types/react": "18.2.0",
-    "@types/react-dom": "18.2.0",
+    "@types/react": "18.3.1",
+    "@types/react-dom": "18.3.1",
     "eslint": "8.28.0",
     "eslint-config-next": "13.0.5",
     "generate-lockfile": "0.0.12",
