@@ -100,7 +100,7 @@ importers:
         version: 1.11.2
       '@interchainjs/react':
         specifier: 1.11.2
-        version: 1.11.2(@chain-registry/v2-types@0.53.68)(@chain-registry/v2@1.71.237)(@tanstack/react-query@4.32.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0))
+        version: 1.11.2(@chain-registry/v2-types@0.53.146)(@chain-registry/v2@1.71.237)(@tanstack/react-query@4.32.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0))
       '@tanstack/react-query':
         specifier: 4.32.0
         version: 4.32.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
@@ -363,7 +363,7 @@ importers:
         version: 1.11.2
       '@interchainjs/cosmos-types':
         specifier: 1.11.2
-        version: 1.11.2(@chain-registry/v2-types@0.53.68)(@chain-registry/v2@1.71.237)
+        version: 1.11.2(@chain-registry/v2-types@0.53.146)(@chain-registry/v2@1.71.237)
       '@tanstack/react-query':
         specifier: 4.32.0
         version: 4.32.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -580,8 +580,8 @@ importers:
         specifier: 1.11.2
         version: 1.11.2
       '@interchainjs/injective':
-        specifier: 1.11.2
-        version: 1.11.2(@chain-registry/v2-types@0.53.146)(@chain-registry/v2@1.71.237)
+        specifier: 1.6.5
+        version: 1.6.5(@chain-registry/v2-types@0.53.146)(@chain-registry/v2@1.71.237)
       '@interchainjs/vue':
         specifier: 1.11.2
         version: 1.11.2(@chain-registry/v2-types@0.53.146)(@chain-registry/v2@1.71.237)(@tanstack/vue-query@5.62.7(vue@3.5.18(typescript@5.6.3)))(vue@3.5.18(typescript@5.6.3))
@@ -591,6 +591,12 @@ importers:
       bignumber.js:
         specifier: 9.1.0
         version: 9.1.0
+      crypto-browserify:
+        specifier: ^3.12.1
+        version: 3.12.1
+      injective-vue:
+        specifier: 1.16.6
+        version: 1.16.6(@chain-registry/v2-types@0.53.146)(@chain-registry/v2@1.71.237)(@tanstack/vue-query@5.62.7(vue@3.5.18(typescript@5.6.3)))(vue@3.5.18(typescript@5.6.3))
       vue:
         specifier: ^3.5.13
         version: 3.5.18(typescript@5.6.3)
@@ -1003,7 +1009,7 @@ importers:
         version: 1.11.2
       '@interchainjs/react':
         specifier: 1.11.2
-        version: 1.11.2(@chain-registry/v2@1.71.237)(@tanstack/react-query@4.32.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0))
+        version: 1.11.2(@chain-registry/v2-types@0.53.146)(@chain-registry/v2@1.71.237)(@tanstack/react-query@4.32.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0))
       '@keplr-wallet/cosmos':
         specifier: ^0.12.44
         version: 0.12.263(bitcoinjs-lib@6.1.7)(starknet@7.6.4)
@@ -3018,6 +3024,9 @@ packages:
   '@interchainjs/amino@1.11.5':
     resolution: {integrity: sha512-ucSqOE4GqcEf006XubG98IP0Ib5OQCzLJnYinTnAvzQr5664fvT94NyuG86Q64Fh812BVG5837JQ0iVTi57L3g==}
 
+  '@interchainjs/amino@1.16.6':
+    resolution: {integrity: sha512-h+wozNdUjFHoUwGjmMHUvwrxAYude12U+f5tuZBDC3Nuw7vnBLH8ikgvP1r3fgCxiuvPOJtWUfhNrVrc4ceiSA==}
+
   '@interchainjs/amino@1.9.12':
     resolution: {integrity: sha512-LJnUzD6lRiFp7yJyLMuOHj3gkfRcAObOKLGtwvdm5yHSOdIU98b8423uU7Q0XG5PZaU5523IuNM1f8oYSwOn0w==}
 
@@ -3035,6 +3044,9 @@ packages:
 
   '@interchainjs/auth@1.11.5':
     resolution: {integrity: sha512-1ap3XQcyvRrTsaAqzIL0r0Furl4TdGm+E7/UNMI9iqImUxg2G1wGZjRTapRbn1cQs1ATmy5ymToEunh+7Ffssw==}
+
+  '@interchainjs/auth@1.16.6':
+    resolution: {integrity: sha512-wqE9CzsKzdFbTnBa7jZ3DrOYo0Ap+GbJkdCqyfqPjbJ4Py7DecWfnOkQ695yFl2qTYkvNgjFUgV0UyuBE/VsVw==}
 
   '@interchainjs/auth@1.6.3':
     resolution: {integrity: sha512-Beogp4nAyjLI88ifcFgqFfehY2UrnyqJMprM1NhXWplz+6gFlf6act/f+YfiQ+OPT9CpFbis2Xi6LyjrIyw8XA==}
@@ -3060,6 +3072,9 @@ packages:
   '@interchainjs/cosmos-types@1.11.5':
     resolution: {integrity: sha512-Vl/NKShcO4FEP11VDnC1NvUjkuGguw5um8tkK/jGGKVETUG00Y6sXN4sznyyU4TbJVJNPV+hKu/z/ZIB1h575A==}
 
+  '@interchainjs/cosmos-types@1.16.6':
+    resolution: {integrity: sha512-WxxdnFCsAiATBaKj3fCcnO2jAi+nUQEEXuV2G5Xxqoy91JJAs3QmLJMZkn0EnIOPNJoQpH9btTtkj5cg85htfg==}
+
   '@interchainjs/cosmos-types@1.6.3':
     resolution: {integrity: sha512-n9Nmktf94Gw9xrvnaeP1bbXTHI4tbzDI34Qt6WVKqqPkfWWQ/RhMy3rbCgYo1iiPB59xJ6XVZzeKANX5mqQLrg==}
 
@@ -3081,6 +3096,9 @@ packages:
   '@interchainjs/cosmos@1.11.5':
     resolution: {integrity: sha512-rUKG/kLgMSerttinOiHAvakGLE2/u8NmoraXRmrBONPnFyCELhYB7TqizqXvEKLYWYSHhNweF1CzBA0GFtK9Yg==}
 
+  '@interchainjs/cosmos@1.16.6':
+    resolution: {integrity: sha512-59c11ifRDc7JQkjBj1dWTqB8u/c5pRcGAlePXJYrPkzbmbMPjlhkhk4oBE/locBX1L15CK5m5wLgIM8YJsc5Hw==}
+
   '@interchainjs/cosmos@1.6.3':
     resolution: {integrity: sha512-HRHueKveLSsdb+ENsYLC2vyj7mTqlfC6G8h/WyW/4dHucNOrYky8lr4uQVbIUsZS+JULLEcMQsMb4+4OdbyhtQ==}
 
@@ -3099,6 +3117,9 @@ packages:
   '@interchainjs/crypto@1.11.5':
     resolution: {integrity: sha512-Usg6gJVnfk4I2vOmIU+aJTiKEz/M1NSUE8VligSs8xKdL4z1VQypM4lFIZCneExurayz/j8U6gXBL3m8W2/9LQ==}
 
+  '@interchainjs/crypto@1.16.6':
+    resolution: {integrity: sha512-PTRHNr0BJdQ3yADb/v1LyA638yCZ/eDDCtT9F+fvp/rnKq0AyWsdHIMUjD8DTRlHhMgmjAiVBQRhMCzmsoyXrw==}
+
   '@interchainjs/crypto@1.9.12':
     resolution: {integrity: sha512-lL1vYIoc25jPoIBy/8Ig+PmCVtWsny8x1aFJ5aBri899PBoTr9eUL6QvD/aNe2p/XYvORQffY6eJTVTo0o4GpQ==}
 
@@ -3114,6 +3135,9 @@ packages:
   '@interchainjs/encoding@1.11.5':
     resolution: {integrity: sha512-J91/Qrq2TylTqPvK4k05pY06PF5CRA42I/DOnVSSBsOGy3UTd0Ru7JQBEhlyEMrgVeriVzCuMG3/ZBPfhKLg5A==}
 
+  '@interchainjs/encoding@1.16.6':
+    resolution: {integrity: sha512-8OxQeAtinHMN8JmuInJOvhR1I1MtHPHImD5mecwXE3o09yZvPf23+zBFWc/aXGo0fWEXI1+fPIKQmVJCFQJ9+Q==}
+
   '@interchainjs/encoding@1.9.12':
     resolution: {integrity: sha512-kfOCToy0qoLkG4svVawhbIEODud6xinBhL+gnp4wFCGpX9Ziipz51OEhRV2s09GSojKlrmlR4PDZEpVieDudRA==}
 
@@ -3123,8 +3147,14 @@ packages:
   '@interchainjs/ethereum@1.11.9':
     resolution: {integrity: sha512-95Fpvuf30+moJ6hL8MYrwh3wJyBryl4Fa7YpPJXVXq1pqnc8XpLdyUX4svdjMe5LejMWY4bHVLxmtn0rVlFs6Q==}
 
+  '@interchainjs/ethereum@1.6.3':
+    resolution: {integrity: sha512-FAItWkwjVR1tRmDkodL+Npvrag6thEtgu1WviRVgV3p60eP7fybRSi4YX16vMqkmQiH2C96uQ6UBtoFaqGjj1A==}
+
   '@interchainjs/injective@1.11.2':
     resolution: {integrity: sha512-zOGmEZBE+C8GC0yXSqAka1xdKtbU3Yn6RgHXN4Hxv4b08Re8GtGISR58LjVnkESF+wn3wDQhdWfBLBQLXwKgAQ==}
+
+  '@interchainjs/injective@1.6.5':
+    resolution: {integrity: sha512-TimS5Xc1U2Qsc87bsO2Keu9MESXwBzMowqAfXqcSFNa22TcXsygRjQecOWFq2G1yKc+HJ1xsdkL5dlCGtxP+5g==}
 
   '@interchainjs/math@1.10.1':
     resolution: {integrity: sha512-i+pUE7wV8phGxYuKh7vO9vMCrnxx7WoNT7QPbscL2Rh+GeZNgQkklQnhA0dAbvwGCEY17H112ouo6VsedWtg/A==}
@@ -3137,6 +3167,9 @@ packages:
 
   '@interchainjs/math@1.11.5':
     resolution: {integrity: sha512-w4n3w7QIrIFZe2AL24OIuhwsO3ArLkRWmBbduZvoRzEi2cG2gfBvrCLtIJisyp2j/w4T80EeP0E+uQqne9Mn7A==}
+
+  '@interchainjs/math@1.16.6':
+    resolution: {integrity: sha512-CRqZpvBN1eS3hXzsQ3DEb40NiuDidNjjI8gZKqEomb0TTIvU+I0nVoJciumI+UimU/MIoqnJ11G1T4GbW6UKCQ==}
 
   '@interchainjs/math@1.9.12':
     resolution: {integrity: sha512-ynMCV+8Q5IRXbW4mC8dtyOZTp3eXcfWcOKH+U27wNMdqavNaPmQA9Dre6z1o0/C91z0O04IIrV9LpEW/HOC4DQ==}
@@ -3152,6 +3185,9 @@ packages:
 
   '@interchainjs/pubkey@1.11.5':
     resolution: {integrity: sha512-vTtoRIMdZKf9dGHLCZModwR7ePUaXBykByrNPjYWJce3OFq7ZwXFPviQauU90Ek6+rZElV2ypTNavLQ5f4lkqA==}
+
+  '@interchainjs/pubkey@1.16.6':
+    resolution: {integrity: sha512-2pHHaOFoVZZ3uUHIwGZhVTB12xErijqkdTEAWhNBD1sgtgP+Yb9HYXUeWa/21B8rYb9UVFbxtdkgpu21kF84ew==}
 
   '@interchainjs/pubkey@1.9.12':
     resolution: {integrity: sha512-Irw4XyygicEzWEwmWOueprfsYjAjoV/w2WMPIyG1LrzTuN7zr16JZb3Ecr+Xbm3ANyTIdoN915xA0nwxvqQD2g==}
@@ -3178,6 +3214,9 @@ packages:
 
   '@interchainjs/types@1.11.9':
     resolution: {integrity: sha512-5G546AwLkUjeYOV0lug3HI9eY4zlnCdMDvojQ2vmQMYsuN1WkE0rKWhektguGFx5YHA9tn8MqgD4gMOsHqqa4A==}
+
+  '@interchainjs/types@1.16.6':
+    resolution: {integrity: sha512-omcYYwlBIEKmZv+aCE+BaMSRNadEEfN0zxm1vXs1iwjbmWlkRgmDqpacGOzwOMSMHDq5cPXqpBavQNA7f4lY0Q==}
 
   '@interchainjs/types@1.6.3':
     resolution: {integrity: sha512-oDW5RUgVd5i4Ni7zx2YizIwRPgC97X79EQdb/sOkD+Fk+N/n83Op5JpnuaN6RB2bYJdeNWdn2RsH+Zk3uE1ETw==}
@@ -3214,6 +3253,12 @@ packages:
 
   '@interchainjs/utils@1.11.9':
     resolution: {integrity: sha512-dT/58D0yms9+Os8m+tOPiQisbAShvzoNCvlm02kf8oPwHKkD48O7X/eU0G8Uioi1QEU3PDI41/Up10WfUWwWAw==}
+    peerDependencies:
+      '@chain-registry/v2': ^1.71.186
+      '@chain-registry/v2-types': ^0.53.115
+
+  '@interchainjs/utils@1.16.6':
+    resolution: {integrity: sha512-p1FDPSsc+Z3P192OSXTn2a5qTSRfFROenZP57h/anUhUbzb4ftY1ryg3y7B3bcjQcNE/ZiAoo7gAr12ade2kdQ==}
     peerDependencies:
       '@chain-registry/v2': ^1.71.186
       '@chain-registry/v2-types': ^0.53.115
@@ -6173,6 +6218,9 @@ packages:
   asap@2.0.6:
     resolution: {integrity: sha512-BSHWgDSAiKs50o2Re8ppvp3seVHXSRM44cdSsT9FfNEUUZLOGWVCsiWaRPWM1Znn+mqZ1OfVZ3z3DWEzSp7hRA==}
 
+  asn1.js@4.10.1:
+    resolution: {integrity: sha512-p32cOF5q0Zqs9uBiONKYLm6BClCoBCM5O9JfeUSlnQLBTxYdTK+pW+nXflm8UkKd2UYlEbYz5qEi0JuZR9ckSw==}
+
   asn1@0.2.6:
     resolution: {integrity: sha512-ix/FxPn0MDjeyJ7i/yoHGFt/EX6LyNbxSEhPPXODPL+KB0VPk86UYfL0lMdy+KCnv+fmvIzySwaK5COwqVbWTQ==}
 
@@ -6405,6 +6453,23 @@ packages:
   brorand@1.1.0:
     resolution: {integrity: sha512-cKV8tMCEpQs4hK/ik71d6LrPOnpkpGBR0wzxqr68g2m/LB2GxVYQroAjMJZRVM1Y4BCjCKc3vAamxSzOY2RP+w==}
 
+  browserify-aes@1.2.0:
+    resolution: {integrity: sha512-+7CHXqGuspUn/Sl5aO7Ea0xWGAtETPXNSAjHo48JfLdPWcMng33Xe4znFvQweqc/uzk5zSOI3H52CYnjCfb5hA==}
+
+  browserify-cipher@1.0.1:
+    resolution: {integrity: sha512-sPhkz0ARKbf4rRQt2hTpAHqn47X3llLkUGn+xEJzLjwY8LRs2p0v7ljvI5EyoRO/mexrNunNECisZs+gw2zz1w==}
+
+  browserify-des@1.0.2:
+    resolution: {integrity: sha512-BioO1xf3hFwz4kc6iBhI3ieDFompMhrMlnDFC4/0/vd5MokpuAc3R+LYbwTA9A5Yc9pq9UYPqffKpW2ObuwX5A==}
+
+  browserify-rsa@4.1.1:
+    resolution: {integrity: sha512-YBjSAiTqM04ZVei6sXighu679a3SqWORA3qZTEqZImnlkDIFtKc6pNutpjyZ8RJTjQtuYfeetkxM11GwoYXMIQ==}
+    engines: {node: '>= 0.10'}
+
+  browserify-sign@4.2.3:
+    resolution: {integrity: sha512-JWCZW6SKhfhjJxO8Tyiiy+XYB7cqd2S5/+WeYHsKdNKFlCBhKbblba1A/HN/90YwtxKc8tCErjffZl++UNmGiw==}
+    engines: {node: '>= 0.12'}
+
   browserslist@4.25.2:
     resolution: {integrity: sha512-0si2SJK3ooGzIawRu61ZdPCO1IncZwS8IzuX73sPZsXW6EQ/w/DAfPyKI8l1ETTCr2MnvqWitmlCUxgdul45jA==}
     engines: {node: ^6 || ^7 || ^8 || ^9 || ^10 || ^11 || ^12 || >=13.7}
@@ -6434,6 +6499,9 @@ packages:
 
   buffer-from@1.1.2:
     resolution: {integrity: sha512-E+XQCRwSbaaiChtv6k6Dwgc+bx+Bs6vuKJHHl5kox/BaKbhiXzqQOwK4cO22yElGp2OCmjwVhT3HmxgyPGnJfQ==}
+
+  buffer-xor@1.0.3:
+    resolution: {integrity: sha512-571s0T7nZWK6vB67HI5dyUF7wXiNcfaPPPTl6zYCNApANjIvYJTg7hlud/+cJpdAhS7dVzqMLmfhfHR3rAcOjQ==}
 
   buffer@6.0.3:
     resolution: {integrity: sha512-FTiCpNxtwiZZHEZbcbTIcZjERVICn9yq/pDFkTl95/AxzD1naBctN7YO68riM/gLSDY7sdrMby8hofADYuuqOA==}
@@ -6808,6 +6876,12 @@ packages:
     engines: {node: '>=0.8'}
     hasBin: true
 
+  create-ecdh@4.0.4:
+    resolution: {integrity: sha512-mf+TCx8wWc9VpuxfP2ht0iSISLZnt0JgWlrOKZiNqyUZWnjIaCIVNQArMHnCZKfEYRg6IM7A+NeJoN8gf/Ws0A==}
+
+  create-hash@1.1.3:
+    resolution: {integrity: sha512-snRpch/kwQhcdlnZKYanNF1m0RDlrCdSKQaH87w1FCFPVPNCQ/Il9QJKAX2jVBZddRdaHBMC+zXa9Gw9tmkNUA==}
+
   create-hash@1.2.0:
     resolution: {integrity: sha512-z00bCGNHDG8mHAkP7CtT1qVu+bFQUPjYq/4Iv3C3kWjTFV10zIjfSoeqXo9Asws8gwSHDGj/hl2u4OGIjapeCg==}
 
@@ -6828,6 +6902,10 @@ packages:
 
   crossws@0.3.5:
     resolution: {integrity: sha512-ojKiDvcmByhwa8YYqbQI/hg7MEU0NC03+pSdEq4ZUnZR9xXpwk7E43SMNGkn+JxJGPFtNvQ48+vV2p+P1ml5PA==}
+
+  crypto-browserify@3.12.1:
+    resolution: {integrity: sha512-r4ESw/IlusD17lgQi1O20Fa3qNnsckR126TdUuBgAu7GBYSIPvdNyONd3Zrxh0xCwA4+6w/TDArBPsMvhur+KQ==}
+    engines: {node: '>= 0.10'}
 
   crypto-js@4.2.0:
     resolution: {integrity: sha512-KALDyEYgpY+Rlob/iriUtjV6d5Eq+Y191A5g4UqLAi8CyGP9N1+FdVbkc1SxKc2r4YAYqG8JzO2KGL+AizD70Q==}
@@ -7036,6 +7114,9 @@ packages:
     resolution: {integrity: sha512-0je+qPKHEMohvfRTCEo3CrPG6cAzAYgmzKyxRiYSSDkS6eGJdyVJm7WaYA5ECaAD9wLB2T4EEeymA5aFVcYXCA==}
     engines: {node: '>=6'}
 
+  des.js@1.1.0:
+    resolution: {integrity: sha512-r17GxjhUCjSRy8aiJpr8/UadFIzMzJGexI3Nmz4ADi9LYSFx4gTBp80+NaX/YsXWWLhpZ7v/v/ubEc/bCNfKwg==}
+
   destr@2.0.5:
     resolution: {integrity: sha512-ugFTXCtDZunbzasqBxrK93Ik/DRYsO6S/fedkWEMKqt04xZ4csmnmwGDBAb07QWNaGMAmnTIemsYZCksjATwsA==}
 
@@ -7080,6 +7161,9 @@ packages:
   diff@5.2.0:
     resolution: {integrity: sha512-uIFDxqpRZGZ6ThOk84hEfqWoHx2devRFvpTZcTHur85vImfaxUbTW9Ryh4CpCuDnToOP1CEtXKIgytHBPVff5A==}
     engines: {node: '>=0.3.1'}
+
+  diffie-hellman@5.0.3:
+    resolution: {integrity: sha512-kqag/Nl+f3GwyK25fhUMYj81BUOrZ9IuJsjIcDE5icNM9FJHAVm3VcUDxdLPoQtTuUylWm6ZIknYJwwaPxsUzg==}
 
   dir-glob@3.0.1:
     resolution: {integrity: sha512-WkrWp9GR4KXfKGYzOLmTuGVi1UWFfws377n9cc55/tb6DuqyF6pcQ5AbiHEshaDpY9v6oaSr2XCDidGmMwdzIA==}
@@ -7504,6 +7588,9 @@ packages:
   events@3.3.0:
     resolution: {integrity: sha512-mQw+2fkQbALzQ7V0MY0IqdnXNOeTtP4r0lN9z7AAawCXgqea7bDii20AYrIBrFd/Hx0M2Ocz6S111CaFkUcb0Q==}
     engines: {node: '>=0.8.x'}
+
+  evp_bytestokey@1.0.3:
+    resolution: {integrity: sha512-/f2Go4TognH/KvCISP7OUsHn85hT9nUkxxA9BEWxFn+Oj9o8ZNLm/40hdlgSLyuOimsrTKLUMEorQexp/aPQeA==}
 
   execa@5.1.1:
     resolution: {integrity: sha512-8uSpZZocAZRBAPIEINJj3Lo9HyGitllczc27Eh5YYojjMFMn8yHMDMaUHE2Jqfq05D/wucwI4JGURyXt1vchyg==}
@@ -7979,6 +8066,13 @@ packages:
   has-unicode@2.0.1:
     resolution: {integrity: sha512-8Rf9Y83NBReMnx0gFzA8JImQACstCYWUplepDa9xprwwtmgEZUF0h/i5xSA625zB/I37EtrswSST6OXxwaaIJQ==}
 
+  hash-base@2.0.2:
+    resolution: {integrity: sha512-0TROgQ1/SxE6KmxWSvXHvRj90/Xo1JvZShofnYF+f6ZsGtR4eES7WfrQzPalmyagfKZCXpVnitiRebZulWsbiw==}
+
+  hash-base@3.0.5:
+    resolution: {integrity: sha512-vXm0l45VbcHEVlTCzs8M+s0VeYsB2lnlAaThoLKGXr3bE/VWDOelNUnycUPEhKEaXARL2TEFjBOyUiM6+55KBg==}
+    engines: {node: '>= 0.10'}
+
   hash-base@3.1.0:
     resolution: {integrity: sha512-1nmYp/rhMDiE7AYkDw+lLwlAzz0AntGIe51F3RfFfEqyQ3feY2eI/NcwC6umIQVOASPMsWJLJScWKSSvzL9IVA==}
     engines: {node: '>=4'}
@@ -8113,6 +8207,12 @@ packages:
     resolution: {integrity: sha512-3i/O9bdvniFHnfAAefrVtg6w73MgHrlv+luKiDnCaJI9QnF6fHBdYU/f8VuiA9Ly1sGaF3f2cCGaLH/JECa5Dg==}
     peerDependencies:
       '@tanstack/react-query': 4.29.1
+
+  injective-vue@1.16.6:
+    resolution: {integrity: sha512-EYthAUv4i+iKBtvCa7HFjDaxBrm6sHzZv94DEOflHT0B0NxlG2PqDv+mMRQl+2r+7AXumLedx2KJ2PaG/tip8g==}
+    peerDependencies:
+      '@tanstack/vue-query': ^5.62.7
+      vue: ^3.5.13
 
   injectivejs@1.11.2:
     resolution: {integrity: sha512-W5mNXiNmkS0sLGmYEwJgRqU6vKqHU9oIbEQbGpHhBMeEbgjbJO3bugDA8TpKMKI3Ch4zIlvgZPEVV4ovxZjOOQ==}
@@ -9088,6 +9188,10 @@ packages:
     resolution: {integrity: sha512-PXwfBhYu0hBCPw8Dn0E+WDYb7af3dSLVWKi3HGv84IdF4TyFoC0ysxFd0Goxw7nSv4T/PzEJQxsYsEiFCKo2BA==}
     engines: {node: '>=8.6'}
 
+  miller-rabin@4.0.1:
+    resolution: {integrity: sha512-115fLhvZVqWwHPbClyntxEVfVDfl9DLLTuJvq3g2O/Oxi8AiNouAHvDSzHS0viUJc+V5vm3eq91Xwqn9dp4jRA==}
+    hasBin: true
+
   mime-db@1.52.0:
     resolution: {integrity: sha512-sPU4uV7dYlvtWJxwwxHD0PuihVNiE7TyAbQ5SWxDCB9mUYvOgroQOwYQQOKPJ8CIbE+1ETVlOoK1UC2nU3gYvg==}
     engines: {node: '>= 0.6'}
@@ -9633,6 +9737,10 @@ packages:
     resolution: {integrity: sha512-GQ2EWRpQV8/o+Aw8YqtfZZPfNRWZYkbidE9k5rpl/hC3vtHHBfGm2Ifi6qWV+coDGkrUKZAxE3Lot5kcsRlh+g==}
     engines: {node: '>=6'}
 
+  parse-asn1@5.1.7:
+    resolution: {integrity: sha512-CTM5kuWR3sx9IFamcl5ErfPl6ea/N8IYwiJ+vpeB2g+1iknv7zBl5uPwbMbRVznRVbrNY6lGuDoE5b30grmbqg==}
+    engines: {node: '>= 0.10'}
+
   parse-entities@4.0.2:
     resolution: {integrity: sha512-GG2AQYWoLgL877gQIKeRPGO1xF9+eG1ujIb5soS5gPvLQ1y2o8FL90w2QWNdf9I361Mpp7726c+lj3U0qK1uGw==}
 
@@ -9693,6 +9801,10 @@ packages:
   path-type@4.0.0:
     resolution: {integrity: sha512-gDKb8aZMDeD/tZWs9P6+q0J9Mwkdl6xMV8TjnGP3qJVJ06bdMgkbBlLU8IdfOsIsFz2BW1rNVT3XuNEl8zPAvw==}
     engines: {node: '>=8'}
+
+  pbkdf2@3.1.3:
+    resolution: {integrity: sha512-wfRLBZ0feWRhCIkoMB6ete7czJcnNnqRpcoWQBLqatqXXmelSRqfdDK4F3u9T2s2cXas/hQJcryI/4lAL+XTlA==}
+    engines: {node: '>=0.12'}
 
   perfect-freehand@1.2.2:
     resolution: {integrity: sha512-eh31l019WICQ03pkF3FSzHxB8n07ItqIQ++G5UV8JX0zVOXzgTGCqnRR0jJ2h9U8/2uW4W4mtGJELt9kEV0CFQ==}
@@ -9920,6 +10032,9 @@ packages:
   psl@1.15.0:
     resolution: {integrity: sha512-JZd3gMVBAVQkSs6HdNZo9Sdo0LNcQeMNP3CozBJb3JYC/QUYZTnKxP+f8oWRX4rHP5EurWxqAHTSwUCjlNKa1w==}
 
+  public-encrypt@4.0.3:
+    resolution: {integrity: sha512-zVpa8oKZSz5bTMTFClc1fQOnyyEzpl5ozpi1B5YcvBrdohMjH2rfsBtyXcuNuwjsDIXmBYlF2N5FlJYhR29t8Q==}
+
   pump@3.0.3:
     resolution: {integrity: sha512-todwxLMY7/heScKmntwQG8CXVkWUOdYxIvY2s0VWAAMh/nd8SoYiRaKjlr7+iCs984f2P8zvrfWcDDYVb73NfA==}
 
@@ -9975,6 +10090,9 @@ packages:
 
   randombytes@2.1.0:
     resolution: {integrity: sha512-vYl3iOX+4CKUWuxGi9Ukhie6fsqXqS9FE2Zaic4tNFD2N2QQaXOMFbuKK4QmDHC0JO6B1Zp41J0LpT0oR68amQ==}
+
+  randomfill@1.0.4:
+    resolution: {integrity: sha512-87lcbR8+MhcWcUiQ+9e+Rwx8MyR2P7qnt15ynUlbm3TU/fjbgz4GsvfSUDTemtCCtVCqb4ZcEFlyPNTh9bBTLw==}
 
   react-ace@11.0.1:
     resolution: {integrity: sha512-ulk2851Fx2j59AAahZHTe7rmQ5bITW1xytskAt11F8dv3rPLtdwBXCyT2qSbRnJvOq8UpuAhWO4/JhKGqQBEDA==}
@@ -10349,6 +10467,9 @@ packages:
     resolution: {integrity: sha512-9dkvaxAsk/xNXSJzMgFqqMCuFgt2+KsOFek3TMLfo8NCPfWpBmqwyNn5Y+NX56QUYfCtsyhF3ayiboEoUmJk/A==}
     engines: {node: 20 || >=22}
     hasBin: true
+
+  ripemd160@2.0.1:
+    resolution: {integrity: sha512-J7f4wutN8mdbV08MJnXibYpCOPHR+yzy+iQ/AsjMv2j8cLavQ8VGagDFUwwTAdF8FmRKVeNpbTTEwNHCW1g94w==}
 
   ripemd160@2.0.2:
     resolution: {integrity: sha512-ii4iagi25WusVoiC4B4lq7pbXfAp3D9v5CwfkY33vffw2+pkDjY1D8GaN7spsxvCSx8dkPqOZCEZyfxcmJG2IA==}
@@ -13630,7 +13751,7 @@ snapshots:
 
   '@chain-registry/v2@1.71.71':
     dependencies:
-      '@chain-registry/v2-types': 0.53.72
+      '@chain-registry/v2-types': 0.53.146
 
   '@colors/colors@1.6.0': {}
 
@@ -16043,22 +16164,22 @@ snapshots:
       - '@chain-registry/v2'
       - '@chain-registry/v2-types'
 
-  '@interchainjs/amino@1.11.2(@chain-registry/v2-types@0.53.68)(@chain-registry/v2@1.71.237)':
-    dependencies:
-      '@interchainjs/crypto': 1.11.2(@chain-registry/v2-types@0.53.68)(@chain-registry/v2@1.71.237)
-      '@interchainjs/encoding': 1.11.2
-      '@interchainjs/math': 1.11.2
-      '@interchainjs/utils': 1.11.2(@chain-registry/v2-types@0.53.68)(@chain-registry/v2@1.71.237)
-    transitivePeerDependencies:
-      - '@chain-registry/v2'
-      - '@chain-registry/v2-types'
-
   '@interchainjs/amino@1.11.5(@chain-registry/v2-types@0.53.146)(@chain-registry/v2@1.71.237)':
     dependencies:
       '@interchainjs/crypto': 1.11.5(@chain-registry/v2-types@0.53.146)(@chain-registry/v2@1.71.237)
       '@interchainjs/encoding': 1.11.5
       '@interchainjs/math': 1.11.5
       '@interchainjs/utils': 1.11.5(@chain-registry/v2-types@0.53.146)(@chain-registry/v2@1.71.237)
+    transitivePeerDependencies:
+      - '@chain-registry/v2'
+      - '@chain-registry/v2-types'
+
+  '@interchainjs/amino@1.16.6(@chain-registry/v2-types@0.53.146)(@chain-registry/v2@1.71.237)':
+    dependencies:
+      '@interchainjs/crypto': 1.16.6(@chain-registry/v2-types@0.53.146)(@chain-registry/v2@1.71.237)
+      '@interchainjs/encoding': 1.16.6
+      '@interchainjs/math': 1.16.6
+      '@interchainjs/utils': 1.16.6(@chain-registry/v2-types@0.53.146)(@chain-registry/v2@1.71.237)
     transitivePeerDependencies:
       - '@chain-registry/v2'
       - '@chain-registry/v2-types'
@@ -16151,6 +16272,21 @@ snapshots:
       - bufferutil
       - utf-8-validate
 
+  '@interchainjs/auth@1.16.6(@chain-registry/v2-types@0.53.146)(@chain-registry/v2@1.71.237)':
+    dependencies:
+      '@interchainjs/crypto': 1.16.6(@chain-registry/v2-types@0.53.146)(@chain-registry/v2@1.71.237)
+      '@interchainjs/types': 1.16.6
+      '@interchainjs/utils': 1.16.6(@chain-registry/v2-types@0.53.146)(@chain-registry/v2@1.71.237)
+      '@noble/curves': 1.9.6
+      '@noble/hashes': 1.8.0
+      '@scure/bip32': 1.7.0
+      bech32: 2.0.0
+      elliptic: 6.6.1
+      libsodium-wrappers-sumo: 0.7.15
+    transitivePeerDependencies:
+      - '@chain-registry/v2'
+      - '@chain-registry/v2-types'
+
   '@interchainjs/auth@1.6.3':
     dependencies:
       '@interchainjs/types': 1.6.3
@@ -16228,6 +16364,15 @@ snapshots:
     dependencies:
       '@interchainjs/types': 1.11.5
       '@interchainjs/utils': 1.11.5(@chain-registry/v2-types@0.53.146)(@chain-registry/v2@1.71.237)
+    transitivePeerDependencies:
+      - '@chain-registry/v2'
+      - '@chain-registry/v2-types'
+
+  '@interchainjs/cosmos-types@1.16.6(@chain-registry/v2-types@0.53.146)(@chain-registry/v2@1.71.237)':
+    dependencies:
+      '@interchainjs/math': 1.16.6
+      '@interchainjs/types': 1.16.6
+      '@interchainjs/utils': 1.16.6(@chain-registry/v2-types@0.53.146)(@chain-registry/v2@1.71.237)
     transitivePeerDependencies:
       - '@chain-registry/v2'
       - '@chain-registry/v2-types'
@@ -16317,6 +16462,28 @@ snapshots:
       - bufferutil
       - utf-8-validate
 
+  '@interchainjs/cosmos@1.16.6(@chain-registry/v2-types@0.53.146)(@chain-registry/v2@1.71.237)':
+    dependencies:
+      '@interchainjs/auth': 1.16.6(@chain-registry/v2-types@0.53.146)(@chain-registry/v2@1.71.237)
+      '@interchainjs/cosmos-types': 1.16.6(@chain-registry/v2-types@0.53.146)(@chain-registry/v2@1.71.237)
+      '@interchainjs/crypto': 1.16.6(@chain-registry/v2-types@0.53.146)(@chain-registry/v2@1.71.237)
+      '@interchainjs/encoding': 1.16.6
+      '@interchainjs/types': 1.16.6
+      '@interchainjs/utils': 1.16.6(@chain-registry/v2-types@0.53.146)(@chain-registry/v2@1.71.237)
+      '@noble/curves': 1.9.6
+      '@noble/hashes': 1.8.0
+      bech32: 1.1.4
+      bignumber.js: 9.1.2
+      bip39: 3.1.0
+      decimal.js: 10.6.0
+      deepmerge: 4.2.2
+      ws: 8.18.2
+    transitivePeerDependencies:
+      - '@chain-registry/v2'
+      - '@chain-registry/v2-types'
+      - bufferutil
+      - utf-8-validate
+
   '@interchainjs/cosmos@1.6.3':
     dependencies:
       '@chain-registry/v2': 1.71.237
@@ -16386,11 +16553,11 @@ snapshots:
       - '@chain-registry/v2'
       - '@chain-registry/v2-types'
 
-  '@interchainjs/crypto@1.11.2(@chain-registry/v2-types@0.53.68)(@chain-registry/v2@1.71.237)':
+  '@interchainjs/crypto@1.11.5(@chain-registry/v2-types@0.53.146)(@chain-registry/v2@1.71.237)':
     dependencies:
-      '@interchainjs/encoding': 1.11.2
-      '@interchainjs/math': 1.11.2
-      '@interchainjs/utils': 1.11.2(@chain-registry/v2-types@0.53.68)(@chain-registry/v2@1.71.237)
+      '@interchainjs/encoding': 1.11.5
+      '@interchainjs/math': 1.11.5
+      '@interchainjs/utils': 1.11.5(@chain-registry/v2-types@0.53.146)(@chain-registry/v2@1.71.237)
       '@noble/hashes': 1.8.0
       bn.js: 5.2.2
       elliptic: 6.6.1
@@ -16399,11 +16566,11 @@ snapshots:
       - '@chain-registry/v2'
       - '@chain-registry/v2-types'
 
-  '@interchainjs/crypto@1.11.5(@chain-registry/v2-types@0.53.146)(@chain-registry/v2@1.71.237)':
+  '@interchainjs/crypto@1.16.6(@chain-registry/v2-types@0.53.146)(@chain-registry/v2@1.71.237)':
     dependencies:
-      '@interchainjs/encoding': 1.11.5
-      '@interchainjs/math': 1.11.5
-      '@interchainjs/utils': 1.11.5(@chain-registry/v2-types@0.53.146)(@chain-registry/v2@1.71.237)
+      '@interchainjs/encoding': 1.16.6
+      '@interchainjs/math': 1.16.6
+      '@interchainjs/utils': 1.16.6(@chain-registry/v2-types@0.53.146)(@chain-registry/v2@1.71.237)
       '@noble/hashes': 1.8.0
       bn.js: 5.2.2
       elliptic: 6.6.1
@@ -16446,6 +16613,13 @@ snapshots:
   '@interchainjs/encoding@1.11.5':
     dependencies:
       '@interchainjs/math': 1.11.5
+      base64-js: 1.5.1
+      bech32: 1.1.4
+      readonly-date: 1.0.0
+
+  '@interchainjs/encoding@1.16.6':
+    dependencies:
+      '@interchainjs/math': 1.16.6
       base64-js: 1.5.1
       bech32: 1.1.4
       readonly-date: 1.0.0
@@ -16493,6 +16667,20 @@ snapshots:
       - bufferutil
       - utf-8-validate
 
+  '@interchainjs/ethereum@1.6.3':
+    dependencies:
+      '@ethersproject/bignumber': 5.8.0
+      '@ethersproject/bytes': 5.8.0
+      '@ethersproject/hash': 5.8.0
+      '@ethersproject/transactions': 5.8.0
+      '@interchainjs/types': 1.6.3
+      '@interchainjs/utils': 1.6.3
+      '@noble/hashes': 1.8.0
+      ethers: 6.15.0
+    transitivePeerDependencies:
+      - bufferutil
+      - utf-8-validate
+
   '@interchainjs/injective@1.11.2(@chain-registry/v2-types@0.53.146)(@chain-registry/v2@1.71.237)':
     dependencies:
       '@ethersproject/transactions': 5.8.0
@@ -16503,6 +16691,21 @@ snapshots:
       '@interchainjs/types': 1.11.2
       '@interchainjs/utils': 1.11.2(@chain-registry/v2-types@0.53.146)(@chain-registry/v2@1.71.237)
       '@noble/hashes': 1.8.0
+      decimal.js: 10.6.0
+      interchainjs: 1.11.2(@chain-registry/v2-types@0.53.146)(@chain-registry/v2@1.71.237)
+    transitivePeerDependencies:
+      - '@chain-registry/v2'
+      - '@chain-registry/v2-types'
+      - bufferutil
+      - utf-8-validate
+
+  '@interchainjs/injective@1.6.5(@chain-registry/v2-types@0.53.146)(@chain-registry/v2@1.71.237)':
+    dependencies:
+      '@interchainjs/cosmos': 1.6.3
+      '@interchainjs/cosmos-types': 1.6.3
+      '@interchainjs/ethereum': 1.6.3
+      '@interchainjs/types': 1.6.3
+      '@interchainjs/utils': 1.6.3
       decimal.js: 10.6.0
       interchainjs: 1.11.2(@chain-registry/v2-types@0.53.146)(@chain-registry/v2@1.71.237)
     transitivePeerDependencies:
@@ -16524,6 +16727,10 @@ snapshots:
       bn.js: 5.2.2
 
   '@interchainjs/math@1.11.5':
+    dependencies:
+      bn.js: 5.2.2
+
+  '@interchainjs/math@1.16.6':
     dependencies:
       bn.js: 5.2.2
 
@@ -16564,17 +16771,6 @@ snapshots:
       - '@chain-registry/v2'
       - '@chain-registry/v2-types'
 
-  '@interchainjs/pubkey@1.11.2(@chain-registry/v2-types@0.53.68)(@chain-registry/v2@1.71.237)':
-    dependencies:
-      '@interchainjs/amino': 1.11.2(@chain-registry/v2-types@0.53.68)(@chain-registry/v2@1.71.237)
-      '@interchainjs/cosmos-types': 1.11.2(@chain-registry/v2-types@0.53.68)(@chain-registry/v2@1.71.237)
-      '@interchainjs/encoding': 1.11.2
-      '@interchainjs/math': 1.11.2
-      '@interchainjs/types': 1.11.2
-    transitivePeerDependencies:
-      - '@chain-registry/v2'
-      - '@chain-registry/v2-types'
-
   '@interchainjs/pubkey@1.11.5(@chain-registry/v2-types@0.53.146)(@chain-registry/v2@1.71.237)':
     dependencies:
       '@interchainjs/amino': 1.11.5(@chain-registry/v2-types@0.53.146)(@chain-registry/v2@1.71.237)
@@ -16582,6 +16778,17 @@ snapshots:
       '@interchainjs/encoding': 1.11.5
       '@interchainjs/math': 1.11.5
       '@interchainjs/types': 1.11.5
+    transitivePeerDependencies:
+      - '@chain-registry/v2'
+      - '@chain-registry/v2-types'
+
+  '@interchainjs/pubkey@1.16.6(@chain-registry/v2-types@0.53.146)(@chain-registry/v2@1.71.237)':
+    dependencies:
+      '@interchainjs/amino': 1.16.6(@chain-registry/v2-types@0.53.146)(@chain-registry/v2@1.71.237)
+      '@interchainjs/cosmos-types': 1.16.6(@chain-registry/v2-types@0.53.146)(@chain-registry/v2@1.71.237)
+      '@interchainjs/encoding': 1.16.6
+      '@interchainjs/math': 1.16.6
+      '@interchainjs/types': 1.16.6
     transitivePeerDependencies:
       - '@chain-registry/v2'
       - '@chain-registry/v2-types'
@@ -16594,6 +16801,23 @@ snapshots:
       '@interchainjs/math': 1.9.12
       '@interchainjs/types': 1.9.12
 
+  '@interchainjs/react@1.11.2(@chain-registry/v2-types@0.53.146)(@chain-registry/v2@1.71.237)(@tanstack/react-query@4.32.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0))':
+    dependencies:
+      '@interchainjs/cosmos': 1.11.2
+      '@interchainjs/cosmos-types': 1.11.2(@chain-registry/v2-types@0.53.146)(@chain-registry/v2@1.71.237)
+      '@interchainjs/encoding': 1.11.2
+      '@interchainjs/pubkey': 1.11.2(@chain-registry/v2-types@0.53.146)(@chain-registry/v2@1.71.237)
+      '@interchainjs/types': 1.11.2
+      '@interchainjs/utils': 1.11.2(@chain-registry/v2-types@0.53.146)(@chain-registry/v2@1.71.237)
+      '@noble/hashes': 1.8.0
+      '@tanstack/react-query': 4.32.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+      decimal.js: 10.6.0
+    transitivePeerDependencies:
+      - '@chain-registry/v2'
+      - '@chain-registry/v2-types'
+      - bufferutil
+      - utf-8-validate
+
   '@interchainjs/react@1.11.2(@chain-registry/v2-types@0.53.146)(@chain-registry/v2@1.71.237)(@tanstack/react-query@4.32.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1))':
     dependencies:
       '@interchainjs/cosmos': 1.11.2
@@ -16604,40 +16828,6 @@ snapshots:
       '@interchainjs/utils': 1.11.2(@chain-registry/v2-types@0.53.146)(@chain-registry/v2@1.71.237)
       '@noble/hashes': 1.8.0
       '@tanstack/react-query': 4.32.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      decimal.js: 10.6.0
-    transitivePeerDependencies:
-      - '@chain-registry/v2'
-      - '@chain-registry/v2-types'
-      - bufferutil
-      - utf-8-validate
-
-  '@interchainjs/react@1.11.2(@chain-registry/v2-types@0.53.68)(@chain-registry/v2@1.71.237)(@tanstack/react-query@4.32.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0))':
-    dependencies:
-      '@interchainjs/cosmos': 1.11.2
-      '@interchainjs/cosmos-types': 1.11.2(@chain-registry/v2-types@0.53.68)(@chain-registry/v2@1.71.237)
-      '@interchainjs/encoding': 1.11.2
-      '@interchainjs/pubkey': 1.11.2(@chain-registry/v2-types@0.53.68)(@chain-registry/v2@1.71.237)
-      '@interchainjs/types': 1.11.2
-      '@interchainjs/utils': 1.11.2(@chain-registry/v2-types@0.53.68)(@chain-registry/v2@1.71.237)
-      '@noble/hashes': 1.8.0
-      '@tanstack/react-query': 4.32.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
-      decimal.js: 10.6.0
-    transitivePeerDependencies:
-      - '@chain-registry/v2'
-      - '@chain-registry/v2-types'
-      - bufferutil
-      - utf-8-validate
-
-  '@interchainjs/react@1.11.2(@chain-registry/v2@1.71.237)(@tanstack/react-query@4.32.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0))':
-    dependencies:
-      '@interchainjs/cosmos': 1.11.2
-      '@interchainjs/cosmos-types': 1.11.2(@chain-registry/v2-types@0.53.146)(@chain-registry/v2@1.71.237)
-      '@interchainjs/encoding': 1.11.2
-      '@interchainjs/pubkey': 1.11.2(@chain-registry/v2-types@0.53.146)(@chain-registry/v2@1.71.237)
-      '@interchainjs/types': 1.11.2
-      '@interchainjs/utils': 1.11.2(@chain-registry/v2-types@0.53.146)(@chain-registry/v2@1.71.237)
-      '@noble/hashes': 1.8.0
-      '@tanstack/react-query': 4.32.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       decimal.js: 10.6.0
     transitivePeerDependencies:
       - '@chain-registry/v2'
@@ -16666,6 +16856,10 @@ snapshots:
       decimal.js: 10.6.0
 
   '@interchainjs/types@1.11.9':
+    dependencies:
+      decimal.js: 10.6.0
+
+  '@interchainjs/types@1.16.6':
     dependencies:
       decimal.js: 10.6.0
 
@@ -16735,6 +16929,14 @@ snapshots:
       '@chain-registry/v2': 1.71.237
       '@chain-registry/v2-types': 0.53.146
       '@interchainjs/types': 1.11.9
+      bech32: 2.0.0
+      decimal.js: 10.6.0
+
+  '@interchainjs/utils@1.16.6(@chain-registry/v2-types@0.53.146)(@chain-registry/v2@1.71.237)':
+    dependencies:
+      '@chain-registry/v2': 1.71.237
+      '@chain-registry/v2-types': 0.53.146
+      '@interchainjs/types': 1.16.6
       bech32: 2.0.0
       decimal.js: 10.6.0
 
@@ -23292,6 +23494,12 @@ snapshots:
 
   asap@2.0.6: {}
 
+  asn1.js@4.10.1:
+    dependencies:
+      bn.js: 4.12.2
+      inherits: 2.0.4
+      minimalistic-assert: 1.0.1
+
   asn1@0.2.6:
     dependencies:
       safer-buffer: 2.1.2
@@ -23652,6 +23860,47 @@ snapshots:
 
   brorand@1.1.0: {}
 
+  browserify-aes@1.2.0:
+    dependencies:
+      buffer-xor: 1.0.3
+      cipher-base: 1.0.6
+      create-hash: 1.2.0
+      evp_bytestokey: 1.0.3
+      inherits: 2.0.4
+      safe-buffer: 5.2.1
+
+  browserify-cipher@1.0.1:
+    dependencies:
+      browserify-aes: 1.2.0
+      browserify-des: 1.0.2
+      evp_bytestokey: 1.0.3
+
+  browserify-des@1.0.2:
+    dependencies:
+      cipher-base: 1.0.6
+      des.js: 1.1.0
+      inherits: 2.0.4
+      safe-buffer: 5.2.1
+
+  browserify-rsa@4.1.1:
+    dependencies:
+      bn.js: 5.2.2
+      randombytes: 2.1.0
+      safe-buffer: 5.2.1
+
+  browserify-sign@4.2.3:
+    dependencies:
+      bn.js: 5.2.2
+      browserify-rsa: 4.1.1
+      create-hash: 1.2.0
+      create-hmac: 1.1.7
+      elliptic: 6.6.1
+      hash-base: 3.0.5
+      inherits: 2.0.4
+      parse-asn1: 5.1.7
+      readable-stream: 2.3.8
+      safe-buffer: 5.2.1
+
   browserslist@4.25.2:
     dependencies:
       caniuse-lite: 1.0.30001734
@@ -23691,6 +23940,8 @@ snapshots:
       node-int64: 0.4.0
 
   buffer-from@1.1.2: {}
+
+  buffer-xor@1.0.3: {}
 
   buffer@6.0.3:
     dependencies:
@@ -24120,6 +24371,18 @@ snapshots:
 
   crc-32@1.2.2: {}
 
+  create-ecdh@4.0.4:
+    dependencies:
+      bn.js: 4.12.2
+      elliptic: 6.6.1
+
+  create-hash@1.1.3:
+    dependencies:
+      cipher-base: 1.0.6
+      inherits: 2.0.4
+      ripemd160: 2.0.2
+      sha.js: 2.4.12
+
   create-hash@1.2.0:
     dependencies:
       cipher-base: 1.0.6
@@ -24167,6 +24430,21 @@ snapshots:
   crossws@0.3.5:
     dependencies:
       uncrypto: 0.1.3
+
+  crypto-browserify@3.12.1:
+    dependencies:
+      browserify-cipher: 1.0.1
+      browserify-sign: 4.2.3
+      create-ecdh: 4.0.4
+      create-hash: 1.2.0
+      create-hmac: 1.1.7
+      diffie-hellman: 5.0.3
+      hash-base: 3.0.5
+      inherits: 2.0.4
+      pbkdf2: 3.1.3
+      public-encrypt: 4.0.3
+      randombytes: 2.1.0
+      randomfill: 1.0.4
 
   crypto-js@4.2.0: {}
 
@@ -24328,6 +24606,11 @@ snapshots:
 
   dequal@2.0.3: {}
 
+  des.js@1.1.0:
+    dependencies:
+      inherits: 2.0.4
+      minimalistic-assert: 1.0.1
+
   destr@2.0.5: {}
 
   detect-browser@5.3.0: {}
@@ -24359,6 +24642,12 @@ snapshots:
   diff-sequences@29.6.3: {}
 
   diff@5.2.0: {}
+
+  diffie-hellman@5.0.3:
+    dependencies:
+      bn.js: 4.12.2
+      miller-rabin: 4.0.1
+      randombytes: 2.1.0
 
   dir-glob@3.0.1:
     dependencies:
@@ -24672,7 +24961,7 @@ snapshots:
       '@typescript-eslint/parser': 5.62.0(eslint@8.28.0)(typescript@4.9.3)
       eslint: 8.28.0
       eslint-import-resolver-node: 0.3.9
-      eslint-import-resolver-typescript: 3.10.1(eslint-plugin-import@2.32.0)(eslint@8.28.0)
+      eslint-import-resolver-typescript: 3.10.1(eslint-plugin-import@2.32.0(eslint@8.28.0))(eslint@8.28.0)
       eslint-plugin-import: 2.32.0(@typescript-eslint/parser@5.62.0(eslint@8.28.0)(typescript@4.9.3))(eslint-import-resolver-typescript@3.10.1)(eslint@8.28.0)
       eslint-plugin-jsx-a11y: 6.10.2(eslint@8.28.0)
       eslint-plugin-react: 7.37.5(eslint@8.28.0)
@@ -24692,7 +24981,7 @@ snapshots:
       eslint: 8.28.0
       eslint-import-resolver-node: 0.3.9
       eslint-import-resolver-typescript: 3.10.1(eslint-plugin-import@2.32.0(eslint@8.28.0))(eslint@8.28.0)
-      eslint-plugin-import: 2.32.0(@typescript-eslint/parser@5.62.0(eslint@8.28.0)(typescript@5.6.3))(eslint-import-resolver-typescript@3.10.1(eslint-plugin-import@2.32.0(eslint@8.28.0))(eslint@8.28.0))(eslint@8.28.0)
+      eslint-plugin-import: 2.32.0(@typescript-eslint/parser@5.62.0(eslint@8.28.0)(typescript@5.6.3))(eslint-import-resolver-typescript@3.10.1)(eslint@8.28.0)
       eslint-plugin-jsx-a11y: 6.10.2(eslint@8.28.0)
       eslint-plugin-react: 7.37.5(eslint@8.28.0)
       eslint-plugin-react-hooks: 4.6.2(eslint@8.28.0)
@@ -24710,8 +24999,8 @@ snapshots:
       '@typescript-eslint/parser': 6.21.0(eslint@8.56.0)(typescript@5.6.3)
       eslint: 8.56.0
       eslint-import-resolver-node: 0.3.9
-      eslint-import-resolver-typescript: 3.10.1(eslint-plugin-import@2.32.0(eslint@8.56.0))(eslint@8.56.0)
-      eslint-plugin-import: 2.32.0(@typescript-eslint/parser@6.21.0(eslint@8.56.0)(typescript@5.6.3))(eslint-import-resolver-typescript@3.10.1(eslint-plugin-import@2.32.0(eslint@8.56.0))(eslint@8.56.0))(eslint@8.56.0)
+      eslint-import-resolver-typescript: 3.10.1(eslint-plugin-import@2.32.0)(eslint@8.56.0)
+      eslint-plugin-import: 2.32.0(@typescript-eslint/parser@6.21.0(eslint@8.56.0)(typescript@5.6.3))(eslint-import-resolver-typescript@3.10.1)(eslint@8.56.0)
       eslint-plugin-jsx-a11y: 6.10.2(eslint@8.56.0)
       eslint-plugin-react: 7.37.5(eslint@8.56.0)
       eslint-plugin-react-hooks: 5.0.0-canary-7118f5dd7-20230705(eslint@8.56.0)
@@ -24745,11 +25034,11 @@ snapshots:
       tinyglobby: 0.2.14
       unrs-resolver: 1.11.1
     optionalDependencies:
-      eslint-plugin-import: 2.32.0(@typescript-eslint/parser@5.62.0(eslint@8.28.0)(typescript@5.6.3))(eslint-import-resolver-typescript@3.10.1(eslint-plugin-import@2.32.0(eslint@8.28.0))(eslint@8.28.0))(eslint@8.28.0)
+      eslint-plugin-import: 2.32.0(@typescript-eslint/parser@5.62.0(eslint@8.28.0)(typescript@5.6.3))(eslint-import-resolver-typescript@3.10.1)(eslint@8.28.0)
     transitivePeerDependencies:
       - supports-color
 
-  eslint-import-resolver-typescript@3.10.1(eslint-plugin-import@2.32.0(eslint@8.56.0))(eslint@8.56.0):
+  eslint-import-resolver-typescript@3.10.1(eslint-plugin-import@2.32.0)(eslint@8.56.0):
     dependencies:
       '@nolyfill/is-core-module': 1.0.39
       debug: 4.4.1
@@ -24760,22 +25049,7 @@ snapshots:
       tinyglobby: 0.2.14
       unrs-resolver: 1.11.1
     optionalDependencies:
-      eslint-plugin-import: 2.32.0(@typescript-eslint/parser@6.21.0(eslint@8.56.0)(typescript@5.6.3))(eslint-import-resolver-typescript@3.10.1(eslint-plugin-import@2.32.0(eslint@8.56.0))(eslint@8.56.0))(eslint@8.56.0)
-    transitivePeerDependencies:
-      - supports-color
-
-  eslint-import-resolver-typescript@3.10.1(eslint-plugin-import@2.32.0)(eslint@8.28.0):
-    dependencies:
-      '@nolyfill/is-core-module': 1.0.39
-      debug: 4.4.1
-      eslint: 8.28.0
-      get-tsconfig: 4.10.1
-      is-bun-module: 2.0.0
-      stable-hash: 0.0.5
-      tinyglobby: 0.2.14
-      unrs-resolver: 1.11.1
-    optionalDependencies:
-      eslint-plugin-import: 2.32.0(@typescript-eslint/parser@5.62.0(eslint@8.28.0)(typescript@5.6.3))(eslint-import-resolver-typescript@3.10.1)(eslint@8.28.0)
+      eslint-plugin-import: 2.32.0(@typescript-eslint/parser@6.21.0(eslint@8.56.0)(typescript@5.6.3))(eslint-import-resolver-typescript@3.10.1)(eslint@8.56.0)
     transitivePeerDependencies:
       - supports-color
 
@@ -24784,17 +25058,6 @@ snapshots:
       debug: 3.2.7
     optionalDependencies:
       '@typescript-eslint/parser': 5.62.0(eslint@8.28.0)(typescript@4.9.3)
-      eslint: 8.28.0
-      eslint-import-resolver-node: 0.3.9
-      eslint-import-resolver-typescript: 3.10.1(eslint-plugin-import@2.32.0)(eslint@8.28.0)
-    transitivePeerDependencies:
-      - supports-color
-
-  eslint-module-utils@2.12.1(@typescript-eslint/parser@5.62.0(eslint@8.28.0)(typescript@5.6.3))(eslint-import-resolver-node@0.3.9)(eslint-import-resolver-typescript@3.10.1(eslint-plugin-import@2.32.0(eslint@8.28.0))(eslint@8.28.0))(eslint@8.28.0):
-    dependencies:
-      debug: 3.2.7
-    optionalDependencies:
-      '@typescript-eslint/parser': 5.62.0(eslint@8.28.0)(typescript@5.6.3)
       eslint: 8.28.0
       eslint-import-resolver-node: 0.3.9
       eslint-import-resolver-typescript: 3.10.1(eslint-plugin-import@2.32.0(eslint@8.28.0))(eslint@8.28.0)
@@ -24808,10 +25071,9 @@ snapshots:
       '@typescript-eslint/parser': 5.62.0(eslint@8.28.0)(typescript@5.6.3)
       eslint: 8.28.0
       eslint-import-resolver-node: 0.3.9
-      eslint-import-resolver-typescript: 3.10.1(eslint-plugin-import@2.32.0)(eslint@8.28.0)
+      eslint-import-resolver-typescript: 3.10.1(eslint-plugin-import@2.32.0(eslint@8.28.0))(eslint@8.28.0)
     transitivePeerDependencies:
       - supports-color
-    optional: true
 
   eslint-module-utils@2.12.1(@typescript-eslint/parser@6.21.0(eslint@8.56.0)(typescript@5.6.3))(eslint-import-resolver-node@0.3.9)(eslint-import-resolver-typescript@3.10.1(eslint-plugin-import@2.32.0(eslint@8.56.0))(eslint@8.56.0))(eslint@8.56.0):
     dependencies:
@@ -24820,7 +25082,7 @@ snapshots:
       '@typescript-eslint/parser': 6.21.0(eslint@8.56.0)(typescript@5.6.3)
       eslint: 8.56.0
       eslint-import-resolver-node: 0.3.9
-      eslint-import-resolver-typescript: 3.10.1(eslint-plugin-import@2.32.0(eslint@8.56.0))(eslint@8.56.0)
+      eslint-import-resolver-typescript: 3.10.1(eslint-plugin-import@2.32.0)(eslint@8.56.0)
     transitivePeerDependencies:
       - supports-color
 
@@ -24848,35 +25110,6 @@ snapshots:
       tsconfig-paths: 3.15.0
     optionalDependencies:
       '@typescript-eslint/parser': 5.62.0(eslint@8.28.0)(typescript@4.9.3)
-    transitivePeerDependencies:
-      - eslint-import-resolver-typescript
-      - eslint-import-resolver-webpack
-      - supports-color
-
-  eslint-plugin-import@2.32.0(@typescript-eslint/parser@5.62.0(eslint@8.28.0)(typescript@5.6.3))(eslint-import-resolver-typescript@3.10.1(eslint-plugin-import@2.32.0(eslint@8.28.0))(eslint@8.28.0))(eslint@8.28.0):
-    dependencies:
-      '@rtsao/scc': 1.1.0
-      array-includes: 3.1.9
-      array.prototype.findlastindex: 1.2.6
-      array.prototype.flat: 1.3.3
-      array.prototype.flatmap: 1.3.3
-      debug: 3.2.7
-      doctrine: 2.1.0
-      eslint: 8.28.0
-      eslint-import-resolver-node: 0.3.9
-      eslint-module-utils: 2.12.1(@typescript-eslint/parser@5.62.0(eslint@8.28.0)(typescript@5.6.3))(eslint-import-resolver-node@0.3.9)(eslint-import-resolver-typescript@3.10.1(eslint-plugin-import@2.32.0(eslint@8.28.0))(eslint@8.28.0))(eslint@8.28.0)
-      hasown: 2.0.2
-      is-core-module: 2.16.1
-      is-glob: 4.0.3
-      minimatch: 3.1.2
-      object.fromentries: 2.0.8
-      object.groupby: 1.0.3
-      object.values: 1.2.1
-      semver: 6.3.1
-      string.prototype.trimend: 1.0.9
-      tsconfig-paths: 3.15.0
-    optionalDependencies:
-      '@typescript-eslint/parser': 5.62.0(eslint@8.28.0)(typescript@5.6.3)
     transitivePeerDependencies:
       - eslint-import-resolver-typescript
       - eslint-import-resolver-webpack
@@ -24910,9 +25143,8 @@ snapshots:
       - eslint-import-resolver-typescript
       - eslint-import-resolver-webpack
       - supports-color
-    optional: true
 
-  eslint-plugin-import@2.32.0(@typescript-eslint/parser@6.21.0(eslint@8.56.0)(typescript@5.6.3))(eslint-import-resolver-typescript@3.10.1(eslint-plugin-import@2.32.0(eslint@8.56.0))(eslint@8.56.0))(eslint@8.56.0):
+  eslint-plugin-import@2.32.0(@typescript-eslint/parser@6.21.0(eslint@8.56.0)(typescript@5.6.3))(eslint-import-resolver-typescript@3.10.1)(eslint@8.56.0):
     dependencies:
       '@rtsao/scc': 1.1.0
       array-includes: 3.1.9
@@ -25279,6 +25511,11 @@ snapshots:
   eventemitter3@5.0.1: {}
 
   events@3.3.0: {}
+
+  evp_bytestokey@1.0.3:
+    dependencies:
+      md5.js: 1.3.5
+      safe-buffer: 5.2.1
 
   execa@5.1.1:
     dependencies:
@@ -25799,6 +26036,15 @@ snapshots:
 
   has-unicode@2.0.1: {}
 
+  hash-base@2.0.2:
+    dependencies:
+      inherits: 2.0.4
+
+  hash-base@3.0.5:
+    dependencies:
+      inherits: 2.0.4
+      safe-buffer: 5.2.1
+
   hash-base@3.1.0:
     dependencies:
       inherits: 2.0.4
@@ -25966,6 +26212,25 @@ snapshots:
       - bufferutil
       - utf-8-validate
 
+  injective-vue@1.16.6(@chain-registry/v2-types@0.53.146)(@chain-registry/v2@1.71.237)(@tanstack/vue-query@5.62.7(vue@3.5.18(typescript@5.6.3)))(vue@3.5.18(typescript@5.6.3)):
+    dependencies:
+      '@interchainjs/cosmos': 1.16.6(@chain-registry/v2-types@0.53.146)(@chain-registry/v2@1.71.237)
+      '@interchainjs/cosmos-types': 1.16.6(@chain-registry/v2-types@0.53.146)(@chain-registry/v2@1.71.237)
+      '@interchainjs/encoding': 1.16.6
+      '@interchainjs/math': 1.16.6
+      '@interchainjs/pubkey': 1.16.6(@chain-registry/v2-types@0.53.146)(@chain-registry/v2@1.71.237)
+      '@interchainjs/types': 1.16.6
+      '@interchainjs/utils': 1.16.6(@chain-registry/v2-types@0.53.146)(@chain-registry/v2@1.71.237)
+      '@noble/hashes': 1.8.0
+      '@tanstack/vue-query': 5.62.7(vue@3.5.18(typescript@5.6.3))
+      decimal.js: 10.6.0
+      vue: 3.5.18(typescript@5.6.3)
+    transitivePeerDependencies:
+      - '@chain-registry/v2'
+      - '@chain-registry/v2-types'
+      - bufferutil
+      - utf-8-validate
+
   injectivejs@1.11.2(@chain-registry/v2-types@0.53.146)(@chain-registry/v2@1.71.237):
     dependencies:
       '@interchainjs/cosmos': 1.11.2
@@ -26083,7 +26348,7 @@ snapshots:
   interchainjs@0.0.1-beta.27(@tanstack/react-query@5.68.0(react@19.1.1)):
     dependencies:
       '@interchainjs/cosmos': 0.0.1-beta.34
-      '@interchainjs/cosmos-types': 0.0.1-beta.17
+      '@interchainjs/cosmos-types': 0.0.1-beta.41
       '@interchainjs/types': 0.0.1-beta.41
       '@interchainjs/utils': 0.0.1-beta.41
       '@noble/hashes': 1.8.0
@@ -27451,6 +27716,11 @@ snapshots:
       braces: 3.0.3
       picomatch: 2.3.1
 
+  miller-rabin@4.0.1:
+    dependencies:
+      bn.js: 4.12.2
+      brorand: 1.1.0
+
   mime-db@1.52.0: {}
 
   mime-types@2.1.35:
@@ -28008,7 +28278,7 @@ snapshots:
     dependencies:
       '@adraffy/ens-normalize': 1.11.0
       '@noble/ciphers': 1.3.0
-      '@noble/curves': 1.9.2
+      '@noble/curves': 1.9.6
       '@noble/hashes': 1.8.0
       '@scure/bip32': 1.7.0
       '@scure/bip39': 1.6.0
@@ -28023,7 +28293,7 @@ snapshots:
     dependencies:
       '@adraffy/ens-normalize': 1.11.0
       '@noble/ciphers': 1.3.0
-      '@noble/curves': 1.9.2
+      '@noble/curves': 1.9.6
       '@noble/hashes': 1.8.0
       '@scure/bip32': 1.7.0
       '@scure/bip39': 1.6.0
@@ -28124,6 +28394,15 @@ snapshots:
     dependencies:
       callsites: 3.1.0
 
+  parse-asn1@5.1.7:
+    dependencies:
+      asn1.js: 4.10.1
+      browserify-aes: 1.2.0
+      evp_bytestokey: 1.0.3
+      hash-base: 3.0.5
+      pbkdf2: 3.1.3
+      safe-buffer: 5.2.1
+
   parse-entities@4.0.2:
     dependencies:
       '@types/unist': 2.0.11
@@ -28191,6 +28470,15 @@ snapshots:
       pify: 3.0.0
 
   path-type@4.0.0: {}
+
+  pbkdf2@3.1.3:
+    dependencies:
+      create-hash: 1.1.3
+      create-hmac: 1.1.7
+      ripemd160: 2.0.1
+      safe-buffer: 5.2.1
+      sha.js: 2.4.12
+      to-buffer: 1.2.1
 
   perfect-freehand@1.2.2: {}
 
@@ -28424,6 +28712,15 @@ snapshots:
     dependencies:
       punycode: 2.3.1
 
+  public-encrypt@4.0.3:
+    dependencies:
+      bn.js: 4.12.2
+      browserify-rsa: 4.1.1
+      create-hash: 1.2.0
+      parse-asn1: 5.1.7
+      randombytes: 2.1.0
+      safe-buffer: 5.2.1
+
   pump@3.0.3:
     dependencies:
       end-of-stream: 1.4.5
@@ -28470,6 +28767,11 @@ snapshots:
 
   randombytes@2.1.0:
     dependencies:
+      safe-buffer: 5.2.1
+
+  randomfill@1.0.4:
+    dependencies:
+      randombytes: 2.1.0
       safe-buffer: 5.2.1
 
   react-ace@11.0.1(react-dom@18.2.0(react@18.2.0))(react@18.2.0):
@@ -29180,6 +29482,11 @@ snapshots:
     dependencies:
       glob: 11.0.3
       package-json-from-dist: 1.0.1
+
+  ripemd160@2.0.1:
+    dependencies:
+      hash-base: 2.0.2
+      inherits: 2.0.4
 
   ripemd160@2.0.2:
     dependencies:

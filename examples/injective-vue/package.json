@@ -17,10 +17,12 @@
     "@interchain-kit/vue": "0.2.222",
     "@interchain-ui/vue": "^1.4.1",
     "@interchainjs/cosmos": "1.11.2",
-    "@interchainjs/injective": "1.11.2",
+    "@interchainjs/injective": "1.6.5",
     "@interchainjs/vue": "1.11.2",
     "@tanstack/vue-query": "5.62.7",
     "bignumber.js": "9.1.0",
+    "crypto-browserify": "^3.12.1",
+    "injective-vue": "1.16.6",
     "vue": "^3.5.13",
     "vue-router": "^4.5.0"
   },
