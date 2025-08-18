@@ -2,7 +2,7 @@
 // @ts-nocheck
 
 import '@interchain-ui/react/styles';
-import '@interchain-ui/react/globalStyles';
+// import '@interchain-ui/react/globalStyles';
 import 'react-calendar/dist/Calendar.css';
 
 import React from 'react';
