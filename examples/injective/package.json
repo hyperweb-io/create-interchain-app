@@ -16,10 +16,10 @@
     "starship:clean": "pnpm run starship stop"
   },
   "overrides": {
-    "react": "18.2.0",
-    "react-dom": "18.2.0",
-    "@types/react": "18.0.25",
-    "@types/react-dom": "18.0.9"
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
+    "@types/react": "^18.3.0",
+    "@types/react-dom": "^18.3.0"
   },
   "dependencies": {
     "@chain-registry/types": "^0.50.13",
@@ -49,16 +49,16 @@
     "injectivejs": "1.11.2",
     "mobx": "^6.13.5",
     "next": "^13",
-    "react": "18.2.0",
-    "react-dom": "18.2.0",
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
     "react-icons": "4.6.0"
   },
   "devDependencies": {
     "@starship-ci/cli": "^2.9.0",
     "@tanstack/react-query-devtools": "4.29.1",
     "@types/node": "^20.14.6",
-    "@types/react": "^18.3.3",
-    "@types/react-dom": "^18.3.0",
+    "@types/react": "^18.3.23",
+    "@types/react-dom": "^18.3.7",
     "eslint": "8.28.0",
     "eslint-config-next": "13.0.5",
     "generate-lockfile": "0.0.12",
