@@ -27,6 +27,7 @@
     "chain-registry": "^1.69.32",
     "fast-fuzzy": "1.12.0",
     "interchain-kit": "0.2.222",
+    "interchainjs": "1.11.2",
     "match-sorter": "^6.3.3",
     "next": "^13",
     "react": "18.3.1",

@@ -1,18 +1,21 @@
 import { useEffect, useMemo } from 'react';
 import { useChain } from '@interchain-kit/react';
 import BigNumber from 'bignumber.js';
-import { bondStatusToJSON, BondStatus } from 'interchainjs/cosmos/staking/v1beta1/staking'
-import { useRpcClient, useRpcEndpoint } from 'interchainjs/react-query'
+import {
+  bondStatusToJSON,
+  BondStatus,
+} from 'interchainjs/cosmos/staking/v1beta1/staking';
+import { useRpcClient, useRpcEndpoint } from '@interchainjs/react/react-query';
 import { defaultContext } from '@tanstack/react-query';
-import { useGetBalance } from '@interchainjs/react/cosmos/bank/v1beta1/query.rpc.react'
-import { useGetDelegatorValidators } from '@interchainjs/react/cosmos/staking/v1beta1/query.rpc.react'
-import { useGetValidators } from '@interchainjs/react/cosmos/staking/v1beta1/query.rpc.react'
-import { useGetDelegationTotalRewards } from '@interchainjs/react/cosmos/distribution/v1beta1/query.rpc.react'
-import { useGetDelegatorDelegations } from '@interchainjs/react/cosmos/staking/v1beta1/query.rpc.react'
-import { useGetParams } from '@interchainjs/react/cosmos/staking/v1beta1/query.rpc.react'
-import { useGetAnnualProvisions } from '@interchainjs/react/cosmos/mint/v1beta1/query.rpc.react'
-import { useGetPool } from '@interchainjs/react/cosmos/staking/v1beta1/query.rpc.react'
-import { useGetParams as useGetParamsDistribution } from '@interchainjs/react/cosmos/distribution/v1beta1/query.rpc.react'
+import { useGetBalance } from '@interchainjs/react/cosmos/bank/v1beta1/query.rpc.react';
+import { useGetDelegatorValidators } from '@interchainjs/react/cosmos/staking/v1beta1/query.rpc.react';
+import { useGetValidators } from '@interchainjs/react/cosmos/staking/v1beta1/query.rpc.react';
+import { useGetDelegationTotalRewards } from '@interchainjs/react/cosmos/distribution/v1beta1/query.rpc.react';
+import { useGetDelegatorDelegations } from '@interchainjs/react/cosmos/staking/v1beta1/query.rpc.react';
+import { useGetParams } from '@interchainjs/react/cosmos/staking/v1beta1/query.rpc.react';
+import { useGetAnnualProvisions } from '@interchainjs/react/cosmos/mint/v1beta1/query.rpc.react';
+import { useGetPool } from '@interchainjs/react/cosmos/staking/v1beta1/query.rpc.react';
+import { useGetParams as useGetParamsDistribution } from '@interchainjs/react/cosmos/distribution/v1beta1/query.rpc.react';
 
 import { usePrices } from './usePrices';
 import { getCoin, getExponent } from '@/config';
@@ -88,25 +91,22 @@ export const useStakingData = (chainName: string) => {
     },
   });
 
-  const rewardsQuery =
-    useGetDelegationTotalRewards({
-      clientResolver: rpcEndpoint,
-      request: {
-        delegatorAddress: address || '',
-      },
-      options: {
-        context: defaultContext,
-        enabled: isDataQueryEnabled,
-        select: (data) => parseRewards(data, coin.base, -exp),
-      },
-    });
+  const rewardsQuery = useGetDelegationTotalRewards({
+    clientResolver: rpcEndpoint,
+    request: {
+      delegatorAddress: address || '',
+    },
+    options: {
+      context: defaultContext,
+      enabled: isDataQueryEnabled,
+      select: (data) => parseRewards(data, coin.base, -exp),
+    },
+  });
 
   const validatorsQuery = useGetValidators({
     clientResolver: rpcEndpoint,
     request: {
-      status: bondStatusToJSON(
-        BondStatus.BOND_STATUS_BONDED
-      ),
+      status: bondStatusToJSON(BondStatus.BOND_STATUS_BONDED),
       pagination: {
         key: new Uint8Array(),
         offset: 0n,
