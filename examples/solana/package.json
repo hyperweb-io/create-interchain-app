@@ -13,7 +13,7 @@
     "@interchain-kit/phantom-extension": "0.3.43",
     "@interchain-kit/react": "0.3.43",
     "@interchain-ui/react": "1.26.3",
-    "@interchainjs/solana": "1.13.1-beta.2",
+    "@interchainjs/solana": "1.16.6",
     "chain-registry": "2.0.31",
     "next": "15.3.5",
     "react": "^19.0.0",
@@ -29,5 +29,6 @@
     "eslint-config-next": "15.3.5",
     "tailwindcss": "^4",
     "typescript": "^5"
-  }
+  },
+  "packageManager": "pnpm@9.7.0"
 }
