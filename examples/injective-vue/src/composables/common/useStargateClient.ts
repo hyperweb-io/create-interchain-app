@@ -1,18 +1,18 @@
 import { Ref, computed, ref, watch } from 'vue';
-import { ExtensionWallet } from '@interchain-kit/core';
-import { useChain, useWalletManager } from '@interchain-kit/vue';
+import { useChain } from '@interchain-kit/vue';
 import { SigningClient as SigningStargateClient } from '@interchainjs/cosmos/signing-client';
 
 export const useStargateClient = (chainName: Ref<string>) => {
-  const { rpcEndpoint, chain } = useChain(chainName);
+  const { rpcEndpoint, chain, wallet } = useChain(chainName);
   const stargazeClient = ref();
-  const wm = useWalletManager();
   const signer = computed(() => {
     if (!chain.value.chainId) {
       return;
     }
-    const wallet = wm.getCurrentWallet() as unknown as ExtensionWallet;
-    return wallet.getOfflineSigner(chain.value.chainId, 'direct'); // cosmoshub-4
+    if (!wallet.value) {
+      return;
+    }
+    return wallet.value.getOfflineSigner(chain.value.chainId, 'direct'); // cosmoshub-4
   });
   const _fetchClient = async (rpcEndpoint: string, signer: any) => {
     if (!rpcEndpoint || !signer) {

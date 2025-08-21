@@ -1,20 +1,20 @@
-import { ExtensionWallet } from '@interchain-kit/core';
-import { useChain, useWalletManager } from '@interchain-kit/vue';
+import { useChain } from '@interchain-kit/vue';
 import { toConverters, toEncoders } from '@interchainjs/cosmos/utils';
 import { InjSigningClient } from '@interchainjs/injective/signing-client';
 import { MsgSend } from '@interchainjs/vue/cosmos/bank/v1beta1/tx';
 import { Ref, computed, ref, watch } from 'vue';
 
 export const useInjectiveClient = (chainName: Ref<string>) => {
-  const { rpcEndpoint, chain } = useChain(chainName);
+  const { rpcEndpoint, chain, wallet } = useChain(chainName);
   const injectiveClient = ref();
-  const wm = useWalletManager();
   const signer = computed(() => {
     if (!chain.value.chainId) {
       return;
     }
-    const wallet = wm.getCurrentWallet() as unknown as ExtensionWallet;
-    return wallet.getOfflineSigner(chain.value.chainId, 'direct'); // cosmoshub-4
+    if (!wallet.value) {
+      return;
+    }
+    return wallet.value.getOfflineSigner(chain.value.chainId, 'direct'); // cosmoshub-4
   });
   const _fetchClient = async (rpcEndpoint: string, signer: any) => {
     if (!rpcEndpoint || !signer) {

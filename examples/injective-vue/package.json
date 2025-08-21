@@ -15,7 +15,7 @@
     "@interchain-kit/keplr-extension": "0.2.222",
     "@interchain-kit/leap-extension": "0.2.222",
     "@interchain-kit/vue": "0.2.222",
-    "@interchain-ui/vue": "^1.4.1",
+    "@interchain-ui/vue": "1.4.1",
     "@interchainjs/cosmos": "1.11.2",
     "@interchainjs/injective": "1.6.5",
     "@interchainjs/vue": "1.11.2",
