@@ -16,72 +16,71 @@ jobs:
         with:
           node-version: 20
 
-      - name: Set up Yarn
-        uses: threeal/setup-yarn-action@v2.0.0
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
         with:
-          cache: false
+          version: 9
 
       - name: Install Dependencies
         run: |
-          echo "YARN_ENABLE_IMMUTABLE_INSTALLS=false" >> $GITHUB_ENV
           npm install -g create-interchain-app
 
       - name: authz
         run: |
           cia --example authz --name authz
           cd authz
-          yarn build
+          pnpm build
 
       - name: ibc-asset-list
         run: |
           cia --example ibc-asset-list --name ibc-asset-list
           cd ibc-asset-list
-          yarn build
+          pnpm build
 
       - name: injective
         run: |
           cia --example injective --name injective
           cd injective
-          yarn build
+          pnpm build
 
       - name: injective-vue
         run: |
           cia --example injective-vue --name injective-vue
           cd injective-vue
-          yarn build
+          pnpm build
 
       - name: stake-tokens
         run: |
           cia --example stake-tokens --name stake-tokens
           cd stake-tokens
-          yarn build
+          pnpm build
 
       - name: vote-proposal
         run: |
           cia --example vote-proposal --name vote-proposal
           cd vote-proposal
-          yarn build
+          pnpm build
 
       - name: chain-template
         run: |
           cia --template chain-template --name chain-template
           cd chain-template
-          yarn build
+          pnpm build
 
       - name: connect-chain
         run: |
           cia --template connect-chain --name connect-chain
           cd connect-chain
-          yarn build
+          pnpm build
 
       - name: connect-multi-chain
         run: |
           cia --template connect-multi-chain --name connect-multi-chain
           cd connect-multi-chain
-          yarn build
+          pnpm build
 
       - name: website
         run: |
           cia --boilerplate website --name website
           cd website
-          yarn build
+          pnpm build

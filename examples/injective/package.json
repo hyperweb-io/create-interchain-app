@@ -7,19 +7,19 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "locks:remove": "rm -f yarn.lock",
-    "locks:create": "generate-lockfile --lockfile ../../yarn.lock --package package.json --write yarn.lock --force",
+    "locks:remove": "rm -f pnpm-lock.yaml",
+    "locks:create": "generate-lockfile --lockfile ../../pnpm-lock.yaml --package package.json --write pnpm-lock.yaml --force",
     "locks": "npm run locks:remove && npm run locks:create",
     "starship": "starship --config ./starship/configs/config.yaml",
     "starship:demo": "tsx starship/src/index.ts",
-    "starship:all": "yarn starship start",
-    "starship:clean": "yarn starship stop"
+    "starship:all": "pnpm run starship start",
+    "starship:clean": "pnpm run starship stop"
   },
-  "resolutions": {
-    "react": "18.2.0",
-    "react-dom": "18.2.0",
-    "@types/react": "18.0.25",
-    "@types/react-dom": "18.0.9"
+  "overrides": {
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
+    "@types/react": "^18.3.0",
+    "@types/react-dom": "^18.3.0"
   },
   "dependencies": {
     "@chain-registry/types": "^0.50.13",
@@ -49,16 +49,16 @@
     "injectivejs": "1.11.2",
     "mobx": "^6.13.5",
     "next": "^13",
-    "react": "18.2.0",
-    "react-dom": "18.2.0",
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
     "react-icons": "4.6.0"
   },
   "devDependencies": {
     "@starship-ci/cli": "^2.9.0",
     "@tanstack/react-query-devtools": "4.29.1",
     "@types/node": "^20.14.6",
-    "@types/react": "^18.3.3",
-    "@types/react-dom": "^18.3.0",
+    "@types/react": "^18.3.23",
+    "@types/react-dom": "^18.3.7",
     "eslint": "8.28.0",
     "eslint-config-next": "13.0.5",
     "generate-lockfile": "0.0.12",
@@ -66,5 +66,5 @@
     "tsx": "^4.19.3",
     "typescript": "^5.1.6"
   },
-  "packageManager": "yarn@4.3.0"
+  "packageManager": "pnpm@9.7.0"
 }

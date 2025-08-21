@@ -21,7 +21,7 @@
     "test": "lerna run test --stream --scope __PACKAGE_IDENTIFIER__",
     "codegen": "lerna run codegen --stream --scope __PACKAGE_IDENTIFIER__",
     "symlink": "symlink-workspace --logLevel error",
-    "postinstall": "yarn symlink"
+    "postinstall": "pnpm run symlink"
   },
   "devDependencies": {
     "@types/jest": "^29.5.11",

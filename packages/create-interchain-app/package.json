@@ -21,7 +21,7 @@
   "scripts": {
     "build:clean": "rimraf dist",
     "build:copy": "copyfiles -f ../../LICENSE-MIT ../../LICENSE-Apache README.md package.json dist",
-    "build:dist": "yarn tsc -p tsconfig.json --outDir dist --module commonjs",
+    "build:dist": "tsc -p tsconfig.json --outDir dist --module commonjs",
     "build:chmod": "chmod +x ./dist/create-interchain-app.js",
     "build": "npm run build:clean && npm run build:dist && npm run build:copy && npm run build:chmod",
     "build:win": "npm run build:clean && npm run build:dist && npm run build:copy",

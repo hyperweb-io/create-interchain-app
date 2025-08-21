@@ -1,10 +1,12 @@
-import { createApp } from 'vue'
-import router from './router'
-import './style.css'
-import "@interchain-ui/vue/style.css";
+import { createApp } from 'vue';
+import router from './router';
+import './style.css';
+import '@interchain-ui/vue/style.css';
 import { VueQueryPlugin, QueryClient } from '@tanstack/vue-query';
-// import "@interchain-ui/vue/globalStyles";
-import App from './App.vue'
+// import '@interchain-ui/vue/globalStyles';
+import App from './App.vue';
+// polyfill for @interchain-kit/vue <-> core compatibility
+import './polyfills/interchain-kit-compat';
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -17,10 +19,10 @@ const queryClient = new QueryClient({
 
 // @ts-ignore
 BigInt.prototype['toJSON'] = function () {
-  return this.toString()
-}
+  return this.toString();
+};
 
 const app = createApp(App);
 app.use(VueQueryPlugin, { queryClient });
-app.use(router)
+app.use(router);
 app.mount('#app');

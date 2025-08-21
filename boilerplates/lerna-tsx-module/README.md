@@ -23,8 +23,8 @@ npm install __MODULENAME__
 When first cloning the repo:
 
 ```
-yarn
-yarn build
+pnpm install
+pnpm build
 ```
 
 ## Interchain JavaScript Stack 

@@ -23,8 +23,8 @@ npm install __MODULENAME__
 When first cloning the repo:
 
 ```
-yarn
-yarn build
+pnpm install
+pnpm build
 ```
 
 ### Codegen
@@ -32,7 +32,7 @@ yarn build
 Contract schemas live in `./contracts`. Look inside of `scripts/codegen.js` and configure the settings for bundling your SDK and contracts into `__MODULENAME__`:
 
 ```
-yarn codegen
+pnpm codegen
 ```
 
 ### Publishing
@@ -40,8 +40,8 @@ yarn codegen
 Build the types and then publish:
 
 ```
-yarn build
-yarn publish
+pnpm build
+pnpm publish
 ```
 
 ## Interchain JavaScript Stack 

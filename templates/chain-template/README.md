@@ -5,7 +5,7 @@ This is an Interchain App project bootstrapped with [`create-interchain-app`](ht
 First, install the packages and run the development server:
 
 ```bash
-yarn && yarn dev
+pnpm install && pnpm dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
@@ -15,8 +15,8 @@ You can start editing the page by modifying `pages/index.tsx`. The page auto-upd
 ## How to connect to Starship chains
 
 1. Follow the official guide to set up Starship: https://docs.hyperweb.io/starship/get-started/step-1
-2. Run `yarn starship start` and wait until Starship is up and running
-3. Open a new terminal and run `yarn dev`
+2. Run `pnpm starship start` and wait until Starship is up and running
+3. Open a new terminal and run `pnpm dev`
 4. Open http://localhost:3000, select "Osmosis Devnet" or "Cosmos Hub Devnet" from the chain dropdown in the top right corner then click "Connect Wallet" in the left sidebar to connect to the chain
 5. Go to "Faucet" to get some test tokens and enjoy!
 

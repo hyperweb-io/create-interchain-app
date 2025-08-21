@@ -47,7 +47,7 @@ Once the app is created, move into the app directory and start the development s
 
 ```sh
 cd my-app
-yarn && yarn dev
+pnpm install && pnpm dev
 ```
 
 Now your app should be running on `http://localhost:3000`!
@@ -109,7 +109,7 @@ npm init interchain-app
 ### Yarn
 
 ```sh
-yarn create interchain-app
+pnpm create interchain-app
 ```
 
 ## Examples
@@ -233,20 +233,20 @@ cia --name ibc-asset-list-example --example ibc-asset-list
 
 ## Development
 
-Because the nature of how template boilerplates are generated, we generate `yarn.lock` files inside of nested packages so we can fix versions to avoid non-deterministic installations.
+Because the nature of how template boilerplates are generated, we generate `pnpm-lock.yaml` files inside of nested packages so we can fix versions to avoid non-deterministic installations.
 
-When adding packages, yarn workspaces will use the root `yarn.lock`. It could be ideal to remove it while adding packages, and when publishing or pushing new changes, generating the nested lock files.
+When adding packages, pnpm workspaces will use the root `pnpm-lock.yaml`. It could be ideal to remove it while adding packages, and when publishing or pushing new changes, generating the nested lock files.
 
 In the root, to remove all nested lock files:
 
 ```
-yarn locks:remove
+pnpm locks:remove
 ```
 
-When you need to remove/generate locks for all nested packages, simply run `yarn locks` in the root:
+When you need to remove/generate locks for all nested packages, simply run `pnpm locks` in the root:
 
 ```
-yarn locks
+pnpm locks
 ```
 
 Windows developers: when build packages/create-interchain-app change rootDir to '.' in tsconfig.json for local build

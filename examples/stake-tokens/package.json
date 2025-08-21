@@ -7,8 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "locks:remove": "rm -f yarn.lock",
-    "locks:create": "generate-lockfile --lockfile ../../yarn.lock --package package.json --write yarn.lock --force",
+    "locks:remove": "rm -f pnpm-lock.yaml",
+    "locks:create": "generate-lockfile --lockfile ../../pnpm-lock.yaml --package package.json --write pnpm-lock.yaml --force",
     "locks": "npm run locks:remove && npm run locks:create"
   },
   "dependencies": {
@@ -27,6 +27,7 @@
     "chain-registry": "^1.69.32",
     "fast-fuzzy": "1.12.0",
     "interchain-kit": "0.2.222",
+    "interchainjs": "1.11.2",
     "match-sorter": "^6.3.3",
     "next": "^13",
     "react": "18.3.1",
@@ -43,5 +44,5 @@
     "generate-lockfile": "0.0.12",
     "typescript": "^5.5.4"
   },
-  "packageManager": "yarn@4.3.0"
+  "packageManager": "pnpm@9.7.0"
 }

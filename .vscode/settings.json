@@ -11,7 +11,7 @@
   },
   "eslint.validate": ["javascript", "javascriptreact"],
   "files.exclude": {
-    ".yarn/*": true
+    ".pnpm-store/*": true
   },
   "typescript.tsdk": "node_modules/typescript/lib"
 }

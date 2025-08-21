@@ -5,7 +5,7 @@ This is an Interchain App project bootstrapped with [`create-interchain-app`](ht
 First, install the packages and run the development server:
 
 ```bash
-yarn && yarn dev
+pnpm install && pnpm dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
