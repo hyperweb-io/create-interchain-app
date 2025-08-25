@@ -10,9 +10,8 @@
   },
   "dependencies": {
     "@chain-registry/v2": "^1.71.237",
-    "@interchain-kit/core": "0.3.43",
-    "@interchain-kit/phantom-extension": "0.3.43",
-    "@interchain-kit/react": "0.3.43",
+    "@interchain-kit/phantom-extension": "0.3.46",
+    "@interchain-kit/react": "0.3.46",
     "@interchain-ui/react": "1.26.3",
     "@interchainjs/solana": "1.16.1",
     "chain-registry": "2.0.31",
