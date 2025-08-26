@@ -25,7 +25,6 @@
     "build:chmod": "chmod +x ./dist/create-interchain-app.js",
     "build": "npm run build:clean && npm run build:dist && npm run build:copy && npm run build:chmod",
     "build:win": "npm run build:clean && npm run build:dist && npm run build:copy",
-    "prepare": "npm run build",
     "dev": "node ./dist/create-interchain-app",
     "lint": "eslint .",
     "format": "eslint --fix .",
