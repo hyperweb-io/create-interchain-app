@@ -12,7 +12,7 @@ import {
 } from '@interchainjs/solana';
 import { useChain, useWalletManager } from '@interchain-kit/react';
 
-type StatusContent = ReactNode;
+type StatusContent = string | ReactNode;
 
 export default function Home() {
   const [client, setClient] = useState<PhantomSigningClient | null>(null);
@@ -57,19 +57,22 @@ export default function Home() {
       setLoading(true);
       setStatus('Connecting to Phantom wallet...');
 
+      // console.log('wallet 2', wallet)
+      const provider = await wallet.getProvider()
+      // console.log('provider', provider)
+      // setClient(provider)
+
       const newClient = await PhantomSigningClient.connectWithPhantom(
         DEVNET_ENDPOINT,
         {
           commitment: 'confirmed',
-          broadcast: { checkTx: true, timeout: 60000 }
-        }
+          broadcast: { checkTx: true, timeout: 60000 },
+          provider
+        },
       );
 
       setClient(newClient); // original
-      // console.log('wallet 2', wallet)
-      // const provider = await wallet.getProvider()
-      // console.log('provider', provider)
-      // setClient(provider)
+
       const walletAddress = newClient.signerAddress.toString();
       setWalletAddress(walletAddress);
       setRecipient(walletAddress);
@@ -349,7 +352,7 @@ export default function Home() {
           <h2 className="text-lg font-semibold text-gray-700 mb-3">Status</h2>
           <div className="bg-gray-50 p-3 rounded min-h-[60px]">
             <p className="text-sm text-gray-700">
-              {loading ? 'Loading...' : status || 'Ready to use'}
+              {loading ? 'Loading...' : (status ? status : 'Ready to use')}
             </p>
           </div>
         </div>
