@@ -79,16 +79,16 @@ importers:
         version: 0.12.0
       '@interchain-kit/core':
         specifier: 0.3.17
-        version: 0.3.17(encoding@0.1.13)(typescript@5.6.3)(zod@3.25.76)
+        version: 0.3.17(encoding@0.1.13)(typescript@5.6.3)
       '@interchain-kit/keplr-extension':
         specifier: 0.3.17
-        version: 0.3.17(encoding@0.1.13)(starknet@7.6.4)(typescript@5.6.3)(zod@3.25.76)
+        version: 0.3.17(encoding@0.1.13)(starknet@7.6.4)(typescript@5.6.3)
       '@interchain-kit/leap-extension':
         specifier: 0.3.17
-        version: 0.3.17(encoding@0.1.13)(typescript@5.6.3)(zod@3.25.76)
+        version: 0.3.17(encoding@0.1.13)(typescript@5.6.3)
       '@interchain-kit/react':
         specifier: 0.3.17
-        version: 0.3.17(@chain-registry/v2@1.71.237)(@types/react-dom@18.2.0)(@types/react@18.2.0)(babel-plugin-macros@3.1.0)(encoding@0.1.13)(immer@10.1.1)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(typescript@5.6.3)(use-sync-external-store@1.5.0(react@18.2.0))(zod@3.25.76)
+        version: 0.3.17(@chain-registry/v2@1.71.237)(@types/react-dom@18.2.0)(@types/react@18.2.0)(babel-plugin-macros@3.1.0)(encoding@0.1.13)(immer@10.1.1)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(typescript@5.6.3)(use-sync-external-store@1.5.0(react@18.2.0))
       '@interchain-ui/react':
         specifier: 1.26.3
         version: 1.26.3(@types/react@18.2.0)(babel-plugin-macros@3.1.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
@@ -226,8 +226,8 @@ importers:
         specifier: ^1.26.3
         version: 1.26.3(@types/react@19.1.11)(babel-plugin-macros@3.1.0)(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
       '@interchainjs/ethereum':
-        specifier: 1.11.9
-        version: 1.11.9(@chain-registry/v2-types@0.53.146)(@chain-registry/v2@1.71.237)
+        specifier: link:/Users/easonsmith/Desktop/hw/interchainjs/networks/ethereum/dist
+        version: link:../../../interchainjs/networks/ethereum/dist
       '@keplr-wallet/types':
         specifier: ^0.12.221
         version: 0.12.265(starknet@7.6.4)
@@ -342,16 +342,16 @@ importers:
         version: 11.10.6(@emotion/react@11.10.6(@types/react@18.3.24)(react@18.3.1))(@types/react@18.3.24)(react@18.3.1)
       '@interchain-kit/core':
         specifier: 0.2.222
-        version: 0.2.222(encoding@0.1.13)(typescript@5.6.3)(zod@3.25.76)
+        version: 0.2.222(encoding@0.1.13)(typescript@5.6.3)
       '@interchain-kit/keplr-extension':
         specifier: 0.2.222
-        version: 0.2.222(encoding@0.1.13)(starknet@7.6.4)(typescript@5.6.3)(zod@3.25.76)
+        version: 0.2.222(encoding@0.1.13)(starknet@7.6.4)(typescript@5.6.3)
       '@interchain-kit/leap-extension':
         specifier: 0.2.222
-        version: 0.2.222(encoding@0.1.13)(typescript@5.6.3)(zod@3.25.76)
+        version: 0.2.222(encoding@0.1.13)(typescript@5.6.3)
       '@interchain-kit/react':
         specifier: 0.2.222
-        version: 0.2.222(@chain-registry/v2@1.71.237)(babel-plugin-macros@3.1.0)(encoding@0.1.13)(immer@10.1.1)(typescript@5.6.3)(use-sync-external-store@1.5.0(react@18.3.1))(zod@3.25.76)
+        version: 0.2.222(@chain-registry/v2@1.71.237)(babel-plugin-macros@3.1.0)(encoding@0.1.13)(immer@10.1.1)(typescript@5.6.3)(use-sync-external-store@1.5.0(react@18.3.1))
       '@interchain-ui/react':
         specifier: ^1.26.3
         version: 1.26.3(@types/react@18.3.24)(babel-plugin-macros@3.1.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -448,16 +448,16 @@ importers:
         version: 11.10.6(@emotion/react@11.10.6(@types/react@18.3.24)(react@18.3.1))(@types/react@18.3.24)(react@18.3.1)
       '@interchain-kit/core':
         specifier: 0.2.222
-        version: 0.2.222(encoding@0.1.13)(typescript@5.6.3)(zod@3.25.76)
+        version: 0.2.222(encoding@0.1.13)(typescript@5.6.3)
       '@interchain-kit/keplr-extension':
         specifier: 0.2.222
-        version: 0.2.222(encoding@0.1.13)(starknet@7.6.4)(typescript@5.6.3)(zod@3.25.76)
+        version: 0.2.222(encoding@0.1.13)(starknet@7.6.4)(typescript@5.6.3)
       '@interchain-kit/leap-extension':
         specifier: 0.2.222
-        version: 0.2.222(encoding@0.1.13)(typescript@5.6.3)(zod@3.25.76)
+        version: 0.2.222(encoding@0.1.13)(typescript@5.6.3)
       '@interchain-kit/react':
         specifier: 0.2.222
-        version: 0.2.222(@chain-registry/v2@1.71.237)(babel-plugin-macros@3.1.0)(encoding@0.1.13)(immer@10.1.1)(typescript@5.6.3)(use-sync-external-store@1.5.0(react@18.3.1))(zod@3.25.76)
+        version: 0.2.222(@chain-registry/v2@1.71.237)(babel-plugin-macros@3.1.0)(encoding@0.1.13)(immer@10.1.1)(typescript@5.6.3)(use-sync-external-store@1.5.0(react@18.3.1))
       '@interchain-ui/react':
         specifier: ^1.26.3
         version: 1.26.3(@types/react@18.3.24)(babel-plugin-macros@3.1.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -563,16 +563,16 @@ importers:
         version: 0.53.146
       '@interchain-kit/core':
         specifier: 0.2.222
-        version: 0.2.222(encoding@0.1.13)(typescript@5.6.3)(zod@3.25.76)
+        version: 0.2.222(encoding@0.1.13)(typescript@5.6.3)
       '@interchain-kit/keplr-extension':
         specifier: 0.2.222
-        version: 0.2.222(encoding@0.1.13)(starknet@7.6.4)(typescript@5.6.3)(zod@3.25.76)
+        version: 0.2.222(encoding@0.1.13)(starknet@7.6.4)(typescript@5.6.3)
       '@interchain-kit/leap-extension':
         specifier: 0.2.222
-        version: 0.2.222(encoding@0.1.13)(typescript@5.6.3)(zod@3.25.76)
+        version: 0.2.222(encoding@0.1.13)(typescript@5.6.3)
       '@interchain-kit/vue':
         specifier: 0.2.222
-        version: 0.2.222(@tanstack/react-query@5.68.0(react@19.1.1))(@types/react@19.1.11)(@vueuse/core@13.7.0(vue@3.5.20(typescript@5.6.3)))(@vueuse/integrations@13.7.0(axios@1.11.0)(focus-trap@7.6.0)(idb-keyval@6.2.2)(vue@3.5.20(typescript@5.6.3)))(babel-plugin-macros@3.1.0)(encoding@0.1.13)(focus-trap@7.6.0)(react@19.1.1)(typescript@5.6.3)(vue@3.5.20(typescript@5.6.3))(zod@3.25.76)
+        version: 0.2.222(@tanstack/react-query@5.68.0(react@19.1.1))(@types/react@19.1.11)(@vueuse/core@13.7.0(vue@3.5.20(typescript@5.6.3)))(@vueuse/integrations@13.7.0(axios@1.11.0)(focus-trap@7.6.0)(idb-keyval@6.2.2)(vue@3.5.20(typescript@5.6.3)))(babel-plugin-macros@3.1.0)(encoding@0.1.13)(focus-trap@7.6.0)(react@19.1.1)(typescript@5.6.3)(vue@3.5.20(typescript@5.6.3))
       '@interchain-ui/vue':
         specifier: 1.4.1
         version: 1.4.1(@types/react@19.1.11)(@vueuse/core@13.7.0(vue@3.5.20(typescript@5.6.3)))(@vueuse/integrations@13.7.0(axios@1.11.0)(focus-trap@7.6.0)(idb-keyval@6.2.2)(vue@3.5.20(typescript@5.6.3)))(babel-plugin-macros@3.1.0)(focus-trap@7.6.0)(react@19.1.1)(vue@3.5.20(typescript@5.6.3))
@@ -635,7 +635,7 @@ importers:
         specifier: 1.26.3
         version: 1.26.3(@types/react@19.1.11)(babel-plugin-macros@3.1.0)(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
       '@interchainjs/solana':
-        specifier: ^1.17.3
+        specifier: 1.17.3
         version: 1.17.3(@chain-registry/v2-types@0.53.146)(@chain-registry/v2@1.71.237)
       chain-registry:
         specifier: 2.0.31
@@ -685,16 +685,16 @@ importers:
         version: 0.50.197
       '@interchain-kit/core':
         specifier: 0.2.222
-        version: 0.2.222(encoding@0.1.13)(typescript@5.6.3)(zod@3.25.76)
+        version: 0.2.222(encoding@0.1.13)(typescript@5.6.3)
       '@interchain-kit/keplr-extension':
         specifier: 0.2.222
-        version: 0.2.222(encoding@0.1.13)(starknet@7.6.4)(typescript@5.6.3)(zod@3.25.76)
+        version: 0.2.222(encoding@0.1.13)(starknet@7.6.4)(typescript@5.6.3)
       '@interchain-kit/leap-extension':
         specifier: 0.2.222
-        version: 0.2.222(encoding@0.1.13)(typescript@5.6.3)(zod@3.25.76)
+        version: 0.2.222(encoding@0.1.13)(typescript@5.6.3)
       '@interchain-kit/react':
         specifier: 0.2.222
-        version: 0.2.222(@chain-registry/v2@1.71.237)(babel-plugin-macros@3.1.0)(encoding@0.1.13)(immer@10.1.1)(typescript@5.6.3)(use-sync-external-store@1.5.0(react@18.3.1))(zod@3.25.76)
+        version: 0.2.222(@chain-registry/v2@1.71.237)(babel-plugin-macros@3.1.0)(encoding@0.1.13)(immer@10.1.1)(typescript@5.6.3)(use-sync-external-store@1.5.0(react@18.3.1))
       '@interchain-ui/react':
         specifier: ^1.26.3
         version: 1.26.3(@types/react@18.3.24)(babel-plugin-macros@3.1.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -867,16 +867,16 @@ importers:
         version: 11.10.6(@emotion/react@11.10.6(@types/react@18.3.24)(react@18.3.1))(@types/react@18.3.24)(react@18.3.1)
       '@interchain-kit/core':
         specifier: 0.2.222
-        version: 0.2.222(encoding@0.1.13)(typescript@5.6.3)(zod@3.25.76)
+        version: 0.2.222(encoding@0.1.13)(typescript@5.6.3)
       '@interchain-kit/keplr-extension':
         specifier: 0.2.222
-        version: 0.2.222(encoding@0.1.13)(starknet@7.6.4)(typescript@5.6.3)(zod@3.25.76)
+        version: 0.2.222(encoding@0.1.13)(starknet@7.6.4)(typescript@5.6.3)
       '@interchain-kit/leap-extension':
         specifier: 0.2.222
-        version: 0.2.222(encoding@0.1.13)(typescript@5.6.3)(zod@3.25.76)
+        version: 0.2.222(encoding@0.1.13)(typescript@5.6.3)
       '@interchain-kit/react':
         specifier: 0.2.222
-        version: 0.2.222(@chain-registry/v2@1.71.237)(babel-plugin-macros@3.1.0)(encoding@0.1.13)(immer@10.1.1)(typescript@5.6.3)(use-sync-external-store@1.5.0(react@18.3.1))(zod@3.25.76)
+        version: 0.2.222(@chain-registry/v2@1.71.237)(babel-plugin-macros@3.1.0)(encoding@0.1.13)(immer@10.1.1)(typescript@5.6.3)(use-sync-external-store@1.5.0(react@18.3.1))
       '@interchain-ui/react':
         specifier: ^1.26.3
         version: 1.26.3(@types/react@18.3.24)(babel-plugin-macros@3.1.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -1043,19 +1043,19 @@ importers:
         version: 0.31.1
       '@interchain-kit/core':
         specifier: ^0.3.40
-        version: 0.3.43(@chain-registry/v2@1.71.237)(encoding@0.1.13)(typescript@4.9.3)(zod@3.25.76)
+        version: 0.3.43(@chain-registry/v2@1.71.237)(encoding@0.1.13)(typescript@4.9.3)
       '@interchain-kit/keplr-extension':
         specifier: 0.3.41
-        version: 0.3.41(@chain-registry/v2@1.71.237)(encoding@0.1.13)(starknet@7.6.4)(typescript@4.9.3)(zod@3.25.76)
+        version: 0.3.41(@chain-registry/v2@1.71.237)(encoding@0.1.13)(starknet@7.6.4)(typescript@4.9.3)
       '@interchain-kit/leap-extension':
         specifier: 0.3.41
-        version: 0.3.41(@chain-registry/v2@1.71.237)(encoding@0.1.13)(typescript@4.9.3)(zod@3.25.76)
+        version: 0.3.41(@chain-registry/v2@1.71.237)(encoding@0.1.13)(typescript@4.9.3)
       '@interchain-kit/metamask-extension':
         specifier: 0.3.41
-        version: 0.3.41(@chain-registry/v2@1.71.237)(encoding@0.1.13)(typescript@4.9.3)(zod@3.25.76)
+        version: 0.3.41(@chain-registry/v2@1.71.237)(encoding@0.1.13)(typescript@4.9.3)
       '@interchain-kit/react':
         specifier: 0.3.41
-        version: 0.3.41(@chain-registry/v2@1.71.237)(@types/react-dom@18.0.9)(@types/react@18.0.25)(babel-plugin-macros@3.1.0)(encoding@0.1.13)(immer@10.1.1)(jiti@2.5.1)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(tsx@4.20.5)(typescript@4.9.3)(use-sync-external-store@1.5.0(react@18.2.0))(zod@3.25.76)
+        version: 0.3.41(@chain-registry/v2@1.71.237)(@types/react-dom@18.0.9)(@types/react@18.0.25)(babel-plugin-macros@3.1.0)(encoding@0.1.13)(immer@10.1.1)(jiti@2.5.1)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(tsx@4.20.5)(typescript@4.9.3)(use-sync-external-store@1.5.0(react@18.2.0))
       '@interchain-ui/react':
         specifier: 1.23.31
         version: 1.23.31(@types/react@18.0.25)(babel-plugin-macros@3.1.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
@@ -1179,16 +1179,16 @@ importers:
         version: 11.10.6(@emotion/react@11.10.6(@types/react@18.3.1)(react@18.3.1))(@types/react@18.3.1)(react@18.3.1)
       '@interchain-kit/core':
         specifier: 0.2.222
-        version: 0.2.222(encoding@0.1.13)(typescript@5.6.3)(zod@3.25.76)
+        version: 0.2.222(encoding@0.1.13)(typescript@5.6.3)
       '@interchain-kit/keplr-extension':
         specifier: 0.2.222
-        version: 0.2.222(encoding@0.1.13)(starknet@7.6.4)(typescript@5.6.3)(zod@3.25.76)
+        version: 0.2.222(encoding@0.1.13)(starknet@7.6.4)(typescript@5.6.3)
       '@interchain-kit/leap-extension':
         specifier: 0.2.222
-        version: 0.2.222(encoding@0.1.13)(typescript@5.6.3)(zod@3.25.76)
+        version: 0.2.222(encoding@0.1.13)(typescript@5.6.3)
       '@interchain-kit/react':
         specifier: 0.2.222
-        version: 0.2.222(@chain-registry/v2@1.71.237)(babel-plugin-macros@3.1.0)(encoding@0.1.13)(immer@10.1.1)(typescript@5.6.3)(use-sync-external-store@1.5.0(react@18.3.1))(zod@3.25.76)
+        version: 0.2.222(@chain-registry/v2@1.71.237)(babel-plugin-macros@3.1.0)(encoding@0.1.13)(immer@10.1.1)(typescript@5.6.3)(use-sync-external-store@1.5.0(react@18.3.1))
       '@interchain-ui/react':
         specifier: ^1.26.3
         version: 1.26.3(@types/react@18.3.1)(babel-plugin-macros@3.1.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -1249,16 +1249,16 @@ importers:
         version: 11.10.6(@emotion/react@11.10.6(@types/react@18.2.0)(react@18.3.1))(@types/react@18.2.0)(react@18.3.1)
       '@interchain-kit/core':
         specifier: 0.2.222
-        version: 0.2.222(encoding@0.1.13)(typescript@5.6.3)(zod@3.25.76)
+        version: 0.2.222(encoding@0.1.13)(typescript@5.6.3)
       '@interchain-kit/keplr-extension':
         specifier: 0.2.222
-        version: 0.2.222(encoding@0.1.13)(starknet@7.6.4)(typescript@5.6.3)(zod@3.25.76)
+        version: 0.2.222(encoding@0.1.13)(starknet@7.6.4)(typescript@5.6.3)
       '@interchain-kit/leap-extension':
         specifier: 0.2.222
-        version: 0.2.222(encoding@0.1.13)(typescript@5.6.3)(zod@3.25.76)
+        version: 0.2.222(encoding@0.1.13)(typescript@5.6.3)
       '@interchain-kit/react':
         specifier: 0.2.222
-        version: 0.2.222(@chain-registry/v2@1.71.237)(babel-plugin-macros@3.1.0)(encoding@0.1.13)(immer@10.1.1)(typescript@5.6.3)(use-sync-external-store@1.5.0(react@18.3.1))(zod@3.25.76)
+        version: 0.2.222(@chain-registry/v2@1.71.237)(babel-plugin-macros@3.1.0)(encoding@0.1.13)(immer@10.1.1)(typescript@5.6.3)(use-sync-external-store@1.5.0(react@18.3.1))
       '@interchain-ui/react':
         specifier: ^1.26.3
         version: 1.26.3(@types/react@18.2.0)(babel-plugin-macros@3.1.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -3356,9 +3356,6 @@ packages:
   '@interchainjs/ethereum@1.11.2':
     resolution: {integrity: sha512-VIvIOlX8EHD43boh1ksthOEVVf5H039Rzg4sYv00pSsHXzRpgRHHWsVPWJhnwUu0WffW8YyjNdbYceha0ycbQg==}
 
-  '@interchainjs/ethereum@1.11.9':
-    resolution: {integrity: sha512-95Fpvuf30+moJ6hL8MYrwh3wJyBryl4Fa7YpPJXVXq1pqnc8XpLdyUX4svdjMe5LejMWY4bHVLxmtn0rVlFs6Q==}
-
   '@interchainjs/ethereum@1.17.1':
     resolution: {integrity: sha512-EOjB3Q8OusoCk5/zg0PlWJUoepKEOjm18DNEeAxUPmG5wDw8CIAp7wkUHF6lfGkE7ZFedwy74Uinc1eZZSDh1g==}
 
@@ -3439,9 +3436,6 @@ packages:
   '@interchainjs/types@1.11.5':
     resolution: {integrity: sha512-cH2mb7bfuEfY2iyA2ITZjYNI7vyHdMWhybAuM2XzYh5xvtyujmQZPQhqDFZoy89qaMYbtIAPaZR8vlOBSCBhMQ==}
 
-  '@interchainjs/types@1.11.9':
-    resolution: {integrity: sha512-5G546AwLkUjeYOV0lug3HI9eY4zlnCdMDvojQ2vmQMYsuN1WkE0rKWhektguGFx5YHA9tn8MqgD4gMOsHqqa4A==}
-
   '@interchainjs/types@1.16.6':
     resolution: {integrity: sha512-omcYYwlBIEKmZv+aCE+BaMSRNadEEfN0zxm1vXs1iwjbmWlkRgmDqpacGOzwOMSMHDq5cPXqpBavQNA7f4lY0Q==}
 
@@ -3480,12 +3474,6 @@ packages:
 
   '@interchainjs/utils@1.11.5':
     resolution: {integrity: sha512-1otzjx72Gku1JuFGX5RWVn7yv49MlR85SNoOcyhzYoLFAyokW6lGejyMiXCJef7FAzwkkFIOVjwdCB5cjBqCuw==}
-    peerDependencies:
-      '@chain-registry/v2': ^1.71.186
-      '@chain-registry/v2-types': ^0.53.115
-
-  '@interchainjs/utils@1.11.9':
-    resolution: {integrity: sha512-dT/58D0yms9+Os8m+tOPiQisbAShvzoNCvlm02kf8oPwHKkD48O7X/eU0G8Uioi1QEU3PDI41/Up10WfUWwWAw==}
     peerDependencies:
       '@chain-registry/v2': ^1.71.186
       '@chain-registry/v2-types': ^0.53.115
@@ -15651,6 +15639,50 @@ snapshots:
   '@img/sharp-win32-x64@0.34.3':
     optional: true
 
+  '@interchain-kit/core@0.2.222(encoding@0.1.13)(typescript@5.6.3)':
+    dependencies:
+      '@chain-registry/v2': 1.71.237
+      '@chain-registry/v2-keplr': 0.0.72
+      '@chain-registry/v2-types': 0.53.146
+      '@interchainjs/cosmos': 1.10.1
+      '@interchainjs/cosmos-types': 1.10.1(@chain-registry/v2-types@0.53.146)(@chain-registry/v2@1.71.237)
+      '@ledgerhq/hw-app-cosmos': 6.32.5
+      '@ledgerhq/hw-transport': 6.31.9
+      '@ledgerhq/hw-transport-webhid': 6.30.5
+      '@ledgerhq/hw-transport-webusb': 6.29.9
+      '@walletconnect/sign-client': 2.21.8(typescript@5.6.3)(zod@3.25.76)
+      '@walletconnect/types': 2.21.8
+      '@walletconnect/universal-provider': 2.21.8(encoding@0.1.13)(typescript@5.6.3)
+      bowser: 2.12.1
+      buffer: 6.0.3
+      interchainjs: 1.10.1(@chain-registry/v2-types@0.53.146)(@chain-registry/v2@1.71.237)
+      long: 5.3.2
+    transitivePeerDependencies:
+      - '@azure/app-configuration'
+      - '@azure/cosmos'
+      - '@azure/data-tables'
+      - '@azure/identity'
+      - '@azure/keyvault-secrets'
+      - '@azure/storage-blob'
+      - '@capacitor/preferences'
+      - '@deno/kv'
+      - '@netlify/blobs'
+      - '@planetscale/database'
+      - '@react-native-async-storage/async-storage'
+      - '@upstash/redis'
+      - '@vercel/blob'
+      - '@vercel/functions'
+      - '@vercel/kv'
+      - aws4fetch
+      - bufferutil
+      - db0
+      - encoding
+      - ioredis
+      - typescript
+      - uploadthing
+      - utf-8-validate
+      - zod
+
   '@interchain-kit/core@0.2.222(encoding@0.1.13)(typescript@5.6.3)(zod@3.25.76)':
     dependencies:
       '@chain-registry/v2': 1.71.237
@@ -15695,7 +15727,7 @@ snapshots:
       - utf-8-validate
       - zod
 
-  '@interchain-kit/core@0.3.17(encoding@0.1.13)(typescript@5.6.3)(zod@3.25.76)':
+  '@interchain-kit/core@0.3.17(encoding@0.1.13)(typescript@5.6.3)':
     dependencies:
       '@chain-registry/v2': 1.71.237
       '@chain-registry/v2-keplr': 0.0.72
@@ -15708,7 +15740,7 @@ snapshots:
       '@ledgerhq/hw-transport-webusb': 6.29.9
       '@walletconnect/sign-client': 2.21.8(typescript@5.6.3)(zod@3.25.76)
       '@walletconnect/types': 2.21.8
-      '@walletconnect/universal-provider': 2.21.8(encoding@0.1.13)(typescript@5.6.3)(zod@3.25.76)
+      '@walletconnect/universal-provider': 2.21.8(encoding@0.1.13)(typescript@5.6.3)
       bowser: 2.12.1
       buffer: 6.0.3
       interchainjs: 1.11.5(@chain-registry/v2-types@0.53.146)(@chain-registry/v2@1.71.237)
@@ -15788,7 +15820,7 @@ snapshots:
       - utf-8-validate
       - zod
 
-  '@interchain-kit/core@0.3.41(@chain-registry/v2@1.71.237)(encoding@0.1.13)(typescript@4.9.3)(zod@3.25.76)':
+  '@interchain-kit/core@0.3.41(@chain-registry/v2@1.71.237)(encoding@0.1.13)(typescript@4.9.3)':
     dependencies:
       '@chain-registry/keplr': 2.0.47
       '@chain-registry/types': 2.0.47
@@ -15799,9 +15831,9 @@ snapshots:
       '@ledgerhq/hw-transport': 6.31.9
       '@ledgerhq/hw-transport-webhid': 6.30.5
       '@ledgerhq/hw-transport-webusb': 6.29.9
-      '@walletconnect/sign-client': 2.21.8(typescript@4.9.3)(zod@3.25.76)
+      '@walletconnect/sign-client': 2.21.8(typescript@4.9.3)
       '@walletconnect/types': 2.21.8
-      '@walletconnect/universal-provider': 2.21.8(encoding@0.1.13)(typescript@4.9.3)(zod@3.25.76)
+      '@walletconnect/universal-provider': 2.21.8(encoding@0.1.13)(typescript@4.9.3)
       base64-js: 1.5.1
       bowser: 2.12.1
       buffer: 6.0.3
@@ -15837,7 +15869,7 @@ snapshots:
       - utf-8-validate
       - zod
 
-  '@interchain-kit/core@0.3.43(@chain-registry/v2@1.71.237)(encoding@0.1.13)(typescript@4.9.3)(zod@3.25.76)':
+  '@interchain-kit/core@0.3.43(@chain-registry/v2@1.71.237)(encoding@0.1.13)(typescript@4.9.3)':
     dependencies:
       '@chain-registry/keplr': 2.0.47
       '@chain-registry/types': 2.0.47
@@ -15848,9 +15880,9 @@ snapshots:
       '@ledgerhq/hw-transport': 6.31.9
       '@ledgerhq/hw-transport-webhid': 6.30.5
       '@ledgerhq/hw-transport-webusb': 6.29.9
-      '@walletconnect/sign-client': 2.21.8(typescript@4.9.3)(zod@3.25.76)
+      '@walletconnect/sign-client': 2.21.8(typescript@4.9.3)
       '@walletconnect/types': 2.21.8
-      '@walletconnect/universal-provider': 2.21.8(encoding@0.1.13)(typescript@4.9.3)(zod@3.25.76)
+      '@walletconnect/universal-provider': 2.21.8(encoding@0.1.13)(typescript@4.9.3)
       base64-js: 1.5.1
       bowser: 2.12.1
       buffer: 6.0.3
@@ -15935,6 +15967,37 @@ snapshots:
       - utf-8-validate
       - zod
 
+  '@interchain-kit/keplr-extension@0.2.222(encoding@0.1.13)(starknet@7.6.4)(typescript@5.6.3)':
+    dependencies:
+      '@interchain-kit/core': 0.2.222(encoding@0.1.13)(typescript@5.6.3)
+      '@keplr-wallet/provider-extension': 0.12.265(starknet@7.6.4)
+    transitivePeerDependencies:
+      - '@azure/app-configuration'
+      - '@azure/cosmos'
+      - '@azure/data-tables'
+      - '@azure/identity'
+      - '@azure/keyvault-secrets'
+      - '@azure/storage-blob'
+      - '@capacitor/preferences'
+      - '@deno/kv'
+      - '@netlify/blobs'
+      - '@planetscale/database'
+      - '@react-native-async-storage/async-storage'
+      - '@upstash/redis'
+      - '@vercel/blob'
+      - '@vercel/functions'
+      - '@vercel/kv'
+      - aws4fetch
+      - bufferutil
+      - db0
+      - encoding
+      - ioredis
+      - starknet
+      - typescript
+      - uploadthing
+      - utf-8-validate
+      - zod
+
   '@interchain-kit/keplr-extension@0.2.222(encoding@0.1.13)(starknet@7.6.4)(typescript@5.6.3)(zod@3.25.76)':
     dependencies:
       '@interchain-kit/core': 0.2.222(encoding@0.1.13)(typescript@5.6.3)(zod@3.25.76)
@@ -15966,9 +16029,9 @@ snapshots:
       - utf-8-validate
       - zod
 
-  '@interchain-kit/keplr-extension@0.3.17(encoding@0.1.13)(starknet@7.6.4)(typescript@5.6.3)(zod@3.25.76)':
+  '@interchain-kit/keplr-extension@0.3.17(encoding@0.1.13)(starknet@7.6.4)(typescript@5.6.3)':
     dependencies:
-      '@interchain-kit/core': 0.3.17(encoding@0.1.13)(typescript@5.6.3)(zod@3.25.76)
+      '@interchain-kit/core': 0.3.17(encoding@0.1.13)(typescript@5.6.3)
       '@keplr-wallet/provider-extension': 0.12.265(starknet@7.6.4)
     transitivePeerDependencies:
       - '@azure/app-configuration'
@@ -16030,9 +16093,9 @@ snapshots:
       - utf-8-validate
       - zod
 
-  '@interchain-kit/keplr-extension@0.3.41(@chain-registry/v2@1.71.237)(encoding@0.1.13)(starknet@7.6.4)(typescript@4.9.3)(zod@3.25.76)':
+  '@interchain-kit/keplr-extension@0.3.41(@chain-registry/v2@1.71.237)(encoding@0.1.13)(starknet@7.6.4)(typescript@4.9.3)':
     dependencies:
-      '@interchain-kit/core': 0.3.41(@chain-registry/v2@1.71.237)(encoding@0.1.13)(typescript@4.9.3)(zod@3.25.76)
+      '@interchain-kit/core': 0.3.41(@chain-registry/v2@1.71.237)(encoding@0.1.13)(typescript@4.9.3)
       '@keplr-wallet/provider-extension': 0.12.265(starknet@7.6.4)
     transitivePeerDependencies:
       - '@azure/app-configuration'
@@ -16063,9 +16126,9 @@ snapshots:
       - utf-8-validate
       - zod
 
-  '@interchain-kit/leap-extension@0.2.222(encoding@0.1.13)(typescript@5.6.3)(zod@3.25.76)':
+  '@interchain-kit/leap-extension@0.2.222(encoding@0.1.13)(typescript@5.6.3)':
     dependencies:
-      '@interchain-kit/core': 0.2.222(encoding@0.1.13)(typescript@5.6.3)(zod@3.25.76)
+      '@interchain-kit/core': 0.2.222(encoding@0.1.13)(typescript@5.6.3)
     transitivePeerDependencies:
       - '@azure/app-configuration'
       - '@azure/cosmos'
@@ -16092,9 +16155,9 @@ snapshots:
       - utf-8-validate
       - zod
 
-  '@interchain-kit/leap-extension@0.3.17(encoding@0.1.13)(typescript@5.6.3)(zod@3.25.76)':
+  '@interchain-kit/leap-extension@0.3.17(encoding@0.1.13)(typescript@5.6.3)':
     dependencies:
-      '@interchain-kit/core': 0.3.17(encoding@0.1.13)(typescript@5.6.3)(zod@3.25.76)
+      '@interchain-kit/core': 0.3.17(encoding@0.1.13)(typescript@5.6.3)
     transitivePeerDependencies:
       - '@azure/app-configuration'
       - '@azure/cosmos'
@@ -16121,9 +16184,9 @@ snapshots:
       - utf-8-validate
       - zod
 
-  '@interchain-kit/leap-extension@0.3.41(@chain-registry/v2@1.71.237)(encoding@0.1.13)(typescript@4.9.3)(zod@3.25.76)':
+  '@interchain-kit/leap-extension@0.3.41(@chain-registry/v2@1.71.237)(encoding@0.1.13)(typescript@4.9.3)':
     dependencies:
-      '@interchain-kit/core': 0.3.41(@chain-registry/v2@1.71.237)(encoding@0.1.13)(typescript@4.9.3)(zod@3.25.76)
+      '@interchain-kit/core': 0.3.41(@chain-registry/v2@1.71.237)(encoding@0.1.13)(typescript@4.9.3)
     transitivePeerDependencies:
       - '@azure/app-configuration'
       - '@azure/cosmos'
@@ -16183,9 +16246,9 @@ snapshots:
       - utf-8-validate
       - zod
 
-  '@interchain-kit/metamask-extension@0.3.41(@chain-registry/v2@1.71.237)(encoding@0.1.13)(typescript@4.9.3)(zod@3.25.76)':
+  '@interchain-kit/metamask-extension@0.3.41(@chain-registry/v2@1.71.237)(encoding@0.1.13)(typescript@4.9.3)':
     dependencies:
-      '@interchain-kit/core': 0.3.41(@chain-registry/v2@1.71.237)(encoding@0.1.13)(typescript@4.9.3)(zod@3.25.76)
+      '@interchain-kit/core': 0.3.41(@chain-registry/v2@1.71.237)(encoding@0.1.13)(typescript@4.9.3)
     transitivePeerDependencies:
       - '@azure/app-configuration'
       - '@azure/cosmos'
@@ -16245,10 +16308,10 @@ snapshots:
       - utf-8-validate
       - zod
 
-  '@interchain-kit/react@0.2.222(@chain-registry/v2@1.71.237)(babel-plugin-macros@3.1.0)(encoding@0.1.13)(immer@10.1.1)(typescript@5.6.3)(use-sync-external-store@1.5.0(react@18.3.1))(zod@3.25.76)':
+  '@interchain-kit/react@0.2.222(@chain-registry/v2@1.71.237)(babel-plugin-macros@3.1.0)(encoding@0.1.13)(immer@10.1.1)(typescript@5.6.3)(use-sync-external-store@1.5.0(react@18.3.1))':
     dependencies:
       '@chain-registry/v2-types': 0.53.146
-      '@interchain-kit/core': 0.2.222(encoding@0.1.13)(typescript@5.6.3)(zod@3.25.76)
+      '@interchain-kit/core': 0.2.222(encoding@0.1.13)(typescript@5.6.3)
       '@interchain-ui/react': 1.26.1(@types/react@18.3.24)(babel-plugin-macros@3.1.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@interchainjs/cosmos': 1.10.1
       '@interchainjs/cosmos-types': 1.10.1(@chain-registry/v2-types@0.53.146)(@chain-registry/v2@1.71.237)
@@ -16290,10 +16353,10 @@ snapshots:
       - utf-8-validate
       - zod
 
-  '@interchain-kit/react@0.3.17(@chain-registry/v2@1.71.237)(@types/react-dom@18.2.0)(@types/react@18.2.0)(babel-plugin-macros@3.1.0)(encoding@0.1.13)(immer@10.1.1)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(typescript@5.6.3)(use-sync-external-store@1.5.0(react@18.2.0))(zod@3.25.76)':
+  '@interchain-kit/react@0.3.17(@chain-registry/v2@1.71.237)(@types/react-dom@18.2.0)(@types/react@18.2.0)(babel-plugin-macros@3.1.0)(encoding@0.1.13)(immer@10.1.1)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(typescript@5.6.3)(use-sync-external-store@1.5.0(react@18.2.0))':
     dependencies:
       '@chain-registry/v2-types': 0.53.146
-      '@interchain-kit/core': 0.3.17(encoding@0.1.13)(typescript@5.6.3)(zod@3.25.76)
+      '@interchain-kit/core': 0.3.17(encoding@0.1.13)(typescript@5.6.3)
       '@interchain-ui/react': 1.26.1(@types/react@18.2.0)(babel-plugin-macros@3.1.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       '@interchainjs/cosmos': 1.11.5(@chain-registry/v2-types@0.53.146)(@chain-registry/v2@1.71.237)
       '@interchainjs/cosmos-types': 1.11.5(@chain-registry/v2-types@0.53.146)(@chain-registry/v2@1.71.237)
@@ -16382,10 +16445,10 @@ snapshots:
       - utf-8-validate
       - zod
 
-  '@interchain-kit/react@0.3.41(@chain-registry/v2@1.71.237)(@types/react-dom@18.0.9)(@types/react@18.0.25)(babel-plugin-macros@3.1.0)(encoding@0.1.13)(immer@10.1.1)(jiti@2.5.1)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(tsx@4.20.5)(typescript@4.9.3)(use-sync-external-store@1.5.0(react@18.2.0))(zod@3.25.76)':
+  '@interchain-kit/react@0.3.41(@chain-registry/v2@1.71.237)(@types/react-dom@18.0.9)(@types/react@18.0.25)(babel-plugin-macros@3.1.0)(encoding@0.1.13)(immer@10.1.1)(jiti@2.5.1)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(tsx@4.20.5)(typescript@4.9.3)(use-sync-external-store@1.5.0(react@18.2.0))':
     dependencies:
       '@chain-registry/types': 2.0.47
-      '@interchain-kit/core': 0.3.41(@chain-registry/v2@1.71.237)(encoding@0.1.13)(typescript@4.9.3)(zod@3.25.76)
+      '@interchain-kit/core': 0.3.41(@chain-registry/v2@1.71.237)(encoding@0.1.13)(typescript@4.9.3)
       '@interchain-ui/react': 1.26.3(@types/react@18.0.25)(babel-plugin-macros@3.1.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       '@interchainjs/cosmos': 1.11.11(@chain-registry/v2-types@0.53.146)(@chain-registry/v2@1.71.237)
       '@interchainjs/cosmos-types': 1.11.11(@chain-registry/v2-types@0.53.146)(@chain-registry/v2@1.71.237)
@@ -16488,10 +16551,10 @@ snapshots:
       - utf-8-validate
       - zod
 
-  '@interchain-kit/vue@0.2.222(@tanstack/react-query@5.68.0(react@19.1.1))(@types/react@19.1.11)(@vueuse/core@13.7.0(vue@3.5.20(typescript@5.6.3)))(@vueuse/integrations@13.7.0(axios@1.11.0)(focus-trap@7.6.0)(idb-keyval@6.2.2)(vue@3.5.20(typescript@5.6.3)))(babel-plugin-macros@3.1.0)(encoding@0.1.13)(focus-trap@7.6.0)(react@19.1.1)(typescript@5.6.3)(vue@3.5.20(typescript@5.6.3))(zod@3.25.76)':
+  '@interchain-kit/vue@0.2.222(@tanstack/react-query@5.68.0(react@19.1.1))(@types/react@19.1.11)(@vueuse/core@13.7.0(vue@3.5.20(typescript@5.6.3)))(@vueuse/integrations@13.7.0(axios@1.11.0)(focus-trap@7.6.0)(idb-keyval@6.2.2)(vue@3.5.20(typescript@5.6.3)))(babel-plugin-macros@3.1.0)(encoding@0.1.13)(focus-trap@7.6.0)(react@19.1.1)(typescript@5.6.3)(vue@3.5.20(typescript@5.6.3))':
     dependencies:
       '@chain-registry/v2-types': 0.53.146
-      '@interchain-kit/core': 0.2.222(encoding@0.1.13)(typescript@5.6.3)(zod@3.25.76)
+      '@interchain-kit/core': 0.2.222(encoding@0.1.13)(typescript@5.6.3)
       '@interchain-ui/vue': 1.4.1(@types/react@19.1.11)(@vueuse/core@13.7.0(vue@3.5.20(typescript@5.6.3)))(@vueuse/integrations@13.7.0(axios@1.11.0)(focus-trap@7.6.0)(idb-keyval@6.2.2)(vue@3.5.20(typescript@5.6.3)))(babel-plugin-macros@3.1.0)(focus-trap@7.6.0)(react@19.1.1)(vue@3.5.20(typescript@5.6.3))
       '@interchainjs/cosmos': 0.0.1-beta.34
       '@interchainjs/cosmos-types': 0.0.1-beta.17
@@ -17528,24 +17591,6 @@ snapshots:
       - bufferutil
       - utf-8-validate
 
-  '@interchainjs/ethereum@1.11.9(@chain-registry/v2-types@0.53.146)(@chain-registry/v2@1.71.237)':
-    dependencies:
-      '@ethersproject/bignumber': 5.8.0
-      '@ethersproject/bytes': 5.8.0
-      '@ethersproject/hash': 5.8.0
-      '@ethersproject/transactions': 5.8.0
-      '@interchainjs/types': 1.11.9
-      '@interchainjs/utils': 1.11.9(@chain-registry/v2-types@0.53.146)(@chain-registry/v2@1.71.237)
-      '@noble/hashes': 1.8.0
-      ethereum-cryptography: 3.2.0
-      ethers: 6.15.0
-      rlp: 3.0.0
-    transitivePeerDependencies:
-      - '@chain-registry/v2'
-      - '@chain-registry/v2-types'
-      - bufferutil
-      - utf-8-validate
-
   '@interchainjs/ethereum@1.17.1(@chain-registry/v2-types@0.53.146)(@chain-registry/v2@1.71.237)':
     dependencies:
       '@ethersproject/bignumber': 5.8.0
@@ -17817,10 +17862,6 @@ snapshots:
     dependencies:
       decimal.js: 10.6.0
 
-  '@interchainjs/types@1.11.9':
-    dependencies:
-      decimal.js: 10.6.0
-
   '@interchainjs/types@1.16.6':
     dependencies:
       decimal.js: 10.6.0
@@ -17891,14 +17932,6 @@ snapshots:
       '@chain-registry/v2': 1.71.237
       '@chain-registry/v2-types': 0.53.146
       '@interchainjs/types': 1.11.5
-      bech32: 2.0.0
-      decimal.js: 10.6.0
-
-  '@interchainjs/utils@1.11.9(@chain-registry/v2-types@0.53.146)(@chain-registry/v2@1.71.237)':
-    dependencies:
-      '@chain-registry/v2': 1.71.237
-      '@chain-registry/v2-types': 0.53.146
-      '@interchainjs/types': 1.11.9
       bech32: 2.0.0
       decimal.js: 10.6.0
 
@@ -23398,7 +23431,7 @@ snapshots:
     dependencies:
       vue: 3.5.20(typescript@5.6.3)
 
-  '@walletconnect/core@2.21.8(typescript@4.9.3)(zod@3.25.76)':
+  '@walletconnect/core@2.21.8(typescript@4.9.3)':
     dependencies:
       '@walletconnect/heartbeat': 1.2.2
       '@walletconnect/jsonrpc-provider': 1.0.14
@@ -23412,7 +23445,7 @@ snapshots:
       '@walletconnect/safe-json': 1.0.2
       '@walletconnect/time': 1.0.2
       '@walletconnect/types': 2.21.8
-      '@walletconnect/utils': 2.21.8(typescript@4.9.3)(zod@3.25.76)
+      '@walletconnect/utils': 2.21.8(typescript@4.9.3)
       '@walletconnect/window-getters': 1.0.1
       es-toolkit: 1.39.3
       events: 3.3.0
@@ -23583,16 +23616,16 @@ snapshots:
     dependencies:
       tslib: 1.14.1
 
-  '@walletconnect/sign-client@2.21.8(typescript@4.9.3)(zod@3.25.76)':
+  '@walletconnect/sign-client@2.21.8(typescript@4.9.3)':
     dependencies:
-      '@walletconnect/core': 2.21.8(typescript@4.9.3)(zod@3.25.76)
+      '@walletconnect/core': 2.21.8(typescript@4.9.3)
       '@walletconnect/events': 1.0.1
       '@walletconnect/heartbeat': 1.2.2
       '@walletconnect/jsonrpc-utils': 1.0.8
       '@walletconnect/logger': 2.1.2
       '@walletconnect/time': 1.0.2
       '@walletconnect/types': 2.21.8
-      '@walletconnect/utils': 2.21.8(typescript@4.9.3)(zod@3.25.76)
+      '@walletconnect/utils': 2.21.8(typescript@4.9.3)
       events: 3.3.0
     transitivePeerDependencies:
       - '@azure/app-configuration'
@@ -23688,7 +23721,7 @@ snapshots:
       - ioredis
       - uploadthing
 
-  '@walletconnect/universal-provider@2.21.8(encoding@0.1.13)(typescript@4.9.3)(zod@3.25.76)':
+  '@walletconnect/universal-provider@2.21.8(encoding@0.1.13)(typescript@4.9.3)':
     dependencies:
       '@walletconnect/events': 1.0.1
       '@walletconnect/jsonrpc-http-connection': 1.0.8(encoding@0.1.13)
@@ -23697,9 +23730,9 @@ snapshots:
       '@walletconnect/jsonrpc-utils': 1.0.8
       '@walletconnect/keyvaluestorage': 1.1.1
       '@walletconnect/logger': 2.1.2
-      '@walletconnect/sign-client': 2.21.8(typescript@4.9.3)(zod@3.25.76)
+      '@walletconnect/sign-client': 2.21.8(typescript@4.9.3)
       '@walletconnect/types': 2.21.8
-      '@walletconnect/utils': 2.21.8(typescript@4.9.3)(zod@3.25.76)
+      '@walletconnect/utils': 2.21.8(typescript@4.9.3)
       es-toolkit: 1.39.3
       events: 3.3.0
     transitivePeerDependencies:
@@ -23808,7 +23841,7 @@ snapshots:
       - utf-8-validate
       - zod
 
-  '@walletconnect/utils@2.21.8(typescript@4.9.3)(zod@3.25.76)':
+  '@walletconnect/utils@2.21.8(typescript@4.9.3)':
     dependencies:
       '@msgpack/msgpack': 3.1.2
       '@noble/ciphers': 1.3.0
@@ -23829,7 +23862,7 @@ snapshots:
       detect-browser: 5.3.0
       query-string: 7.1.3
       uint8arrays: 3.1.1
-      viem: 2.31.0(typescript@4.9.3)(zod@3.25.76)
+      viem: 2.31.0(typescript@4.9.3)
     transitivePeerDependencies:
       - '@azure/app-configuration'
       - '@azure/cosmos'
@@ -24420,10 +24453,9 @@ snapshots:
       fs-extra: 10.1.0
       yargs: 17.7.2
 
-  abitype@1.0.8(typescript@4.9.3)(zod@3.25.76):
+  abitype@1.0.8(typescript@4.9.3):
     optionalDependencies:
       typescript: 4.9.3
-      zod: 3.25.76
 
   abitype@1.0.8(typescript@5.6.3)(zod@3.25.76):
     optionalDependencies:
@@ -26139,7 +26171,7 @@ snapshots:
       '@typescript-eslint/parser': 5.62.0(eslint@8.28.0)(typescript@4.9.3)
       eslint: 8.28.0
       eslint-import-resolver-node: 0.3.9
-      eslint-import-resolver-typescript: 3.10.1(eslint-plugin-import@2.32.0)(eslint@8.28.0)
+      eslint-import-resolver-typescript: 3.10.1(eslint-plugin-import@2.32.0(eslint@8.28.0))(eslint@8.28.0)
       eslint-plugin-import: 2.32.0(@typescript-eslint/parser@5.62.0(eslint@8.28.0)(typescript@4.9.3))(eslint-import-resolver-typescript@3.10.1)(eslint@8.28.0)
       eslint-plugin-jsx-a11y: 6.10.2(eslint@8.28.0)
       eslint-plugin-react: 7.37.5(eslint@8.28.0)
@@ -26158,7 +26190,7 @@ snapshots:
       '@typescript-eslint/parser': 5.62.0(eslint@8.28.0)(typescript@5.6.3)
       eslint: 8.28.0
       eslint-import-resolver-node: 0.3.9
-      eslint-import-resolver-typescript: 3.10.1(eslint-plugin-import@2.32.0)(eslint@8.28.0)
+      eslint-import-resolver-typescript: 3.10.1(eslint-plugin-import@2.32.0(eslint@8.28.0))(eslint@8.28.0)
       eslint-plugin-import: 2.32.0(@typescript-eslint/parser@5.62.0(eslint@8.28.0)(typescript@5.6.3))(eslint-import-resolver-typescript@3.10.1)(eslint@8.28.0)
       eslint-plugin-jsx-a11y: 6.10.2(eslint@8.28.0)
       eslint-plugin-react: 7.37.5(eslint@8.28.0)
@@ -26221,7 +26253,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  eslint-import-resolver-typescript@3.10.1(eslint-plugin-import@2.32.0)(eslint@8.28.0):
+  eslint-import-resolver-typescript@3.10.1(eslint-plugin-import@2.32.0(eslint@8.28.0))(eslint@8.28.0):
     dependencies:
       '@nolyfill/is-core-module': 1.0.39
       debug: 4.4.1
@@ -26273,7 +26305,7 @@ snapshots:
       '@typescript-eslint/parser': 5.62.0(eslint@8.28.0)(typescript@4.9.3)
       eslint: 8.28.0
       eslint-import-resolver-node: 0.3.9
-      eslint-import-resolver-typescript: 3.10.1(eslint-plugin-import@2.32.0)(eslint@8.28.0)
+      eslint-import-resolver-typescript: 3.10.1(eslint-plugin-import@2.32.0(eslint@8.28.0))(eslint@8.28.0)
     transitivePeerDependencies:
       - supports-color
 
@@ -26284,7 +26316,7 @@ snapshots:
       '@typescript-eslint/parser': 5.62.0(eslint@8.28.0)(typescript@5.6.3)
       eslint: 8.28.0
       eslint-import-resolver-node: 0.3.9
-      eslint-import-resolver-typescript: 3.10.1(eslint-plugin-import@2.32.0)(eslint@8.28.0)
+      eslint-import-resolver-typescript: 3.10.1(eslint-plugin-import@2.32.0(eslint@8.28.0))(eslint@8.28.0)
     transitivePeerDependencies:
       - supports-color
 
@@ -29715,7 +29747,7 @@ snapshots:
       object-keys: 1.1.1
       safe-push-apply: 1.0.0
 
-  ox@0.7.1(typescript@4.9.3)(zod@3.25.76):
+  ox@0.7.1(typescript@4.9.3):
     dependencies:
       '@adraffy/ens-normalize': 1.11.0
       '@noble/ciphers': 1.3.0
@@ -29723,7 +29755,7 @@ snapshots:
       '@noble/hashes': 1.8.0
       '@scure/bip32': 1.7.0
       '@scure/bip39': 1.6.0
-      abitype: 1.0.8(typescript@4.9.3)(zod@3.25.76)
+      abitype: 1.0.8(typescript@4.9.3)
       eventemitter3: 5.0.1
     optionalDependencies:
       typescript: 4.9.3
@@ -32145,15 +32177,15 @@ snapshots:
       d3-time: 3.1.0
       d3-timer: 3.0.1
 
-  viem@2.31.0(typescript@4.9.3)(zod@3.25.76):
+  viem@2.31.0(typescript@4.9.3):
     dependencies:
       '@noble/curves': 1.9.1
       '@noble/hashes': 1.8.0
       '@scure/bip32': 1.7.0
       '@scure/bip39': 1.6.0
-      abitype: 1.0.8(typescript@4.9.3)(zod@3.25.76)
+      abitype: 1.0.8(typescript@4.9.3)
       isows: 1.0.7(ws@8.18.2)
-      ox: 0.7.1(typescript@4.9.3)(zod@3.25.76)
+      ox: 0.7.1(typescript@4.9.3)
       ws: 8.18.2
     optionalDependencies:
       typescript: 4.9.3

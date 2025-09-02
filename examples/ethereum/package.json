@@ -17,7 +17,7 @@
     "@interchain-kit/metamask-extension": "0.3.39",
     "@interchain-kit/react": "0.3.39",
     "@interchain-ui/react": "^1.26.3",
-    "@interchainjs/ethereum": "1.11.9",
+    "@interchainjs/ethereum": "link:/Users/easonsmith/Desktop/hw/interchainjs/networks/ethereum/dist",
     "@keplr-wallet/types": "^0.12.221",
     "@metamask/providers": "^22.0.0",
     "autoprefixer": "^10.4.20",
