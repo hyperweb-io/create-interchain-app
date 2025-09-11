@@ -4,7 +4,6 @@ import { Box, Button, TextField, NumberField, FieldLabel, Callout } from "@inter
 import React, { useState, useEffect } from "react"
 import { Wallet, ArrowRight, RefreshCw, AlertCircle } from "lucide-react"
 import { SignerFromBrowser } from "@interchainjs/ethereum/signers/SignerFromBrowser"
-import { parseEther, formatEther } from "@interchainjs/ethereum/utils/denominations"
 import { MetaMaskInpageProvider } from "@metamask/providers";
 import { useChain } from '@interchain-kit/react'
 import { WalletState } from "@interchain-kit/core"
@@ -64,14 +63,15 @@ export default function WalletPage() {
     if (!ethereum) return
     try {
       console.log('ethereum in getBalance:', ethereum)
-      const wallet = new SignerFromBrowser(
-        ethereum!
-        // window.ethereum as EthereumProvider
-      )
-      console.log('wallet in getBalance:', wallet)
-      const balance = await wallet.getBalance()
-      console.log('balance in getBalance:', balance)
-      setBalance(formatEther(balance))
+      // Use EIP-1193 provider directly to fetch balance
+      const addr = account
+      if (!addr) throw new Error('No connected account')
+      const hexBalance = await (ethereum as any).request({
+        method: 'eth_getBalance',
+        params: [addr, 'latest']
+      }) as string
+      const wei = BigInt(hexBalance)
+      setBalance(formatEther(wei))
     } catch (err: any) {
       console.error("Failed to get balance:", err)
       setError(err.message || "Failed to get balance")
@@ -107,7 +107,7 @@ export default function WalletPage() {
 
       // Wait for confirmation
       await transaction.wait()
-      setTxLink(`${CHAIN_INFO.blockExplorerUrls[0]}/tx/${transaction.txHash}`) // ← set explorer link
+      setTxLink(`${CHAIN_INFO.blockExplorerUrls[0]}/tx/${transaction.transactionHash}`) // ← set explorer link
 
       // Update balance
       await getBalance()
@@ -242,4 +242,23 @@ export default function WalletPage() {
       )}
     </main>
   )
+}
+
+// Minimal helpers for ETH denominations (18 decimals)
+const WEI_PER_ETHER = 10n ** 18n
+function parseEther(value: number | string): bigint {
+  const str = typeof value === 'number' ? value.toString() : value
+  if (!str.includes('.')) return BigInt(str) * WEI_PER_ETHER
+  const [whole, fracRaw] = str.split('.')
+  const frac = (fracRaw || '').slice(0, 18).padEnd(18, '0')
+  return BigInt(whole || '0') * WEI_PER_ETHER + BigInt(frac || '0')
+}
+
+function formatEther(wei: bigint): string {
+  const negative = wei < 0n
+  const n = negative ? -wei : wei
+  const whole = n / WEI_PER_ETHER
+  const frac = n % WEI_PER_ETHER
+  const fracStr = frac.toString().padStart(18, '0').replace(/0+$/, '')
+  return `${negative ? '-' : ''}${whole.toString()}${fracStr ? '.' + fracStr : ''}`
 }
