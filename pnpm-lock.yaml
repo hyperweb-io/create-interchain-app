@@ -226,8 +226,8 @@ importers:
         specifier: ^1.26.3
         version: 1.26.3(@types/react@19.1.11)(babel-plugin-macros@3.1.0)(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
       '@interchainjs/ethereum':
-        specifier: link:/Users/easonsmith/Desktop/hw/interchainjs/networks/ethereum/dist
-        version: link:../../../interchainjs/networks/ethereum/dist
+        specifier: ^1.17.4
+        version: 1.17.4(@chain-registry/v2-types@0.53.146)(@chain-registry/v2@1.71.237)
       '@keplr-wallet/types':
         specifier: ^0.12.221
         version: 0.12.265(starknet@7.6.4)
@@ -3248,6 +3248,9 @@ packages:
   '@interchainjs/auth@1.17.1':
     resolution: {integrity: sha512-4khXhRti537vqsSzSPfCwtarFBNvXkc8ISYFvqY43I2j0m0FbzZhNqjrXQn+xnihnjsF9ec/SqckVKdXX2DHFg==}
 
+  '@interchainjs/auth@1.17.4':
+    resolution: {integrity: sha512-lp5cl9OymwJpjOBR3KGOr8Zgb4pjBv19Wlqgd+E1EB9FjyBldj/1cF+j4Kk3mh+DgEVQYwwJhctpL06Ps47IwQ==}
+
   '@interchainjs/auth@1.6.3':
     resolution: {integrity: sha512-Beogp4nAyjLI88ifcFgqFfehY2UrnyqJMprM1NhXWplz+6gFlf6act/f+YfiQ+OPT9CpFbis2Xi6LyjrIyw8XA==}
 
@@ -3329,6 +3332,9 @@ packages:
   '@interchainjs/crypto@1.17.1':
     resolution: {integrity: sha512-vrKtsRq4YX6pUukD73CbLLOD6tgwHb05GMOVhK0S8lGULiSoW8f76LvhOUgX13v5MSWiBzdSiAaVsAfTvkJePw==}
 
+  '@interchainjs/crypto@1.17.4':
+    resolution: {integrity: sha512-QK6tbb7MqkwoWmxR20RshsqkjeyU1vBz2qo1CwuMWhimg74CPmneSmf+0owBXUNMXVs9/1L2RbKO2JfBtI8fUA==}
+
   '@interchainjs/crypto@1.9.12':
     resolution: {integrity: sha512-lL1vYIoc25jPoIBy/8Ig+PmCVtWsny8x1aFJ5aBri899PBoTr9eUL6QvD/aNe2p/XYvORQffY6eJTVTo0o4GpQ==}
 
@@ -3350,6 +3356,9 @@ packages:
   '@interchainjs/encoding@1.17.1':
     resolution: {integrity: sha512-ALRsvzEtSAHBiBw2z+i9bp9ICGpMN8L6cqS0AIpx+B4mFnuFp0TYi4m7CerklcDeV78ld+G6Xf5PbbQUGI0/hA==}
 
+  '@interchainjs/encoding@1.17.4':
+    resolution: {integrity: sha512-RWkuUxI/T8DGQ7NUaBse/8BlsEPeOyxefnOtYkLxp3kdnIv69Zw45or/8xT6Qc7BOb7kW6Cbv+cEOUE1Bw6wag==}
+
   '@interchainjs/encoding@1.9.12':
     resolution: {integrity: sha512-kfOCToy0qoLkG4svVawhbIEODud6xinBhL+gnp4wFCGpX9Ziipz51OEhRV2s09GSojKlrmlR4PDZEpVieDudRA==}
 
@@ -3358,6 +3367,9 @@ packages:
 
   '@interchainjs/ethereum@1.17.1':
     resolution: {integrity: sha512-EOjB3Q8OusoCk5/zg0PlWJUoepKEOjm18DNEeAxUPmG5wDw8CIAp7wkUHF6lfGkE7ZFedwy74Uinc1eZZSDh1g==}
+
+  '@interchainjs/ethereum@1.17.4':
+    resolution: {integrity: sha512-YT70Rkprza0r6ALijKL4Sa0764+Q7BMyA16W+P3INgRDAI1YkZ9VTnkrpoYgcaH/QXdUZ6ueeX8sESC0JvMxpQ==}
 
   '@interchainjs/ethereum@1.6.3':
     resolution: {integrity: sha512-FAItWkwjVR1tRmDkodL+Npvrag6thEtgu1WviRVgV3p60eP7fybRSi4YX16vMqkmQiH2C96uQ6UBtoFaqGjj1A==}
@@ -3388,6 +3400,9 @@ packages:
 
   '@interchainjs/math@1.17.3':
     resolution: {integrity: sha512-IGxi8KkQPKReHgXbg053SowUr0+48GJC+EjQ4MWfG2KMtUMN4f4dIYDdXCpdLt3QSZjxi2KCbgOuJ+7NwIjBow==}
+
+  '@interchainjs/math@1.17.4':
+    resolution: {integrity: sha512-j5pMAS179AYr9tyMQj+CY3Iw5C4oEFnCl1Zun0WvH8fon+PP0SzG8hQIw2+sATcuHWAfwF1OAiq35K5f2FoGPg==}
 
   '@interchainjs/math@1.9.12':
     resolution: {integrity: sha512-ynMCV+8Q5IRXbW4mC8dtyOZTp3eXcfWcOKH+U27wNMdqavNaPmQA9Dre6z1o0/C91z0O04IIrV9LpEW/HOC4DQ==}
@@ -3445,6 +3460,9 @@ packages:
   '@interchainjs/types@1.17.3':
     resolution: {integrity: sha512-y4uihwvFRb16DVfvBCSXS7m45G6Mo6lgZq1F6Sut+hwhXBRV0Hvl59/7KhmMmH3sKffP1Lh/SmaeEvlUeQEI5A==}
 
+  '@interchainjs/types@1.17.4':
+    resolution: {integrity: sha512-lmIkB/DrYmWrg3PAJoj99TnHHeFuFyPHBwojHOWVauTIckMBFFUOAS+Iz3QGhPoyYWklic3i6HjD1SjZeTKomA==}
+
   '@interchainjs/types@1.6.3':
     resolution: {integrity: sha512-oDW5RUgVd5i4Ni7zx2YizIwRPgC97X79EQdb/sOkD+Fk+N/n83Op5JpnuaN6RB2bYJdeNWdn2RsH+Zk3uE1ETw==}
 
@@ -3492,6 +3510,12 @@ packages:
 
   '@interchainjs/utils@1.17.3':
     resolution: {integrity: sha512-WFzJhhOGK+DZFx8s5cwHXvcAG9DHo60U8+h97ufyTmexPKXMMzBHty2Lir4gNibXUJbchre1+Yl5ElXXdsMSBA==}
+    peerDependencies:
+      '@chain-registry/v2': ^1.71.186
+      '@chain-registry/v2-types': ^0.53.115
+
+  '@interchainjs/utils@1.17.4':
+    resolution: {integrity: sha512-ZhNDXg1Qo5cqnXBGCFX7hL4oaGnYG/psQd+KL/o0pjkuxE0tKKAvt7fqWamgud8eolMjITk6JCcskgACxbC30Q==}
     peerDependencies:
       '@chain-registry/v2': ^1.71.186
       '@chain-registry/v2-types': ^0.53.115
@@ -17165,6 +17189,21 @@ snapshots:
       - '@chain-registry/v2'
       - '@chain-registry/v2-types'
 
+  '@interchainjs/auth@1.17.4(@chain-registry/v2-types@0.53.146)(@chain-registry/v2@1.71.237)':
+    dependencies:
+      '@interchainjs/crypto': 1.17.4(@chain-registry/v2-types@0.53.146)(@chain-registry/v2@1.71.237)
+      '@interchainjs/types': 1.17.4
+      '@interchainjs/utils': 1.17.4(@chain-registry/v2-types@0.53.146)(@chain-registry/v2@1.71.237)
+      '@noble/curves': 1.9.7
+      '@noble/hashes': 1.8.0
+      '@scure/bip32': 1.7.0
+      bech32: 2.0.0
+      elliptic: 6.6.1
+      libsodium-wrappers-sumo: 0.7.15
+    transitivePeerDependencies:
+      - '@chain-registry/v2'
+      - '@chain-registry/v2-types'
+
   '@interchainjs/auth@1.6.3':
     dependencies:
       '@interchainjs/types': 1.6.3
@@ -17514,6 +17553,19 @@ snapshots:
       - '@chain-registry/v2'
       - '@chain-registry/v2-types'
 
+  '@interchainjs/crypto@1.17.4(@chain-registry/v2-types@0.53.146)(@chain-registry/v2@1.71.237)':
+    dependencies:
+      '@interchainjs/encoding': 1.17.4
+      '@interchainjs/math': 1.17.4
+      '@interchainjs/utils': 1.17.4(@chain-registry/v2-types@0.53.146)(@chain-registry/v2@1.71.237)
+      '@noble/hashes': 1.8.0
+      bn.js: 5.2.2
+      elliptic: 6.6.1
+      libsodium-wrappers-sumo: 0.7.15
+    transitivePeerDependencies:
+      - '@chain-registry/v2'
+      - '@chain-registry/v2-types'
+
   '@interchainjs/crypto@1.9.12':
     dependencies:
       '@interchainjs/encoding': 1.9.12
@@ -17566,6 +17618,13 @@ snapshots:
       bech32: 1.1.4
       readonly-date: 1.0.0
 
+  '@interchainjs/encoding@1.17.4':
+    dependencies:
+      '@interchainjs/math': 1.17.4
+      base64-js: 1.5.1
+      bech32: 1.1.4
+      readonly-date: 1.0.0
+
   '@interchainjs/encoding@1.9.12':
     dependencies:
       '@interchainjs/math': 1.9.12
@@ -17600,6 +17659,25 @@ snapshots:
       '@interchainjs/auth': 1.17.1(@chain-registry/v2-types@0.53.146)(@chain-registry/v2@1.71.237)
       '@interchainjs/types': 1.17.1
       '@interchainjs/utils': 1.17.1(@chain-registry/v2-types@0.53.146)(@chain-registry/v2@1.71.237)
+      '@noble/curves': 1.9.7
+      '@noble/hashes': 1.8.0
+      bip39: 3.1.0
+      deepmerge: 4.2.2
+      ethereum-cryptography: 3.2.0
+      rlp: 3.0.0
+    transitivePeerDependencies:
+      - '@chain-registry/v2'
+      - '@chain-registry/v2-types'
+
+  '@interchainjs/ethereum@1.17.4(@chain-registry/v2-types@0.53.146)(@chain-registry/v2@1.71.237)':
+    dependencies:
+      '@ethersproject/bignumber': 5.8.0
+      '@ethersproject/bytes': 5.8.0
+      '@ethersproject/hash': 5.8.0
+      '@ethersproject/transactions': 5.8.0
+      '@interchainjs/auth': 1.17.4(@chain-registry/v2-types@0.53.146)(@chain-registry/v2@1.71.237)
+      '@interchainjs/types': 1.17.4
+      '@interchainjs/utils': 1.17.4(@chain-registry/v2-types@0.53.146)(@chain-registry/v2@1.71.237)
       '@noble/curves': 1.9.7
       '@noble/hashes': 1.8.0
       bip39: 3.1.0
@@ -17682,6 +17760,10 @@ snapshots:
       bn.js: 5.2.2
 
   '@interchainjs/math@1.17.3':
+    dependencies:
+      bn.js: 5.2.2
+
+  '@interchainjs/math@1.17.4':
     dependencies:
       bn.js: 5.2.2
 
@@ -17874,6 +17956,10 @@ snapshots:
     dependencies:
       decimal.js: 10.6.0
 
+  '@interchainjs/types@1.17.4':
+    dependencies:
+      decimal.js: 10.6.0
+
   '@interchainjs/types@1.6.3':
     dependencies:
       decimal.js: 10.6.0
@@ -17956,6 +18042,14 @@ snapshots:
       '@chain-registry/v2': 1.71.237
       '@chain-registry/v2-types': 0.53.146
       '@interchainjs/types': 1.17.3
+      bech32: 2.0.0
+      decimal.js: 10.6.0
+
+  '@interchainjs/utils@1.17.4(@chain-registry/v2-types@0.53.146)(@chain-registry/v2@1.71.237)':
+    dependencies:
+      '@chain-registry/v2': 1.71.237
+      '@chain-registry/v2-types': 0.53.146
+      '@interchainjs/types': 1.17.4
       bech32: 2.0.0
       decimal.js: 10.6.0
 
