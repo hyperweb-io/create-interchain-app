@@ -1,0 +1,56 @@
+{
+  "name": "@hyperweb/cosmwasm-ts-codegen",
+  "version": "2.4.6",
+  "private": true,
+  "description": "CosmWasm ts-codegen example showcasing generated client code for smart contract interactions",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "locks:remove": "rm -f yarn.lock",
+    "locks:create": "generate-lockfile --lockfile ../../yarn.lock --package package.json --write yarn.lock --force",
+    "locks": "npm run locks:remove && npm run locks:create"
+  },
+  "resolutions": {
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0"
+  },
+  "dependencies": {
+    "@chain-registry/assets": "1.63.5",
+    "@chain-registry/v2": "^1.71.229",
+    "@cosmjs/stargate": "0.31.1",
+    "@interchain-kit/core": "^0.3.40",
+    "@interchain-kit/keplr-extension": "0.3.41",
+    "@interchain-kit/leap-extension": "0.3.41",
+    "@interchain-kit/metamask-extension": "0.3.41",
+    "@interchain-kit/react": "0.3.41",
+    "@interchain-ui/react": "1.23.31",
+    "@interchain-ui/react-no-ssr": "0.1.2",
+    "@interchainjs/cosmos": "1.17.1",
+    "@interchainjs/cosmos-types": "1.17.1",
+    "@interchainjs/react": "1.17.1",
+    "interchainjs": "1.17.1",
+    "@interchainjs/types": "1.17.1",
+    "@tanstack/react-query": "4.32.0",
+    "bignumber.js": "9.1.2",
+    "chain-registry": "1.62.3",
+    "dayjs": "1.11.11",
+    "interchain-kit": "0.3.41",
+    "next": "^13",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-icons": "5.2.1",
+    "react-json-pretty": "^2.2.0"
+  },
+  "devDependencies": {
+    "@types/node": "^18",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "eslint": "8",
+    "eslint-config-next": "13",
+    "typescript": "^4"
+  }
+}
